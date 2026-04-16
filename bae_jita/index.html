@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨설팅 요약 — 배지타님</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="컨설팅 요약 — 배지타님">
+<meta property="og:description" content="2026.4.14 컨설팅 요약 정리 — RE:FEEEL">
+<meta property="og:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<meta property="og:type" content="article">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="컨설팅 요약 — 배지타님">
+<meta name="twitter:description" content="2026.4.14 컨설팅 요약 정리 — RE:FEEEL">
+<meta name="twitter:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --bg: #f8f6f2;
+  --bg-card: #ffffff;
+  --text: #302b26;
+  --text-light: #948b80;
+  --text-mid: #5e574f;
+  --accent: #4a6e5f;
+  --accent-soft: rgba(74,110,95,0.08);
+  --border: #ddd7ce;
+  --white: #fff;
+
+  --sp-md: 24px;
+  --sp-lg: 48px;
+  --sp-xl: 80px;
+  --sp-2xl: 120px;
+
+  --ease: cubic-bezier(.16,1,.3,1);
+
+  --font-display: 'Pretendard Variable', 'SUIT Variable', sans-serif;
+  --font-body: 'SUIT Variable', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.ct { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+.rv { opacity:0; transform:translateY(20px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.rv.vis { opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce) { .rv { transition:none !important; opacity:1 !important; transform:none !important; } }
+
+/* ════════ COVER ════════ */
+.cover { position:relative; padding:var(--sp-2xl) 0 var(--sp-xl); }
+.cover .ct { display:flex; flex-direction:column; }
+.cover::before { content:''; position:absolute; inset:0; background:var(--bg-card); z-index:-1; }
+.cover-part { font-size:12px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:var(--text-light); margin-bottom:var(--sp-lg); }
+.cover h1 { font-family:var(--font-display); font-size:clamp(28px,4.5vw,44px); font-weight:800; line-height:1.35; letter-spacing:-1px; margin-bottom:32px; }
+.cover-line { width:48px; height:2px; background:var(--accent); margin-bottom:32px; }
+.cover-desc { font-size:15px; line-height:2; color:var(--text-mid); max-width:640px; margin-bottom:var(--sp-xl); }
+.cover-meta { display:flex; gap:var(--sp-lg); font-size:12px; color:var(--text-light); }
+.cover-meta dt { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:3px; }
+
+/* ════════ SECTION HEADERS ════════ */
+.sec-hd { margin-top:80px; padding:32px 0 var(--sp-md); border-top:1px solid var(--border); }
+.sec-hd.no-rule { margin-top:48px; padding-top:0; border-top:none; }
+.sec-num { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+.sec-tl { font-family:var(--font-display); font-size:clamp(21px,3vw,30px); font-weight:800; line-height:1.5; letter-spacing:-0.3px; }
+
+/* ════════ PROSE ════════ */
+.prose { font-size:15.5px; line-height:1.9; color:var(--text-mid); letter-spacing:-0.1px; }
+.prose p { margin-bottom:var(--sp-md); }
+.prose p:last-child { margin-bottom:0; }
+
+/* ════════ INSIGHT ════════ */
+.insight { padding:20px 0; margin:40px 0; }
+.insight-tag { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.insight p { font-size:15px; line-height:2; color:var(--text); }
+
+/* ════════ CTA ════════ */
+.cta { background:var(--accent-soft); padding:32px; margin:48px 0 0; border-radius:2px; border-left:3px solid var(--accent); }
+.cta-label { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:12px; }
+.cta-title { font-family:var(--font-display); font-size:18px; font-weight:800; line-height:1.5; letter-spacing:-0.2px; margin-bottom:12px; color:var(--text); }
+.cta p { font-size:14.5px; line-height:1.9; color:var(--text-mid); }
+
+/* ════════ GEMS ════════ */
+.gem { display:grid; grid-template-columns:72px 1fr; gap:16px; padding:var(--sp-md) 0; border-bottom:1px solid var(--border); }
+.gem:first-of-type { border-top:1px solid var(--border); }
+.gem-tag { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent); padding-top:2px; }
+.gem h5 { font-size:14px; font-weight:700; margin-bottom:4px; line-height:1.5; }
+.gem p { font-size:13px; color:var(--text-light); line-height:1.8; }
+
+/* ════════ TO TOP ════════ */
+.to-top { position:fixed; bottom:32px; right:32px; width:40px; height:40px; border:1px solid var(--border); background:var(--bg-card); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .4s; z-index:50; font-size:18px; color:var(--text-light); border-radius:0; }
+.to-top.show { opacity:1; }
+
+/* ════════ PAGE FOOTER ════════ */
+.page-footer { max-width:720px; margin:0 auto; padding:40px 32px 80px; text-align:center; border-top:1px solid var(--border); margin-top:80px; }
+.page-footer-brand { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--text-mid); margin-bottom:8px; }
+.page-footer-note { font-size:11px; color:var(--text-light); line-height:1.6; }
+
+@media (max-width: 768px) {
+  .cover { padding:60px 0 40px !important; }
+  .cover-meta { flex-direction:column; gap:16px; }
+  .ct { padding:0 20px; }
+  .gem { grid-template-columns:1fr; gap:4px; }
+  .cta { padding:24px; }
+}
+@media (max-width: 480px) {
+  .cover h1 { font-size:24px; }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<section class="cover">
+<div class="ct">
+  <div class="cover-part rv">Consulting Summary</div>
+  <h1 class="rv">컨설팅 요약</h1>
+  <div class="cover-line rv"></div>
+  <p class="cover-desc rv">
+    지타님의 계정과 사업 구조를 분석하고, 컨설팅에서 나눈 이야기의 핵심 방향을 정리했습니다. 10년치 팬덤과 다섯 가지 자산의 조합 — 그것을 어떻게 꺼내 쓸 것인지가 앞으로의 과제입니다.
+  </p>
+  <dl class="cover-meta rv">
+    <div><dt>Client</dt><dd>배지타</dd></div>
+    <div><dt>By</dt><dd>RE:FEEEL</dd></div>
+    <div><dt>Date</dt><dd>2026. 04. 14</dd></div>
+  </dl>
+</div>
+</section>
+
+
+<!-- ═══════════════ 01. 진단 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Diagnosis</div>
+    <h2 class="sec-tl">메시지가 아니라 메신저</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>혈당관리, 식습관 교정, 음식 먹는 순서, 물 먼저 마시기, 성분 확인 — 이 내용 자체는 지타님이 아니어도 얘기할 수 있는 범주입니다. 유튜브에 이미 정말 많고요.</p>
+    <p>같은 말이라도 누가 어떻게 푸느냐에 따라 받아들여지는 것이 완전히 달라집니다. 지타님의 차별점은 상품에 있는 것이 아니라 메신저인 '베지타'라는 사람 자체에 있습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 02. 메신저의 자산 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd no-rule rv">
+    <div class="sec-num">Assets</div>
+    <h2 class="sec-tl">메신저의 자산</h2>
+  </div>
+
+  <div class="gem rv">
+    <div class="gem-tag">01</div>
+    <div>
+      <h5>40대 갱년기 여성인데 비주얼이 유지되는 사람</h5>
+      <p>갱년기가 빨리 오고 출산도 줄어든 시대에, 이 나이대에서 이 몸을 유지하는 것은 절대 공통적이지 않습니다. 지타님 본인이 "공통적인 거 아닌가요"라고 하셨지만 아닙니다. 엄청난 차별점입니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">02</div>
+    <div>
+      <h5>20살 아들을 둔 엄마</h5>
+      <p>여자로서 완성형 몸을 유지하면서 성인 자녀를 둔 엄마. 이 조합 자체가 서사입니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">03</div>
+    <div>
+      <h5>본인이 그 주기를 겪고 있는 사람</h5>
+      <p>대부분 이 얘기를 하는 사람이 20대이거나 남자 의사인데, "당신이 내 상황을 어떻게 아냐"가 됩니다. 지타님은 그것을 말할 수 있는 자격이 있는 사람입니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">04</div>
+    <div>
+      <h5>PT 5년차 트레이너</h5>
+      <p>5년째 수업 중이시고, 이것이 드러나면 "내 몸 관리하는 사람"에서 "남의 몸을 5년간 관리해온 전문가"로 포지션이 완전히 바뀝니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">05</div>
+    <div>
+      <h5>10년차 인스타 고인물 + 24.8만 팔로워</h5>
+      <p>오랜 시간 축적된 팬덤 자산. 이것 자체가 신규 진입자가 절대 복제할 수 없는 해자입니다.</p>
+    </div>
+  </div>
+
+  <div class="insight rv">
+    <div class="insight-tag">Finding</div>
+    <p>지타님은 이 다섯 가지 자산의 조합 자체가 차별화입니다. 다만 지금 피드에서 제대로 드러나는 것은 1번(비주얼) 하나뿐입니다. 나머지 넷은 피드 밖에 있습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 03. 24.8만 팔로워 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Followers</div>
+    <h2 class="sec-tl">24.8만 팔로워</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>지타님이 초반에 말씀하셨듯이, 24.8만 중 대부분은 지타님의 비주얼적인 요소 때문에 모인 팔로워입니다. 아들+엄마 릴스가 1,960만, 989만 조회수를 기록한 것이 그 증거고요.</p>
+    <p>즉 24.8만은 "혈당관리를 배우고 싶어서" 모인 것이 아니라, "지타님처럼 되고 싶어서" 모인 팔로워라는 뜻입니다. "보고 싶은 사람"과 "돈을 내고 싶은 사람"은 겹치지 않습니다. 24.8만을 전부 공략할 필요가 없고, 이 안에서 진짜 타겟을 좁혀야 합니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 04. 경쟁 환경 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Competition</div>
+    <h2 class="sec-tl">경쟁 환경</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>지금 다이어트 시장의 가장 큰 경쟁자는 다른 코치가 아니라 위고비·마운자로입니다. 압도적이죠.</p>
+    <p>다만 그 안에서도 지타님만 설 수 있는 자리가 있습니다. 40대 이상 갱년기 여성이 굶어서 뺐을 때 어떤 일이 벌어지는지 — 본인이 그 연령대에서 그 몸을 유지하고 있는 사람이기 때문에 가장 설득력 있게 말할 수 있는 위치입니다. 남들이 말하면 어디서 흔히 들은 정보지만, 지타님이 말하면 증거가 되니까요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 05. 고급화의 방향 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd no-rule rv">
+    <div class="sec-num">Positioning</div>
+    <h2 class="sec-tl">고급화의 방향은 밀착</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>"고급화"라고 쓰셨지만, 얘기 들어보니 본질은 "식습관 교정하면 베지타"라는 인식을 심고 싶다는 것이죠. 이것은 기능적 고급화가 아니라 관계의 깊이로 만드는 포지셔닝입니다. "나를 위해 베지타가 봐준다"는 느낌 자체가 상품입니다.</p>
+    <p>이 방향에서는 지타 AI와 단톡방 둘 다 신중해야 합니다. 두 가지 모두 지타님의 핵심 자산인 "사람으로서의 베지타"를 희석시킬 수 있는 구조거든요. 구체적으로 어떤 설계가 맞을지는 함께 풀어가야 할 지점입니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 06. 비주얼 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Visual</div>
+    <h2 class="sec-tl">지타님의 소구점, 비주얼</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>아들과 나오는 대비 영상들이 1,960만, 989만 조회수를 기록한 것이 증거입니다. "38세 엄마인데 저렇게 생긴 사람"이라는 비주얼이 지타님의 가장 강력한 소구점입니다.</p>
+    <p>최근 정보형 릴스로 톤을 바꾸시면서 이 강점이 흐려지고 있습니다. 예전으로 돌아가라는 뜻이 아니라, 이미 만들어진 브랜드의 결을 유지하면서 새로운 방향을 얹어가는 속도 조절이 필요합니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 07. 서사 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd no-rule rv">
+    <div class="sec-num">Narrative</div>
+    <h2 class="sec-tl">완성형 주인공의 한계</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>지금 피드는 완벽한 몸, 동안, 완벽한 라이프스타일이 있는데 — 어떻게 해서 이렇게 됐는지가 하나도 보이지 않습니다. 드라마에서 완성형 주인공이 완성된 삶을 사는 것을 누가 보나요. 만들어가는 과정이나 위기를 겪는 서사가 있어야 감정이입이 됩니다.</p>
+    <p>지타님의 Why가 보여야 하고, 그것이 "나는 진심으로 내가 이런 것을 겪어왔고 나와 같은 사람을 돕고 싶다"가 되어야 명분이 생깁니다. "나는 전문가니까 사업한다"가 아니라.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 08. 다음 단계 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Next</div>
+    <h2 class="sec-tl">다음 단계</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>오늘은 지타님의 사업 구조에서 보이는 가장 큰 그림을 정리했습니다. 10년치 자산이 피드에 드러나지 않고 있다는 것, 24.8만이 "혈당관리를 배우고 싶어서" 모인 팔로워가 아니라는 것, 고급화의 방향은 밀착이라는 것.</p>
+    <p>여기서부터는 구체적인 실행입니다. 메신저로서의 다섯 자산 중 무엇을 어떤 순서로 꺼낼 것인가, 밀착을 상품 구조에 어떻게 녹일 것인가, 7일 챌린지부터 1:1 코칭까지 이어지는 퍼널을 어떤 콘텐츠로 채울 것인가 — 이 설계가 필요하다고 생각합니다.</p>
+  </div>
+
+  <div class="insight rv" style="margin-bottom:160px;">
+    <div class="insight-tag">Remember</div>
+    <p>메시지가 아니라 메신저. 지타님의 차별점은 상품에 있는 것이 아니라 '베지타'라는 사람 자체에 있습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<div class="page-footer rv">
+  <div class="page-footer-brand">RE:FEEEL</div>
+  <div class="page-footer-note">본 요약은 배지타님을 위해 작성되었습니다. © 2026</div>
+</div>
+
+
+<button class="to-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+window.addEventListener('scroll', () => {
+  document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
+});
+</script>
+</body>
+</html>
