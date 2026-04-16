@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨설팅 요약 — 최은설님</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="컨설팅 요약 — 최은설님">
+<meta property="og:description" content="2026.4.14 컨설팅 요약 정리 — RE:FEEEL">
+<meta property="og:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<meta property="og:type" content="article">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="컨설팅 요약 — 최은설님">
+<meta name="twitter:description" content="2026.4.14 컨설팅 요약 정리 — RE:FEEEL">
+<meta name="twitter:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --bg: #f8f6f2;
+  --bg-card: #ffffff;
+  --text: #302b26;
+  --text-light: #948b80;
+  --text-mid: #5e574f;
+  --accent: #4a6e5f;
+  --accent-soft: rgba(74,110,95,0.08);
+  --border: #ddd7ce;
+  --white: #fff;
+
+  --sp-md: 24px;
+  --sp-lg: 48px;
+  --sp-xl: 80px;
+  --sp-2xl: 120px;
+
+  --ease: cubic-bezier(.16,1,.3,1);
+
+  --font-display: 'Pretendard Variable', 'SUIT Variable', sans-serif;
+  --font-body: 'SUIT Variable', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.ct { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+.rv { opacity:0; transform:translateY(20px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.rv.vis { opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce) { .rv { transition:none !important; opacity:1 !important; transform:none !important; } }
+
+/* ════════ COVER ════════ */
+.cover { position:relative; padding:var(--sp-2xl) 0 var(--sp-xl); }
+.cover .ct { display:flex; flex-direction:column; }
+.cover::before { content:''; position:absolute; inset:0; background:var(--bg-card); z-index:-1; }
+.cover-part { font-size:12px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:var(--text-light); margin-bottom:var(--sp-lg); }
+.cover h1 { font-family:var(--font-display); font-size:clamp(28px,4.5vw,44px); font-weight:800; line-height:1.35; letter-spacing:-1px; margin-bottom:32px; }
+.cover-line { width:48px; height:2px; background:var(--accent); margin-bottom:32px; }
+.cover-desc { font-size:15px; line-height:2; color:var(--text-mid); max-width:640px; margin-bottom:var(--sp-xl); }
+.cover-meta { display:flex; gap:var(--sp-lg); font-size:12px; color:var(--text-light); }
+.cover-meta dt { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:3px; }
+
+/* ════════ SECTION HEADERS ════════ */
+.sec-hd { margin-top:80px; padding:32px 0 var(--sp-md); border-top:1px solid var(--border); }
+.sec-hd.no-rule { margin-top:48px; padding-top:0; border-top:none; }
+.sec-num { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+.sec-tl { font-family:var(--font-display); font-size:clamp(21px,3vw,30px); font-weight:800; line-height:1.5; letter-spacing:-0.3px; }
+
+/* ════════ PROSE ════════ */
+.prose { font-size:15.5px; line-height:1.9; color:var(--text-mid); letter-spacing:-0.1px; }
+.prose p { margin-bottom:var(--sp-md); }
+.prose p:last-child { margin-bottom:0; }
+
+/* ════════ INSIGHT ════════ */
+.insight { padding:20px 0; margin:40px 0; }
+.insight-tag { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.insight p { font-size:15px; line-height:2; color:var(--text); }
+
+/* ════════ GEMS ════════ */
+.gem { display:grid; grid-template-columns:72px 1fr; gap:16px; padding:var(--sp-md) 0; border-bottom:1px solid var(--border); }
+.gem:first-of-type { border-top:1px solid var(--border); }
+.gem-tag { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent); padding-top:2px; }
+.gem h5 { font-size:14px; font-weight:700; margin-bottom:4px; line-height:1.5; }
+.gem p { font-size:13px; color:var(--text-light); line-height:1.8; }
+
+/* ════════ TO TOP ════════ */
+.to-top { position:fixed; bottom:32px; right:32px; width:40px; height:40px; border:1px solid var(--border); background:var(--bg-card); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .4s; z-index:50; font-size:18px; color:var(--text-light); border-radius:0; }
+.to-top.show { opacity:1; }
+
+/* ════════ PAGE FOOTER ════════ */
+.page-footer { max-width:720px; margin:0 auto; padding:40px 32px 80px; text-align:center; border-top:1px solid var(--border); margin-top:80px; }
+.page-footer-brand { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--text-mid); margin-bottom:8px; }
+.page-footer-note { font-size:11px; color:var(--text-light); line-height:1.6; }
+
+@media (max-width: 768px) {
+  .cover { padding:60px 0 40px !important; }
+  .cover-meta { flex-direction:column; gap:16px; }
+  .ct { padding:0 20px; }
+  .gem { grid-template-columns:1fr; gap:4px; }
+}
+@media (max-width: 480px) {
+  .cover h1 { font-size:24px; }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<section class="cover">
+<div class="ct">
+  <div class="cover-part rv">Consulting Summary</div>
+  <h1 class="rv">컨설팅 요약</h1>
+  <div class="cover-line rv"></div>
+  <p class="cover-desc rv">
+    은설님의 계정과 사업 구조를 분석하고, 컨설팅에서 나눈 이야기의 핵심 방향을 정리했습니다. 이미 쌓아온 팬덤과 강점을 어떤 포지션으로 꺼낼 것인지가 앞으로의 과제입니다.
+  </p>
+  <dl class="cover-meta rv">
+    <div><dt>Client</dt><dd>최은설</dd></div>
+    <div><dt>By</dt><dd>RE:FEEEL</dd></div>
+    <div><dt>Date</dt><dd>2026. 04. 14</dd></div>
+  </dl>
+</div>
+</section>
+
+
+<!-- ═══════════════ 01. 진단 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Diagnosis</div>
+    <h2 class="sec-tl">"어썸테이블"처럼 느껴지는 계정</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>은설님 계정을 보면, 키친웨어 사업을 하신다면 정말 잘 만들어진 사업입니다. 이 말은 — 사람이 드러나는 계정이 아니라 '어썸테이블'이라는 브랜드처럼 보인다는 뜻이기도 합니다. 은설님 본인이 "최은설은 장난기도 많은 사람인데, 어썸이는 안녕하세요, 이건 이렇습니다"라고 하셨듯이, 두 결이 서로 다르게 존재하고 있습니다.</p>
+    <p>지금 계정은 유튜브로 풀거나 메타 퍼포먼스 광고로 돌렸을 때 전환이 잘 나올 구조입니다. 하지만 공구란 상품력이나 소구점이 아닌, 팬덤 — '누구'를 보고 이어지는 연장선입니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 02. 자산 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd no-rule rv">
+    <div class="sec-num">Assets</div>
+    <h2 class="sec-tl">은설님이 가진 자산</h2>
+  </div>
+
+  <div class="gem rv">
+    <div class="gem-tag">01</div>
+    <div>
+      <h5>이미 축적된 팬덤</h5>
+      <p>"최은설이 뭔가를 소개하면 믿어볼 만하다"는 층이 분명히 존재합니다. 숫자보다 이 층의 깊이가 은설님의 진짜 자산입니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">02</div>
+    <div>
+      <h5>미적 감도 + 실용의 조합</h5>
+      <p>예쁘기만 한 계정도 많고, 실용적이기만 한 계정도 많습니다. 이 둘이 함께 있는 계정은 흔치 않습니다. 은설님의 피드는 그 조합을 이미 만들어내고 있습니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">03</div>
+    <div>
+      <h5>스토리텔링 능력</h5>
+      <p>"왜 자꾸 버리게 될까?" 반찬통 콘텐츠에서 증명되는 부분입니다. 사람의 심리와 상황을 언어로 풀어낼 수 있는 힘이 있습니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">04</div>
+    <div>
+      <h5>차분하고 자세한 톤</h5>
+      <p>"50 넘었는데 새댁한테 배워요"라는 고객 언어가 나오는 이유입니다. 큐레이터에 가까운 설명력이 기존 팬덤의 핵심 선호 지점입니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">05</div>
+    <div>
+      <h5>본인만 모르는 서사</h5>
+      <p>5년 전 5천 명으로 시작해서 "마지막으로 하나만 올리고 그만두자" 했던 영상이 터지면서 지금까지 이어져 온 과정. 본인이 특별하지 않다고 느끼는 이야기가 팔로워에게는 가장 듣고 싶은 이야기일 수 있습니다.</p>
+    </div>
+  </div>
+
+  <div class="insight rv">
+    <div class="insight-tag">Finding</div>
+    <p>은설님은 이 다섯 가지 자산의 조합 자체가 차별화입니다. 다만 지금 피드에서 제대로 드러나는 것은 1번(미적 감도) 하나이고, 나머지 넷은 '어썸테이블'이라는 브랜드 뒤에 가려져 있습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 03. 포지션 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Positioning</div>
+    <h2 class="sec-tl">자신만의 브랜드를<br>구축하는 방향</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>오늘 대화에서 자연스럽게 드러난 지점이 있습니다. 은설님 안에는 이미 "내 브랜드를 만들어가고 싶다"는 방향이 자리해 있었다는 것이었고요.</p>
+    <p>공구 모델은 회전과 신규 유입에 의존하는 구조입니다. 제품을 계속 바꾸고, 새로운 유입을 계속 만들고, 거래마다 판매가 처음부터 다시 시작되는 특성이 있습니다. 이 구조 자체가 나쁜 것이 아니라, 은설님의 강점이 이 구조 안에서는 충분히 발휘되기 어렵다는 것이 핵심입니다.</p>
+    <p>은설님의 팬덤과 신뢰 축적력은 '중개'보다 '브랜드'에 어울리는 자산입니다. 같은 시간을 써서 더 많이 남기는 구조, 자신만의 브랜드를 구축하는 방향이 은설님의 강점과 수익성을 동시에 끌어올릴 수 있는 경로이고요. 은설님이 이미 향하고 계신 방향을, 한 번 더 확인하는 과정이었습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 04. 타겟 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd no-rule rv">
+    <div class="sec-num">Target</div>
+    <h2 class="sec-tl">타겟은 "몇 대"가 아니라 "어떤 상황"</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>20대 30대 40대 50대 — 이것은 타겟이 아니라 인구 분포에 가깝습니다. 타겟은 상황에서 정의됩니다.</p>
+    <p>오늘 은설님 입에서 실마리가 두 번 나왔습니다. "설거지 접고 편하게 요리할 수 있게 해주세요" — 효율형 워킹맘의 언어. "내가 나이 50 넘었는데 새댁한테 배워요" — 살림을 오래 한 40~50대 여성의 언어. 서로 다른 두 그룹처럼 보이지만 공통점이 있습니다. 이것저것 사봤는데 결국 안 쓰게 된 경험이 축적된 사람들입니다.</p>
+    <p>효자템이 그릇·냄비·조리도구이고 실패템이 텀블러·컵인 것은 우연이 아닙니다. 욕구 자체가 다른 고객이 한 계정에 섞여 있으니 반응이 흩어지는 것이니까요. 타겟이 좁혀지면 제품 선택의 기준도, 콘텐츠의 방향도 같이 선명해집니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 05. 상품 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Product</div>
+    <h2 class="sec-tl">레시피북 — 이미 검증된 상품</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>레시피북 50종을 무료로 배포한 콘텐츠의 ER이 11.13%로 계정 최고 기록입니다. 시장이 이미 검증한 상품이라는 신호이고요.</p>
+    <p>"이건 간장 넣고 설탕 넣고 하면 되는 건데 특별하지 않다"는 감각은 제작자 관점에서 자연스러운 것이지만, 소비자의 욕구와는 결이 다릅니다. 서점에서 "파 0.2mm, 고기 2ml" 식의 정교한 레시피북은 소비자들이 원하지 않습니다. 내가 따라 할 수 있어 보이는 책을 고릅니다. 백종원이 사랑받은 이유가 "한 국자 넣으시고요, 두 숟가락 넣으시고요"였으니까요.</p>
+    <p>은설님의 미적 감도와 실용적인 레시피의 조합은 이미 시장에서 작동하는 조합입니다. 공구 사업의 수익 변동성을 받쳐줄 수 있는 안정적 파이프라인으로도 기능할 수 있습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 06. 진정성 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Authenticity</div>
+    <h2 class="sec-tl">"완벽한 피드"가<br>단점이 되는 시대</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>오늘 영상으로 뵈면서 느낀 지점입니다. 피드에서 느껴지는 완벽함과 실제 은설님 사이에 흥미로운 간극이 있습니다. 이 간극이 은설님의 숨겨진 자산입니다.</p>
+    <p>요즘 소비자들은 완벽함에 피로를 느끼고 있습니다. 청산유수로 말을 잘하는 쇼호스트 같은 톤에는 오히려 거리감을 두고, 사람 자체의 진정성이 드러나는 톤에 신뢰를 느낍니다. "뭘 파는 것 같다"는 감각 자체가 구매를 차단하는 시대입니다.</p>
+    <p>다만 매일 콘텐츠를 올리는 루틴 안에서 '날 것'을 꺼내는 일이 쉽지 않다는 것도 오늘 대화에서 드러난 지점입니다. 지금의 완성도 높은 프레임은 은설님의 꾸준함을 지켜온 구조이기도 하고요. 그래서 이 전환은 '바꾸라'가 아니라 '어떤 속도와 방식으로 스며들게 할 것인가'의 문제입니다.</p>
+    <p>은설님이 가진 실제의 결 — 구어체, 장난기, 불완전함 — 이 피드에 조금씩 얹혀가면, 지금의 완벽한 미감과 대비되면서 오히려 깊이가 더해질 수 있는 방향이 열려 있습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 07. 서사 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd no-rule rv">
+    <div class="sec-num">Narrative</div>
+    <h2 class="sec-tl">은설님의 이야기는<br>이미 있습니다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>"저는 이벤트가 없어요, 아이도 없고 남편도 자립적이고, 집도 절간처럼 조용해요"라는 말 — 이 이야기를 들으면서 오히려 공감이 크게 왔습니다.</p>
+    <p>요즘 많은 사람이 이렇게 살아갑니다. 관계가 단절되어 있고, 결혼하지 않은 사람도 많고, 결혼해도 둘이 대화가 적고, 이렇게 사는 것이 맞나 싶으면서도 혼자 있고 싶은 복합적인 감정. 서점에 시다르타와 불교 관련 책이 트렌드로 올라온 배경이기도 합니다.</p>
+    <p>자극적인 콘텐츠에 지친 시기에, 은설님의 단조로움 자체가 공감의 지점이 될 수 있습니다. 본인이 특별하지 않다고 느끼는 일상이 팔로워에게는 가장 듣고 싶은 이야기일 수 있습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 08. 다음 단계 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Next</div>
+    <h2 class="sec-tl">다음 단계</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>오늘은 은설님의 사업 구조에서 보이는 가장 큰 그림을 정리했습니다. 지금 피드가 '사람'이 아니라 '브랜드'처럼 읽히고 있다는 것, 다섯 가지 자산 중 대부분이 피드 밖에 있다는 것, 공구 중개보다 자신만의 브랜드를 구축하는 방향이 은설님의 강점과 더 맞닿아 있다는 것.</p>
+    <p>여기서부터는 구체적인 실행입니다. 타겟을 한 사람으로 정의하는 작업, 광저우에서 어떤 기준으로 제품을 선별할 것인가, 레시피북을 어떤 형태의 상품으로 만들 것인가, 콘텐츠의 톤을 어떤 속도로 전환할 것인가 — 이 설계가 필요하다고 생각합니다.</p>
+  </div>
+
+  <div class="insight rv" style="margin-bottom:160px;">
+    <div class="insight-tag">Remember</div>
+    <p>은설님의 강점은 회전이 아니라 축적에서 발휘됩니다. 신뢰가 쌓이는 구조, 자신만의 브랜드를 구축하는 방향이 은설님의 결과 가장 맞닿아 있습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<div class="page-footer rv">
+  <div class="page-footer-brand">RE:FEEEL</div>
+  <div class="page-footer-note">본 요약은 최은설님을 위해 작성되었습니다. © 2026</div>
+</div>
+
+
+<button class="to-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+window.addEventListener('scroll', () => {
+  document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
+});
+</script>
+</body>
+</html>
