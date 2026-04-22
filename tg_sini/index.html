@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨설팅 요약 — 이시니님</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="컨설팅 요약 — 이시니님">
+<meta property="og:description" content="2026.4.21 컨설팅 요약 정리 — RE:FEEEL">
+<meta property="og:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<meta property="og:type" content="article">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="컨설팅 요약 — 이시니님">
+<meta name="twitter:description" content="2026.4.21 컨설팅 요약 정리 — RE:FEEEL">
+<meta name="twitter:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --bg: #f8f6f2;
+  --bg-card: #ffffff;
+  --text: #302b26;
+  --text-light: #948b80;
+  --text-mid: #5e574f;
+  --accent: #4a6e5f;
+  --accent-soft: rgba(74,110,95,0.08);
+  --border: #ddd7ce;
+
+  --sp-md: 24px;
+  --sp-lg: 48px;
+  --sp-xl: 80px;
+  --sp-2xl: 120px;
+
+  --ease: cubic-bezier(.16,1,.3,1);
+
+  --font-display: 'Pretendard Variable', 'SUIT Variable', sans-serif;
+  --font-body: 'SUIT Variable', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.ct { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+.rv { opacity:0; transform:translateY(20px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.rv.vis { opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce) { .rv { transition:none !important; opacity:1 !important; transform:none !important; } }
+
+/* ════════ COVER ════════ */
+.cover { position:relative; padding:var(--sp-2xl) 0 var(--sp-xl); }
+.cover .ct { display:flex; flex-direction:column; }
+.cover::before { content:''; position:absolute; inset:0; background:var(--bg-card); z-index:-1; }
+.cover-part { font-size:12px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:var(--text-light); margin-bottom:var(--sp-lg); }
+.cover h1 { font-family:var(--font-display); font-size:clamp(28px,4.5vw,44px); font-weight:800; line-height:1.35; letter-spacing:-1px; margin-bottom:32px; }
+.cover-line { width:48px; height:2px; background:var(--accent); margin-bottom:32px; }
+.cover-desc { font-size:15px; line-height:2; color:var(--text-mid); max-width:640px; margin-bottom:var(--sp-xl); }
+.cover-meta { display:flex; gap:var(--sp-lg); font-size:12px; color:var(--text-light); }
+.cover-meta dt { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:3px; }
+
+/* ════════ SECTION HEADERS ════════ */
+.sec-hd { margin-top:80px; padding:32px 0 var(--sp-md); border-top:1px solid var(--border); }
+.sec-hd.no-rule { margin-top:48px; padding-top:0; border-top:none; }
+.sec-num { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+.sec-tl { font-family:var(--font-display); font-size:clamp(21px,3vw,30px); font-weight:800; line-height:1.5; letter-spacing:-0.3px; }
+
+/* ════════ PROSE ════════ */
+.prose { font-size:15.5px; line-height:1.9; color:var(--text-mid); letter-spacing:-0.1px; }
+.prose p { margin-bottom:var(--sp-md); }
+.prose p:last-child { margin-bottom:0; }
+
+/* ════════ INSIGHT ════════ */
+.insight { padding:20px 0; margin:40px 0; }
+.insight-tag { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.insight p { font-size:15px; line-height:2; color:var(--text); }
+
+/* ════════ GEMS ════════ */
+.gem { display:grid; grid-template-columns:72px 1fr; gap:16px; padding:var(--sp-md) 0; border-bottom:1px solid var(--border); }
+.gem:first-of-type { border-top:1px solid var(--border); }
+.gem-tag { font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--accent); padding-top:2px; }
+.gem h5 { font-size:14px; font-weight:700; margin-bottom:4px; line-height:1.5; }
+.gem p { font-size:13px; color:var(--text-light); line-height:1.8; }
+
+/* ════════ TO TOP ════════ */
+.to-top { position:fixed; bottom:32px; right:32px; width:40px; height:40px; border:1px solid var(--border); background:var(--bg-card); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .4s; z-index:50; font-size:18px; color:var(--text-light); border-radius:0; }
+.to-top.show { opacity:1; }
+
+/* ════════ PAGE FOOTER ════════ */
+.page-footer { max-width:720px; margin:0 auto; padding:40px 32px 80px; text-align:center; border-top:1px solid var(--border); margin-top:80px; }
+.page-footer-brand { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--text-mid); margin-bottom:8px; }
+.page-footer-note { font-size:11px; color:var(--text-light); line-height:1.6; }
+
+@media (max-width: 768px) {
+  .cover { padding:60px 0 40px !important; }
+  .cover-meta { flex-direction:column; gap:16px; }
+  .ct { padding:0 20px; }
+  .gem { grid-template-columns:1fr; gap:4px; }
+}
+@media (max-width: 480px) {
+  .cover h1 { font-size:24px; }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<section class="cover">
+<div class="ct">
+  <div class="cover-part rv">Consulting Summary</div>
+  <h1 class="rv">컨설팅 요약</h1>
+  <div class="cover-line rv"></div>
+  <p class="cover-desc rv">
+    시니님의 계정과 사업 구조를 분석하고, 컨설팅에서 나눈 이야기의 핵심 방향을 정리했습니다. B2C로 이미 증명된 성과 위에 B2B를 얹어가는 경로가 오늘의 핵심입니다.
+  </p>
+  <dl class="cover-meta rv">
+    <div><dt>Client</dt><dd>이시니</dd></div>
+    <div><dt>By</dt><dd>RE:FEEEL</dd></div>
+    <div><dt>Date</dt><dd>2026. 04. 21</dd></div>
+  </dl>
+</div>
+</section>
+
+
+<!-- ═══════════════ 01. 진단 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Diagnosis</div>
+    <h2 class="sec-tl">기술은 보이는데<br>사람이 없다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>시니님의 계정에서 비포 애프터, 고객 컨설팅 결과, 기술력은 보입니다. 반응이 좋았던 콘텐츠도 대부분 고객 대상의 소구("5살 어린 남친 친구들 모임에서 나만 늙어 보이는 느낌" 등)에 집중되어 있습니다.</p>
+    <p>다만 이 계정에서 브랜드가 느껴지지 않습니다. 영혼, 생각, 기준, 관점 — 시니님이라는 사람의 결이 피드에 거의 드러나지 않고 있습니다. 지금 피드는 포트폴리오에 가깝습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 02. 자산 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd no-rule rv">
+    <div class="sec-num">Assets</div>
+    <h2 class="sec-tl">시니님이 가진 자산</h2>
+  </div>
+
+  <div class="gem rv">
+    <div class="gem-tag">01</div>
+    <div>
+      <h5>B2C 성과가 이미 증명된 상태</h5>
+      <p>콘텐츠를 통해 단가를 올렸고, 예약도 안정적으로 유지되고 있습니다. 이 성과 자체가 B2B에서 가장 강력한 증거입니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">02</div>
+    <div>
+      <h5>교육 체계가 이미 준비 중</h5>
+      <p>직원을 교육 강사로 키우고 커리큘럼을 구축하고 있는 과정이 이미 진행 중입니다. 아직 알려지지 않았을 뿐, 구조는 갖추어져 가고 있습니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">03</div>
+    <div>
+      <h5>독립까지의 서사</h5>
+      <p>개인 매장 → 프랜차이즈 체인 계약 → 교육과 연수 → 독립 결정까지의 여정. 이 과정 자체가 콘텐츠의 재료이며, 시니님만이 이야기할 수 있는 서사입니다.</p>
+    </div>
+  </div>
+  <div class="gem rv">
+    <div class="gem-tag">04</div>
+    <div>
+      <h5>포항이라는 지역</h5>
+      <p>교육 자원이 제한된 지방에서 대형 매장을 운영하고 있다는 것 자체가 희소합니다. 경남권까지 시장을 넓힐 수 있는 여지가 있습니다.</p>
+    </div>
+  </div>
+
+  <div class="insight rv">
+    <div class="insight-tag">Finding</div>
+    <p>시니님의 자산은 기술력이 아닙니다. 기술력은 기본이고, 그 위에 쌓인 B2C 성과, 교육 체계, 독립의 서사 — 이 조합이 차별화입니다. 다만 지금 피드에서는 이 자산들이 거의 드러나지 않고 있습니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 03. 포지셔닝 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Positioning</div>
+    <h2 class="sec-tl">B2C와 B2B는<br>분리가 아니라 "얹기"</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>사전 분석에서는 B2C와 B2B를 분리하는 방향을 검토했습니다. 하지만 오늘 대화를 통해 확인한 결론은 다릅니다. 시니님의 경우에는 분리할 필요가 없습니다.</p>
+    <p>이유가 명확합니다. 시니님의 B2C 성과 — 높은 단가, 안정적 예약, 콘텐츠를 통한 모객 — 가 그 자체로 B2B의 증거이기 때문입니다. "나 이렇게 잘 되고 있다"를 보여주는 것이 곧 "이 사람을 따라가면 나도 저렇게 될 수 있겠다"는 소구점이 됩니다.</p>
+    <p>기존 B2C 콘텐츠는 유지하면서, 그 위에 B2B 소구점을 자연스럽게 얹어가는 구조가 맞습니다. 고객이 봐도 반감이 생기지 않으면서, 디자이너가 봤을 때는 따라가고 싶어지는 — 그 균형의 설계가 앞으로의 과제입니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 04. 타겟 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd no-rule rv">
+    <div class="sec-num">Target</div>
+    <h2 class="sec-tl">요즘 디자이너가<br>원하는 것</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>예전의 디자이너들은 "월천 찍기"가 목표였습니다. 지금은 달라졌습니다. 요즘 디자이너들이 원하는 것은 "내 삶을 지키면서 적당히 잘 버는 것"에 가깝습니다. 몸을 갈아 넣지 않고도 높은 단가로 워라밸을 유지하면서 일할 수 있는 경로.</p>
+    <p>시니님은 실제로 그렇게 살고 있는 사람입니다. 이것 자체가 B2B의 가장 강력한 소구점입니다. 기술을 가르치는 것이 아니라 "이런 삶이 가능하다"는 것을 보여주는 것이 핵심이고, 시니님의 일상과 구조가 그 증거입니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 05. 서사 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Narrative</div>
+    <h2 class="sec-tl">서사는 이미 있습니다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>왜 미용을 시작했는지, 경제적 자유를 향한 여정, 개인 매장에서 프랜차이즈 체인으로 갔다가 다시 독립을 결정하기까지 — 이 과정 자체가 서사입니다.</p>
+    <p>지금은 타이밍상 모든 서사를 직접적으로 풀 수 없는 시점입니다. 하지만 "왜 미용을 시작했는지", 일상에서의 워라밸, 직원들과의 하루 — 이런 간접적인 서사부터 드러내는 것은 지금도 가능합니다. 서사를 한꺼번에 풀 필요는 없고, 타이밍에 맞춰 그라데이션으로 쌓아가는 설계가 필요합니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 06. 영향력 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd no-rule rv">
+    <div class="sec-num">Visibility</div>
+    <h2 class="sec-tl">잘하면 되는 것이 아니라<br>잘 보여주면 되는 것</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>조회수를 배제하고 전환 중심으로 가겠다는 판단이 있었습니다. B2C 매출의 관점에서는 맞는 선택일 수 있습니다.</p>
+    <p>다만 시니님의 궁극적 목표가 사업 확장이라면, 영향력이 필요합니다. "이 사람 대단하다 → 따라가고 싶다"가 되려면 보여져야 합니다. 잘하는 것은 이미 하고 계십니다. 앞으로의 과제는 그것을 보여주는 것입니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 07. 다음 단계 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Next</div>
+    <h2 class="sec-tl">다음 단계</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>오늘은 시니님의 사업에서 보이는 가장 큰 그림을 정리했습니다. 피드에 사람이 없다는 것, B2C 성과가 곧 B2B의 증거라는 것, 분리가 아니라 얹어가는 구조가 맞다는 것, 그리고 서사와 영향력을 쌓아가는 방향이 필요하다는 것.</p>
+    <p>여기서부터는 구체적인 실행입니다. B2B 소구점을 어떤 콘텐츠로 풀 것인가, 서사를 어떤 순서와 타이밍으로 드러낼 것인가, 독립 이후의 브랜드 구조를 어떻게 설계할 것인가 — 이 설계가 필요하다고 생각합니다.</p>
+  </div>
+
+  <div class="insight rv" style="margin-bottom:160px;">
+    <div class="insight-tag">Remember</div>
+    <p>시니님의 차별점은 기술이 아닙니다. B2C에서 이미 증명된 성과, 그 성과가 만들어낸 삶의 구조 — 이것이 곧 B2B의 언어입니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<div class="page-footer rv">
+  <div class="page-footer-brand">RE:FEEEL</div>
+  <div class="page-footer-note">본 요약은 이시니님을 위해 작성되었습니다. © 2026</div>
+</div>
+
+
+<button class="to-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+window.addEventListener('scroll', () => {
+  document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
+});
+</script>
+</body>
+</html>
