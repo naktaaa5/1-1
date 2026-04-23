@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨설팅 요약 — 홍채이님</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="컨설팅 요약 — 홍채이님">
+<meta property="og:description" content="2026.4.22 컨설팅 요약 정리 — RE:FEEEL">
+<meta property="og:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<meta property="og:type" content="article">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="컨설팅 요약 — 홍채이님">
+<meta name="twitter:description" content="2026.4.22 컨설팅 요약 정리 — RE:FEEEL">
+<meta name="twitter:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --bg: #f8f6f2;
+  --bg-card: #ffffff;
+  --text: #302b26;
+  --text-light: #948b80;
+  --text-mid: #5e574f;
+  --accent: #4a6e5f;
+  --accent-soft: rgba(74,110,95,0.08);
+  --border: #ddd7ce;
+
+  --sp-md: 24px;
+  --sp-lg: 48px;
+  --sp-xl: 80px;
+  --sp-2xl: 120px;
+
+  --ease: cubic-bezier(.16,1,.3,1);
+
+  --font-display: 'Pretendard Variable', 'SUIT Variable', sans-serif;
+  --font-body: 'SUIT Variable', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; font-size: 15px; line-height: 1.8; }
+
+.ct { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+.rv { opacity:0; transform:translateY(20px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.rv.vis { opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce) { .rv { transition:none !important; opacity:1 !important; transform:none !important; } }
+
+.cover { position:relative; padding:var(--sp-2xl) 0 var(--sp-xl); }
+.cover .ct { display:flex; flex-direction:column; }
+.cover::before { content:''; position:absolute; inset:0; background:var(--bg-card); z-index:-1; }
+.cover-part { font-size:12px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:var(--text-light); margin-bottom:var(--sp-lg); }
+.cover h1 { font-family:var(--font-display); font-size:clamp(28px,4.5vw,44px); font-weight:800; line-height:1.35; letter-spacing:-1px; margin-bottom:32px; }
+.cover-line { width:48px; height:2px; background:var(--accent); margin-bottom:32px; }
+.cover-desc { font-size:15px; line-height:2; color:var(--text-mid); max-width:640px; margin-bottom:var(--sp-xl); }
+.cover-meta { display:flex; gap:var(--sp-lg); font-size:12px; color:var(--text-light); }
+.cover-meta dt { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:3px; }
+
+.sec-hd { margin-top:80px; padding:32px 0 var(--sp-md); border-top:1px solid var(--border); }
+.sec-hd.no-rule { margin-top:48px; padding-top:0; border-top:none; }
+.sec-num { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+.sec-tl { font-family:var(--font-display); font-size:clamp(21px,3vw,30px); font-weight:800; line-height:1.5; letter-spacing:-0.3px; }
+
+.prose { font-size:15.5px; line-height:1.9; color:var(--text-mid); letter-spacing:-0.1px; }
+.prose p { margin-bottom:var(--sp-md); }
+.prose p:last-child { margin-bottom:0; }
+
+.insight { padding:20px 0; margin:40px 0; }
+.insight-tag { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.insight p { font-size:15px; line-height:2; color:var(--text); }
+
+.div-line { width:32px; height:1px; background:var(--border); margin:var(--sp-lg) 0; }
+
+.to-top { position:fixed; bottom:32px; right:32px; width:40px; height:40px; border:1px solid var(--border); background:var(--bg-card); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .4s; z-index:50; font-size:18px; color:var(--text-light); border-radius:0; }
+.to-top.show { opacity:1; }
+
+.page-footer { max-width:720px; margin:0 auto; padding:40px 32px 80px; text-align:center; border-top:1px solid var(--border); margin-top:80px; }
+.page-footer-brand { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--text-mid); margin-bottom:8px; }
+.page-footer-note { font-size:11px; color:var(--text-light); line-height:1.6; }
+
+@media (max-width: 768px) {
+  .cover { padding:60px 0 40px !important; }
+  .cover-meta { flex-direction:column; gap:16px; }
+  .ct { padding:0 20px; }
+}
+@media (max-width: 480px) { .cover h1 { font-size:24px; } }
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<section class="cover">
+<div class="ct">
+  <div class="cover-part rv">Consulting Summary</div>
+  <h1 class="rv">컨설팅 요약</h1>
+  <div class="cover-line rv"></div>
+  <p class="cover-desc rv">
+    오늘 나눈 이야기를 정리해 드립니다 :)
+  </p>
+  <dl class="cover-meta rv">
+    <div><dt>Client</dt><dd>홍채이</dd></div>
+    <div><dt>By</dt><dd>RE:FEEEL</dd></div>
+    <div><dt>Date</dt><dd>2026. 04. 22</dd></div>
+  </dl>
+</div>
+</section>
+
+
+<!-- ═══════════════ 01. 진단 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Diagnosis</div>
+    <h2 class="sec-tl">전문가의 언어로만<br>돼 있다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>"눈썹길 흐름 설계자" — 채이님이 7년간 쌓아온 방법론에서 나온 진짜 언어예요. 좋은데, 불친절해요. 고객 입장에서는 "눈썹길 흐름을 설계해서 뭐?" — 그래서 내 눈썹이 어떻게 되는 건지가 안 와닿거든요.</p>
+    <p>프로필부터 피드까지 전부 시술자의 방법론으로만 돼 있고, 고객이 얻는 가치가 어디에도 안 보여요. 전문가끼리는 감탄할 수 있는 언어인데, 고객한테는 안 닿아요. 제가 바로 전날 컨설팅한 17년차 에스테틱 분도 같은 문제였어요. "마이크로 실버 성분이 PPC가 어떻고 은이 들어가 있는데..." — 저는 그거 보면서 "그래서 뭐 어쩌라고"밖에 안 들었거든요.</p>
+    <p>이 전문성을 버리라는 게 아니라 고객이 알아들을 수 있게 번역하라는 거예요. "이 사람의 골격에서 이 방향이 맞는 이유" — 시술 사진마다 이 한 줄만 붙여도 같은 비포애프터가 완전히 다른 콘텐츠가 돼요.</p>
+    <p>그리고 "시간이 흐른 뒤 바이채이의 눈썹" 같은 게시물도 — 의도는 좋은데 사람들이 한 번에 못 알아들어요. "4년 전에 시술한 눈썹이 지금 이래요" 이렇게 한 문장으로 써야 해요. 고객은 5살이라고 생각하세요. 딱 보고 모르면 넘기거든요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 02. 고객 신뢰 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Trust</div>
+    <h2 class="sec-tl">근데 고객은<br>이미 만족하고 있다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>채이님의 고객 유입 경로에 ChatGPT가 있었어요. AI가 채이님 샵을 추천한 거예요. 요즘 네이버 알고리즘도 ChatGPT도 예전처럼 리뷰 개수만 보는 게 아니라 맥락을 읽어요. 이걸 AEO(AI Engine Optimization)라고 하는데, "다른 숍에서 망했는데 여기 오니까 원장님이 내 눈에 맞게 해줬다" 이런 진짜 만족에서 나온 리뷰에 높은 점수를 줘요. 이벤트 걸어서 억지로 받은 리뷰랑 질이 완전히 다르거든요.</p>
+    <p>송도에 숍이 많은데 굳이 채이님 샵을 추천했다는 건 리뷰의 질이 진짜 좋다는 거예요. 기술은 검증된 거예요. 이제 그 기술 뒤에 있는 채이라는 사람의 기준과 이야기가 보이면 돼요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 03. 아이덴티티 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Identity</div>
+    <h2 class="sec-tl">"나를 드러내면<br>안 되는 건가" — 아니에요</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>브랜딩 클래스를 보면서 "나를 드러내면 안 되는 건가"라고 생각하셨다고 했잖아요. 그게 아니에요.</p>
+    <p>퍼스널 브랜딩은 "나를 브랜드로 만드는 것"이 아니라 <b>"이 브랜드가 인간이라면 뭘까?"</b>에 가까워요. 바이채이를 만든 건 홍채이라는 사람이에요. 그러면 내가 브랜드가 되는 거예요. 이 브랜드에 맞는 것만 보여주면 돼요.</p>
+    <p>"나 오늘 밥 뭐 먹었어, 나 오늘 시술했어" — 이건 일기예요. 의도가 없으니까. 근데 "나는 이런 얼굴에는 이런 이유로 이 방향을 선택해요" — 이걸 보면 고객이 "이 사람은 기준이 명확하구나, 눈썹도 대충 안 하겠구나"가 연결되는 거죠. 사업과 연관된 나만 보여주면 됩니다.</p>
+    <p>그리고 채이님의 차분함은 약점이 아니에요. 강한 훅이랑 채이님이랑 어울리지도 않아요. 저도 사람 하나 떠있고 "그런 건 아니야!" 이런 거 죽어도 못하겠거든요. 근데 그러지 않아도 되더라고요. 채이님은 크리에이터가 아니라 신뢰를 주려고 하는 사람이에요. 연기하면 느껴져요. 채이님 그대로 나오면 돼요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 04. 콘텐츠 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Content</div>
+    <h2 class="sec-tl">고객 한 명만 생각하고<br>만든다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>채이님이 앞에 고객 있으면 상담을 잘하신다고 했잖아요. 실제로 스케치하면서 설명하면 설득이 잘 된다고. 근데 콘텐츠로 가면 재미없게 얘기하시는 거예요. 그 이유가 타겟이 없어서예요. 앞에 사람이 있을 때는 그 사람한테 집중하니까 잘 되는 건데, 콘텐츠를 만들 때 "모든 사람"한테 하려고 하니까 아무한테도 안 닿는 거죠.</p>
+    <p>연예인 사진 하나 뽑아서 직접 그리면서 설명해도 되고, 상담하는 모습을 찍어도 되고, 혼자 그리면서 녹음해도 돼요. "입술 반영구 다음 날 일상생활 가능해요?", "자연스러운 건 좋은데 6개월이면 없어지더라", "신생아 키우느라 화장할 시간이 없어요" — 채이님이 매일 상담하면서 이미 하고 있는 말들이에요. 그걸 그대로 올리면 됩니다.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 05. 비주얼 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Visual</div>
+    <h2 class="sec-tl">풀샷이 필요하다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>지금 피드는 눈썹 클로즈업만 있어서 다른 반영구 계정이랑 구분이 안 돼요. 아샵(김아라) 계정을 보면 고객 전체 얼굴이 보이는 풀샷이 있어요. "저 사람 되게 이쁘다 → 저 입술이 문신으로 가능해? → 나 할래"가 이어지는 거예요. 기술 차이는 저는 판단 능력이 없어요. 근데 전체적으로 이쁘다, 나도 하고 싶다 — 이 느낌이 채이님 계정에서는 안 오는 거죠.</p>
+    <p>모델 모집해도 좋고 일반인이어도 괜찮아요. 다만 임상 사진처럼 찍지는 마세요. 애프터의 아름다운 모습을 담아야 해요. 그리고 아샵처럼 "4월 예약 마감, 5월로 예약 가능" 같은 희소성 콘텐츠를 중간중간 의도적으로 넣는 것도 좋아요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 06. 포지셔닝 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Positioning</div>
+    <h2 class="sec-tl">B2C와 B2B —<br>분리할 필요 없다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>채이님의 B2C 실력이 곧 B2B의 소구점이에요. "이 사람이 눈썹을 잘하니까 나도 배우고 싶다"가 연결되는 구조라서 같은 계정에서 갈 수 있어요. 다만 시술 사진만으로는 "배우고 싶다"까지 안 가요. 채이님이라는 사람이 보여야 수강으로 이어져요.</p>
+    <p>묘정님 계정을 보면 — 콘텐츠의 70~80%가 묘정님 본인이에요. 고객으로서도 머리 받고 싶고, 디자이너를 꿈꾸는 사람도 이 사람한테 가고 싶게 만들거든요. B2C와 B2B를 둘 다 잡은 케이스예요.</p>
+    <p>나중에 수강생을 모집할 때 — 대기업 10년 다니다가 경단녀가 되어서 뷰티 사업을 시작한 이야기, 육아하면서 여유롭게 일하고 있는 이야기가 핵심 소구점이 돼요. 50대 아저씨가 "육아하면서 병행 가능해요"라고 하는 거랑 실제로 그 상황인 채이님이 하는 거랑은 완전히 다르게 받아들여지거든요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 07. 다음 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Next</div>
+    <h2 class="sec-tl">조회수에 집착하지 않는다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>완벽하게 만들려 하지 마세요. 피드에 9개만 제대로 깔려도 전환이 달라져요. 채이님은 하루에 100명이 온다고 100명 다 시술할 수 있는 게 아니잖아요. 이걸 볼 사람이 누구인가만 생각하고 만들면 돼요.</p>
+  </div>
+
+  <div class="div-line rv"></div>
+
+  <div class="insight rv" style="margin-bottom:160px;">
+    <div class="insight-tag">Remember</div>
+    <p>기술은 이미 검증됐어요. 이제 필요한 건 그 기술 뒤에 있는 채이라는 사람의 기준과 이야기를 보여주는 일이에요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<div class="page-footer rv">
+  <div class="page-footer-brand">RE:FEEEL</div>
+  <div class="page-footer-note">본 요약은 홍채이님을 위해 작성되었습니다. © 2026</div>
+</div>
+
+
+<button class="to-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+window.addEventListener('scroll', () => {
+  document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
+});
+</script>
+</body>
+</html>
