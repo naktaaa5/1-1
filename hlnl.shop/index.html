@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨설팅 요약 — 김현희님</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="컨설팅 요약 — 김현희님">
+<meta property="og:description" content="2026.4.23 컨설팅 요약 정리 — RE:FEEEL">
+<meta property="og:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<meta property="og:type" content="article">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="컨설팅 요약 — 김현희님">
+<meta name="twitter:description" content="2026.4.23 컨설팅 요약 정리 — RE:FEEEL">
+<meta name="twitter:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --bg: #f8f6f2;
+  --bg-card: #ffffff;
+  --text: #302b26;
+  --text-light: #948b80;
+  --text-mid: #5e574f;
+  --accent: #4a6e5f;
+  --border: #ddd7ce;
+
+  --sp-md: 24px;
+  --sp-lg: 48px;
+  --sp-xl: 80px;
+  --sp-2xl: 120px;
+
+  --ease: cubic-bezier(.16,1,.3,1);
+
+  --font-display: 'Pretendard Variable', 'SUIT Variable', sans-serif;
+  --font-body: 'SUIT Variable', sans-serif;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; font-size: 15px; line-height: 1.8; }
+
+.ct { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+.rv { opacity:0; transform:translateY(20px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.rv.vis { opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce) { .rv { transition:none !important; opacity:1 !important; transform:none !important; } }
+
+.cover { position:relative; padding:var(--sp-2xl) 0 var(--sp-xl); }
+.cover .ct { display:flex; flex-direction:column; }
+.cover::before { content:''; position:absolute; inset:0; background:var(--bg-card); z-index:-1; }
+.cover-part { font-size:12px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:var(--text-light); margin-bottom:var(--sp-lg); }
+.cover h1 { font-family:var(--font-display); font-size:clamp(28px,4.5vw,44px); font-weight:800; line-height:1.35; letter-spacing:-1px; margin-bottom:32px; }
+.cover-line { width:48px; height:2px; background:var(--accent); margin-bottom:32px; }
+.cover-desc { font-size:15px; line-height:2; color:var(--text-mid); max-width:640px; margin-bottom:var(--sp-xl); }
+.cover-meta { display:flex; gap:var(--sp-lg); font-size:12px; color:var(--text-light); }
+.cover-meta dt { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:3px; }
+
+.sec-hd { margin-top:80px; padding:32px 0 var(--sp-md); border-top:1px solid var(--border); }
+.sec-hd.no-rule { margin-top:48px; padding-top:0; border-top:none; }
+.sec-num { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+.sec-tl { font-family:var(--font-display); font-size:clamp(21px,3vw,30px); font-weight:800; line-height:1.5; letter-spacing:-0.3px; }
+
+.prose { font-size:15.5px; line-height:1.9; color:var(--text-mid); letter-spacing:-0.1px; }
+.prose p { margin-bottom:var(--sp-md); }
+.prose p:last-child { margin-bottom:0; }
+
+.insight { padding:20px 0; margin:40px 0; }
+.insight-tag { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.insight p { font-size:15px; line-height:2; color:var(--text); }
+
+.flow { margin:var(--sp-lg) 0; }
+.flow-item { display:grid; grid-template-columns:32px 1fr; gap:16px; padding:20px 0; border-top:1px solid var(--border); }
+.flow-item:last-child { border-bottom:1px solid var(--border); }
+.flow-n { font-size:13px; font-weight:700; color:var(--accent); padding-top:2px; }
+.flow-title { font-family:var(--font-display); font-size:16px; font-weight:800; letter-spacing:-0.2px; margin-bottom:6px; }
+.flow-desc { font-size:14px; color:var(--text-mid); line-height:1.85; }
+
+.div-line { width:32px; height:1px; background:var(--border); margin:var(--sp-lg) 0; }
+
+.to-top { position:fixed; bottom:32px; right:32px; width:40px; height:40px; border:1px solid var(--border); background:var(--bg-card); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .4s; z-index:50; font-size:18px; color:var(--text-light); border-radius:0; }
+.to-top.show { opacity:1; }
+
+.page-footer { max-width:720px; margin:0 auto; padding:40px 32px 80px; text-align:center; border-top:1px solid var(--border); margin-top:80px; }
+.page-footer-brand { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--text-mid); margin-bottom:8px; }
+.page-footer-note { font-size:11px; color:var(--text-light); line-height:1.6; }
+
+@media (max-width: 768px) {
+  .cover { padding:60px 0 40px !important; }
+  .cover-meta { flex-direction:column; gap:16px; }
+  .ct { padding:0 20px; }
+}
+@media (max-width: 480px) { .cover h1 { font-size:24px; } }
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════════ COVER ═══════════════ -->
+<section class="cover">
+<div class="ct">
+  <div class="cover-part rv">Consulting Summary</div>
+  <h1 class="rv">컨설팅 요약</h1>
+  <div class="cover-line rv"></div>
+  <p class="cover-desc rv">
+    오늘 나눈 이야기를 정리해 드립니다 :)
+  </p>
+  <dl class="cover-meta rv">
+    <div><dt>Client</dt><dd>김현희</dd></div>
+    <div><dt>By</dt><dd>RE:FEEEL</dd></div>
+    <div><dt>Date</dt><dd>2026. 04. 23</dd></div>
+  </dl>
+</div>
+</section>
+
+
+<!-- ═══════════════ 01. 자산 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Assets</div>
+    <h2 class="sec-tl">제품은 이미<br>증명됐다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>현희님의 제품력은 검증된 상태예요. 재구매율 32%, 10,000명 이상 구매, 후기의 질이 진짜 좋아요. 저도 후기를 읽으면서 사고 싶어졌을 정도예요. "백화점 1층보다 낫다", "명품 많이 사는데 안 뒤진다", "진짜 다이아가 있는데도 이걸 낀다", "다른 주얼리는 몇 번 끼면 손이 안 가는데 이건 계속 손이 간다" — 소재가 이렇게 많은 브랜드를 본 적이 없어요.</p>
+    <p>그리고 메타 광고를 남편분이 잘 돌려서 유입 자체는 되고 있어요. 이미지도 현희님이 직접 찍는데 감도가 좋아요. 브랜드의 톤앤매너가 한결같고 고급스러워요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 02. 진단 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Diagnosis</div>
+    <h2 class="sec-tl">예쁜데<br>기억에 안 남는다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>근데 지금 이 브랜드는 단일 상품으로는 좋은데 브랜드가 기억에 남지 않아요. 광고를 보고 예뻐서 사긴 하는데, "히니"라는 이름을 기억하는 사람은 거의 없을 거예요. 그냥 "예쁜 반지"로 끝나는 거죠.</p>
+    <p>메타 광고 소재랑 피드 콘텐츠가 동일해요. 광고는 예쁜 제품 사진 + 가격 충격이 맞지만, 피드는 "왜 여기서 사야 하는지"를 보여줘야 하는 곳이에요. 지금은 둘 다 똑같으니까 광고를 보고 들어와도 "아 여기도 그냥 예쁜 주얼리 파는 데구나"로 끝나는 거예요. 전환율 0.9%가 낮은 이유가 여기 있어요.</p>
+    <p>그리고 현희님이 직접 말씀하셨잖아요 — "계속 분위기가 비슷하니까 피로도가 생긴 것 같다." 같은 톤의 광고를 계속 돌리면 처음엔 신선해도 결국 소비자가 면역이 생겨요.</p>
+    <p>프로필에 "내 눈을 통과한 것만"이라고 적혀 있는데 — 그 "내 눈"의 "내"가 누군지를 알 수가 없어요. 이 사람의 철학, 어떤 취향, 어떤 기준으로 고르는지가 어디에도 안 나타나 있거든요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 03. 방향 1 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Direction 01</div>
+    <h2 class="sec-tl">히니가 사람이라면<br>뭘까?</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>히니라는 브랜드가 사람으로 형상화된다면 어떤 사람일까를 한번 생각해봤으면 좋겠어요. 나이대, 직업, 소득, 아침부터 저녁까지 어떻게 지내는지. 만약에 어려우면 이걸 착용하는 사람 중에 가장 어울리는 사람의 삶을 상상해서 — 그걸 콘텐츠화하면 돼요.</p>
+    <p>현희님이 "설명을 못하겠다"고 하셨는데 — 이건 설명을 못하는 게 아니라 고객이 물어보면 답하는 것들이 이미 있어요. "이거랑 뭐가 달라요?" 하면 뭐가 다르고 저게 다르고 이야기하시잖아요. 그게 콘텐츠예요.</p>
+    <p>얼굴이 안 나와도 돼요. 손만 나와도 되고 목소리만 나와도 돼요. 근데 이걸 만든 사람의 기준은 나와야 해요. "나는 싫은 건 진짜 못하는 성격이다" — 이것만 전시하면 돼요. 전부 꺼내 보이면 일기지만, 이 브랜드에 맞는 기준만 보여주면 브랜딩이에요.</p>
+    <p>비즈니스에는 세 가지가 있어요. 기능이 좋거나, 싸거나, 예쁘거나. 근데 네 번째는 이 브랜드의 생각과 기준이에요. 이게 명료하면 사람들이 조금 더 비싸도 사고, 조금 덜 예뻐도 사요. 지금 히니 계정에는 그게 없어요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 04. 방향 2 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Direction 02</div>
+    <h2 class="sec-tl">후기가<br>콘텐츠 언어다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>현희님이 "콘텐츠를 어떻게 만드는지 모르겠다"고 하셨는데 — 이미 만들어져 있어요. 후기에.</p>
+    <p>"인터넷에서 액세서리를 안 사봐서 반짝거림이 덜하지 않을까 했는데 전혀 없었다. 촌스럽게 번떡거리는 게 아니라 은은하고 고급스럽다." "상세페이지에서 반지 뒷면 마감, 사이즈 설명이 가장 뛰어났다." "러브 팔찌가 질렸는데 텐스 팔찌를 같이 끼니까 새 걸 산 것 같다." "블러드 다이아몬드 이야기를 하는 분도 있었죠."</p>
+    <p>이런 문장들이 현희님의 콘텐츠 언어예요. 제품 사진 옆에 이 문장을 붙이는 것만으로 피드가 달라져요.</p>
+    <p>그리고 현희님이 말씀하신 것 중에 인상 깊었던 게 — 배송지를 보면 우리나라에 좋은 아파트는 다 있다는 거. 그리고 오래전부터 반복 구매하는 사람이 많다는 거. 이것도 콘텐츠가 돼요. 이 브랜드의 고객이 어떤 사람인지를 간접적으로 보여주는 거니까. "주얼리는 시간이 지나야 증명된다"고 하셨잖아요 — 그 시간을 견딘 고객이 계속 돌아온다는 사실 자체가 히니의 가장 강한 증거예요.</p>
+    <p>소비자가 가장 걱정하는 것들 — "사진이랑 실물이 다르면 어떡하지", "인터넷에서 주얼리 사도 되나", "시뮬럿인 게 티 나지 않을까" — 이런 걱정에 대한 답을 콘텐츠로 풀면 전환율이 올라가요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 05. 방향 3 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Direction 03</div>
+    <h2 class="sec-tl">인플루언서 협업은<br>"한 명이라도 제대로"</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>패션은 솔직히 자본력 싸움이에요. 누가 착용했느냐에 따라 브랜드 가치가 달라지는 시장이거든요. 근데 수천만 원씩 쓰는 건 현실적이지 않아요.</p>
+    <p>현희님이 직접 아이디어를 주셨잖아요 — "그 사람만 판매할 수 있는 디자인을 주는 것." 이거 너무 좋아요. 대신 수익 셰어는 해야 해요. 광고비가 아니라 판매량에 따른 셰어니까 리스크도 적어요.</p>
+    <p>근데 진짜 잘 골라야 해요. 시드물 이야기를 했잖아요 — 제품 좋은 화장품 브랜드가 노출 위주 인플루언서랑 협업하니까 브랜드 이미지가 나락 간 거. 현희님 주얼리를 착용하는 사람이 브랜드의 얼굴이 되는 거예요. 막 뿌리지 말고, 현희님이 상상하는 고객 — 관리 잘하고 감각 있고 명품도 있는 사람 — 과 일치하는 사람을 딱 한 명이라도 제대로 잡으세요.</p>
+    <p>그리고 현희님이 "기준을 먼저 보여줘야 좋은 인플루언서들도 설득이 될 것 같다"고 하셨는데 맞아요. 대형 인플루언서들도 자기 브랜드를 따지거든요. 제품만 예뻐서는 안 되고, 이 브랜드의 기준이 보여야 "같이 하고 싶다"가 돼요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 06. 방향 4 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Direction 04</div>
+    <h2 class="sec-tl">"명품 대체"가 아니라<br>"명품과 함께"</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>현희님이 "고객들이 이 브랜드를 숨기고 싶어하는 것 같다"고 하셨잖아요. 저장은 많은데 좋아요·댓글은 없고 DM으로만 온다고.</p>
+    <p>근데 이건 "숨기는 브랜드"로 볼 필요가 없어요. 까르띠에랑 히니를 같이 끼고 있으면 "쟤 저거 팔아서 저거 샀네"가 아니라 <b>"레이어링 매칭이 잘 되네"</b>로 보이거든요. 까르띠에로만 레이어링 하면 몇천만 원인데, 히니랑 매칭하면 그 무드를 유지하면서도 합리적이에요. 돈이 없어서 사는 게 아니라 합리적인 사람이라서 사는 거.</p>
+    <p>이 포지션을 콘텐츠로 보여주면 돼요. 히니 주얼리와 까르띠에를 같이 끼고 있는 이미지 하나만으로도 인식이 달라져요. "명품을 대체하는 주얼리"가 아니라 "명품과 함께 끼는 주얼리."</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 07. 기타 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">More</div>
+    <h2 class="sec-tl">백화점 팝업 ·<br>폰트도 브랜드의 목소리다</h2>
+  </div>
+
+  <div class="prose rv">
+    <p>백화점에서 1층 입점 제안이 왔는데 수수료가 부담되고 매일 갈 수도 없고.</p>
+    <p>근데 현희님이 백화점을 매출 창구로 쓸 필요가 없어요. 한 번만 해도 돼요. 한남동이나 성수동에 매장 하나만 있어도 브랜드 인식이 달라지거든요. "여긴 인터넷 쇼핑몰이 아니구나, 진짜 브랜드네" — 사람들 생각이 단순해요. 매장이 있으면 브랜드, 없으면 쇼핑몰. 쇼핑몰은 비싸면 안 팔리는데 브랜드라고 인식하면 몇십만 원이어도 사요. 반응이 좋으면 그때 직원을 교육시키면 돼요.</p>
+    <p>하나 더. 지금 카드뉴스에 쓰는 폰트가 히니 브랜드랑 안 어울려요. 폰트는 브랜드의 목소리예요. 현희님의 주얼리 고르는 감각이 좋은데, 그 감각이 폰트까지 이어져야 해요. 다른 분들한테는 세리프체를 추천하지 않지만 현희님 브랜드는 그게 더 잘 어울릴 수 있어요. 핀터레스트나 해외 주얼리 브랜드 계정에서 레퍼런스를 찾아보세요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ 08. 우선순위 ═══════════════ -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Next Steps</div>
+    <h2 class="sec-tl">우선순위</h2>
+  </div>
+
+  <div class="flow rv">
+    <div class="flow-item">
+      <div class="flow-n">01</div>
+      <div>
+        <div class="flow-title">레퍼런스부터 찾는다</div>
+        <div class="flow-desc">핀터레스트에서 이미지 위에 텍스트를 어떻게 녹이는지, 해외 주얼리 브랜드가 콘텐츠를 어떻게 만드는지.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">02</div>
+      <div>
+        <div class="flow-title">후기에서 소재를 뽑아서 콘텐츠로 만든다</div>
+        <div class="flow-desc">이미 있는 재료를 재가공하는 거예요. 없는 걸 만드는 게 아니라 있는 걸 꺼내서 보여주면 돼요.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">03</div>
+      <div>
+        <div class="flow-title">인플루언서를 잘 셀렉해서 협업한다</div>
+        <div class="flow-desc">이미지 맞는 사람 찾아서 같이 디자인하고 수익 셰어.</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">04</div>
+      <div>
+        <div class="flow-title">백화점에서 좋은 자리 제안이 오면 한 번 가본다</div>
+        <div class="flow-desc">매출이 아니라 신뢰의 도구로. 한 번만 해도 브랜드 인식이 달라져요.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div-line rv"></div>
+
+  <div class="insight rv" style="margin-bottom:160px;">
+    <div class="insight-tag">Remember</div>
+    <p>"주얼리는 시간이 지나야 증명된다"고 하셨잖아요. 그 시간을 견딘 고객이 계속 돌아온다는 사실 자체가 히니의 가장 강한 증거예요. 이제 그 증거를 피드에 꺼내 놓으면 돼요.</p>
+  </div>
+</div>
+
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<div class="page-footer rv">
+  <div class="page-footer-brand">RE:FEEEL</div>
+  <div class="page-footer-note">본 요약은 김현희님을 위해 작성되었습니다. © 2026</div>
+</div>
+
+
+<button class="to-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+window.addEventListener('scroll', () => {
+  document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
+});
+</script>
+</body>
+</html>
