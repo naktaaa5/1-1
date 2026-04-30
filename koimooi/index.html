@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨설팅 요약 — 최수현님</title>
+
+<meta property="og:title" content="컨설팅 요약 — 최수현님">
+<meta property="og:description" content="2026.4.24 컨설팅 요약 정리 — RE:FEEEL">
+<meta property="og:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="컨설팅 요약 — 최수현님">
+<meta name="twitter:description" content="2026.4.24 컨설팅 요약 정리 — RE:FEEEL">
+<meta name="twitter:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --bg: #f8f6f2; --bg-card: #ffffff; --text: #302b26; --text-light: #948b80; --text-mid: #5e574f;
+  --accent: #4a6e5f; --border: #ddd7ce;
+  --sp-md: 24px; --sp-lg: 48px; --sp-xl: 80px; --sp-2xl: 120px;
+  --ease: cubic-bezier(.16,1,.3,1);
+  --font-display: 'Pretendard Variable', 'SUIT Variable', sans-serif;
+  --font-body: 'SUIT Variable', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; font-size: 15px; line-height: 1.8; }
+.ct { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+.rv { opacity:0; transform:translateY(20px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.rv.vis { opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce) { .rv { transition:none !important; opacity:1 !important; transform:none !important; } }
+
+.cover { position:relative; padding:var(--sp-2xl) 0 var(--sp-xl); }
+.cover .ct { display:flex; flex-direction:column; }
+.cover::before { content:''; position:absolute; inset:0; background:var(--bg-card); z-index:-1; }
+.cover-part { font-size:12px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:var(--text-light); margin-bottom:var(--sp-lg); }
+.cover h1 { font-family:var(--font-display); font-size:clamp(28px,4.5vw,44px); font-weight:800; line-height:1.35; letter-spacing:-1px; margin-bottom:32px; }
+.cover-line { width:48px; height:2px; background:var(--accent); margin-bottom:32px; }
+.cover-desc { font-size:15px; line-height:2; color:var(--text-mid); max-width:640px; margin-bottom:var(--sp-xl); }
+.cover-meta { display:flex; gap:var(--sp-lg); font-size:12px; color:var(--text-light); }
+.cover-meta dt { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:3px; }
+
+.sec-hd { margin-top:80px; padding:32px 0 var(--sp-md); border-top:1px solid var(--border); }
+.sec-hd.no-rule { margin-top:48px; padding-top:0; border-top:none; }
+.sec-num { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+.sec-tl { font-family:var(--font-display); font-size:clamp(21px,3vw,30px); font-weight:800; line-height:1.5; letter-spacing:-0.3px; }
+
+.prose { font-size:15.5px; line-height:1.9; color:var(--text-mid); letter-spacing:-0.1px; }
+.prose p { margin-bottom:var(--sp-md); }
+.prose p:last-child { margin-bottom:0; }
+
+.insight { padding:20px 0; margin:40px 0; }
+.insight-tag { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.insight p { font-size:15px; line-height:2; color:var(--text); }
+
+.div-line { width:32px; height:1px; background:var(--border); margin:var(--sp-lg) 0; }
+
+.channel-table { margin:32px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.channel-row { display:grid; grid-template-columns:120px 1fr; gap:24px; padding:20px 0; border-bottom:1px solid var(--border); align-items:start; }
+.channel-row:last-child { border-bottom:none; }
+.channel-row.head { padding:12px 0; border-bottom:2px solid var(--text-mid); }
+.channel-row.head > div { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-light); }
+.channel-name { font-size:14.5px; font-weight:700; color:var(--text); }
+.channel-role { font-size:14px; line-height:1.85; color:var(--text-mid); }
+
+.flow { margin:var(--sp-lg) 0; }
+.flow-item { display:grid; grid-template-columns:32px 1fr; gap:16px; padding:20px 0; border-top:1px solid var(--border); }
+.flow-item:last-child { border-bottom:1px solid var(--border); }
+.flow-n { font-size:13px; font-weight:700; color:var(--accent); padding-top:2px; }
+.flow-title { font-family:var(--font-display); font-size:16px; font-weight:800; letter-spacing:-0.2px; margin-bottom:6px; }
+.flow-desc { font-size:14px; color:var(--text-mid); line-height:1.85; }
+
+.to-top { position:fixed; bottom:32px; right:32px; width:40px; height:40px; border:1px solid var(--border); background:var(--bg-card); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .4s; z-index:50; font-size:18px; color:var(--text-light); border-radius:0; }
+.to-top.show { opacity:1; }
+
+.page-footer { max-width:720px; margin:0 auto; padding:40px 32px 80px; text-align:center; border-top:1px solid var(--border); margin-top:80px; }
+.page-footer-brand { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--text-mid); margin-bottom:8px; }
+.page-footer-note { font-size:11px; color:var(--text-light); line-height:1.6; }
+
+@media (max-width: 768px) {
+  .cover { padding:60px 0 40px !important; }
+  .cover-meta { flex-direction:column; gap:16px; }
+  .ct { padding:0 20px; }
+  .channel-row { grid-template-columns:1fr; gap:6px; }
+  .channel-row.head { display:none; }
+}
+@media (max-width: 480px) { .cover h1 { font-size:24px; } }
+</style>
+</head>
+<body>
+
+
+<section class="cover">
+<div class="ct">
+  <div class="cover-part rv">Consulting Summary</div>
+  <h1 class="rv">컨설팅 요약</h1>
+  <div class="cover-line rv"></div>
+  <p class="cover-desc rv">오늘 나눈 이야기를 정리해 드립니다 :)</p>
+  <dl class="cover-meta rv">
+    <div><dt>Client</dt><dd>최수현</dd></div>
+    <div><dt>By</dt><dd>RE:FEEEL</dd></div>
+    <div><dt>Date</dt><dd>2026. 04. 24</dd></div>
+  </dl>
+</div>
+</section>
+
+
+<!-- 01. 진단 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Diagnosis</div>
+    <h2 class="sec-tl">브랜드에<br>브랜드가 없다</h2>
+  </div>
+  <div class="prose rv">
+    <p>수현님 계정이 솔직히 가장 어려웠습니다. 피드를 보면 이미지 감도는 좋습니다. 톤앤매너도 일관되고 고급스럽고. 근데 "이 가방이 뭐가 다른데?"에 대한 답이 어디에도 없습니다.</p>
+    <p>코이무이 공식 계정(2.9만)은 룩북입니다. 예쁜 사진들. 근데 가방 브랜드 10개를 나란히 놓으면 구분이 안 됩니다. 바이오에 "Step back in time and embrace urban silhouettes"라고 써놨는데 — 멋있지만 그래서 이 가방이 나한테 뭘 해주는 건지가 와닿지 않습니다.</p>
+    <p>디자인도 외부 프리랜서 디자이너한테 맡겨서 힙하게도 나왔다가 트렌디하게도 나왔다가 — 방향이 없이 디자이너를 쓰면 브랜드에 일관성이 없어집니다. 디자인의 방향성도 없이 디자이너를 채용하는 건 — 브랜드에 브랜드가 없는 상태입니다.</p>
+    <p>그리고 loversclub이라는 별도 계정(434명)으로 고객 착용샷을 올리고 있는데 — 명품 브랜드도 아닌 상황에서 이걸 분리할 이유가 없습니다. 공식 계정에 합치는 걸 권합니다.</p>
+  </div>
+</div>
+
+
+<!-- 02. 페르소나 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Persona</div>
+    <h2 class="sec-tl">"코이무이가 사람이라면<br>뭘까?"</h2>
+  </div>
+  <div class="prose rv">
+    <p>이걸 한번 상상해보는 걸 권합니다. 나이대, 직업, 소득, 아침부터 저녁까지 어떻게 지내는지. 이 가방을 들고 다니는 사람의 삶을 그려보는 겁니다.</p>
+    <p>수현님의 니즈가 이미 답이 되고 있습니다 — "명품은 매일 들고 다니기에 무겁고 부담스럽고, 비건가죽은 싼티 나고, 국내 브랜드 중에 감도 좋은 곳을 못 찾겠다." 이게 수현님의 니즈이면서 동시에 타겟의 니즈입니다.</p>
+    <p>그러면 코이무이를 사는 사람은 — 명품도 있고 감각도 있는데 데일리로 부담 없이 들 수 있는 진짜 가죽 가방을 원하는 사람. 비즈니스 미팅에도 어울리고 아이랑 외출할 때도 어울리는, 휘뚜루마뚜루 가방. 이게 코이무이의 사람입니다.</p>
+    <p>지금은 이 사람이 피드에서 안 보입니다. 그래서 예쁘긴 한데 기억에 안 남는 겁니다.</p>
+  </div>
+</div>
+
+
+<!-- 03. 서사 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Story</div>
+    <h2 class="sec-tl">수현님의 서사도<br>콘텐츠가 된다</h2>
+  </div>
+  <div class="prose rv">
+    <p>남동생이 5년간 했던 가방 브랜드를 부모님 빚까지 끌어다 쓰고도 안 돼서, 수현님이 이어받은 거잖아요. 잡지사에서 일했고 패션에 관심이 있었으니까 "그나마 네가 맡아봐라" 해서 시작한 것.</p>
+    <p>이건 비하인드 스토리입니다. 이걸 풀면 사람들이 코이무이를 기억할 이유가 생깁니다. 지금은 이 이야기가 어디에도 없습니다.</p>
+    <p>최수현이라는 사람을 드러내는 게 아니라 코이무이라는 브랜드가 사람이 된다면 어떤 사람일까를 드러내는 겁니다. 수현님의 개인 계정에서 가방을 자연스럽게 들고 있는 사진이라든가, 신상품 나올 때 어느 부분을 신경 썼는지, 왜 이번에는 이 방향으로 갔는지 — 이런 비하인드를 풀어가면 코이무이에 대한 팬심이 쌓입니다.</p>
+  </div>
+</div>
+
+
+<!-- 04. 타겟 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Visual</div>
+    <h2 class="sec-tl">타겟은<br>시각적으로 부른다</h2>
+  </div>
+  <div class="prose rv">
+    <p>패션 브랜드는 텍스트로 타겟을 부르는 게 아니라 이미지로 불러야 합니다. 길거리에서 "저기요" 하면 아무도 안 돌아보는데, "까만 모자 쓰고 하얀 티 입으신 분" 하면 돌아보잖아요. 패션도 같습니다.</p>
+    <p>같은 가방이라도 20대 대학생이 들고 있는 사진과 30대 후반 전문직 여성이 들고 있는 사진은 완전히 다른 인식을 만들어냅니다. 지금 코이무이 피드에는 런던 거리에서 모델이 들고 있는 룩북 사진이 있는데 — 예쁘지만 "저 사람처럼 되고 싶다"는 생기지 않습니다. 내 타겟과 일치하는 사람이 들고 있어야 "나도 저걸 들어야겠다"가 되는 겁니다.</p>
+    <p>고객들이 갖고 있는 문제점을 시각적으로 보여주는 걸 권합니다. "명품은 무겁고 비건은 싫은 사람"이 코이무이를 들고 있는 장면 — 이게 타겟을 부르는 이미지입니다.</p>
+  </div>
+</div>
+
+
+<!-- 05. 인플루언서 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Influencer</div>
+    <h2 class="sec-tl">인플루언서 —<br>이미 성공한 경험이 있다</h2>
+  </div>
+  <div class="prose rv">
+    <p>변호사 인플루언서랑 협업해서 판매 비율 15% 셰어로 했을 때 잘 됐었습니다. 이 모델이 좋은 이유가 — 광고비를 먼저 내는 게 아니라 팔린 만큼만 셰어하니까 리스크가 적습니다. 그리고 이 사람이 코이무이를 들고 다니는 것 자체가 브랜드의 얼굴이 됩니다.</p>
+    <p>"전문직이고 관리 잘하고 감각 있는 사람이 이 가방을 들고 다니네" — 사람들이 이걸 보고 인식을 만듭니다. 팔로워가 많을 필요 없습니다. 이미지가 맞는 사람을 잘 골라서, 한 명이라도 제대로 하는 게 중요합니다.</p>
+    <p>의사, 변호사, 전문직 워킹맘 — 이런 분들 중에서 코이무이의 타겟과 일치하는 사람을 지속적으로 발굴하는 걸 권합니다. 막 뿌리면 브랜드 이미지가 무너집니다. 시드물 사례를 기억하세요.</p>
+  </div>
+</div>
+
+
+<!-- 06. 자사몰 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Channel</div>
+    <h2 class="sec-tl">자사몰에<br>힘을 실어야 한다</h2>
+  </div>
+  <div class="prose rv">
+    <p>지금 29cm랑 W컨셉에서 수수료 30%에 할인 30%까지 하면 남는 게 없는 상태입니다. 이 구조를 정리하는 걸 권합니다.</p>
+  </div>
+
+  <div class="channel-table rv">
+    <div class="channel-row head">
+      <div>채널</div>
+      <div>역할</div>
+    </div>
+    <div class="channel-row">
+      <div class="channel-name">자사몰</div>
+      <div class="channel-role">실제 매출의 중심. 메타 광고는 자사몰로 보내는 데 집중</div>
+    </div>
+    <div class="channel-row">
+      <div class="channel-name">29cm · W컨셉</div>
+      <div class="channel-role">입점 유지하되 브랜드 신뢰 도구로만. 추가 광고비는 태우지 않음</div>
+    </div>
+  </div>
+
+  <div class="prose rv">
+    <p>소비자마다 좋아하는 플랫폼이 있으니까 입점해 있다는 것 자체가 채널 역할을 합니다. 근데 플랫폼에 추가로 광고비를 태우는 건 지금 상황에서 무리입니다. 입점처를 프로필이나 피드에 명시해놓는 것만으로도 전환에 도움이 됩니다.</p>
+  </div>
+</div>
+
+
+<!-- 07. PD 리스트 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Order</div>
+    <h2 class="sec-tl">PD 리스트 —<br>방향이 먼저다</h2>
+  </div>
+  <div class="prose rv">
+    <p>PD분이 만들어준 릴스 리스트 10개 — 주제들이 기시감이 좀 들긴 합니다. 근데 나쁘다는 뜻은 아닙니다. 방향이 확실하면 유행 포맷을 가져와도 괜찮습니다. 문제는 방향 없이 하면 이것저것 하다 길을 잃는다는 겁니다.</p>
+    <p>"코이무이가 사람이라면 뭘까?"가 먼저 잡히면, 그다음에 PD 리스트를 그 방향에 맞게 걸러서 써도 됩니다. 순서가 중요합니다.</p>
+  </div>
+</div>
+
+
+<!-- 08. 정리 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Next Steps</div>
+    <h2 class="sec-tl">정리하면</h2>
+  </div>
+
+  <div class="flow rv">
+    <div class="flow-item">
+      <div class="flow-n">01</div>
+      <div>
+        <div class="flow-title">"코이무이가 사람이라면?" 써보기</div>
+        <div class="flow-desc">나이대, 직업, 소득, 하루의 삶. 이게 브랜드의 방향이 됩니다</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">02</div>
+      <div>
+        <div class="flow-title">타겟과 일치하는 인플루언서 발굴</div>
+        <div class="flow-desc">변호사 사례처럼. 이미지 맞는 사람 한 명이라도 제대로. 판매 셰어 모델</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">03</div>
+      <div>
+        <div class="flow-title">자사몰 비중 높이기</div>
+        <div class="flow-desc">메타 광고는 자사몰로. 플랫폼은 신뢰 도구로만</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">04</div>
+      <div>
+        <div class="flow-title">loversclub 합치기</div>
+        <div class="flow-desc">공식 계정 하나로</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">05</div>
+      <div>
+        <div class="flow-title">개인 계정에서 코이무이의 비하인드를 풀기</div>
+        <div class="flow-desc">방향만 잊지 않으면 됩니다</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div-line rv"></div>
+
+  <div class="insight rv" style="margin-bottom:160px;">
+    <div class="insight-tag">Remember</div>
+    <p>이미지 감도는 이미 좋습니다. 부족한 건 "코이무이가 누구인가"의 답입니다. 이 답이 잡히면 디자이너도, 인플루언서도, 콘텐츠도 같은 방향으로 모이기 시작합니다.</p>
+  </div>
+</div>
+
+
+<div class="page-footer rv">
+  <div class="page-footer-brand">RE:FEEEL</div>
+  <div class="page-footer-note">본 요약은 최수현님을 위해 작성되었습니다. © 2026</div>
+</div>
+
+
+<button class="to-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+window.addEventListener('scroll', () => {
+  document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
+});
+</script>
+</body>
+</html>
