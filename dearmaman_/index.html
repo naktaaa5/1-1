@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>컨설팅 요약 — 안보미님</title>
+
+<!-- Open Graph -->
+<meta property="og:title" content="컨설팅 요약 — 안보미님">
+<meta property="og:description" content="2026.4.24 컨설팅 요약 정리 — RE:FEEEL">
+<meta property="og:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<meta property="og:type" content="article">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="컨설팅 요약 — 안보미님">
+<meta name="twitter:description" content="2026.4.24 컨설팅 요약 정리 — RE:FEEEL">
+<meta name="twitter:image" content="https://pub-e470c27e348244dab3f75fe3725a94a6.r2.dev/og-refeeel.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root {
+  --bg: #f8f6f2; --bg-card: #ffffff; --text: #302b26; --text-light: #948b80; --text-mid: #5e574f;
+  --accent: #4a6e5f; --border: #ddd7ce;
+  --sp-md: 24px; --sp-lg: 48px; --sp-xl: 80px; --sp-2xl: 120px;
+  --ease: cubic-bezier(.16,1,.3,1);
+  --font-display: 'Pretendard Variable', 'SUIT Variable', sans-serif;
+  --font-body: 'SUIT Variable', sans-serif;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family: var(--font-body); background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; overflow-x: hidden; font-size: 15px; line-height: 1.8; }
+.ct { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+.rv { opacity:0; transform:translateY(20px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.rv.vis { opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion: reduce) { .rv { transition:none !important; opacity:1 !important; transform:none !important; } }
+
+.cover { position:relative; padding:var(--sp-2xl) 0 var(--sp-xl); }
+.cover .ct { display:flex; flex-direction:column; }
+.cover::before { content:''; position:absolute; inset:0; background:var(--bg-card); z-index:-1; }
+.cover-part { font-size:12px; font-weight:600; letter-spacing:5px; text-transform:uppercase; color:var(--text-light); margin-bottom:var(--sp-lg); }
+.cover h1 { font-family:var(--font-display); font-size:clamp(28px,4.5vw,44px); font-weight:800; line-height:1.35; letter-spacing:-1px; margin-bottom:32px; }
+.cover-line { width:48px; height:2px; background:var(--accent); margin-bottom:32px; }
+.cover-desc { font-size:15px; line-height:2; color:var(--text-mid); max-width:640px; margin-bottom:var(--sp-xl); }
+.cover-meta { display:flex; gap:var(--sp-lg); font-size:12px; color:var(--text-light); }
+.cover-meta dt { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:3px; }
+
+.sec-hd { margin-top:80px; padding:32px 0 var(--sp-md); border-top:1px solid var(--border); }
+.sec-hd.no-rule { margin-top:48px; padding-top:0; border-top:none; }
+.sec-num { font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; color:var(--accent); margin-bottom:16px; }
+.sec-tl { font-family:var(--font-display); font-size:clamp(21px,3vw,30px); font-weight:800; line-height:1.5; letter-spacing:-0.3px; }
+
+.prose { font-size:15.5px; line-height:1.9; color:var(--text-mid); letter-spacing:-0.1px; }
+.prose p { margin-bottom:var(--sp-md); }
+.prose p:last-child { margin-bottom:0; }
+
+.insight { padding:20px 0; margin:40px 0; }
+.insight-tag { font-size:10px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+.insight p { font-size:15px; line-height:2; color:var(--text); }
+
+.div-line { width:32px; height:1px; background:var(--border); margin:var(--sp-lg) 0; }
+
+.data-table { margin:32px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); }
+.data-row { display:grid; grid-template-columns:1fr auto auto; gap:16px; padding:16px 0; border-bottom:1px solid var(--border); align-items:center; }
+.data-row:last-child { border-bottom:none; }
+.data-row.head { padding:12px 0; border-bottom:2px solid var(--text-mid); }
+.data-row.head > div { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--text-light); }
+.data-label { font-size:14px; line-height:1.6; }
+.data-value { font-size:15px; font-weight:700; color:var(--accent); white-space:nowrap; min-width:80px; text-align:right; }
+.data-sub { font-size:12.5px; color:var(--text-light); white-space:nowrap; min-width:90px; text-align:right; }
+
+.flow { margin:var(--sp-lg) 0; }
+.flow-item { display:grid; grid-template-columns:32px 1fr; gap:16px; padding:20px 0; border-top:1px solid var(--border); }
+.flow-item:last-child { border-bottom:1px solid var(--border); }
+.flow-n { font-size:13px; font-weight:700; color:var(--accent); padding-top:2px; }
+.flow-title { font-family:var(--font-display); font-size:16px; font-weight:800; letter-spacing:-0.2px; margin-bottom:6px; }
+.flow-desc { font-size:14px; color:var(--text-mid); line-height:1.85; }
+
+.to-top { position:fixed; bottom:32px; right:32px; width:40px; height:40px; border:1px solid var(--border); background:var(--bg-card); cursor:pointer; display:flex; align-items:center; justify-content:center; opacity:0; transition:opacity .4s; z-index:50; font-size:18px; color:var(--text-light); border-radius:0; }
+.to-top.show { opacity:1; }
+
+.page-footer { max-width:720px; margin:0 auto; padding:40px 32px 80px; text-align:center; border-top:1px solid var(--border); margin-top:80px; }
+.page-footer-brand { font-size:12px; font-weight:700; letter-spacing:1px; color:var(--text-mid); margin-bottom:8px; }
+.page-footer-note { font-size:11px; color:var(--text-light); line-height:1.6; }
+
+@media (max-width: 768px) {
+  .cover { padding:60px 0 40px !important; }
+  .cover-meta { flex-direction:column; gap:16px; }
+  .ct { padding:0 20px; }
+  .data-row { grid-template-columns:1fr auto; gap:8px 16px; }
+  .data-row.head { display:none; }
+  .data-sub { grid-column:1 / -1; text-align:left; min-width:0; font-size:11.5px; }
+}
+@media (max-width: 480px) { .cover h1 { font-size:24px; } }
+</style>
+</head>
+<body>
+
+
+<section class="cover">
+<div class="ct">
+  <div class="cover-part rv">Consulting Summary</div>
+  <h1 class="rv">컨설팅 요약</h1>
+  <div class="cover-line rv"></div>
+  <p class="cover-desc rv">오늘 나눈 이야기를 정리해 드립니다 :)</p>
+  <dl class="cover-meta rv">
+    <div><dt>Client</dt><dd>안보미</dd></div>
+    <div><dt>By</dt><dd>RE:FEEEL</dd></div>
+    <div><dt>Date</dt><dd>2026. 04. 24</dd></div>
+  </dl>
+</div>
+</section>
+
+
+<!-- 01. 진단 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Diagnosis</div>
+    <h2 class="sec-tl">사람들이 산 건 도자기가 아니라<br>이야기다</h2>
+  </div>
+  <div class="prose rv">
+    <p>보미님은 제가 만나본 분들 중 소재가 정말 많았습니다. 게시물 20개, 팔로워 1,793명 — 숫자만 보면 작지만 이 20개 안에 들어 있는 이야기의 힘이 보통이 아닙니다.</p>
+    <p>데이터를 보면 명확합니다.</p>
+  </div>
+
+  <div class="data-table rv">
+    <div class="data-row head">
+      <div>콘텐츠 유형</div>
+      <div>평균 ER</div>
+      <div>댓글 반응</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label">성과·위기형 서사<br><span style="font-size:12.5px;color:var(--text-light);">"또 돈 썼어요", "브랜드 망할까요?"</span></div>
+      <div class="data-value">63.9%</div>
+      <div class="data-sub">최대 2,949개</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label">질문형</div>
+      <div class="data-value">4.8%</div>
+      <div class="data-sub">간헐적</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label">판매 안내<br><span style="font-size:12.5px;color:var(--text-light);">"⎾판매안내⏌ 호수 그릇"</span></div>
+      <div class="data-value">1.5%</div>
+      <div class="data-sub">매번 0개</div>
+    </div>
+  </div>
+
+  <div class="prose rv">
+    <p>42배 차이. 릴스와 캐러셀의 반응 차이도 33배입니다. 사람들이 반응하는 건 도자기가 아니라 이야기입니다.</p>
+    <p>도자기가 팔린 이유도 같습니다. 초보 사장이 진심으로 브랜드를 만들어가는 과정을 공유했기 때문이지, 상품의 품질 때문이 아닙니다. 보미님의 서사가 전환을 만든 겁니다. 이건 엄청나게 좋은 소식입니다 — 나중에 침구로 가더라도 이 서사력이 그대로 따라가니까요.</p>
+  </div>
+</div>
+
+
+<!-- 02. 서사 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Narrative</div>
+    <h2 class="sec-tl">브랜드의 서사를<br>드러내야 한다</h2>
+  </div>
+  <div class="prose rv">
+    <p>보미님의 이야기에는 "디어 마망"이라는 이름이 왜 나왔는지의 답이 다 들어 있습니다. 자가면역질환이 있는 동생과 본인이 편안하게 덮을 수 있는 이불을 만들고 싶었다는 것. 중견기업과 공무원까지 했지만 몸이 따라주지 않아서 그만둘 수밖에 없었던 것. 그런 자신을 보면서 힘들어하시는 엄마에게 한번 더 희망을 드리고 싶었다는 것.</p>
+    <p>이 서사가 지금 계정 어디에도 없습니다.</p>
+    <p>프로필에 "지친 엄마를 위해 엄선한 선물"이라고 적혀 있는데 — 지친 엄마가 왜 지쳤는지를 알 수가 없습니다. 모든 엄마가 지쳐 있거든요. 근데 보미님의 이야기는 조금 더 울림이 있는 이야기입니다. 이걸 드러내는 걸 권합니다.</p>
+    <p>사연팔이가 될까봐 걱정될 수 있습니다. 근데 사람들이 신뢰하고 좋아하고 "이 사람한테 사고 싶다"는 감정은 그 사람의 고유한 스토리에서 나옵니다. 드라마나 영화를 봐도 아무런 문제나 결점이 없는 인물은 나오지 않습니다. 사연도 있고 서사도 있으니까 사람들이 몰입하는 거죠. 보미님의 이야기는 억지로 만든 것도 꾸며낸 것도 아닌, 있는 그대로의 사실이니까요.</p>
+  </div>
+</div>
+
+
+<!-- 03. AI 목소리 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Voice</div>
+    <h2 class="sec-tl">AI 목소리를 쓸 수밖에 없는 이유가<br>서사가 된다</h2>
+  </div>
+  <div class="prose rv">
+    <p>한 달 중 3주는 구강 궤양 때문에 녹음이 어려운 상황에서, AI 목소리에 대한 걱정은 자연스러운 겁니다. 근데 보미님한테는 AI 음성을 쓸 수밖에 없는 서사가 명확하게 있습니다. 그러면 그냥 쓰면 됩니다.</p>
+    <p>대신 고정 게시물 하나를 만들어 놓는 걸 권합니다. "나는 한 달에 한두 번밖에 목소리가 나오지 않아요." 이걸 올려놓으면 어떤 영상에 AI 소리가 나와도 불쾌감을 느낄 사람은 없습니다. 그리고 이 고정 게시물만큼은 목소리가 나오는 날에 직접 녹음해서 올리는 걸 권합니다. AI를 쓸 수밖에 없는 이유를 진짜 목소리로 전하는 것 — 약점이 아니라 보미님만의 서사가 됩니다.</p>
+  </div>
+</div>
+
+
+<!-- 04. 릴스 스크립트 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Hook</div>
+    <h2 class="sec-tl">릴스 스크립트 —<br>이미 잘하고 있다</h2>
+  </div>
+
+  <div class="data-table rv">
+    <div class="data-row head">
+      <div>훅</div>
+      <div></div>
+      <div>구조</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label">"엄마한테 매일 뭘 팔면 좋겠냐고 물었다.<br>대답은 '모른다'였다."</div>
+      <div></div>
+      <div class="data-sub">의외성 → 호기심</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label">"2천만 원 계약 날렸어요"</div>
+      <div></div>
+      <div class="data-sub">위기 → 반전</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label">"저희 브랜드 망할까요?"</div>
+      <div></div>
+      <div class="data-sub">자극적 질문 → 철학</div>
+    </div>
+    <div class="data-row">
+      <div class="data-label">"여러분 저 또 돈 썼어요!!!"</div>
+      <div></div>
+      <div class="data-sub">자조적 유머 → 정보</div>
+    </div>
+  </div>
+
+  <div class="prose rv">
+    <p>첫 문장이 전부 보게 만드는 힘이 있습니다. 인스타를 안 하던 사람이 이걸 감으로 하고 있다는 건 재능입니다. 근데 보미님은 이걸 모릅니다. 자기가 잘하는 걸 모르는 게 고민인 거죠.</p>
+  </div>
+</div>
+
+
+<!-- 05. 디어 마망 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Identity</div>
+    <h2 class="sec-tl">디어 마망이<br>아직 시작되지 않았다</h2>
+  </div>
+  <div class="prose rv">
+    <p>이름만 바꿔놓고 피드는 100% "쓸만한 상점"의 도자기 콘텐츠 그대로입니다. 프로필은 "지친 엄마를 위한 선물"이라고 말하고, 피드는 도자기 브랜드를 보여주고, 콘텐츠 톤은 "초보 사장 성장기"를 주장하고 있습니다. 정체성이 세 개가 동시에 존재하는 상태입니다.</p>
+    <p>지금 피드의 도자기 콘텐츠를 삭제할 필요는 없습니다. "디어 마망이 큐레이션한 첫 번째 브랜드"로 재맥락화하면 됩니다. 근데 첫 번째 할 일은 — "왜 이불을 만드는 사람인지"를 선언하는 콘텐츠 하나를 올리는 것. 이게 디어 마망의 진짜 시작입니다.</p>
+    <p>침구로 전환하면 기존 팔로워 중 이탈하는 사람이 있을 수 있습니다. 근데 이 팔로워는 도자기가 좋아서 온 게 아니라 보미님의 이야기가 좋아서 온 사람들입니다. 서사로 모은 팔로워는 상품이 바뀌어도 따라옵니다. 그리고 1,793명이면 지금이 전환하기 가장 좋은 타이밍이기도 합니다.</p>
+  </div>
+</div>
+
+
+<!-- 06. 판매 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Sales</div>
+    <h2 class="sec-tl">판매에 대한 거부감 —<br>순서를 만들면 된다</h2>
+  </div>
+  <div class="prose rv">
+    <p>제품을 직접적으로 "이거 사세요"라고 하는 게 어려운 마음, 자연스러운 겁니다. 보미님이 느끼는 거부감은 — 아무것도 안 깔려 있는 상태에서 갑자기 판매를 하는 느낌 때문입니다. 순서를 만들면 거부감이 사라집니다.</p>
+    <p>피드에서 서사와 정보로 신뢰를 쌓아가면서, 스토리에서 프로모션이나 신상품 안내를 병행하면 — 이미 관심이 있는 사람들이 보는 거라 전환이 자연스럽게 일어납니다. 판매 전후로 흐름을 설계하는 걸 권합니다.</p>
+  </div>
+
+  <div class="flow rv">
+    <div class="flow-item">
+      <div class="flow-n">01</div>
+      <div>
+        <div class="flow-title">프로모션 2주 전</div>
+        <div class="flow-desc">이야기 깔기, 상품 티징</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">02</div>
+      <div>
+        <div class="flow-title">프로모션 당일</div>
+        <div class="flow-desc">판매 오픈</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">03</div>
+      <div>
+        <div class="flow-title">프로모션 이후</div>
+        <div class="flow-desc">고객 질문 답변, 관리법, 후기 공유</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="prose rv">
+    <p>이 순환이 신뢰를 쌓습니다.</p>
+  </div>
+</div>
+
+
+<!-- 07. 톤 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Tone</div>
+    <h2 class="sec-tl">톤을 정돈할 것</h2>
+  </div>
+  <div class="prose rv">
+    <p>디테일 하나. 썸네일의 폰트가 깔끔하고 매거진 같은데, 안쪽 전개는 아기자기한 톤입니다. 이 둘이 안 맞습니다.</p>
+    <p>폰트는 브랜드의 목소리입니다. 보미님 브랜드는 따뜻하고 진심인 브랜드인데, 매거진 톤의 썸네일은 감성이 느껴지지 않고 상품 추천 계정처럼 보입니다. 꼭 하나의 폰트를 쓸 필요는 없지만, 전체적인 톤이 일관되게 정돈하는 걸 권합니다.</p>
+  </div>
+</div>
+
+
+<!-- 08. 시작 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Start</div>
+    <h2 class="sec-tl">완벽하게 준비될 때는<br>오지 않습니다</h2>
+  </div>
+  <div class="prose rv">
+    <p>스크립트를 일주일에 하나밖에 못 쓴다는 건, 완벽하게 준비된 상태에서 시작하고 싶은 마음 때문입니다. 근데 완벽하게 준비될 때는 오지 않습니다. 게시물 20개, 팔로워 1,793명 — 올리면 올릴수록 뭘 개선해야 할지가 보이고 사람들이 뭐에 반응하는지 데이터가 쌓입니다. 깔아놓은 게 없으면 분석할 것도 없습니다.</p>
+    <p>조회수가 무서우면 가려놓고 보지 않는 걸 권합니다. 팔로워가 어제 몇 명이었는지 내일 몇 명인지 — 관심 있는 건 나밖에 없으니까요.</p>
+  </div>
+</div>
+
+
+<!-- 09. 우선순위 -->
+<div class="ct">
+  <div class="sec-hd rv">
+    <div class="sec-num">Next Steps</div>
+    <h2 class="sec-tl">우선순위</h2>
+  </div>
+
+  <div class="flow rv">
+    <div class="flow-item">
+      <div class="flow-n">01</div>
+      <div>
+        <div class="flow-title">고정 게시물 — "왜 AI 목소리를 쓸 수밖에 없는지"</div>
+        <div class="flow-desc">목소리 나오는 날에 직접 녹음해서 올리기</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">02</div>
+      <div>
+        <div class="flow-title">브랜드 서사 선언</div>
+        <div class="flow-desc">왜 이불을 만드는 사람인지, 왜 "디어 마망"인지</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">03</div>
+      <div>
+        <div class="flow-title">프로필 문구 수정</div>
+        <div class="flow-desc">"지친 엄마"가 왜 지쳤는지. 보미님의 이야기가 한 줄이라도 들어가야 합니다</div>
+      </div>
+    </div>
+    <div class="flow-item">
+      <div class="flow-n">04</div>
+      <div>
+        <div class="flow-title">톤 정돈</div>
+        <div class="flow-desc">썸네일과 안쪽 콘텐츠의 톤을 일관되게</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="div-line rv"></div>
+
+  <div class="insight rv" style="margin-bottom:160px;">
+    <div class="insight-tag">Remember</div>
+    <p>나머지는 다 방향 맞습니다. 사람들이 반응하는 건 도자기가 아니라 보미님의 이야기입니다. 침구로 가더라도 이 서사력이 그대로 따라갑니다.</p>
+  </div>
+</div>
+
+
+<div class="page-footer rv">
+  <div class="page-footer-brand">RE:FEEEL</div>
+  <div class="page-footer-note">본 요약은 안보미님을 위해 작성되었습니다. © 2026</div>
+</div>
+
+
+<button class="to-top" id="toTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('vis'); });
+}, { threshold: 0.12 });
+document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+window.addEventListener('scroll', () => {
+  document.getElementById('toTop').classList.toggle('show', window.scrollY > 400);
+});
+</script>
+</body>
+</html>
