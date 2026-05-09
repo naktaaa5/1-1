@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>컨설팅 브리프 — 이승빈 · @yourbintamin</title>
+<meta name="description" content="이승빈 (@yourbintamin) 콘텐츠 전략 진단 · RE:FEEEL Consulting Brief"/>
+
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="컨설팅 브리프 — 이승빈 · @yourbintamin"/>
+<meta property="og:description" content="이승빈 (@yourbintamin) 콘텐츠 전략 진단 · RE:FEEEL Consulting Brief"/>
+<meta property="og:image" content="https://pub-f337889f68dc417a957731031766fb4f.r2.dev/logo_black.png"/>
+<meta property="og:site_name" content="RE:FEEEL"/>
+<meta property="og:locale" content="ko_KR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="컨설팅 브리프 — 이승빈"/>
+<meta name="twitter:description" content="이승빈 (@yourbintamin) 콘텐츠 전략 진단 · RE:FEEEL"/>
+<meta name="twitter:image" content="https://pub-f337889f68dc417a957731031766fb4f.r2.dev/logo_black.png"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js" crossorigin="anonymous"></script>
+<style>
+/* ═══════════════════════════════════════════════════════
+   RE:FEEEL — Consulting Brief Design System
+   Hybrid: MUJI breathing + Editorial navigation
+   Restraint, whitespace, sage accent in single dose
+   ═══════════════════════════════════════════════════════ */
+
+:root{
+  --bg:#fafaf7;
+  --bg-soft:#f3f1ec;
+  --ink:#0a0a0a;
+  --ink-2:#2a2a2a;
+  --ink-3:#555555;
+  --ink-4:#8a8a8a;
+  --ink-5:#b8b8b8;
+  --rule:#e0ddd5;
+  --rule-soft:#ebe8e0;
+  --accent:#e75519;
+  --accent-soft:rgba(231,85,25,.08);
+
+  --pp:clamp(20px,4vw,48px);
+  --max-w:880px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{
+  font-family:'SUIT Variable','Pretendard Variable',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--ink-2);
+  font-size:15px;
+  line-height:1.85;
+  font-weight:400;
+  letter-spacing:-.005em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+  word-break:keep-all;
+}
+
+:focus-visible{outline:1.5px solid var(--accent);outline-offset:3px}
+
+/* ═══════════ TOP BAR (mobile/tablet) ═══════════ */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,250,247,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+  height:52px;
+  display:flex;align-items:center;
+  padding:0 var(--pp);
+}
+.tb-inner{max-width:var(--max-w);margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.tb-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);flex-shrink:0}
+.tb-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+.tb-current{font-size:11.5px;color:var(--ink-4);font-weight:500;letter-spacing:.3px;flex:1;text-align:center;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px}
+.tb-current .num{color:var(--ink);font-weight:700;margin-right:8px}
+.tb-progress{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.tb-prog-bar{width:64px;height:1px;background:var(--rule);position:relative;overflow:hidden}
+.tb-prog-fill{position:absolute;top:0;left:0;height:100%;background:var(--ink);width:0%;transition:width .3s ease}
+.tb-menu{
+  background:none;border:none;padding:8px;margin-right:-8px;
+  cursor:pointer;flex-shrink:0;color:var(--ink);
+  display:flex;align-items:center;
+}
+.tb-menu-icon{display:inline-flex;flex-direction:column;gap:4px;width:14px}
+.tb-menu-icon span{display:block;height:1px;background:currentColor}
+.tb-menu-icon span:nth-child(2){width:70%}
+
+@media(max-width:640px){
+  .tb-current{font-size:11px}
+  .tb-prog-bar{width:48px}
+}
+@media(min-width:1180px){
+  .topbar{display:none}
+}
+
+/* ═══════════ SIDE NAV (desktop) ═══════════ */
+.sidenav{display:none}
+@media(min-width:1180px){
+  :root{ --nav-w:240px; }
+  .sidenav{
+    display:flex;flex-direction:column;
+    position:fixed;top:0;left:0;bottom:0;
+    width:var(--nav-w);z-index:80;
+    padding:48px 24px 32px 36px;
+    background:var(--bg);
+    border-right:1px solid var(--rule);
+    box-sizing:border-box;
+  }
+  .sn-masthead{margin-bottom:56px}
+  .sn-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);margin-bottom:24px;display:flex;align-items:center}
+  .sn-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+  .sn-client{font-size:13.5px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.4;margin-bottom:6px}
+  .sn-tagline{font-size:10px;font-weight:600;color:var(--ink-4);letter-spacing:1.6px;text-transform:uppercase}
+  .sn-head{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--ink-4);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .sn-head::before{content:"";width:14px;height:1px;background:var(--ink-4)}
+  .sn-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;flex:1;overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}
+  .sn-list::-webkit-scrollbar{display:none}
+  .sn-item a{
+    display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:baseline;
+    padding:7px 0;text-decoration:none;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .sn-item a:hover{transform:translateX(2px)}
+  .sn-item a:hover .sn-title{color:var(--ink)}
+  .sn-num{font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--ink-5);font-variant-numeric:tabular-nums}
+  .sn-title{font-size:12.5px;font-weight:500;color:var(--ink-3);letter-spacing:-.2px;transition:color .2s ease}
+  .sn-item.active .sn-num{color:var(--accent)}
+  .sn-item.active .sn-title{color:var(--ink);font-weight:700}
+  .sn-foot{padding-top:24px;border-top:1px solid var(--rule);margin-top:24px}
+  .sn-foot-lbl{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--ink-4);text-transform:uppercase;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .sn-foot-num{color:var(--ink);font-variant-numeric:tabular-nums}
+  .sn-prog{width:100%;height:1px;background:var(--rule);position:relative;overflow:hidden}
+  .sn-prog-fill{position:absolute;top:0;left:0;height:100%;background:var(--ink);width:0%;transition:width .3s ease}
+}
+
+/* ═══════════ MOBILE DRAWER ═══════════ */
+.drawer{
+  position:fixed;inset:0;z-index:200;
+  background:var(--ink);color:#fff;
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .3s cubic-bezier(.2,.8,.2,1), visibility 0s linear .3s;
+}
+.drawer.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .3s cubic-bezier(.2,.8,.2,1), visibility 0s linear 0s}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:0 var(--pp);height:52px;border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0}
+.drawer-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:#fff;display:flex;align-items:center}
+.drawer-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px}
+.drawer-close{background:none;border:none;color:#fff;cursor:pointer;padding:8px;margin-right:-8px;font-size:22px;line-height:1;font-weight:300}
+.drawer-body{flex:1;overflow-y:auto;padding:48px var(--pp) 64px}
+.drawer-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:32px;display:flex;align-items:center;gap:10px}
+.drawer-eyebrow::before{content:"";width:18px;height:1px;background:var(--accent)}
+.dw-list{list-style:none;margin:0;padding:0}
+.dw-item a{display:grid;grid-template-columns:32px 1fr 16px;gap:14px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;color:inherit;transition:padding-left .3s cubic-bezier(.2,.8,.2,1)}
+.dw-item a:active{padding-left:6px}
+.dw-num{font-size:11px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.5);font-variant-numeric:tabular-nums;padding-top:2px}
+.dw-body{display:flex;flex-direction:column;gap:4px}
+.dw-title{font-size:16px;font-weight:600;color:#fff;letter-spacing:-.3px;line-height:1.4}
+.dw-desc{font-size:12px;color:rgba(255,255,255,.5);line-height:1.5}
+.dw-arrow{font-size:13px;color:rgba(255,255,255,.4);padding-top:4px;text-align:right}
+body.drawer-open{overflow:hidden}
+
+/* ═══════════ MAIN ═══════════ */
+main{padding-top:52px}
+@media(min-width:1180px){main{padding-top:0;padding-left:var(--nav-w)}}
+
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pp)}
+.wrap-narrow{max-width:640px;margin:0 auto;padding:0 var(--pp)}
+
+/* ═══════════ COVER ═══════════ */
+.cover{
+  background:var(--ink);color:#fff;
+  min-height:calc(100vh - 52px);
+  display:flex;flex-direction:column;
+  padding:64px var(--pp) 48px;
+  position:relative;
+}
+@media(min-width:1180px){
+  .cover{min-height:100vh;padding:80px var(--pp) 64px}
+}
+.cover-inner{max-width:var(--max-w);margin:0 auto;width:100%;display:flex;flex-direction:column;flex:1}
+.cv-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:48px;font-size:10px;letter-spacing:2.5px;color:rgba(255,255,255,.5);text-transform:uppercase;font-weight:600}
+.cv-top .r{text-align:right;line-height:1.8}
+.cv-mid{flex:1;display:flex;flex-direction:column;justify-content:center;padding:48px 0}
+.cv-label{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:32px;display:flex;align-items:center;gap:10px}
+.cv-label::before{content:"";width:24px;height:1px;background:var(--accent)}
+.cv-h1{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(40px,7vw,80px);
+  font-weight:300;letter-spacing:-2.5px;
+  line-height:1;color:#fff;
+  margin-bottom:24px;
+}
+.cv-h1 .line2{display:block;color:rgba(255,255,255,.4);font-weight:200;font-size:.55em;letter-spacing:-1px;margin-top:14px}
+.cv-desc{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.7);max-width:480px;font-weight:400;margin-top:16px}
+.cv-bot{padding-top:48px;border-top:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.cv-kpi{padding:0}
+.cv-kpi-num{font-size:9.5px;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:1.5px;margin-bottom:14px}
+.cv-kpi-val{font-family:'Pretendard Variable','SUIT Variable',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:300;letter-spacing:-1.5px;line-height:1;color:#fff;margin-bottom:14px;font-variant-numeric:tabular-nums}
+.cv-kpi-val .ac{color:#ff7a4a}
+.cv-kpi-lbl{font-size:12px;font-weight:600;color:#fff;margin-bottom:3px;letter-spacing:-.1px}
+.cv-kpi-sub{font-size:11px;color:rgba(255,255,255,.5);line-height:1.5}
+
+@media(max-width:640px){
+  .cv-bot{grid-template-columns:repeat(2,1fr);gap:32px 16px}
+}
+
+/* ═══════════ DOTS DIVIDER ═══════════ */
+.dots{
+  text-align:center;
+  font-size:11px;
+  color:var(--ink-5);
+  letter-spacing:6px;
+  padding:24px 0;
+}
+@media(min-width:1180px){
+  .dots{padding:32px 0}
+}
+
+/* ═══════════ INTRO ═══════════ */
+.intro{padding:48px var(--pp) 0;max-width:640px;margin:0 auto}
+@media(min-width:1180px){.intro{padding-top:64px}}
+.intro p{font-size:15.5px;line-height:1.85;color:var(--ink-3);margin-bottom:22px}
+.intro p:last-child{margin-bottom:0}
+.intro em{font-style:normal;color:var(--ink);font-weight:600}
+
+/* ═══════════ TOC ═══════════ */
+.toc-section{padding-top:96px;padding-bottom:0}
+@media(min-width:1180px){.toc-section{padding-top:128px}}
+.toc-eyebrow{font-size:10px;font-weight:600;letter-spacing:2.5px;color:var(--ink-4);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.toc-eyebrow::before{content:"";width:18px;height:1px;background:var(--accent)}
+.toc-title{font-family:'Pretendard Variable','SUIT Variable',sans-serif;font-size:clamp(26px,3.5vw,36px);font-weight:300;letter-spacing:-1px;line-height:1.25;color:var(--ink);margin-bottom:48px}
+.toc-list{border-top:1px solid var(--ink)}
+.toc-item{
+  display:grid;grid-template-columns:60px 1fr 24px;gap:24px;align-items:baseline;
+  padding:22px 0;border-bottom:1px solid var(--rule);
+  text-decoration:none;color:inherit;
+  transition:padding-left .35s cubic-bezier(.2,.8,.2,1);
+}
+.toc-item:hover{padding-left:8px}
+.toc-item:hover .toc-arrow{color:var(--accent);transform:translateX(4px)}
+.toc-num{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--ink-4);padding-top:6px;font-variant-numeric:tabular-nums}
+.toc-body{display:flex;flex-direction:column;gap:5px}
+.toc-tl{font-size:17px;font-weight:600;color:var(--ink);letter-spacing:-.3px;line-height:1.35}
+.toc-desc{font-size:13px;color:var(--ink-3);line-height:1.6}
+.toc-arrow{font-size:13px;color:var(--ink-5);padding-top:8px;text-align:right;transition:color .25s ease, transform .3s cubic-bezier(.2,.8,.2,1)}
+@media(max-width:560px){
+  .toc-item{grid-template-columns:40px 1fr 16px;gap:16px}
+  .toc-tl{font-size:15.5px}
+  .toc-desc{font-size:12.5px}
+}
+
+/* ═══════════ SECTION ═══════════ */
+.section{padding:0 var(--pp);scroll-margin-top:32px}
+.section-inner{max-width:640px;margin:0 auto;padding:48px 0}
+@media(min-width:1180px){.section-inner{padding:64px 0}}
+
+.s-marker{
+  display:flex;align-items:baseline;gap:14px;
+  margin-bottom:24px;
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:10px;font-weight:600;letter-spacing:2.5px;
+  color:var(--ink-4);text-transform:uppercase;
+}
+.s-marker-num{color:var(--ink);font-weight:700}
+
+.s-title{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(28px,4vw,40px);
+  font-weight:300;letter-spacing:-1.2px;
+  line-height:1.25;color:var(--ink);
+  margin-bottom:24px;
+}
+.s-title em{font-style:normal;color:var(--ink-4);font-weight:200}
+
+.s-sub{
+  font-size:15px;line-height:1.75;color:var(--ink-3);
+  font-weight:400;margin-bottom:36px;
+}
+.s-sub strong{color:var(--ink);font-weight:600}
+
+/* ═══════════ PROSE ═══════════ */
+.prose{font-size:15.5px;line-height:1.85;color:var(--ink-3)}
+.prose p{margin-bottom:22px}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--ink);font-weight:600}
+.prose em{font-style:normal;color:var(--ink);font-weight:600;background-image:linear-gradient(to top,var(--accent-soft) 30%,transparent 30%);padding:0 3px}
+
+/* ═══════════ HERO STAT ═══════════ */
+.hero{
+  margin:48px 0;
+  padding:48px 0;
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--rule);
+  text-align:center;
+}
+.hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero-num{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(96px,15vw,160px);
+  font-weight:200;letter-spacing:-5px;line-height:.9;
+  color:var(--ink);font-variant-numeric:tabular-nums;
+  margin-bottom:24px;
+}
+.hero-num span{font-size:.4em;vertical-align:.5em;margin-left:0;color:var(--ink-4);font-weight:300}
+.hero-headline{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.3px;line-height:1.5;margin-bottom:8px}
+.hero-detail{font-size:13px;color:var(--ink-4);line-height:1.7;max-width:380px;margin:0 auto}
+
+/* ═══════════ CHART ═══════════ */
+.chart-wrap{margin:48px 0;border-top:1px solid var(--ink);padding-top:24px}
+.chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;gap:16px}
+.chart-tl{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink)}
+.chart-meta{font-size:10px;color:var(--ink-4);letter-spacing:1.5px;text-transform:uppercase}
+.chart-canvas{position:relative;height:320px;width:100%}
+@media(max-width:520px){.chart-canvas{height:280px}}
+
+/* ═══════════ COMPARE ═══════════ */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:48px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.cc-col{padding:28px 24px}
+.cc-col+.cc-col{border-left:1px solid var(--rule)}
+.cc-tag{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.cc-name{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:20px;word-break:break-all}
+.cc-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-top:1px solid var(--rule);font-size:12.5px;gap:12px}
+.cc-row:first-of-type{border-top:1px solid var(--ink-2)}
+.cc-key{color:var(--ink-4);font-weight:500}
+.cc-val{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+@media(max-width:560px){
+  .compare{grid-template-columns:1fr}
+  .cc-col+.cc-col{border-left:none;border-top:1px solid var(--rule)}
+  .cc-col{padding:24px 0}
+  .cc-col:first-child{padding-top:0}
+}
+
+/* ═══════════ THREE DIRECTIONS ═══════════ */
+.three{margin:48px 0;border-top:1px solid var(--ink)}
+.three-row{
+  display:grid;grid-template-columns:48px 1fr;
+  gap:24px;padding:28px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+.three-row:last-child{border-bottom:1px solid var(--ink-2)}
+.three-num{font-family:'Pretendard Variable',sans-serif;font-size:32px;font-weight:200;color:var(--ink-4);line-height:1;letter-spacing:-1.5px}
+.three-label{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.3px}
+.three-text{font-size:13.5px;color:var(--ink-3);line-height:1.75}
+
+/* ═══════════ TARGET MATRIX ═══════════ */
+.matrix{margin:48px 0;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.mx-col{padding:28px 24px}
+.mx-col+.mx-col{border-left:1px solid var(--rule)}
+.mx-mark{font-family:'Pretendard Variable',sans-serif;font-size:24px;font-weight:200;color:var(--accent);margin-bottom:14px;letter-spacing:-1px;line-height:1}
+.mx-title{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:24px;letter-spacing:-.3px;padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.mx-block{margin-bottom:20px}
+.mx-block:last-child{margin-bottom:0}
+.mx-lbl{font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-4);margin-bottom:7px}
+.mx-text{font-size:13px;color:var(--ink);line-height:1.75}
+@media(max-width:560px){
+  .matrix{grid-template-columns:1fr}
+  .mx-col+.mx-col{border-left:none;border-top:1px solid var(--rule)}
+}
+
+/* ═══════════ DARK BLOCK ═══════════ */
+.dark-block{
+  background:var(--ink);color:#fff;
+  padding:56px var(--pp);
+  margin:64px 0;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  box-sizing:border-box;
+}
+@media(min-width:1180px){
+  .dark-block{
+    width:calc(100vw - var(--nav-w));
+    margin-left:calc(50% - 50vw + var(--nav-w)/2);
+    margin-right:calc(50% - 50vw + var(--nav-w)/2);
+    padding:80px var(--pp);
+  }
+}
+.db-inner{max-width:640px;margin:0 auto}
+.db-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#ff7a4a;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.db-label::before{content:"";width:18px;height:1px;background:#ff7a4a}
+.db-h{
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:clamp(20px,2.6vw,28px);
+  font-weight:300;letter-spacing:-.7px;
+  line-height:1.45;color:#fff;
+  margin-bottom:24px;
+}
+.db-h em{font-style:normal;color:#ff7a4a;font-weight:500}
+.db-h strong{font-weight:600;color:#fff}
+.db-body{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.7);max-width:580px}
+.db-body strong{color:#fff;font-weight:600}
+.db-body p+p{margin-top:18px}
+
+/* ═══════════ FLOW (next steps) ═══════════ */
+.flow{margin:48px 0 0;border-top:1px solid var(--ink)}
+.flow-item{
+  display:grid;grid-template-columns:48px 1fr;
+  gap:24px;padding:28px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+.flow-item:last-child{border-bottom:1px solid var(--ink-2)}
+.flow-num{font-family:'Pretendard Variable',sans-serif;font-size:24px;font-weight:200;color:var(--ink-4);line-height:1;letter-spacing:-1px;padding-top:4px}
+.flow-title{font-size:15px;font-weight:700;color:var(--ink);line-height:1.5;letter-spacing:-.3px;margin-bottom:8px}
+.flow-desc{font-size:13px;color:var(--ink-3);line-height:1.75}
+
+
+/* ═══════════ REVIEW CTA ═══════════ */
+.review-cta{
+  padding:0 var(--pp);
+  margin:0 0 64px;
+}
+.review-cta-inner{
+  max-width:640px;margin:0 auto;
+}
+.review-cta-greeting{
+  font-family:'SUIT Variable','Pretendard Variable',sans-serif;
+  font-size:19px;font-weight:700;letter-spacing:-.5px;
+  color:var(--ink);
+  margin:0 0 18px;
+}
+.review-cta-body{
+  font-size:15.5px;line-height:1.85;color:var(--ink-2);
+  margin-bottom:28px;letter-spacing:-.05px;
+}
+.review-cta-body strong{color:var(--ink);font-weight:600}
+.review-cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--accent);color:#fff;
+  border:none;
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:-.1px;
+  padding:14px 24px;
+  text-decoration:none;
+  transition:background .2s ease;
+}
+.review-cta-btn:hover{
+  background:#d04915;
+}
+.review-cta-btn .arrow{
+  display:inline-block;
+  transition:transform .2s ease;
+}
+.review-cta-btn:hover .arrow{
+  transform:translateX(3px);
+}
+@media(min-width:1180px){
+  .review-cta{margin-bottom:80px}
+}
+
+/* ═══════════ FOOTER ═══════════ */
+.foot{
+  border-top:1px solid var(--rule);
+  padding:48px var(--pp);
+  margin-top:64px;
+}
+.foot-inner{
+  max-width:var(--max-w);margin:0 auto;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:10px;color:var(--ink-4);letter-spacing:1.5px;text-transform:uppercase;
+  font-weight:500;
+}
+.foot-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);display:flex;align-items:center}
+.foot-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+@media(max-width:520px){.foot-inner{flex-direction:column;gap:10px;align-items:flex-start}}
+
+/* ═══════════ CLIENT VOICE ═══════════ */
+.voice-meta{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:0;margin-top:32px;
+  border-top:1px solid var(--rule);
+}
+.vm-item{
+  display:flex;flex-direction:column;gap:4px;
+  padding:14px 16px 14px 0;
+  border-bottom:1px solid var(--rule);
+}
+.vm-item:nth-child(2n){padding-left:16px;padding-right:0;border-left:1px solid var(--rule)}
+.vm-key{font-size:9.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-4)}
+.vm-val{font-size:13px;font-weight:500;color:var(--ink);letter-spacing:-.2px;line-height:1.5}
+
+.voice-list{margin-top:48px}
+.voice-item{
+  padding:32px 0;
+  border-bottom:1px solid var(--rule);
+}
+.voice-item:first-child{padding-top:0}
+.voice-item:last-child{border-bottom:1px solid var(--ink-2)}
+.voice-q-label{
+  display:inline-block;
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  color:var(--accent);margin-bottom:14px;
+  font-variant-numeric:tabular-nums;
+}
+.voice-q{
+  font-size:14.5px;font-weight:600;color:var(--ink-2);
+  letter-spacing:-.3px;line-height:1.5;margin-bottom:18px;
+}
+.voice-a{
+  font-size:15.5px;line-height:1.95;color:var(--ink);
+  letter-spacing:-.05px;font-weight:400;
+  word-break:normal;
+  overflow-wrap:break-word;
+}
+
+@media(max-width:560px){
+  .voice-meta{grid-template-columns:1fr}
+  .vm-item{padding:14px 0}
+  .vm-item:nth-child(2n){padding-left:0;border-left:none}
+}
+
+/* ═══════════ ANIMATIONS ═══════════ */
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* three directions - stagger */
+.three .three-row{opacity:0;transform:translateX(-8px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.three.visible .three-row{opacity:1;transform:translateX(0)}
+.three.visible .three-row:nth-child(1){transition-delay:.1s}
+.three.visible .three-row:nth-child(2){transition-delay:.25s}
+.three.visible .three-row:nth-child(3){transition-delay:.4s}
+
+/* compare cards stagger */
+.compare .cc-col{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.compare.visible .cc-col:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.1s}
+.compare.visible .cc-col:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.25s}
+
+/* matrix stagger */
+.matrix .mx-col{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.matrix.visible .mx-col:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.1s}
+.matrix.visible .mx-col:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.25s}
+
+/* flow stagger */
+.flow .flow-item{opacity:0;transform:translateX(-8px);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1)}
+.flow.visible .flow-item:nth-child(1){opacity:1;transform:translateX(0);transition-delay:.05s}
+.flow.visible .flow-item:nth-child(2){opacity:1;transform:translateX(0);transition-delay:.18s}
+.flow.visible .flow-item:nth-child(3){opacity:1;transform:translateX(0);transition-delay:.31s}
+.flow.visible .flow-item:nth-child(4){opacity:1;transform:translateX(0);transition-delay:.44s}
+
+/* dark block - bg first, then content */
+.dark-block{opacity:0;transition:opacity .8s cubic-bezier(.2,.8,.2,1)}
+.dark-block.visible{opacity:1}
+.dark-block .db-label,
+.dark-block .db-h,
+.dark-block .db-body{opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
+.dark-block.visible .db-label{opacity:1;transform:translateY(0);transition-delay:.2s}
+.dark-block.visible .db-h{opacity:1;transform:translateY(0);transition-delay:.35s}
+.dark-block.visible .db-body{opacity:1;transform:translateY(0);transition-delay:.5s}
+
+/* chart wrap fade - DISABLED to prevent rendering issue */
+.chart-wrap{opacity:1}
+
+@media (prefers-reduced-motion: reduce){
+  .fade-in,.three .three-row,.compare .cc-col,.matrix .mx-col,
+  .flow .flow-item,.dark-block,.chart-wrap,
+  .dark-block .db-label,.dark-block .db-h,.dark-block .db-body{
+    opacity:1!important;transform:none!important;transition:none!important;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════ TOP BAR (mobile/tablet) ═══════════ -->
+<header class="topbar" role="banner">
+  <div class="tb-inner">
+    <div class="tb-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div class="tb-current" id="tbCurrent"><span class="num">01</span>계정 현황</div>
+    <div class="tb-progress">
+      <div class="tb-prog-bar"><div class="tb-prog-fill" id="tbProgFill"></div></div>
+      <button class="tb-menu" id="tbMenu" aria-label="목차 열기">
+        <span class="tb-menu-icon"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<!-- ═══════════ SIDE NAV (desktop) ═══════════ -->
+<nav class="sidenav" aria-label="목차">
+  <div class="sn-masthead">
+    <div class="sn-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div class="sn-client">이승빈</div>
+    <div class="sn-tagline">@yourbintamin · N°011</div>
+  </div>
+  <div class="sn-head">Contents</div>
+  <ul class="sn-list">
+    <li class="sn-item"><a href="#s01"><span class="sn-num">01</span><span class="sn-title">계정 현황</span></a></li>
+    <li class="sn-item"><a href="#s02"><span class="sn-num">02</span><span class="sn-title">데이터 진단</span></a></li>
+    <li class="sn-item"><a href="#s03"><span class="sn-num">03</span><span class="sn-title">핵심 진단</span></a></li>
+    <li class="sn-item"><a href="#s04"><span class="sn-num">04</span><span class="sn-title">서사 부재</span></a></li>
+    <li class="sn-item"><a href="#s05"><span class="sn-num">05</span><span class="sn-title">유입 vs 전환</span></a></li>
+    <li class="sn-item"><a href="#s06"><span class="sn-num">06</span><span class="sn-title">상품 구조</span></a></li>
+    <li class="sn-item"><a href="#s07"><span class="sn-num">07</span><span class="sn-title">프로필</span></a></li>
+    <li class="sn-item"><a href="#s08"><span class="sn-num">08</span><span class="sn-title">키워드 확장</span></a></li>
+    <li class="sn-item"><a href="#s09"><span class="sn-num">09</span><span class="sn-title">우선순위</span></a></li>
+  </ul>
+  <div class="sn-foot">
+    <div class="sn-foot-lbl"><span>Progress</span><span class="sn-foot-num" id="snProgNum">0%</span></div>
+    <div class="sn-prog"><div class="sn-prog-fill" id="snProgFill"></div></div>
+  </div>
+</nav>
+
+
+<!-- ═══════════ MOBILE DRAWER ═══════════ -->
+<div class="drawer" id="drawer" role="dialog" aria-label="목차" aria-hidden="true">
+  <div class="drawer-head">
+    <div class="drawer-brand"><span class="dot"></span>RE:FEEEL</div>
+    <button class="drawer-close" id="drawerClose" aria-label="닫기">×</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-eyebrow">Contents</div>
+    <ul class="dw-list">
+      <li class="dw-item"><a href="#s01"><span class="dw-num">01</span><span class="dw-body"><span class="dw-title">계정 현황</span><span class="dw-desc">팔로워 5,409 · ER 9.04%</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s02"><span class="dw-num">02</span><span class="dw-body"><span class="dw-title">데이터 진단</span><span class="dw-desc">유입은 잘 되는데 전환이 없다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s03"><span class="dw-num">03</span><span class="dw-body"><span class="dw-title">핵심 진단</span><span class="dw-desc">콘텐츠가 진단하고 있다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s04"><span class="dw-num">04</span><span class="dw-body"><span class="dw-title">서사 부재</span><span class="dw-desc">이승빈이라는 사람이 안 보인다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s05"><span class="dw-num">05</span><span class="dw-body"><span class="dw-title">유입 vs 전환</span><span class="dw-desc">두 콘텐츠는 역할이 다르다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s06"><span class="dw-num">06</span><span class="dw-body"><span class="dw-title">상품 구조</span><span class="dw-desc">8주는 진입 장벽이 높다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s07"><span class="dw-num">07</span><span class="dw-body"><span class="dw-title">프로필</span><span class="dw-desc">전문이 아니라 고백이다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s08"><span class="dw-num">08</span><span class="dw-body"><span class="dw-title">키워드 확장</span><span class="dw-desc">가스라이팅 → 불안</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s09"><span class="dw-num">09</span><span class="dw-body"><span class="dw-title">우선순위</span><span class="dw-desc">다음 단계</span></span><span class="dw-arrow">→</span></a></li>
+    </ul>
+  </div>
+</div>
+
+
+<main>
+
+
+<!-- ═══════════ COVER ═══════════ -->
+<section class="cover" aria-label="표지">
+<div class="cover-inner">
+  <div class="cv-top">
+    <div>RE:FEEEL Consulting Brief</div>
+    <div class="r">
+      Brief N°011<br>
+      2026 . 05 . 06
+    </div>
+  </div>
+  <div class="cv-mid">
+    <div class="cv-label">Brand Strategy Diagnosis</div>
+    <h1 class="cv-h1">컨설팅 요약<span class="line2">이승빈 · @yourbintamin</span></h1>
+    <p class="cv-desc">
+      릴스를 잘 만드는 사람이라는 건 데이터가 증명합니다. 다만 콘텐츠의 역할이 [유입] 한쪽으로만 쏠려 있고, 그 위에 올려야 할 [이승빈이라는 사람]의 이야기가 비어 있습니다.
+    </p>
+  </div>
+  <div class="cv-bot">
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">01</div>
+      <div class="cv-kpi-val"><span class="ac">9.04</span><span style="font-size:.5em;">%</span></div>
+      <div class="cv-kpi-lbl">평균 ER</div>
+      <div class="cv-kpi-sub">콘텐츠 제작 능력은 검증된 수치</div>
+    </div>
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">02</div>
+      <div class="cv-kpi-val">5,409</div>
+      <div class="cv-kpi-lbl">팔로워</div>
+      <div class="cv-kpi-sub">정보를 보러 온 사람들</div>
+    </div>
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">03</div>
+      <div class="cv-kpi-val">41.15<span style="font-size:.5em;">%</span></div>
+      <div class="cv-kpi-lbl">최고 ER</div>
+      <div class="cv-kpi-sub">나르시시스트 1인칭 시점</div>
+    </div>
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">04</div>
+      <div class="cv-kpi-val">0.09<span style="font-size:.5em;">%</span></div>
+      <div class="cv-kpi-lbl">본인 서사 ER</div>
+      <div class="cv-kpi-sub">전체 최하위</div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════ INTRO ═══════════ -->
+<section class="intro" aria-label="서문">
+  <p>승빈님은 릴스를 잘 만드는 사람입니다. 스크립트 구조, 비유 활용, 빌런 시점 전환 — 콘텐츠 제작 능력 자체는 데이터가 증명하고 있어요. 평균 ER 9.04%는 흔치 않은 수치입니다.</p>
+  <p>다만 — 그 콘텐츠가 만드는 트래픽이 <em>전환으로 이어지지 않는 구조</em>입니다. 조회수가 터져도 매출이 그대로인 이유, 영업이 어렵게 느껴지는 이유. 모두 같은 지점에서 출발합니다. 이 브리프는 그 지점이 어디인지를 정리합니다.</p>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 01. 계정 현황 ═══════════ -->
+<section class="section" id="s01" data-title="계정 현황">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">01</span><span>Status</span></div>
+    <h2 class="s-title">콘텐츠는 <em>잘 만들고 있다</em></h2>
+    <p class="s-sub">평균 ER <strong>9.04%</strong>는 흔치 않은 수치이고, 주 2.4회 포스팅 빈도도 안정적이다. 다만 그 안에서 가장 잘 터지는 콘텐츠와 <strong>본인 서사 콘텐츠 사이에 큰 격차</strong>가 있다.</p>
+
+    <div class="compare">
+      <div class="cc-col">
+        <div class="cc-tag">Instagram</div>
+        <div class="cc-name">@yourbintamin</div>
+        <div class="cc-row"><span class="cc-key">팔로워</span><span class="cc-val">5,409</span></div>
+        <div class="cc-row"><span class="cc-key">팔로우</span><span class="cc-val">0</span></div>
+        <div class="cc-row"><span class="cc-key">게시물</span><span class="cc-val">60 (전량 릴스)</span></div>
+        <div class="cc-row"><span class="cc-key">평균 ER</span><span class="cc-val">9.04%</span></div>
+        <div class="cc-row"><span class="cc-key">포스팅 빈도</span><span class="cc-val">주 2.4회 (최근 8주)</span></div>
+      </div>
+      <div class="cc-col">
+        <div class="cc-tag">Business</div>
+        <div class="cc-name">가스라이팅 트라우마 케어</div>
+        <div class="cc-row"><span class="cc-key">분야</span><span class="cc-val">관계 · 정서 회복</span></div>
+        <div class="cc-row"><span class="cc-key">현재 상품</span><span class="cc-val">8주 프로그램</span></div>
+        <div class="cc-row"><span class="cc-key">회당 비용</span><span class="cc-val">5만 원</span></div>
+        <div class="cc-row"><span class="cc-key">매출 경로</span><span class="cc-val">인스타 DM → 프로그램 결제</span></div>
+        <div class="cc-row"><span class="cc-key">강점</span><span class="cc-val">본인 경험 · 콘텐츠 제작력</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 02. 데이터 진단 ═══════════ -->
+<section class="section" id="s02" data-title="데이터 진단">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">02</span><span>Data Diagnosis</span></div>
+    <h2 class="s-title">유입은 잘 되는데, <em>전환은 없다</em></h2>
+    <p class="s-sub">가장 잘 터지는 콘텐츠는 <strong>나르시시스트 1인칭 시점</strong> (ER 41.15%, 좋아요 2,112). 반대로 <strong>본인 경험 서사형</strong>은 ER 0.09%로 전체 최하위. 조회수는 올라가는데 매출은 그대로인 구조가 만들어진 이유다.</p>
+
+    <div class="hero">
+      <div class="hero-eyebrow">Content Inversion</div>
+      <div class="hero-num">457<span>×</span></div>
+      <div class="hero-headline">조회수를 만드는 콘텐츠 vs 신뢰를 만드는 콘텐츠</div>
+      <div class="hero-detail">충격·인용형 ER 41.15% ↔ 본인 경험 서사 ER 0.09%. 같은 사람이 만든 콘텐츠인데 트래픽과 신뢰 사이에서 완전히 갈렸다.</div>
+    </div>
+
+    <div class="chart-wrap">
+      <div class="chart-head">
+        <div class="chart-tl">톤별 평균 ER</div>
+        <div class="chart-meta">N=60 게시물 · 전량 릴스</div>
+      </div>
+      <div class="chart-canvas"><canvas id="hookChart"></canvas></div>
+    </div>
+
+    <div class="prose">
+      <p>초기에 본인 이야기를 올렸다가 반응이 안 나오니까 정보·진단형으로 선회한 흔적이 보입니다. 조회수는 올라갔지만 — <em>전환은 더 안 나오는 구조</em>가 그렇게 고착된 거예요. 서비스 공지형(컨설팅 이벤트)의 ER도 1.98%. <strong>팔로워는 정보를 보러 오지, 서비스를 사러 오지 않습니다.</strong></p>
+      <p>톤 분포도 같은 이야기를 합니다. 위로·공감형이 14.71%로 가장 높고, 정보 제공형이 8.57%. 그런데 신뢰의 영역으로 넘어가게 만드는 <em>경험 서사형은 0.09%로 거의 0에 가깝습니다.</em></p>
+    </div>
+  </div>
+
+  <div class="dark-block">
+    <div class="db-inner">
+      <div class="db-label">Key Insight</div>
+      <div class="db-h">
+        조회수 10만이 터져도 매출은 그대로일 수 있다. 반대로 조회수 6,000인 콘텐츠가 <em>매출을 3배 뛰게 만들 수도</em> 있다.
+      </div>
+      <div class="db-body">
+        <p>지금 봐야 할 지표는 조회수가 아닙니다. 어떤 콘텐츠가 <strong>"이 사람한테 돈을 내고 싶다"는 감정을 만드는가</strong> — 이게 진짜 봐야 할 변수입니다. 다음 섹션에서 왜 지금의 콘텐츠가 그 감정을 만들어내지 못하는지 분석합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 03. 핵심 진단 ═══════════ -->
+<section class="section" id="s03" data-title="핵심 진단">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">03</span><span>Core Diagnosis</span></div>
+    <h2 class="s-title">콘텐츠가 <em>진단하고 있다</em></h2>
+    <p class="s-sub">사람들이 정신의학과를 가기 싫어하는 이유 — <strong>내가 그 병을 가지고 있다는 걸 누군가가 진단한다는 것</strong>, 나한테 뭔가 이상이 있다는 것 자체가 무서운 일이다. 지금 콘텐츠의 톤이 그 구조와 비슷하다.</p>
+
+    <div class="prose">
+      <p><em>"너 지금 이런 상태야"</em>, <em>"이거 나만 이상해?"</em>, <em>"확신이 안 서면 체크 달아줘"</em> — 전문성을 보여주기 위해 상대의 상태를 짚어주는 방식인데, 진짜 그 상황에 있는 사람한테는 불편한 톤입니다.</p>
+      <p>특히 가스라이팅 피해자는 <em>누군가가 나를 정의하고 "이게 맞아"라고 하는 것에 대한 공포심</em>이 있는 사람이거든요. 콘텐츠가 그 구조를 반복하고 있는 셈입니다. 이 사람한테 돈을 내고 상담받고 싶다는 감정으로 이어지기 어려운 거예요.</p>
+      <p>마음이 아픈 사람들한테 필요한 첫 번째는 <strong>"누군가가 내 이야기를 들어주는 것"</strong>입니다. 지금 콘텐츠는 처음 보자마자 파헤치고 있어요. 정신과 의사가 진단만 내리는 느낌 — 거기서 사람들은 더 외로움을 느끼게 되니까요.</p>
+    </div>
+  </div>
+
+  <div class="dark-block">
+    <div class="db-inner">
+      <div class="db-label">Pivot Point</div>
+      <div class="db-h">
+        공유하고 저장하는 건 정보니까 하지만, <em>결제하고 만나는 건 신뢰의 영역</em>이다.
+      </div>
+      <div class="db-body">
+        <p>승빈님의 콘텐츠는 정보 채널로 소비되고 있습니다. 좋아요·저장·공유는 잘 일어나는데 — DM·결제·예약으로는 넘어가지 않는 구조. 이건 콘텐츠 양을 늘려서 해결되는 게 아니라, <strong>콘텐츠의 톤이 "진단"에서 "동행"으로 바뀌어야</strong> 풀리는 문제입니다.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 04. 타겟 불일치 ═══════════ -->
+<section class="section" id="s04" data-title="서사 부재">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">04</span><span>Narrative Gap</span></div>
+    <h2 class="s-title">"이승빈"이라는 사람이 <em>안 보인다</em></h2>
+    <p class="s-sub">설득에는 세 가지가 필요하다 — <strong>권위</strong>(누가 이야기하는가) + <strong>감정</strong>(공감) + <strong>논리</strong>(방법론). 지금 이 계정에는 <em>논리만 있다</em>.</p>
+
+    <div class="three">
+      <div class="three-row">
+        <div class="three-num">1</div>
+        <div>
+          <div class="three-label">권위 — 누가 이야기하는가  ✗</div>
+          <div class="three-text">프로필에 "직접 겪어봐서 압니다"라고 적혀 있는데, 콘텐츠에서는 겪어본 이야기가 거의 안 보인다. 어떤 관계에서 어떤 일이 벌어졌고, 어떻게 무너졌고, 거기서 어떻게 올라왔는지의 완결된 서사가 비어있다.</div>
+        </div>
+      </div>
+      <div class="three-row">
+        <div class="three-num">2</div>
+        <div>
+          <div class="three-label">감정 — 공감  ⚠</div>
+          <div class="three-text">위로·공감형 톤이 ER 14.71%로 가장 높게 나온다. 감정의 영역에서 반응을 만드는 능력은 있다. 다만 그게 "이승빈"이라는 사람과 연결되지 않아서, 감정 → 신뢰 → 결제로 이어지지 못하는 상태.</div>
+        </div>
+      </div>
+      <div class="three-row">
+        <div class="three-num">3</div>
+        <div>
+          <div class="three-label">논리 — 방법론  ✓</div>
+          <div class="three-text">가스라이팅의 메커니즘, 대처법, 체크리스트 — 전부 방법론. 정보로서는 충분히 잘 정리되어 있고, 그래서 저장·공유는 잘 일어나는 영역.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>상세 페이지도 마찬가지입니다. <em>"매일 무너지던 사람입니다. 불안장애로 무너졌던 시기."</em> — 이렇게만 적혀 있으면 와닿는 게 없어요. 왜 무너졌는지, 그때 뭐가 있었는지가 길게 풀려야 읽는 사람이 <strong>"이 사람이 진짜 거기 있었구나"</strong>를 느끼고, "이 사람은 나를 알아줄 수 있겠다"로 이어지게 되니까요.</p>
+      <p>심리학 책 중에 잘 팔리는 책을 보면 학술적인 내용은 거의 없습니다. 다 자기 이야기예요. 콘텐츠를 만들 때 학술지를 참고하는 건 좋은데, <em>콘텐츠 위에 올라가야 하는 건 논문이 아니라 이야기</em>입니다.</p>
+      <p>한 가지 짚어둘 것 — 타인한테는 "나한테 상담받아, 힘든 얘기 다 꺼내"라고 하면서, 본인은 "불편하다, 가족 이야기라서 못 꺼내겠다"가 동시에 있습니다. 이 모순을 인식하는 것이 첫 걸음입니다. 고객 사례를 콘텐츠로 쓸 때도 — 실명을 쓰는 게 아닙니다. <strong>성별을 바꾸거나 상황을 변형하면 됩니다.</strong> 방송에 나오는 전문가들도 전부 사연을 변형해서 쓰고 있어요. 사례가 없으면 책도, 콘텐츠도, 상세 페이지도 쓸 게 없습니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 05. 유입 vs 전환 ═══════════ -->
+<section class="section" id="s05" data-title="유입 vs 전환">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">05</span><span>Two Roles</span></div>
+    <h2 class="s-title">유입 콘텐츠와 전환 콘텐츠는 <em>역할이 다르다</em></h2>
+    <p class="s-sub">콘텐츠 방향을 완전히 바꾸라는 게 아니다. 정보·진단형 릴스를 잘 만드는 건 강점이고, 버릴 필요 없다. 다만 <strong>그 위에 전환 콘텐츠를 올려야</strong> 한다.</p>
+
+    <div class="compare">
+      <div class="cc-col">
+        <div class="cc-tag">현재 강점</div>
+        <div class="cc-name">유입 콘텐츠 (정보 · 진단형)</div>
+        <div class="cc-row"><span class="cc-key">역할</span><span class="cc-val">사람들을 끌어옴</span></div>
+        <div class="cc-row"><span class="cc-key">반응 지표</span><span class="cc-val">조회수, 저장, 공유</span></div>
+        <div class="cc-row"><span class="cc-key">감정 흐름</span><span class="cc-val">"오, 유익하네"</span></div>
+        <div class="cc-row"><span class="cc-key">결과</span><span class="cc-val">팔로우</span></div>
+      </div>
+      <div class="cc-col">
+        <div class="cc-tag">비어있는 영역</div>
+        <div class="cc-name">전환 콘텐츠 (서사 · 사례)</div>
+        <div class="cc-row"><span class="cc-key">역할</span><span class="cc-val">신뢰를 만든다</span></div>
+        <div class="cc-row"><span class="cc-key">반응 지표</span><span class="cc-val">DM, 결제, 예약</span></div>
+        <div class="cc-row"><span class="cc-key">감정 흐름</span><span class="cc-val">"이 사람이 나를 알아줄 것 같다"</span></div>
+        <div class="cc-row"><span class="cc-key">결과</span><span class="cc-val">상담 신청</span></div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p><strong>9~12개를 하나의 세트</strong>로 놓고, 유입과 전환을 섞는 흐름을 권합니다. 비율은 <em>유입 7 : 전환 3</em> 정도. 조회수가 10만 터졌을 때 트래픽은 올라가는데 매출은 그대로인 경우가 많습니다. 반대로 전환 콘텐츠는 조회수 6,000~7,000이어도 매출이 3배 뛰기도 합니다. 우리가 봐야 할 지표는 조회수가 아니거든요.</p>
+      <p>전환 콘텐츠에 들어갈 것 — <em>본인 이야기를 녹인 릴스, 고객이 변화한 사례(익명 · 세부 변경 가능), 프로그램 과정에서 일어나는 일.</em> 지금까지 만나본 분들의 이야기가 전부 소재가 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 06. 상품 구조 ═══════════ -->
+<section class="section" id="s06" data-title="상품 구조">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">06</span><span>Product Structure</span></div>
+    <h2 class="s-title">8주는 <em>진입 장벽이 너무 높다</em></h2>
+    <p class="s-sub">8주 프로그램, 회당 5만 원. 고객 입장에서 <strong>"8주"라는 단어 자체가 장벽</strong>이다. 결심이 어려워서가 아니라, 시작 전부터 부담스러운 호흡이라.</p>
+
+    <div class="prose">
+      <p>심리상담 1회 비용보다 적게 잡았다고 했는데, <em>비교 기준 자체를 바꾸는 걸 권합니다</em>. 이건 심리상담이 아니거든요. 심리상담과 비교하는 순간 "차라리 자격증 있는 상담사한테 가지"가 됩니다.</p>
+      <p>구조를 둘로 나누는 흐름이 자연스럽습니다 — <strong>1회짜리 단독 세션</strong>(금액을 올리되 접근은 쉽게), 그 위에 <strong>심화 패키지</strong>. 1회에서 너무 많이 해결해주면 다음이 없어요. 1회 세션에서 "이 사람한테 더 받고 싶다"는 감정을 만들고, 거기서 심화 패키지로 자연스럽게 넘어가는 흐름.</p>
+      <p>그리고 영업이 어렵게 느껴지는 건 — 성격의 문제가 아닙니다. <em>"영업"이라고 느끼는 이유 자체가 콘텐츠와 상품 구조가 연결이 안 되어 있기 때문</em>입니다. 콘텐츠에서 이미 "이 사람이 어떤 사람인지"가 보이고, 프로그램이 "뭘 해주는 건지"가 명확하면 영업을 따로 할 필요가 없어집니다. 콘텐츠 자체가 영업이 되니까요.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 07. 프로필 ═══════════ -->
+<section class="section" id="s07" data-title="프로필">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">07</span><span>Profile Reframe</span></div>
+    <h2 class="s-title">전문이 아니라 <em>고백이다</em></h2>
+    <p class="s-sub">"가스라이팅 트라우마 전문" — 이 한 줄이 <strong>"너네 가스라이팅 당했지? 너 트라우마 있지?"</strong>로 읽힌다. 같은 단어인데 위치만 바뀌면 완전히 다르게 읽힌다.</p>
+
+    <div class="compare">
+      <div class="cc-col">
+        <div class="cc-tag">현재</div>
+        <div class="cc-name">"가스라이팅 트라우마 전문"</div>
+        <div class="cc-row"><span class="cc-key">읽히는 방식</span><span class="cc-val">진단</span></div>
+        <div class="cc-row"><span class="cc-key">독자 반응</span><span class="cc-val">방어, 거리 두기</span></div>
+        <div class="cc-row"><span class="cc-key">감정 흐름</span><span class="cc-val">"너 그래"</span></div>
+      </div>
+      <div class="cc-col">
+        <div class="cc-tag">권장</div>
+        <div class="cc-name">"저 가스라이팅 당해봤고요. 트라우마도 있어요."</div>
+        <div class="cc-row"><span class="cc-key">읽히는 방식</span><span class="cc-val">고백</span></div>
+        <div class="cc-row"><span class="cc-key">독자 반응</span><span class="cc-val">동질감, 가까이 다가옴</span></div>
+        <div class="cc-row"><span class="cc-key">감정 흐름</span><span class="cc-val">"나도요"</span></div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>같은 단어가 위치만 바뀌어도 — <em>공격이 아니라 고백이 됩니다.</em> 바이오에는 고객이 실제로 쓰는 말, 상담할 때 가장 많이 했던 문장이 들어가는 흐름이 자연스럽습니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 08. 키워드 확장 ═══════════ -->
+<section class="section" id="s08" data-title="키워드 확장">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">08</span><span>Keyword Expansion</span></div>
+    <h2 class="s-title">"가스라이팅"에서 <em>"불안"으로 확장한다</em></h2>
+    <p class="s-sub">"가스라이팅"만으로 콘텐츠를 계속 만들면 <strong>소재가 좁아지고 단어 자체가 소모된다</strong>. "불안"이라는 상위 키워드로 확장하는 흐름을 권한다.</p>
+
+    <div class="prose">
+      <p>요즘 사람들이 사주를 많이 보는 이유도 결국 <em>불안</em> 때문이거든요. <strong>"요즘 사람들이 사주를 많이 보는 이유"</strong> 같은 유입 콘텐츠로 시작해서, 결국 불안의 본질로 연결하는 구조도 가능합니다. "가스라이팅"은 불안의 한 양태일 뿐이고, 상위 키워드로 올라가면 소재가 끝없이 풀려나옵니다.</p>
+    </div>
+
+    <div class="prose" style="margin-top:36px;">
+      <p><strong>참고 — 불안 관련 베스트셀러 카피</strong></p>
+      <p>서점에서 잘 팔리는 불안 관련 책들의 제목 · 띠지 카피 · 목차를 보는 흐름을 권합니다. 상세 페이지, 프로필 카피, 콘텐츠 훅 — 전부 여기서 참고할 수 있어요.</p>
+      <p style="padding-left:14px;border-left:2px solid var(--accent);font-size:14.5px;line-height:1.85;color:var(--ink-2);">
+        「불안 세대」 — 디지털 세계는 우리 아이들을 어떻게 병들게 하는가<br>
+        「비교와 불안의 시대」 — 단단한 사람으로 성장하는 자존감 교육<br>
+        「불안과 후회를 끊어내고 오늘을 사는 법」
+      </p>
+      <p>이 제목들에 학술적인 느낌이 하나도 없습니다. <em>전부 사람의 감정을 건드리는 언어</em>입니다. 콘텐츠 훅과 상세 페이지의 문장이 이 톤으로 가야 신뢰의 영역으로 넘어갈 수 있어요.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 09. 우선순위 ═══════════ -->
+<section class="section" id="s09" data-title="우선순위">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">09</span><span>Next Steps</span></div>
+    <h2 class="s-title">우선순위</h2>
+    <p class="s-sub">정보에서 이야기로, 진단에서 동행으로, 전문에서 고백으로. 여섯 가지를 순서대로 권한다.</p>
+
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div>
+          <div class="flow-title">본인 이야기를 콘텐츠에 녹이기</div>
+          <div class="flow-desc">정보형 사이사이에 경험 서사를 섞는다. 어떤 관계에서 어떤 일이 있었고, 어떻게 무너졌고, 어떻게 올라왔는지. 한 편의 완결된 이야기.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div>
+          <div class="flow-title">프로필 리빌드 — "전문"을 "고백"으로</div>
+          <div class="flow-desc">"가스라이팅 트라우마 전문" → "저 가스라이팅 당해봤고요." 같은 단어, 다른 위치. 고객의 언어를 반영한 바이오로 다시 쓴다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div>
+          <div class="flow-title">상품 구조 재설계 — 8주 단일 → 1회 + 심화</div>
+          <div class="flow-desc">진입 장벽을 낮춘 1회 단독 세션, 그 위에 심화 패키지. 1회에서 다 해결하지 않고 다음을 만드는 구조.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div>
+          <div class="flow-title">상세 페이지 리빌드 — "누군데"를 채운다</div>
+          <div class="flow-desc">방법론보다 이야기 먼저. "매일 무너지던 사람입니다"만으로는 와닿지 않는다. 왜 무너졌는지, 그때 뭐가 있었는지를 길게 풀어내는 것.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">5</div>
+        <div>
+          <div class="flow-title">"가스라이팅" → "불안"으로 키워드 확장</div>
+          <div class="flow-desc">한 단어로 콘텐츠를 계속 만들면 소재가 좁아진다. 상위 키워드로 올라가면 사주 · 비교 · 외로움 · 자존감까지 소재가 풀려나온다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">6</div>
+        <div>
+          <div class="flow-title">불안 관련 베스트셀러 3~5권 읽기</div>
+          <div class="flow-desc">목차 · 띠지 카피 · 서사 구조 참고. 잘 팔리는 책의 언어가 곧 잘 팔리는 콘텐츠의 언어다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dark-block">
+    <div class="db-inner">
+      <div class="db-label">One More</div>
+      <div class="db-h">
+        콘텐츠 제작 능력은 이미 검증됐다. 조회수가 증명하고 있다. 이제 필요한 건 그 콘텐츠 위에 <em>"이승빈"이라는 사람의 이야기</em>를 올리는 것.
+      </div>
+      <div class="db-body">
+        <p>사람들이 돈을 내는 건 정보가 아닙니다. <strong>"이 사람"</strong>입니다. 정보는 검색하면 다 나오는 시대니까요. 본인 이야기를 꺼내는 게 불편한 건 자연스러운 일이지만 — 그 불편함을 안고 한 발씩 꺼낼 때마다, 이 계정은 정보 채널이 아니라 사람의 이야기로 바뀌어 갑니다. 그게 결제로 이어지는 유일한 길입니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ REVIEW CTA ═══════════ -->
+<section class="review-cta" aria-label="후기 요청">
+  <div class="review-cta-inner">
+    <h3 class="review-cta-greeting">승빈님에게</h3>
+    <p class="review-cta-body">
+      이 컨설팅이 도움이 됐다면, 짧은 후기 한 줄을 부탁드립니다. 어떤 부분이 가장 도움이 됐는지, 한 줄이면 — 다음 코호트를 고민하는 분들에게 큰 도움이 되니까요.
+    </p>
+    <a href="https://refeeel.com/shop_view?idx=46" class="review-cta-btn" target="_blank" rel="noopener">
+      구매평 남기기 <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+
+</main>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div>본 브리프는 이승빈님을 위해 작성되었습니다 · © 2026</div>
+  </div>
+</footer>
+
+
+<script>
+// ── REVEAL ANIMATIONS ──
+const reveal = document.querySelectorAll('.three, .compare, .matrix, .flow, .dark-block');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+reveal.forEach(el => revealObserver.observe(el));
+
+// ── DRAWER ──
+const drawer = document.getElementById('drawer');
+const tbMenu = document.getElementById('tbMenu');
+const drawerClose = document.getElementById('drawerClose');
+function openDrawer(){ drawer.classList.add('open'); document.body.classList.add('drawer-open'); drawer.setAttribute('aria-hidden','false'); }
+function closeDrawer(){ drawer.classList.remove('open'); document.body.classList.remove('drawer-open'); drawer.setAttribute('aria-hidden','true'); }
+tbMenu?.addEventListener('click', openDrawer);
+drawerClose?.addEventListener('click', closeDrawer);
+drawer?.addEventListener('click', (e) => { if(e.target === drawer) closeDrawer(); });
+drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+// ── PROGRESS BAR ──
+const tbProgFill = document.getElementById('tbProgFill');
+const snProgFill = document.getElementById('snProgFill');
+const snProgNum = document.getElementById('snProgNum');
+
+function updateProgress(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+  if(tbProgFill) tbProgFill.style.width = pct + '%';
+  if(snProgFill) snProgFill.style.width = pct + '%';
+  if(snProgNum) snProgNum.textContent = Math.round(pct) + '%';
+}
+updateProgress();
+window.addEventListener('scroll', updateProgress, { passive: true });
+
+// ── ACTIVE SECTION ──
+const sections = document.querySelectorAll('section[id]');
+const snItems = document.querySelectorAll('.sn-item');
+const tbCurrent = document.getElementById('tbCurrent');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.id;
+      const num = id.replace('s','');
+      const title = entry.target.dataset.title || '';
+      snItems.forEach(item => {
+        const a = item.querySelector('a');
+        item.classList.toggle('active', a && a.getAttribute('href') === '#' + id);
+      });
+      if(tbCurrent && title){
+        tbCurrent.innerHTML = '<span class="num">' + num + '</span>' + title;
+      }
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+
+sections.forEach(sec => sectionObserver.observe(sec));
+
+// ── CHART ──
+let chartInstance = null;
+function initChart(){
+  const ctx = document.getElementById('hookChart');
+  if(!ctx || typeof Chart === 'undefined' || chartInstance) return;
+
+  chartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['위로 / 공감형', '정보 제공형', '홍보 / CTA형', '경험 서사형'],
+      datasets: [{
+        label: '평균 ER (%)',
+        data: [14.71, 8.57, 1.98, 0.09],
+        backgroundColor: ['#e75519', '#cfc9bd', '#aaa498', '#aaa498'],
+        borderWidth: 0,
+        barPercentage: 0.7,
+        categoryPercentage: 0.85
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#0a0a0a',
+          titleColor: '#fff',
+          bodyColor: 'rgba(255,255,255,0.85)',
+          padding: 10,
+          cornerRadius: 0,
+          displayColors: false,
+          callbacks: { label: (ctx) => ctx.parsed.x + '%' }
+        }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          max: 16,
+          grid: { color: '#ebe8e0', drawBorder: false },
+          border: { display: false },
+          ticks: {
+            color: '#8a8a8a',
+            font: { size: 10.5, family: "'SUIT Variable', sans-serif", weight: 500 },
+            stepSize: 4,
+            callback: (v) => v + '%'
+          }
+        },
+        y: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            color: '#2a2a2a',
+            font: { size: 12, family: "'SUIT Variable', sans-serif", weight: 600 },
+            padding: 14
+          }
+        }
+      },
+      animation: {
+        duration: 900,
+        easing: 'easeOutQuart',
+        delay: (context) => {
+          if(context.type === 'data' && context.mode === 'default'){
+            return context.dataIndex * 180;
+          }
+          return 0;
+        }
+      }
+    }
+  });
+}
+
+// Trigger chart render only when scrolled into view
+window.addEventListener('load', () => {
+  const chartEl = document.getElementById('hookChart');
+  if(!chartEl) return;
+
+  const chartObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        initChart();
+        chartObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  chartObserver.observe(chartEl);
+});
+</script>
+</body>
+</html>
