@@ -1,0 +1,1383 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>컨설팅 브리프 — 김재한 · @geulhan_</title>
+<meta name="description" content="MOVEL · 김재한 PT 브랜드 콘텐츠 전략 진단 · RE:FEEEL Consulting Brief"/>
+
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="컨설팅 브리프 — 김재한 · @geulhan_"/>
+<meta property="og:description" content="MOVEL · 김재한 PT 브랜드 콘텐츠 전략 진단 · RE:FEEEL Consulting Brief"/>
+<meta property="og:image" content="https://pub-f337889f68dc417a957731031766fb4f.r2.dev/logo_black.png"/>
+<meta property="og:site_name" content="RE:FEEEL"/>
+<meta property="og:locale" content="ko_KR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="컨설팅 브리프 — 김재한"/>
+<meta name="twitter:description" content="MOVEL · 김재한 PT 브랜드 콘텐츠 전략 진단 · RE:FEEEL"/>
+<meta name="twitter:image" content="https://pub-f337889f68dc417a957731031766fb4f.r2.dev/logo_black.png"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js" crossorigin="anonymous"></script>
+<style>
+/* ═══════════════════════════════════════════════════════
+   RE:FEEEL — Consulting Brief Design System
+   Hybrid: MUJI breathing + Editorial navigation
+   Restraint, whitespace, sage accent in single dose
+   ═══════════════════════════════════════════════════════ */
+
+:root{
+  --bg:#fafaf7;
+  --bg-soft:#f3f1ec;
+  --ink:#0a0a0a;
+  --ink-2:#2a2a2a;
+  --ink-3:#555555;
+  --ink-4:#8a8a8a;
+  --ink-5:#b8b8b8;
+  --rule:#e0ddd5;
+  --rule-soft:#ebe8e0;
+  --accent:#e75519;
+  --accent-soft:rgba(231,85,25,.08);
+
+  --pp:clamp(20px,4vw,48px);
+  --max-w:880px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{
+  font-family:'SUIT Variable','Pretendard Variable',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--ink-2);
+  font-size:15px;
+  line-height:1.85;
+  font-weight:400;
+  letter-spacing:-.005em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+  word-break:keep-all;
+}
+
+:focus-visible{outline:1.5px solid var(--accent);outline-offset:3px}
+
+/* ═══════════ TOP BAR (mobile/tablet) ═══════════ */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,250,247,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+  height:52px;
+  display:flex;align-items:center;
+  padding:0 var(--pp);
+}
+.tb-inner{max-width:var(--max-w);margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.tb-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);flex-shrink:0}
+.tb-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+.tb-current{font-size:11.5px;color:var(--ink-4);font-weight:500;letter-spacing:.3px;flex:1;text-align:center;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px}
+.tb-current .num{color:var(--ink);font-weight:700;margin-right:8px}
+.tb-progress{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.tb-prog-bar{width:64px;height:1px;background:var(--rule);position:relative;overflow:hidden}
+.tb-prog-fill{position:absolute;top:0;left:0;height:100%;background:var(--ink);width:0%;transition:width .3s ease}
+.tb-menu{
+  background:none;border:none;padding:8px;margin-right:-8px;
+  cursor:pointer;flex-shrink:0;color:var(--ink);
+  display:flex;align-items:center;
+}
+.tb-menu-icon{display:inline-flex;flex-direction:column;gap:4px;width:14px}
+.tb-menu-icon span{display:block;height:1px;background:currentColor}
+.tb-menu-icon span:nth-child(2){width:70%}
+
+@media(max-width:640px){
+  .tb-current{font-size:11px}
+  .tb-prog-bar{width:48px}
+}
+@media(min-width:1180px){
+  .topbar{display:none}
+}
+
+/* ═══════════ SIDE NAV (desktop) ═══════════ */
+.sidenav{display:none}
+@media(min-width:1180px){
+  :root{ --nav-w:240px; }
+  .sidenav{
+    display:flex;flex-direction:column;
+    position:fixed;top:0;left:0;bottom:0;
+    width:var(--nav-w);z-index:80;
+    padding:48px 24px 32px 36px;
+    background:var(--bg);
+    border-right:1px solid var(--rule);
+    box-sizing:border-box;
+  }
+  .sn-masthead{margin-bottom:56px}
+  .sn-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);margin-bottom:24px;display:flex;align-items:center}
+  .sn-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+  .sn-client{font-size:13.5px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.4;margin-bottom:6px}
+  .sn-tagline{font-size:10px;font-weight:600;color:var(--ink-4);letter-spacing:1.6px;text-transform:uppercase}
+  .sn-head{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--ink-4);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .sn-head::before{content:"";width:14px;height:1px;background:var(--ink-4)}
+  .sn-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;flex:1;overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}
+  .sn-list::-webkit-scrollbar{display:none}
+  .sn-item a{
+    display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:baseline;
+    padding:7px 0;text-decoration:none;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .sn-item a:hover{transform:translateX(2px)}
+  .sn-item a:hover .sn-title{color:var(--ink)}
+  .sn-num{font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--ink-5);font-variant-numeric:tabular-nums}
+  .sn-title{font-size:12.5px;font-weight:500;color:var(--ink-3);letter-spacing:-.2px;transition:color .2s ease}
+  .sn-item.active .sn-num{color:var(--accent)}
+  .sn-item.active .sn-title{color:var(--ink);font-weight:700}
+  .sn-foot{padding-top:24px;border-top:1px solid var(--rule);margin-top:24px}
+  .sn-foot-lbl{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--ink-4);text-transform:uppercase;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .sn-foot-num{color:var(--ink);font-variant-numeric:tabular-nums}
+  .sn-prog{width:100%;height:1px;background:var(--rule);position:relative;overflow:hidden}
+  .sn-prog-fill{position:absolute;top:0;left:0;height:100%;background:var(--ink);width:0%;transition:width .3s ease}
+}
+
+/* ═══════════ MOBILE DRAWER ═══════════ */
+.drawer{
+  position:fixed;inset:0;z-index:200;
+  background:var(--ink);color:#fff;
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .3s cubic-bezier(.2,.8,.2,1), visibility 0s linear .3s;
+}
+.drawer.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .3s cubic-bezier(.2,.8,.2,1), visibility 0s linear 0s}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:0 var(--pp);height:52px;border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0}
+.drawer-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:#fff;display:flex;align-items:center}
+.drawer-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px}
+.drawer-close{background:none;border:none;color:#fff;cursor:pointer;padding:8px;margin-right:-8px;font-size:22px;line-height:1;font-weight:300}
+.drawer-body{flex:1;overflow-y:auto;padding:48px var(--pp) 64px}
+.drawer-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:32px;display:flex;align-items:center;gap:10px}
+.drawer-eyebrow::before{content:"";width:18px;height:1px;background:var(--accent)}
+.dw-list{list-style:none;margin:0;padding:0}
+.dw-item a{display:grid;grid-template-columns:32px 1fr 16px;gap:14px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;color:inherit;transition:padding-left .3s cubic-bezier(.2,.8,.2,1)}
+.dw-item a:active{padding-left:6px}
+.dw-num{font-size:11px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.5);font-variant-numeric:tabular-nums;padding-top:2px}
+.dw-body{display:flex;flex-direction:column;gap:4px}
+.dw-title{font-size:16px;font-weight:600;color:#fff;letter-spacing:-.3px;line-height:1.4}
+.dw-desc{font-size:12px;color:rgba(255,255,255,.5);line-height:1.5}
+.dw-arrow{font-size:13px;color:rgba(255,255,255,.4);padding-top:4px;text-align:right}
+body.drawer-open{overflow:hidden}
+
+/* ═══════════ MAIN ═══════════ */
+main{padding-top:52px}
+@media(min-width:1180px){main{padding-top:0;padding-left:var(--nav-w)}}
+
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pp)}
+.wrap-narrow{max-width:640px;margin:0 auto;padding:0 var(--pp)}
+
+/* ═══════════ COVER ═══════════ */
+.cover{
+  background:var(--ink);color:#fff;
+  min-height:calc(100vh - 52px);
+  display:flex;flex-direction:column;
+  padding:64px var(--pp) 48px;
+  position:relative;
+}
+@media(min-width:1180px){
+  .cover{min-height:100vh;padding:80px var(--pp) 64px}
+}
+.cover-inner{max-width:var(--max-w);margin:0 auto;width:100%;display:flex;flex-direction:column;flex:1}
+.cv-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:48px;font-size:10px;letter-spacing:2.5px;color:rgba(255,255,255,.5);text-transform:uppercase;font-weight:600}
+.cv-top .r{text-align:right;line-height:1.8}
+.cv-mid{flex:1;display:flex;flex-direction:column;justify-content:center;padding:48px 0}
+.cv-label{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:32px;display:flex;align-items:center;gap:10px}
+.cv-label::before{content:"";width:24px;height:1px;background:var(--accent)}
+.cv-h1{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(40px,7vw,80px);
+  font-weight:300;letter-spacing:-2.5px;
+  line-height:1;color:#fff;
+  margin-bottom:24px;
+}
+.cv-h1 .line2{display:block;color:rgba(255,255,255,.4);font-weight:200;font-size:.55em;letter-spacing:-1px;margin-top:14px}
+.cv-desc{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.7);max-width:480px;font-weight:400;margin-top:16px}
+.cv-bot{padding-top:48px;border-top:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.cv-kpi{padding:0}
+.cv-kpi-num{font-size:9.5px;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:1.5px;margin-bottom:14px}
+.cv-kpi-val{font-family:'Pretendard Variable','SUIT Variable',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:300;letter-spacing:-1.5px;line-height:1;color:#fff;margin-bottom:14px;font-variant-numeric:tabular-nums}
+.cv-kpi-val .ac{color:#ff7a4a}
+.cv-kpi-lbl{font-size:12px;font-weight:600;color:#fff;margin-bottom:3px;letter-spacing:-.1px}
+.cv-kpi-sub{font-size:11px;color:rgba(255,255,255,.5);line-height:1.5}
+
+@media(max-width:640px){
+  .cv-bot{grid-template-columns:repeat(2,1fr);gap:32px 16px}
+}
+
+/* ═══════════ DOTS DIVIDER ═══════════ */
+.dots{
+  text-align:center;
+  font-size:11px;
+  color:var(--ink-5);
+  letter-spacing:6px;
+  padding:24px 0;
+}
+@media(min-width:1180px){
+  .dots{padding:32px 0}
+}
+
+/* ═══════════ INTRO ═══════════ */
+.intro{padding:48px var(--pp) 0;max-width:640px;margin:0 auto}
+@media(min-width:1180px){.intro{padding-top:64px}}
+.intro p{font-size:15.5px;line-height:1.85;color:var(--ink-3);margin-bottom:22px}
+.intro p:last-child{margin-bottom:0}
+.intro em{font-style:normal;color:var(--ink);font-weight:600}
+
+/* ═══════════ TOC ═══════════ */
+.toc-section{padding-top:96px;padding-bottom:0}
+@media(min-width:1180px){.toc-section{padding-top:128px}}
+.toc-eyebrow{font-size:10px;font-weight:600;letter-spacing:2.5px;color:var(--ink-4);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.toc-eyebrow::before{content:"";width:18px;height:1px;background:var(--accent)}
+.toc-title{font-family:'Pretendard Variable','SUIT Variable',sans-serif;font-size:clamp(26px,3.5vw,36px);font-weight:300;letter-spacing:-1px;line-height:1.25;color:var(--ink);margin-bottom:48px}
+.toc-list{border-top:1px solid var(--ink)}
+.toc-item{
+  display:grid;grid-template-columns:60px 1fr 24px;gap:24px;align-items:baseline;
+  padding:22px 0;border-bottom:1px solid var(--rule);
+  text-decoration:none;color:inherit;
+  transition:padding-left .35s cubic-bezier(.2,.8,.2,1);
+}
+.toc-item:hover{padding-left:8px}
+.toc-item:hover .toc-arrow{color:var(--accent);transform:translateX(4px)}
+.toc-num{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--ink-4);padding-top:6px;font-variant-numeric:tabular-nums}
+.toc-body{display:flex;flex-direction:column;gap:5px}
+.toc-tl{font-size:17px;font-weight:600;color:var(--ink);letter-spacing:-.3px;line-height:1.35}
+.toc-desc{font-size:13px;color:var(--ink-3);line-height:1.6}
+.toc-arrow{font-size:13px;color:var(--ink-5);padding-top:8px;text-align:right;transition:color .25s ease, transform .3s cubic-bezier(.2,.8,.2,1)}
+@media(max-width:560px){
+  .toc-item{grid-template-columns:40px 1fr 16px;gap:16px}
+  .toc-tl{font-size:15.5px}
+  .toc-desc{font-size:12.5px}
+}
+
+/* ═══════════ SECTION ═══════════ */
+.section{padding:0 var(--pp);scroll-margin-top:32px}
+.section-inner{max-width:640px;margin:0 auto;padding:48px 0}
+@media(min-width:1180px){.section-inner{padding:64px 0}}
+
+.s-marker{
+  display:flex;align-items:baseline;gap:14px;
+  margin-bottom:24px;
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:10px;font-weight:600;letter-spacing:2.5px;
+  color:var(--ink-4);text-transform:uppercase;
+}
+.s-marker-num{color:var(--ink);font-weight:700}
+
+.s-title{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(28px,4vw,40px);
+  font-weight:300;letter-spacing:-1.2px;
+  line-height:1.25;color:var(--ink);
+  margin-bottom:24px;
+}
+.s-title em{font-style:normal;color:var(--ink-4);font-weight:200}
+
+.s-sub{
+  font-size:15px;line-height:1.75;color:var(--ink-3);
+  font-weight:400;margin-bottom:36px;
+}
+.s-sub strong{color:var(--ink);font-weight:600}
+
+/* ═══════════ PROSE ═══════════ */
+.prose{font-size:15.5px;line-height:1.85;color:var(--ink-3)}
+.prose p{margin-bottom:22px}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--ink);font-weight:600}
+.prose em{font-style:normal;color:var(--ink);font-weight:600;background-image:linear-gradient(to top,var(--accent-soft) 30%,transparent 30%);padding:0 3px}
+
+/* ═══════════ HERO STAT ═══════════ */
+.hero{
+  margin:48px 0;
+  padding:48px 0;
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--rule);
+  text-align:center;
+}
+.hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero-num{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(96px,15vw,160px);
+  font-weight:200;letter-spacing:-5px;line-height:.9;
+  color:var(--ink);font-variant-numeric:tabular-nums;
+  margin-bottom:24px;
+}
+.hero-num span{font-size:.4em;vertical-align:.5em;margin-left:0;color:var(--ink-4);font-weight:300}
+.hero-headline{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.3px;line-height:1.5;margin-bottom:8px}
+.hero-detail{font-size:13px;color:var(--ink-4);line-height:1.7;max-width:380px;margin:0 auto}
+
+/* ═══════════ CHART ═══════════ */
+.chart-wrap{margin:48px 0;border-top:1px solid var(--ink);padding-top:24px}
+.chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;gap:16px}
+.chart-tl{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink)}
+.chart-meta{font-size:10px;color:var(--ink-4);letter-spacing:1.5px;text-transform:uppercase}
+.chart-canvas{position:relative;height:320px;width:100%}
+@media(max-width:520px){.chart-canvas{height:280px}}
+
+/* ═══════════ COMPARE ═══════════ */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:48px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.cc-col{padding:28px 24px}
+.cc-col+.cc-col{border-left:1px solid var(--rule)}
+.cc-tag{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.cc-name{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:20px;word-break:break-all}
+.cc-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-top:1px solid var(--rule);font-size:12.5px;gap:12px}
+.cc-row:first-of-type{border-top:1px solid var(--ink-2)}
+.cc-key{color:var(--ink-4);font-weight:500}
+.cc-val{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+@media(max-width:560px){
+  .compare{grid-template-columns:1fr}
+  .cc-col+.cc-col{border-left:none;border-top:1px solid var(--rule)}
+  .cc-col{padding:24px 0}
+  .cc-col:first-child{padding-top:0}
+}
+
+/* ═══════════ THREE DIRECTIONS ═══════════ */
+.three{margin:48px 0;border-top:1px solid var(--ink)}
+.three-row{
+  display:grid;grid-template-columns:48px 1fr;
+  gap:24px;padding:28px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+.three-row:last-child{border-bottom:1px solid var(--ink-2)}
+.three-num{font-family:'Pretendard Variable',sans-serif;font-size:32px;font-weight:200;color:var(--ink-4);line-height:1;letter-spacing:-1.5px}
+.three-label{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.3px}
+.three-text{font-size:13.5px;color:var(--ink-3);line-height:1.75}
+
+/* ═══════════ TARGET MATRIX ═══════════ */
+.matrix{margin:48px 0;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.mx-col{padding:28px 24px}
+.mx-col+.mx-col{border-left:1px solid var(--rule)}
+.mx-mark{font-family:'Pretendard Variable',sans-serif;font-size:24px;font-weight:200;color:var(--accent);margin-bottom:14px;letter-spacing:-1px;line-height:1}
+.mx-title{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:24px;letter-spacing:-.3px;padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.mx-block{margin-bottom:20px}
+.mx-block:last-child{margin-bottom:0}
+.mx-lbl{font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-4);margin-bottom:7px}
+.mx-text{font-size:13px;color:var(--ink);line-height:1.75}
+@media(max-width:560px){
+  .matrix{grid-template-columns:1fr}
+  .mx-col+.mx-col{border-left:none;border-top:1px solid var(--rule)}
+}
+
+/* ═══════════ DARK BLOCK ═══════════ */
+.dark-block{
+  background:var(--ink);color:#fff;
+  padding:56px var(--pp);
+  margin:64px 0;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  box-sizing:border-box;
+}
+@media(min-width:1180px){
+  .dark-block{
+    width:calc(100vw - var(--nav-w));
+    margin-left:calc(50% - 50vw + var(--nav-w)/2);
+    margin-right:calc(50% - 50vw + var(--nav-w)/2);
+    padding:80px var(--pp);
+  }
+}
+.db-inner{max-width:640px;margin:0 auto}
+.db-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#ff7a4a;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.db-label::before{content:"";width:18px;height:1px;background:#ff7a4a}
+.db-h{
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:clamp(20px,2.6vw,28px);
+  font-weight:300;letter-spacing:-.7px;
+  line-height:1.45;color:#fff;
+  margin-bottom:24px;
+}
+.db-h em{font-style:normal;color:#ff7a4a;font-weight:500}
+.db-h strong{font-weight:600;color:#fff}
+.db-body{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.7);max-width:580px}
+.db-body strong{color:#fff;font-weight:600}
+.db-body p+p{margin-top:18px}
+
+/* ═══════════ FLOW (next steps) ═══════════ */
+.flow{margin:48px 0 0;border-top:1px solid var(--ink)}
+.flow-item{
+  display:grid;grid-template-columns:48px 1fr;
+  gap:24px;padding:28px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+.flow-item:last-child{border-bottom:1px solid var(--ink-2)}
+.flow-num{font-family:'Pretendard Variable',sans-serif;font-size:24px;font-weight:200;color:var(--ink-4);line-height:1;letter-spacing:-1px;padding-top:4px}
+.flow-title{font-size:15px;font-weight:700;color:var(--ink);line-height:1.5;letter-spacing:-.3px;margin-bottom:8px}
+.flow-desc{font-size:13px;color:var(--ink-3);line-height:1.75}
+
+
+/* ═══════════ REVIEW CTA ═══════════ */
+.review-cta{
+  padding:0 var(--pp);
+  margin:0 0 64px;
+}
+.review-cta-inner{
+  max-width:640px;margin:0 auto;
+}
+.review-cta-greeting{
+  font-family:'SUIT Variable','Pretendard Variable',sans-serif;
+  font-size:19px;font-weight:700;letter-spacing:-.5px;
+  color:var(--ink);
+  margin:0 0 18px;
+}
+.review-cta-body{
+  font-size:15.5px;line-height:1.85;color:var(--ink-2);
+  margin-bottom:28px;letter-spacing:-.05px;
+}
+.review-cta-body strong{color:var(--ink);font-weight:600}
+.review-cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--accent);color:#fff;
+  border:none;
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:-.1px;
+  padding:14px 24px;
+  text-decoration:none;
+  transition:background .2s ease;
+}
+.review-cta-btn:hover{
+  background:#d04915;
+}
+.review-cta-btn .arrow{
+  display:inline-block;
+  transition:transform .2s ease;
+}
+.review-cta-btn:hover .arrow{
+  transform:translateX(3px);
+}
+@media(min-width:1180px){
+  .review-cta{margin-bottom:80px}
+}
+
+/* ═══════════ RECORDING LINK ═══════════ */
+.recording-link{
+  padding:0 var(--pp);
+  margin:48px 0 64px;
+}
+.recording-inner{
+  max-width:640px;margin:0 auto;
+  padding-top:24px;
+  border-top:1px solid var(--rule);
+}
+.recording-label{
+  font-size:10px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--ink-4);
+  margin-bottom:10px;
+}
+.recording-title{
+  font-family:'SUIT Variable','Pretendard Variable',sans-serif;
+  font-size:17px;font-weight:700;letter-spacing:-.4px;
+  color:var(--ink);margin-bottom:8px;
+}
+.recording-desc{
+  font-size:14.5px;line-height:1.75;color:var(--ink-3);
+  margin-bottom:18px;
+}
+.recording-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid var(--ink);
+  color:var(--ink);background:transparent;
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:12px;font-weight:600;letter-spacing:-.1px;
+  padding:11px 18px;
+  text-decoration:none;
+  transition:background .2s ease, color .2s ease;
+}
+.recording-btn:hover{
+  background:var(--ink);color:#fff;
+}
+.recording-btn .arrow{display:inline-block;transition:transform .2s ease}
+.recording-btn:hover .arrow{transform:translateX(3px)}
+
+/* ═══════════ CONTENT MATRIX ═══════════ */
+.cmx{
+  margin:32px 0 28px;
+  border-top:1px solid var(--rule);
+}
+.cmx-row{
+  display:flex;align-items:center;gap:20px;
+  padding:18px 0;
+  border-bottom:1px solid var(--rule);
+}
+.cmx-rank{
+  font-family:'SUIT Variable','Pretendard Variable',sans-serif;
+  font-size:13px;font-weight:700;
+  color:var(--ink-4);
+  letter-spacing:-.2px;
+  width:24px;flex-shrink:0;
+}
+.cmx-body{flex:1;min-width:0}
+.cmx-title{
+  font-size:14.5px;font-weight:600;
+  color:var(--ink);
+  letter-spacing:-.3px;line-height:1.55;
+  margin-bottom:4px;
+}
+.cmx-meta{
+  font-size:13px;color:var(--ink-3);
+  line-height:1.5;
+}
+.cmx-stat{
+  font-family:'SUIT Variable','Pretendard Variable',sans-serif;
+  font-size:22px;font-weight:700;
+  color:var(--ink);
+  letter-spacing:-.5px;
+  flex-shrink:0;
+  min-width:44px;text-align:right;
+}
+.cmx-row.is-peak .cmx-stat{color:var(--accent)}
+
+/* ═══════════ INLINE CTA ═══════════ */
+.inline-cta{
+  margin:32px 0 8px;
+  padding-top:24px;
+  border-top:1px solid var(--rule);
+}
+.inline-cta-label{
+  font-size:10px;font-weight:700;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--ink-4);
+  margin-bottom:10px;
+}
+.inline-cta-title{
+  font-family:'SUIT Variable','Pretendard Variable',sans-serif;
+  font-size:17px;font-weight:700;letter-spacing:-.4px;
+  color:var(--ink);margin-bottom:8px;
+}
+.inline-cta-desc{
+  font-size:14.5px;line-height:1.75;color:var(--ink-3);
+  margin-bottom:18px;
+}
+.inline-cta-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent);color:#fff;border:none;
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:12px;font-weight:600;letter-spacing:-.1px;
+  padding:11px 18px;
+  text-decoration:none;
+  transition:background .2s ease;
+}
+.inline-cta-btn:hover{background:#d04915}
+.inline-cta-btn .arrow{display:inline-block;transition:transform .2s ease}
+.inline-cta-btn:hover .arrow{transform:translateX(3px)}
+
+/* ═══════════ FOOTER ═══════════ */
+.foot{
+  border-top:1px solid var(--rule);
+  padding:48px var(--pp);
+  margin-top:64px;
+}
+.foot-inner{
+  max-width:var(--max-w);margin:0 auto;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:10px;color:var(--ink-4);letter-spacing:1.5px;text-transform:uppercase;
+  font-weight:500;
+}
+.foot-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);display:flex;align-items:center}
+.foot-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+@media(max-width:520px){.foot-inner{flex-direction:column;gap:10px;align-items:flex-start}}
+
+/* ═══════════ CLIENT VOICE ═══════════ */
+.voice-meta{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:0;margin-top:32px;
+  border-top:1px solid var(--rule);
+}
+.vm-item{
+  display:flex;flex-direction:column;gap:4px;
+  padding:14px 16px 14px 0;
+  border-bottom:1px solid var(--rule);
+}
+.vm-item:nth-child(2n){padding-left:16px;padding-right:0;border-left:1px solid var(--rule)}
+.vm-key{font-size:9.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-4)}
+.vm-val{font-size:13px;font-weight:500;color:var(--ink);letter-spacing:-.2px;line-height:1.5}
+
+.voice-list{margin-top:48px}
+.voice-item{
+  padding:32px 0;
+  border-bottom:1px solid var(--rule);
+}
+.voice-item:first-child{padding-top:0}
+.voice-item:last-child{border-bottom:1px solid var(--ink-2)}
+.voice-q-label{
+  display:inline-block;
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  color:var(--accent);margin-bottom:14px;
+  font-variant-numeric:tabular-nums;
+}
+.voice-q{
+  font-size:14.5px;font-weight:600;color:var(--ink-2);
+  letter-spacing:-.3px;line-height:1.5;margin-bottom:18px;
+}
+.voice-a{
+  font-size:15.5px;line-height:1.95;color:var(--ink);
+  letter-spacing:-.05px;font-weight:400;
+  word-break:normal;
+  overflow-wrap:break-word;
+}
+
+@media(max-width:560px){
+  .voice-meta{grid-template-columns:1fr}
+  .vm-item{padding:14px 0}
+  .vm-item:nth-child(2n){padding-left:0;border-left:none}
+}
+
+/* ═══════════ ANIMATIONS ═══════════ */
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* three directions - stagger */
+.three .three-row{opacity:0;transform:translateX(-8px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.three.visible .three-row{opacity:1;transform:translateX(0)}
+.three.visible .three-row:nth-child(1){transition-delay:.1s}
+.three.visible .three-row:nth-child(2){transition-delay:.25s}
+.three.visible .three-row:nth-child(3){transition-delay:.4s}
+
+/* compare cards stagger */
+.compare .cc-col{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.compare.visible .cc-col:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.1s}
+.compare.visible .cc-col:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.25s}
+
+/* matrix stagger */
+.matrix .mx-col{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.matrix.visible .mx-col:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.1s}
+.matrix.visible .mx-col:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.25s}
+
+/* flow stagger */
+.flow .flow-item{opacity:0;transform:translateX(-8px);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1)}
+.flow.visible .flow-item:nth-child(1){opacity:1;transform:translateX(0);transition-delay:.05s}
+.flow.visible .flow-item:nth-child(2){opacity:1;transform:translateX(0);transition-delay:.18s}
+.flow.visible .flow-item:nth-child(3){opacity:1;transform:translateX(0);transition-delay:.31s}
+.flow.visible .flow-item:nth-child(4){opacity:1;transform:translateX(0);transition-delay:.44s}
+
+/* dark block - bg first, then content */
+.dark-block{opacity:0;transition:opacity .8s cubic-bezier(.2,.8,.2,1)}
+.dark-block.visible{opacity:1}
+.dark-block .db-label,
+.dark-block .db-h,
+.dark-block .db-body{opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
+.dark-block.visible .db-label{opacity:1;transform:translateY(0);transition-delay:.2s}
+.dark-block.visible .db-h{opacity:1;transform:translateY(0);transition-delay:.35s}
+.dark-block.visible .db-body{opacity:1;transform:translateY(0);transition-delay:.5s}
+
+/* chart wrap fade - DISABLED to prevent rendering issue */
+.chart-wrap{opacity:1}
+
+@media (prefers-reduced-motion: reduce){
+  .fade-in,.three .three-row,.compare .cc-col,.matrix .mx-col,
+  .flow .flow-item,.dark-block,.chart-wrap,
+  .dark-block .db-label,.dark-block .db-h,.dark-block .db-body{
+    opacity:1!important;transform:none!important;transition:none!important;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════ TOP BAR (mobile/tablet) ═══════════ -->
+<header class="topbar" role="banner">
+  <div class="tb-inner">
+    <div class="tb-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div class="tb-current" id="tbCurrent"><span class="num">01</span>계정 현황</div>
+    <div class="tb-progress">
+      <div class="tb-prog-bar"><div class="tb-prog-fill" id="tbProgFill"></div></div>
+      <button class="tb-menu" id="tbMenu" aria-label="목차 열기">
+        <span class="tb-menu-icon"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<!-- ═══════════ SIDE NAV (desktop) ═══════════ -->
+<nav class="sidenav" aria-label="목차">
+  <div class="sn-masthead">
+    <div class="sn-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div class="sn-client">김재한</div>
+    <div class="sn-tagline">@geulhan_ · N°013</div>
+  </div>
+  <div class="sn-head">Contents</div>
+  <ul class="sn-list">
+    <li class="sn-item"><a href="#s01"><span class="sn-num">01</span><span class="sn-title">두 계정의 구조</span></a></li>
+    <li class="sn-item"><a href="#s02"><span class="sn-num">02</span><span class="sn-title">데이터 진단</span></a></li>
+    <li class="sn-item"><a href="#s03"><span class="sn-num">03</span><span class="sn-title">핵심 진단</span></a></li>
+    <li class="sn-item"><a href="#s04"><span class="sn-num">04</span><span class="sn-title">타겟 좁히기</span></a></li>
+    <li class="sn-item"><a href="#s05"><span class="sn-num">05</span><span class="sn-title">채널 역할 분리</span></a></li>
+    <li class="sn-item"><a href="#s06"><span class="sn-num">06</span><span class="sn-title">콘텐츠 — 고객이 나와야</span></a></li>
+    <li class="sn-item"><a href="#s07"><span class="sn-num">07</span><span class="sn-title">전문성을 쉽게</span></a></li>
+    <li class="sn-item"><a href="#s08"><span class="sn-num">08</span><span class="sn-title">차별점 — "보는 눈"</span></a></li>
+    <li class="sn-item"><a href="#s09"><span class="sn-num">09</span><span class="sn-title">리뷰 + 플레이스</span></a></li>
+    <li class="sn-item"><a href="#s10"><span class="sn-num">10</span><span class="sn-title">우선순위</span></a></li>
+  </ul>
+  <div class="sn-foot">
+    <div class="sn-foot-lbl"><span>Progress</span><span class="sn-foot-num" id="snProgNum">0%</span></div>
+    <div class="sn-prog"><div class="sn-prog-fill" id="snProgFill"></div></div>
+  </div>
+</nav>
+
+
+<!-- ═══════════ MOBILE DRAWER ═══════════ -->
+<div class="drawer" id="drawer" role="dialog" aria-label="목차" aria-hidden="true">
+  <div class="drawer-head">
+    <div class="drawer-brand"><span class="dot"></span>RE:FEEEL</div>
+    <button class="drawer-close" id="drawerClose" aria-label="닫기">×</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-eyebrow">Contents</div>
+    <ul class="dw-list">
+      <li class="dw-item"><a href="#s01"><span class="dw-num">01</span><span class="dw-body"><span class="dw-title">두 계정의 구조</span><span class="dw-desc">geulhan_ vs movel_pt</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s02"><span class="dw-num">02</span><span class="dw-body"><span class="dw-title">데이터 진단</span><span class="dw-desc">고객의 말이 가장 잘 닿는다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s03"><span class="dw-num">03</span><span class="dw-body"><span class="dw-title">핵심 진단</span><span class="dw-desc">전문가의 언어로만 돼 있다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s04"><span class="dw-num">04</span><span class="dw-body"><span class="dw-title">타겟 좁히기</span><span class="dw-desc">페인포인트가 높은 사람</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s05"><span class="dw-num">05</span><span class="dw-body"><span class="dw-title">채널 역할 분리</span><span class="dw-desc">유입 / 정보 / 설득</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s06"><span class="dw-num">06</span><span class="dw-body"><span class="dw-title">콘텐츠 — 고객이 나와야</span><span class="dw-desc">시설·회원·일상이 보여야 한다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s07"><span class="dw-num">07</span><span class="dw-body"><span class="dw-title">전문성을 쉽게</span><span class="dw-desc">뉴로·신경계를 비유로</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s08"><span class="dw-num">08</span><span class="dw-body"><span class="dw-title">차별점 — "보는 눈"</span><span class="dw-desc">교육으로 안 되는 영역</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s09"><span class="dw-num">09</span><span class="dw-body"><span class="dw-title">리뷰 + 플레이스</span><span class="dw-desc">고객 언어가 이미 있다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s10"><span class="dw-num">10</span><span class="dw-body"><span class="dw-title">우선순위</span><span class="dw-desc">다음 단계</span></span><span class="dw-arrow">→</span></a></li>
+    </ul>
+  </div>
+</div>
+
+
+<main>
+
+
+<!-- ═══════════ COVER ═══════════ -->
+<section class="cover" aria-label="표지">
+<div class="cover-inner">
+  <div class="cv-top">
+    <div>RE:FEEEL Consulting Brief</div>
+    <div class="r">
+      Brief N°013<br>
+      2026 . 05 . 06
+    </div>
+  </div>
+  <div class="cv-mid">
+    <div class="cv-label">Brand Strategy Diagnosis</div>
+    <h1 class="cv-h1">컨설팅 요약<span class="line2">김재한 · @geulhan_</span></h1>
+    <p class="cv-desc">
+      26년 경력의 PT 트레이너이자 MOVEL의 운영자입니다. 그 26년이 만든 전문성이 — 콘텐츠에서는 전문가의 언어로만 표현되어 고객에게 닿지 못하고 있습니다.
+    </p>
+  </div>
+  <div class="cv-bot">
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">01</div>
+      <div class="cv-kpi-val"><span class="ac">26</span></div>
+      <div class="cv-kpi-lbl">Years of Expertise</div>
+      <div class="cv-kpi-sub">PT 트레이너 경력</div>
+    </div>
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">02</div>
+      <div class="cv-kpi-val">407</div>
+      <div class="cv-kpi-lbl">메인 계정 팔로워</div>
+      <div class="cv-kpi-sub">@geulhan_ · 게시물 12</div>
+    </div>
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">03</div>
+      <div class="cv-kpi-val">156</div>
+      <div class="cv-kpi-lbl">보조 계정 팔로워</div>
+      <div class="cv-kpi-sub">@movel_pt · 게시물 13</div>
+    </div>
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">04</div>
+      <div class="cv-kpi-val">1</div>
+      <div class="cv-kpi-lbl">고객 등장 콘텐츠</div>
+      <div class="cv-kpi-sub">피드 12개 중 / 텍스트 캐러셀 위주</div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════ INTRO ═══════════ -->
+<section class="intro" aria-label="서문">
+  <p>재한 대표님은 26년 경력의 PT 트레이너입니다. 사람의 움직임을 보는 눈이 있고, 같은 동작을 시켜도 사람마다 다르게 접근합니다. 이건 자격증으로 만들어지지 않는 영역의 자산입니다.</p>
+  <p>다만 그 자산이 콘텐츠 위에 올라오지 않고 있습니다. <em>"움직임을 분석하고 설계하는 공간", "계통 발생적 움직임"</em> — 전문가끼리는 통하는 언어이지만 고객은 "여기 가면 내 문제가 해결되겠구나"를 느끼지 못합니다. 이 브리프는 그 격차를 어떻게 메울지 정리합니다.</p>
+</section>
+
+
+<!-- ═══════════ RECORDING LINK ═══════════ -->
+<section class="recording-link" aria-label="컨설팅 녹화본">
+  <div class="recording-inner">
+    <div class="recording-label">Consultation Recording</div>
+    <div class="recording-title">컨설팅 전체 녹화본</div>
+    <a href="https://us06web.zoom.us/rec/share/yyIq6l5IjcudSxSOErlcU8QWrqEB6C9bxIjy2AWgCd06FnKR1n8sl7RgsvegbkWk.LiNMUXMcXLGkjAkl?pwd=DJMcUXSTiDlR15aqLwAAIAAAAK88sbedGer9IC6HTJ0PngMG4IVxgfvDntTtnMPAeM4qG-Loxb07uG62nVjWwzqAHTAwMDAwNA&from=hub" class="recording-btn" target="_blank" rel="noopener">
+      녹화본 보기 <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 01. 계정 현황 ═══════════ -->
+<section class="section" id="s01" data-title="두 계정의 구조">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">01</span><span>Status</span></div>
+    <h2 class="s-title">두 계정, <em>지금은 분리의 의미가 없다</em></h2>
+    <p class="s-sub">@geulhan_ 과 @movel_pt 가 공동작업자로 같은 콘텐츠를 올리고 있다. <strong>분리는 명목상이고 실질적 차이는 없는 상태</strong>이다. 혼자 운영하는 상황에서 에너지를 한 곳에 모아야 한다.</p>
+
+    <div class="compare">
+      <div class="cc-col">
+        <div class="cc-tag">개인 / 메인</div>
+        <div class="cc-name">@geulhan_</div>
+        <div class="cc-row"><span class="cc-key">팔로워</span><span class="cc-val">407</span></div>
+        <div class="cc-row"><span class="cc-key">게시물</span><span class="cc-val">12</span></div>
+        <div class="cc-row"><span class="cc-key">팔로우</span><span class="cc-val">356</span></div>
+        <div class="cc-row"><span class="cc-key">역할</span><span class="cc-val">사람 + 브랜드 서사</span></div>
+        <div class="cc-row"><span class="cc-key">권장</span><span class="cc-val">메인 채널로 집중</span></div>
+      </div>
+      <div class="cc-col">
+        <div class="cc-tag">사업 / 보조</div>
+        <div class="cc-name">@movel_pt</div>
+        <div class="cc-row"><span class="cc-key">팔로워</span><span class="cc-val">156</span></div>
+        <div class="cc-row"><span class="cc-key">게시물</span><span class="cc-val">13</span></div>
+        <div class="cc-row"><span class="cc-key">팔로우</span><span class="cc-val">139</span></div>
+        <div class="cc-row"><span class="cc-key">역할</span><span class="cc-val">B2B · 트레이너 교육 (추후)</span></div>
+        <div class="cc-row"><span class="cc-key">권장</span><span class="cc-val">최소 유지 → 시점 대기</span></div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>@geulhan_ 을 메인으로 집중하는 걸 권합니다. 브랜드(MOVEL)가 앞에 서되, 피드 안에서 김재한이라는 사람과 회원들의 서사가 보이는 구조. 플레이스 연결도 여기로 가는 게 맞습니다.</p>
+      <p>@movel_pt 는 지금은 최소한으로 유지하고, <em>일반 고객층이 충분히 쌓인 다음에</em> 트레이너 교육 · B2B 채널로 전환하는 게 자연스럽습니다. 이미 광주 트레이너 교육 모임과 연결되어 있고 교육도 진행 중이므로 — 그 시점이 오면 두 계정의 분리가 비로소 의미를 갖게 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 02. 데이터 진단 ═══════════ -->
+<section class="section" id="s02" data-title="데이터 진단">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">02</span><span>Data Diagnosis</span></div>
+    <h2 class="s-title">고객의 말에서 시작한 콘텐츠가, <em>가장 잘 닿는다</em></h2>
+    <p class="s-sub">게시물 12개로 통계적 유의성을 말하기는 어렵다. 다만 <strong>어떤 톤이 닿고, 어떤 톤이 안 닿는지</strong>의 경향은 분명하게 읽힌다.</p>
+
+    <div class="cmx">
+      <div class="cmx-row is-peak">
+        <div class="cmx-rank">1</div>
+        <div class="cmx-body">
+          <div class="cmx-title">"도수치료 받아봤는데 왜 아플까요"</div>
+          <div class="cmx-meta">고객 페인포인트에서 출발</div>
+        </div>
+        <div class="cmx-stat">24</div>
+      </div>
+      <div class="cmx-row">
+        <div class="cmx-rank">2</div>
+        <div class="cmx-body">
+          <div class="cmx-title">"모벨은 왜 생겼는가"</div>
+          <div class="cmx-meta">본인 이야기</div>
+        </div>
+        <div class="cmx-stat">18</div>
+      </div>
+      <div class="cmx-row">
+        <div class="cmx-rank">3</div>
+        <div class="cmx-body">
+          <div class="cmx-title">"운동하고 오히려 아파본 적"</div>
+          <div class="cmx-meta">고객 경험에서 출발</div>
+        </div>
+        <div class="cmx-stat">15</div>
+      </div>
+      <div class="cmx-row">
+        <div class="cmx-rank">4</div>
+        <div class="cmx-body">
+          <div class="cmx-title">"어깨·고관절·몸통 봐야 하는 이유"</div>
+          <div class="cmx-meta">전문가 정보</div>
+        </div>
+        <div class="cmx-stat">13</div>
+      </div>
+      <div class="cmx-row">
+        <div class="cmx-rank">5</div>
+        <div class="cmx-body">
+          <div class="cmx-title">"잘하고 싶다면 일단 시작하면 됩니다"</div>
+          <div class="cmx-meta">동기부여</div>
+        </div>
+        <div class="cmx-stat">11</div>
+      </div>
+      <div class="cmx-row">
+        <div class="cmx-rank">6</div>
+        <div class="cmx-body">
+          <div class="cmx-title">"인간의 움직임의 언어를 아시나요"</div>
+          <div class="cmx-meta">추상적 이론</div>
+        </div>
+        <div class="cmx-stat">9</div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>순서가 명확합니다 — <em>고객의 말에서 시작한 것 → 본인 서사 → 정보형 → 동기부여 → 추상적 이론.</em> "도수치료 받아봤는데 왜 아플까요"가 가장 반응이 좋은 이유는 — <strong>고객이 실제로 하는 말</strong>에서 시작했기 때문입니다.</p>
+      <p>"인간의 움직임의 언어를 아시나요"는 같은 사람이 만든 같은 콘텐츠인데도 가장 반응이 약합니다. 콘텐츠 자체가 나빠서가 아니라 — <em>고객이 그 말을 자기 입으로 한 적이 없기 때문</em>입니다.</p>
+    </div>
+  </div>
+
+  <div class="dark-block">
+    <div class="db-inner">
+      <div class="db-label">Key Insight</div>
+      <div class="db-h">
+        고객이 "이거 나한테 하는 말이다"라고 느끼게 만드는 콘텐츠는 — <em>고객이 실제로 쓰는 말</em>에서 시작한다.
+      </div>
+      <div class="db-body">
+        <p>이 패턴이 의미하는 건, 콘텐츠를 더 만들 필요가 없다는 게 아닙니다. <strong>어떤 출발점에서 콘텐츠를 만들지를 바꾸어야 한다는 뜻</strong>입니다. 다음 섹션에서 왜 지금의 콘텐츠가 그 출발점에서 멀어져 있는지를 봅니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 03. 핵심 진단 ═══════════ -->
+<section class="section" id="s03" data-title="핵심 진단">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">03</span><span>Core Diagnosis</span></div>
+    <h2 class="s-title">전문가의 언어로만 <em>되어 있다</em></h2>
+    <p class="s-sub">"움직임을 분석하고 설계하는 공간." 이 문장을 보고 고객이 <strong>"나한테 필요한 곳이다"</strong>라고 느낄 수 있을까. <em>"계통 발생적 움직임"</em>, <em>"인풋과 아웃풋"</em>, <em>"Performance Training"</em> — 전문가끼리는 감탄할 수 있는 언어인데, 고객한테는 안 닿는 단어들이다.</p>
+
+    <div class="prose">
+      <p>고객이 와서 <em>"제 움직임을 분석해서 설계해 주세요"</em>라고 하지 않습니다. <strong>"나 어디가 아프고, 도수 치료 갔는데 효과가 없었고, 이거 운동하면 좋아져요?"</strong> — 이렇게 말합니다. 그 말에 재한 대표님이 실제로 답하는 방식, 그게 콘텐츠가 되어야 하니까요.</p>
+      <p>26년이면 수천 명의 고객을 본 경험이 쌓여 있을 겁니다. 그 경험이 재한 대표님의 진짜 자산인데 — 콘텐츠에서는 그 경험이 <em>이론으로만</em> 나오고 있습니다. 이론은 책에서 가져올 수 있지만, 26년의 경험은 다른 누구도 흉내 낼 수 없는 영역인데도요.</p>
+    </div>
+  </div>
+
+  <div class="dark-block">
+    <div class="db-inner">
+      <div class="db-label">Pivot Point</div>
+      <div class="db-h">
+        돈을 벌고 사업을 키우려면, 전문가의 언어를 <em>계속해서 내려놓아야 한다.</em>
+      </div>
+      <div class="db-body">
+        <p>논문을 쓰는 게 아니라 매출을 만드는 영역이니까요. 그리고 — <strong>전문가의 언어를 내려놓는 것이 곧 전문성을 잃는 것</strong>은 아닙니다. 오히려 진짜 전문가는 어려운 것을 쉽게 풀어낼 수 있는 사람이고, 26년의 경험이 그걸 가능하게 만듭니다. §07에서 어떻게 쉽게 풀지를 봅니다.</p>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 04. 타겟 좁히기 ═══════════ -->
+<section class="section" id="s04" data-title="타겟 좁히기">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">04</span><span>Target Focus</span></div>
+    <h2 class="s-title">"일상 속 통증"은 <em>너무 넓다</em></h2>
+    <p class="s-sub">일상 속 통증은 종류도 다양하고 경도도 너무 다양하다. 수술해야 하는 사람, 수술 후 재활이 필요한 사람, 가볍게 어딘가 좀 쑤시는 사람 — 이 사이에서 <strong>누구에게 말하는 건지 모르면 아무한테도 안 닿는다</strong>.</p>
+
+    <div class="prose">
+      <p>지금의 단가를 유지하려면, <em>페인 포인트가 높은 쪽</em>으로 가야 합니다. 디스크 수술을 권유받은 사람, 도수 치료를 받아봤는데 안 나은 사람, 수술했는데 여전히 아픈 사람 — 이 사람들은 이미 수백만 원을 썼고, <strong>선택지가 절실합니다</strong>. 그 안에 재한 대표님의 PT가 들어가면 가격의 설득력이 생깁니다.</p>
+      <p>아무리 소비 여력이 있는 동네라도 <em>가치가 명확하지 않으면 돈을 안 씁니다.</em> 서울 압구정 · 청담도 마찬가지입니다. 값비싼 차를 타는 것과 PT에 돈을 쓰는 건 전혀 다른 문제이니까요. <strong>"여기 가면 내 문제가 해결된다"가 보여야 지갑이 열립니다.</strong></p>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 05. 채널 역할 분리 ═══════════ -->
+<section class="section" id="s05" data-title="채널 역할 분리">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">05</span><span>Channel Roles</span></div>
+    <h2 class="s-title">지금은 모든 채널에서 <em>같은 것을 하고 있다</em></h2>
+    <p class="s-sub">플레이스, 블로그, 인스타, 당근 — 각 채널은 역할이 다른데 지금은 모두에 같은 콘텐츠가 들어간다. 채널마다 <strong>고객이 만나는 시점과 의도가 다르다</strong>.</p>
+
+    <div class="three">
+      <div class="three-row">
+        <div class="three-num">1</div>
+        <div>
+          <div class="three-label">플레이스 · 당근  =  유입</div>
+          <div class="three-text">"봉선동 PT"를 검색한 사람이 처음 만나는 곳이다. 밖에 나가서 사람들한테 말 잘 걸면서 전단지 잘 돌리는 친구. 여기 가면 뭘 해주는 곳인지가 <strong>3초 안에 읽혀야</strong> 한다.</div>
+        </div>
+      </div>
+      <div class="three-row">
+        <div class="three-num">2</div>
+        <div>
+          <div class="three-label">블로그  =  정보 · 이론</div>
+          <div class="three-text">재한 대표님이 풀고 싶은 전문적인 내용은 여기서 한다. 길고 깊은 이야기가 어울리는 채널.</div>
+        </div>
+      </div>
+      <div class="three-row">
+        <div class="three-num">3</div>
+        <div>
+          <div class="three-label">인스타  =  서사 · 설득</div>
+          <div class="three-text">상담 한 번이면 바로 결제시키는 친구. 고객과 운동하는 장면, 회원의 변화, 재한 대표님이라는 사람 — 이게 보여야 한다. 이론도 카드뉴스 자동화도 여기서는 필요 없다.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>인스타로 유입을 만드는 업종이 아닙니다. <em>플레이스에서 검색하고 → 인스타를 보고 → "여기 가면 이렇게 되겠구나"를 느끼는</em> 순서이기 때문에, 개수보다 설득력이 중요합니다. 한 달에 몇 개라도 질이 높으면 충분합니다.</p>
+      <p>당근은 포기하지 않는 걸 권합니다. <strong>타겟이 명확해지면 당근의 효율이 바뀝니다.</strong> "허리 통증 순서가 틀렸을 수 있다"보다 <em>"도수 치료 3번 받았는데 안 나았다면"</em>이 그 사람한테 더 닿으니까요. 도구의 문제가 아니라 메시지의 문제입니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 06. 콘텐츠 — 고객이 나와야 ═══════════ -->
+<section class="section" id="s06" data-title="콘텐츠 — 고객이 나와야">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">06</span><span>People in Frame</span></div>
+    <h2 class="s-title">피드에 <em>고객이 나와야 한다</em></h2>
+    <p class="s-sub">지금 피드에 고객이 등장하는 콘텐츠가 1개뿐이다. 나머지는 전부 텍스트 캐러셀. <strong>시설이 어떤지, 어떻게 운동시키는지, 트레이너가 어떤 사람인지</strong> — 아무것도 안 보이는 상태.</p>
+
+    <div class="prose">
+      <p>PT는 일회성이 아니라 적어도 수십 회를 함께해야 하는 관계입니다. <em>"이 사람이랑 운동하면 어떤 느낌일까"</em>가 전달되어야 합니다. 고객과 운동하는 장면, 대화하는 순간, 변화를 함께 확인하는 모습 — 이런 것들이 사람을 설득합니다.</p>
+      <p>친한 회원이나 신규 등록 시 <em>"한두 번 더 드릴 테니 영상 좀 같이 찍어주실 수 있냐"</em>로 동의받으면 됩니다. 매번 세팅할 수 없으니 거치대를 설치해두고 루틴으로 찍는 것도 방법이니까요.</p>
+      <p>한 가지 — 트레이너가 운동하는 영상은 <strong>지금의 타겟에는 불필요합니다</strong>. 재활 타겟에게는 바디빌더 같은 몸이나 높은 퍼포먼스보다, 고객들의 <em>"나와 같은 상황의" 변화</em>가 신뢰로 작동합니다. 깔끔하게 입고 전문가스럽게 — 재활 포지셔닝에는 그 결이 맞습니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 07. 전문성을 쉽게 ═══════════ -->
+<section class="section" id="s07" data-title="전문성을 쉽게">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">07</span><span>Translate Expertise</span></div>
+    <h2 class="s-title">전문성은 버리는 게 아니라, <em>쉽게 푸는 것이다</em></h2>
+    <p class="s-sub">카드뉴스 중에 <em>"당신이 운동을 못하는 게 아닙니다. 트레이너가 방법을 못 찾은 거지 당신의 문제가 아닙니다"</em> — 이건 좋은 스크립트다. 카드뉴스가 아니라 재한 대표님이 <strong>직접 말하는 릴스</strong>로 바꾸면 훨씬 닿는다.</p>
+
+    <div class="prose">
+      <p>뉴로 / 신경계 교육을 받고 있다고 했는데, 이것도 그대로 쓰면 전문가 언어입니다. 쉽게 풀면 강력한 훅이 됩니다 —</p>
+      <p style="padding-left:14px;border-left:2px solid var(--accent);font-size:14.5px;line-height:1.85;color:var(--ink-2);">
+        "뇌가 몸에 잘못된 신호를 보내고 있어서 아픈 겁니다"<br>
+        "근육이 짧아서가 아니라, 뇌가 허용을 안 해서 안 펴지는 겁니다"
+      </p>
+      <p>이런 식으로 풀면, 같은 내용이 완전히 다르게 닿습니다. 이미 올린 <em>"눈이 나빠서 허리가 아프다"</em> 콘텐츠가 바로 뉴로를 쉽게 푼 예시입니다. 이 방향으로 더 풀어내면 됩니다.</p>
+      <p>피드 전체를 전략적으로 설계하는 걸 권합니다. <strong>전문성 콘텐츠(쉽게 풀린 뉴로 · 움직임 분석)와 서사 콘텐츠(회원 변화 · 본인 이야기)를 번갈아 배치</strong>하면 — 스크롤했을 때 <em>"이 사람은 전문가이면서 사람을 진짜 본다"</em>가 느껴지는 피드가 됩니다.</p>
+      <p>반면 <em>"계통 발생적 움직임"</em>, <em>"견관절 움직임 6개 — 거상, 하강, 전인"</em> 같은 콘텐츠는 트레이너 대상이지 고객 대상이 아닙니다. 이건 추후 @movel_pt 에서 트레이너 교육 콘텐츠로 활용하면 됩니다.</p>
+      <p style="margin-top:28px"><strong>레퍼런스 활용법</strong></p>
+      <p>콘텐츠를 처음부터 만들려고 하면 어렵습니다. 잘 되는 계정의 릴스를 다운로드해서 스크립트를 추출하고, 거기에 재한 대표님의 이야기를 넣어서 바꾸는 흐름을 권합니다. 헬스장 · 피트니스 계정보다 <em>재활의학과 · 정형외과 유튜브</em>를 참고하는 게 더 맞습니다. <em>"허리 아플 때 절대 하지 말 것"</em>, <em>"디스크 있으면 이것만은 꼭"</em> — 이런 훅 구조가 재활 타겟에 닿습니다. 내용이 맞냐 안 맞냐가 아니라 <strong>"이 구조가 먹히는구나"</strong>를 가져오는 작업입니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 08. 차별점 — "보는 눈" ═══════════ -->
+<section class="section" id="s08" data-title='차별점 — "보는 눈"'>
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">08</span><span>The Eye</span></div>
+    <h2 class="s-title">"보는 눈"은 <em>교육으로 안 되는 영역이다</em></h2>
+    <p class="s-sub">재한 대표님이 직접 말한 차별점 — <em>"사람의 움직임을 보는 눈이 좋다. 감정 상태, 컨디션, 표정을 보고 읽는다. 같은 런지를 시켜도 다르게 접근한다."</em> 이게 진짜 자산이다.</p>
+
+    <div class="prose">
+      <p>이건 교육으로 안 되는 영역입니다. 같은 자격증, 같은 교육을 받아도 감이 없는 사람이 있습니다. 외과 의사들끼리도 <em>"같은 서울대를 나왔어도 손재주가 없는 사람은 있다"</em>고 합니다. 지식과 경험은 동일해도, 환자의 상태를 읽는 눈은 사람마다 다르니까요.</p>
+      <p>이걸 콘텐츠로 풀어도 강력합니다. <strong>"지식은 다 배울 수 있는데, 누가 보느냐에 따라 달라진다. 건강검진을 똑같이 해도 판독하는 사람이 중요한 것처럼."</strong> — 이런 비유로 풀면, 26년의 경험이 왜 다른지가 한 줄로 전달됩니다.</p>
+    </div>
+  </div>
+
+  <div class="dark-block">
+    <div class="db-inner">
+      <div class="db-label">Differentiator</div>
+      <div class="db-h">
+        같은 동작을 시켜도, 그 사람을 보고 다르게 접근하는 것 — <em>이게 26년이 만든 자산</em>이다.
+      </div>
+      <div class="db-body">
+        <p>이 차별점은 자격증으로 만들어지지 않고, 콘텐츠로 보여줄 수 없으면 고객은 모릅니다. <strong>"보는 눈이 다른 트레이너"</strong>라는 포지셔닝이 콘텐츠의 모든 결에 묻어나야 — 다른 PT 센터와 구별되는 자리가 만들어집니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 09. 리뷰 + 플레이스 ═══════════ -->
+<section class="section" id="s09" data-title="리뷰 + 플레이스">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">09</span><span>Customer Voice</span></div>
+    <h2 class="s-title">고객의 언어는, <em>리뷰에 이미 적혀 있다</em></h2>
+    <p class="s-sub">플레이스 리뷰가 길고 많다는 건 강점이다. 거기에 <strong>고객이 실제로 쓴 말</strong>이 들어 있다. 차별점을 만드는 게 아니라 — 이미 있는 차별점을 고객의 입에서 꺼내오는 작업이다.</p>
+
+    <div class="prose">
+      <p><em>"도수 치료 받아봤는데 여기 오니까 달랐다"</em>, <em>"이 선생님은 보는 눈이 다르다"</em> — 이런 문장이 리뷰에 있다면, 그게 곧 <strong>프로필 카피가 되고, 콘텐츠 훅이 되고, 플레이스 소개문이 됩니다</strong>. 책을 읽거나 레퍼런스를 찾기 전에, 이미 가지고 있는 리뷰를 먼저 읽는 흐름을 권합니다.</p>
+      <p>고객이 <em>"다르다, 신기하다"</em>고 했을 때 — 그게 구체적으로 어떤 말이었는지가 리뷰에 적혀 있을 가능성이 높습니다. 차별점을 발명하는 게 아니라 <em>이미 있는 차별점을 채굴하는</em> 작업입니다.</p>
+      <p>현재 모객이 전부 플레이스와 당근인데, 플레이스가 검색 상단에 있으면서도 <strong>전환이 안 되고 있는 상태</strong>입니다. 들어오는 사람은 있는데 잡지 못하고 있다는 뜻이니까요. 리뷰를 시작점으로 플레이스 자체를 다시 설계하는 흐름을 권합니다.</p>
+
+      <div class="inline-cta">
+        <div class="inline-cta-label">RE:FEEEL Service</div>
+        <div class="inline-cta-title">네이버 플레이스 분석 / 개선 리포트</div>
+        <div class="inline-cta-desc">플레이스 리뷰에서 고객의 실제 언어를 추출하고, 그걸 플레이스 소개·콘텐츠·프로필에 어떻게 활용할지까지 함께 설계합니다.</div>
+        <a href="https://refeeel.com/shop_view?idx=49" class="inline-cta-btn" target="_blank" rel="noopener">
+          자세히 보기 <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ § 10. 우선순위 ═══════════ -->
+<section class="section" id="s10" data-title="우선순위">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">10</span><span>Next Steps</span></div>
+    <h2 class="s-title">우선순위</h2>
+    <p class="s-sub">전문가의 언어를 고객의 언어로 번역하는 작업이 핵심이다. 여섯 가지를 순서대로 권한다.</p>
+
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div>
+          <div class="flow-title">두 계정 정리 — @geulhan_ 메인 집중</div>
+          <div class="flow-desc">@movel_pt 는 최소 유지. 일반 고객층이 충분히 쌓인 후 트레이너 교육 채널로 분리. 지금은 한 곳에 에너지를 모아야 한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div>
+          <div class="flow-title">타겟을 좁힌다 — 페인포인트가 높은 사람</div>
+          <div class="flow-desc">디스크 수술 권유받은 사람, 도수 치료 안 나은 사람, 수술 후에도 아픈 사람. 이 타겟이 명확해지면 콘텐츠 · 당근 · 플레이스의 효율이 모두 바뀐다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div>
+          <div class="flow-title">플레이스 리뷰에서 고객 언어 추출</div>
+          <div class="flow-desc">레퍼런스를 찾기 전에 이미 가지고 있는 리뷰를 먼저 읽는다. 차별점을 발명하지 않고, 이미 있는 차별점을 고객의 입에서 채굴한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div>
+          <div class="flow-title">피드에 고객을 등장시킨다</div>
+          <div class="flow-desc">고객 영상 · 운동 장면 · 변화의 순간. 회원 동의는 "한두 번 더 드릴 테니"로. 거치대 설치하고 루틴으로 촬영. 트레이너 운동 영상은 지금 타겟엔 불필요.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">5</div>
+        <div>
+          <div class="flow-title">전문성을 쉽게 푼 릴스 시작</div>
+          <div class="flow-desc">"뇌가 잘못된 신호를 보내고 있다", "허용을 안 해서 안 펴진다" — 같은 내용이 다르게 닿는다. 카드뉴스 대신 직접 말하는 릴스. 재활의학과 유튜브 훅 구조 참고.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">6</div>
+        <div>
+          <div class="flow-title">채널별 역할 분리</div>
+          <div class="flow-desc">플레이스/당근은 유입, 블로그는 정보, 인스타는 서사·설득. 같은 콘텐츠를 모든 채널에 올리는 게 아니라 — 각 채널의 역할에 맞는 결로 만든다.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dark-block">
+    <div class="db-inner">
+      <div class="db-label">One More</div>
+      <div class="db-h">
+        전문성은 이미 검증되어 있다. <em>26년이 증명하고 있으니까.</em>
+      </div>
+      <div class="db-body">
+        <p>이제 필요한 건 그 전문성을 <strong>고객이 알아듣는 언어로 번역하는 것</strong>, 그리고 <strong>"여기 가면 내가 어떻게 되는지"를 보여주는 것</strong>입니다. 콘텐츠를 더 만들어야 한다는 이야기가 아니라 — 이미 가진 26년의 자산을 어떻게 꺼내 보일지의 문제이니까요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<div class="dots">— · — · —</div>
+
+
+<!-- ═══════════ REVIEW CTA ═══════════ -->
+<section class="review-cta" aria-label="후기 요청">
+  <div class="review-cta-inner">
+    <h3 class="review-cta-greeting">재한 대표님에게</h3>
+    <p class="review-cta-body">
+      이 컨설팅이 도움이 됐다면, 짧은 후기 한 줄을 부탁드립니다. 어떤 부분이 가장 도움이 됐는지, 한 줄이면 — 다음 코호트를 고민하는 분들에게 큰 도움이 되니까요.
+    </p>
+    <a href="https://refeeel.com/shop_view?idx=46" class="review-cta-btn" target="_blank" rel="noopener">
+      구매평 남기기 <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+
+</main>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div>본 브리프는 김재한 대표님을 위해 작성되었습니다 · © 2026</div>
+  </div>
+</footer>
+
+
+<script>
+// ── REVEAL ANIMATIONS ──
+const reveal = document.querySelectorAll('.three, .compare, .matrix, .flow, .dark-block');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+reveal.forEach(el => revealObserver.observe(el));
+
+// ── DRAWER ──
+const drawer = document.getElementById('drawer');
+const tbMenu = document.getElementById('tbMenu');
+const drawerClose = document.getElementById('drawerClose');
+function openDrawer(){ drawer.classList.add('open'); document.body.classList.add('drawer-open'); drawer.setAttribute('aria-hidden','false'); }
+function closeDrawer(){ drawer.classList.remove('open'); document.body.classList.remove('drawer-open'); drawer.setAttribute('aria-hidden','true'); }
+tbMenu?.addEventListener('click', openDrawer);
+drawerClose?.addEventListener('click', closeDrawer);
+drawer?.addEventListener('click', (e) => { if(e.target === drawer) closeDrawer(); });
+drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+// ── PROGRESS BAR ──
+const tbProgFill = document.getElementById('tbProgFill');
+const snProgFill = document.getElementById('snProgFill');
+const snProgNum = document.getElementById('snProgNum');
+
+function updateProgress(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+  if(tbProgFill) tbProgFill.style.width = pct + '%';
+  if(snProgFill) snProgFill.style.width = pct + '%';
+  if(snProgNum) snProgNum.textContent = Math.round(pct) + '%';
+}
+updateProgress();
+window.addEventListener('scroll', updateProgress, { passive: true });
+
+// ── ACTIVE SECTION ──
+const sections = document.querySelectorAll('section[id]');
+const snItems = document.querySelectorAll('.sn-item');
+const tbCurrent = document.getElementById('tbCurrent');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.id;
+      const num = id.replace('s','');
+      const title = entry.target.dataset.title || '';
+      snItems.forEach(item => {
+        const a = item.querySelector('a');
+        item.classList.toggle('active', a && a.getAttribute('href') === '#' + id);
+      });
+      if(tbCurrent && title){
+        tbCurrent.innerHTML = '<span class="num">' + num + '</span>' + title;
+      }
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+
+sections.forEach(sec => sectionObserver.observe(sec));
+
+// ── CHART ──
+let chartInstance = null;
+function initChart(){
+  const ctx = document.getElementById('hookChart');
+  if(!ctx || typeof Chart === 'undefined' || chartInstance) return;
+
+  chartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['교육 / 정보형', 'CTA 강조형', '공감 / 질문형', '개인 서사형', '포트폴리오형'],
+      datasets: [{
+        label: '평균 ER (%)',
+        data: [0.25, 0.14, 0.06, 0.04, 0.03],
+        backgroundColor: ['#e75519', '#cfc9bd', '#cfc9bd', '#cfc9bd', '#aaa498'],
+        borderWidth: 0,
+        barPercentage: 0.7,
+        categoryPercentage: 0.85
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#0a0a0a',
+          titleColor: '#fff',
+          bodyColor: 'rgba(255,255,255,0.85)',
+          padding: 10,
+          cornerRadius: 0,
+          displayColors: false,
+          callbacks: { label: (ctx) => ctx.parsed.x + '%' }
+        }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          max: 0.30,
+          grid: { color: '#ebe8e0', drawBorder: false },
+          border: { display: false },
+          ticks: {
+            color: '#8a8a8a',
+            font: { size: 10.5, family: "'SUIT Variable', sans-serif", weight: 500 },
+            stepSize: 0.05,
+            callback: (v) => v.toFixed(2) + '%'
+          }
+        },
+        y: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            color: '#2a2a2a',
+            font: { size: 12, family: "'SUIT Variable', sans-serif", weight: 600 },
+            padding: 14
+          }
+        }
+      },
+      animation: {
+        duration: 900,
+        easing: 'easeOutQuart',
+        delay: (context) => {
+          if(context.type === 'data' && context.mode === 'default'){
+            return context.dataIndex * 180;
+          }
+          return 0;
+        }
+      }
+    }
+  });
+}
+
+// Trigger chart render only when scrolled into view
+window.addEventListener('load', () => {
+  const chartEl = document.getElementById('hookChart');
+  if(!chartEl) return;
+
+  const chartObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        initChart();
+        chartObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  chartObserver.observe(chartEl);
+});
+</script>
+</body>
+</html>
