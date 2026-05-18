@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>컨설팅 브리프 — 이건우 · @1rm_archive · @nore__ai</title>
+<meta name="description" content="이건우 대표 · 1RM · nore__ai 콘텐츠 / 단가 / AI CRM 전략 진단 · RE:FEEEL Consulting Brief"/>
+
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="컨설팅 브리프 — 이건우 · @1rm_archive · @nore__ai"/>
+<meta property="og:description" content="이건우 대표 · 1RM · nore__ai 콘텐츠 / 단가 / AI CRM 전략 진단 · RE:FEEEL Consulting Brief"/>
+<meta property="og:image" content="https://pub-f337889f68dc417a957731031766fb4f.r2.dev/logo_black.png"/>
+<meta property="og:site_name" content="RE:FEEEL"/>
+<meta property="og:locale" content="ko_KR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="컨설팅 브리프 — 이건우"/>
+<meta name="twitter:description" content="이건우 대표 · 1RM · nore__ai 전략 진단 · RE:FEEEL"/>
+<meta name="twitter:image" content="https://pub-f337889f68dc417a957731031766fb4f.r2.dev/logo_black.png"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js" crossorigin="anonymous"></script>
+<style>
+/* ═══════════════════════════════════════════════════════
+   RE:FEEEL — Consulting Brief Design System
+   Hybrid: MUJI breathing + Editorial navigation
+   Restraint, whitespace, sage accent in single dose
+   ═══════════════════════════════════════════════════════ */
+
+:root{
+  --bg:#fafaf7;
+  --bg-soft:#f3f1ec;
+  --ink:#0a0a0a;
+  --ink-2:#2a2a2a;
+  --ink-3:#555555;
+  --ink-4:#8a8a8a;
+  --ink-5:#b8b8b8;
+  --rule:#e0ddd5;
+  --rule-soft:#ebe8e0;
+  --accent:#e75519;
+  --accent-soft:rgba(231,85,25,.08);
+
+  --pp:clamp(20px,4vw,48px);
+  --max-w:880px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{
+  font-family:'SUIT Variable','Pretendard Variable',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--ink-2);
+  font-size:15px;
+  line-height:1.85;
+  font-weight:400;
+  letter-spacing:-.005em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+  word-break:keep-all;
+}
+
+:focus-visible{outline:1.5px solid var(--accent);outline-offset:3px}
+
+/* ═══════════ TOP BAR (mobile/tablet) ═══════════ */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,250,247,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+  height:52px;
+  display:flex;align-items:center;
+  padding:0 var(--pp);
+}
+.tb-inner{max-width:var(--max-w);margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.tb-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);flex-shrink:0}
+.tb-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+.tb-current{font-size:11.5px;color:var(--ink-4);font-weight:500;letter-spacing:.3px;flex:1;text-align:center;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px}
+.tb-current .num{color:var(--ink);font-weight:700;margin-right:8px}
+.tb-progress{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.tb-prog-bar{width:64px;height:1px;background:var(--rule);position:relative;overflow:hidden}
+.tb-prog-fill{position:absolute;top:0;left:0;height:100%;background:var(--ink);width:0%;transition:width .3s ease}
+.tb-menu{
+  background:none;border:none;padding:8px;margin-right:-8px;
+  cursor:pointer;flex-shrink:0;color:var(--ink);
+  display:flex;align-items:center;
+}
+.tb-menu-icon{display:inline-flex;flex-direction:column;gap:4px;width:14px}
+.tb-menu-icon span{display:block;height:1px;background:currentColor}
+.tb-menu-icon span:nth-child(2){width:70%}
+
+@media(max-width:640px){
+  .tb-current{font-size:11px}
+  .tb-prog-bar{width:48px}
+}
+@media(min-width:1180px){
+  .topbar{display:none}
+}
+
+/* ═══════════ SIDE NAV (desktop) ═══════════ */
+.sidenav{display:none}
+@media(min-width:1180px){
+  :root{ --nav-w:240px; }
+  .sidenav{
+    display:flex;flex-direction:column;
+    position:fixed;top:0;left:0;bottom:0;
+    width:var(--nav-w);z-index:80;
+    padding:48px 24px 32px 36px;
+    background:var(--bg);
+    border-right:1px solid var(--rule);
+    box-sizing:border-box;
+  }
+  .sn-masthead{margin-bottom:56px}
+  .sn-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);margin-bottom:24px;display:flex;align-items:center}
+  .sn-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+  .sn-client{font-size:13.5px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.4;margin-bottom:6px}
+  .sn-tagline{font-size:10px;font-weight:600;color:var(--ink-4);letter-spacing:1.6px;text-transform:uppercase}
+  .sn-head{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--ink-4);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .sn-head::before{content:"";width:14px;height:1px;background:var(--ink-4)}
+  .sn-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;flex:1;overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}
+  .sn-list::-webkit-scrollbar{display:none}
+  .sn-item a{
+    display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:baseline;
+    padding:7px 0;text-decoration:none;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .sn-item a:hover{transform:translateX(2px)}
+  .sn-item a:hover .sn-title{color:var(--ink)}
+  .sn-num{font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--ink-5);font-variant-numeric:tabular-nums}
+  .sn-title{font-size:12.5px;font-weight:500;color:var(--ink-3);letter-spacing:-.2px;transition:color .2s ease}
+  .sn-item.active .sn-num{color:var(--accent)}
+  .sn-item.active .sn-title{color:var(--ink);font-weight:700}
+  .sn-foot{padding-top:24px;border-top:1px solid var(--rule);margin-top:24px}
+  .sn-foot-lbl{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--ink-4);text-transform:uppercase;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .sn-foot-num{color:var(--ink);font-variant-numeric:tabular-nums}
+  .sn-prog{width:100%;height:1px;background:var(--rule);position:relative;overflow:hidden}
+  .sn-prog-fill{position:absolute;top:0;left:0;height:100%;background:var(--ink);width:0%;transition:width .3s ease}
+}
+
+/* ═══════════ MOBILE DRAWER ═══════════ */
+.drawer{
+  position:fixed;inset:0;z-index:200;
+  background:var(--ink);color:#fff;
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .3s cubic-bezier(.2,.8,.2,1), visibility 0s linear .3s;
+}
+.drawer.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .3s cubic-bezier(.2,.8,.2,1), visibility 0s linear 0s}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:0 var(--pp);height:52px;border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0}
+.drawer-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:#fff;display:flex;align-items:center}
+.drawer-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px}
+.drawer-close{background:none;border:none;color:#fff;cursor:pointer;padding:8px;margin-right:-8px;font-size:22px;line-height:1;font-weight:300}
+.drawer-body{flex:1;overflow-y:auto;padding:48px var(--pp) 64px}
+.drawer-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:32px;display:flex;align-items:center;gap:10px}
+.drawer-eyebrow::before{content:"";width:18px;height:1px;background:var(--accent)}
+.dw-list{list-style:none;margin:0;padding:0}
+.dw-item a{display:grid;grid-template-columns:32px 1fr 16px;gap:14px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;color:inherit;transition:padding-left .3s cubic-bezier(.2,.8,.2,1)}
+.dw-item a:active{padding-left:6px}
+.dw-num{font-size:11px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.5);font-variant-numeric:tabular-nums;padding-top:2px}
+.dw-body{display:flex;flex-direction:column;gap:4px}
+.dw-title{font-size:16px;font-weight:600;color:#fff;letter-spacing:-.3px;line-height:1.4}
+.dw-desc{font-size:12px;color:rgba(255,255,255,.5);line-height:1.5}
+.dw-arrow{font-size:13px;color:rgba(255,255,255,.4);padding-top:4px;text-align:right}
+body.drawer-open{overflow:hidden}
+
+/* ═══════════ MAIN ═══════════ */
+main{padding-top:52px}
+@media(min-width:1180px){main{padding-top:0;padding-left:var(--nav-w)}}
+
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pp)}
+.wrap-narrow{max-width:640px;margin:0 auto;padding:0 var(--pp)}
+
+/* ═══════════ COVER ═══════════ */
+.cover{
+  background:var(--ink);color:#fff;
+  min-height:calc(100vh - 52px);
+  display:flex;flex-direction:column;
+  padding:64px var(--pp) 48px;
+  position:relative;
+}
+@media(min-width:1180px){
+  .cover{min-height:100vh;padding:80px var(--pp) 64px}
+}
+.cover-inner{max-width:var(--max-w);margin:0 auto;width:100%;display:flex;flex-direction:column;flex:1}
+.cv-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:48px;font-size:10px;letter-spacing:2.5px;color:rgba(255,255,255,.5);text-transform:uppercase;font-weight:600}
+.cv-top .r{text-align:right;line-height:1.8}
+.cv-mid{flex:1;display:flex;flex-direction:column;justify-content:center;padding:48px 0}
+.cv-label{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:32px;display:flex;align-items:center;gap:10px}
+.cv-label::before{content:"";width:24px;height:1px;background:var(--accent)}
+.cv-h1{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(40px,7vw,80px);
+  font-weight:300;letter-spacing:-2.5px;
+  line-height:1;color:#fff;
+  margin-bottom:24px;
+}
+.cv-h1 .line2{display:block;color:rgba(255,255,255,.4);font-weight:200;font-size:.55em;letter-spacing:-1px;margin-top:14px}
+.cv-desc{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.7);max-width:480px;font-weight:400;margin-top:16px}
+.cv-bot{padding-top:48px;border-top:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.cv-kpi{padding:0}
+.cv-kpi-num{font-size:9.5px;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:1.5px;margin-bottom:14px}
+.cv-kpi-val{font-family:'Pretendard Variable','SUIT Variable',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:300;letter-spacing:-1.5px;line-height:1;color:#fff;margin-bottom:14px;font-variant-numeric:tabular-nums}
+.cv-kpi-val .ac{color:#ff7a4a}
+.cv-kpi-lbl{font-size:12px;font-weight:600;color:#fff;margin-bottom:3px;letter-spacing:-.1px}
+.cv-kpi-sub{font-size:11px;color:rgba(255,255,255,.5);line-height:1.5}
+
+@media(max-width:640px){
+  .cv-bot{grid-template-columns:repeat(2,1fr);gap:32px 16px}
+}
+
+/* ═══════════ DOTS DIVIDER ═══════════ */
+.dots{
+  text-align:center;
+  font-size:11px;
+  color:var(--ink-5);
+  letter-spacing:6px;
+  padding:24px 0;
+}
+@media(min-width:1180px){
+  .dots{padding:32px 0}
+}
+
+/* ═══════════ INTRO ═══════════ */
+.intro{padding:48px var(--pp) 0;max-width:640px;margin:0 auto}
+@media(min-width:1180px){.intro{padding-top:64px}}
+.intro p{font-size:15.5px;line-height:1.85;color:var(--ink-3);margin-bottom:22px}
+.intro p:last-child{margin-bottom:0}
+.intro em{font-style:normal;color:var(--ink);font-weight:inherit}
+
+/* ═══════════ TOC ═══════════ */
+.toc-section{padding-top:96px;padding-bottom:0}
+@media(min-width:1180px){.toc-section{padding-top:128px}}
+.toc-eyebrow{font-size:10px;font-weight:600;letter-spacing:2.5px;color:var(--ink-4);text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.toc-eyebrow::before{content:"";width:18px;height:1px;background:var(--accent)}
+.toc-title{font-family:'Pretendard Variable','SUIT Variable',sans-serif;font-size:clamp(26px,3.5vw,36px);font-weight:300;letter-spacing:-1px;line-height:1.25;color:var(--ink);margin-bottom:48px}
+.toc-list{border-top:1px solid var(--ink)}
+.toc-item{
+  display:grid;grid-template-columns:60px 1fr 24px;gap:24px;align-items:baseline;
+  padding:22px 0;border-bottom:1px solid var(--rule);
+  text-decoration:none;color:inherit;
+  transition:padding-left .35s cubic-bezier(.2,.8,.2,1);
+}
+.toc-item:hover{padding-left:8px}
+.toc-item:hover .toc-arrow{color:var(--accent);transform:translateX(4px)}
+.toc-num{font-size:11px;font-weight:700;letter-spacing:1.5px;color:var(--ink-4);padding-top:6px;font-variant-numeric:tabular-nums}
+.toc-body{display:flex;flex-direction:column;gap:5px}
+.toc-tl{font-size:17px;font-weight:600;color:var(--ink);letter-spacing:-.3px;line-height:1.35}
+.toc-desc{font-size:13px;color:var(--ink-3);line-height:1.6}
+.toc-arrow{font-size:13px;color:var(--ink-5);padding-top:8px;text-align:right;transition:color .25s ease, transform .3s cubic-bezier(.2,.8,.2,1)}
+@media(max-width:560px){
+  .toc-item{grid-template-columns:40px 1fr 16px;gap:16px}
+  .toc-tl{font-size:15.5px}
+  .toc-desc{font-size:12.5px}
+}
+
+/* ═══════════ SECTION ═══════════ */
+.section{padding:0 var(--pp);scroll-margin-top:32px}
+.section-inner{max-width:640px;margin:0 auto;padding:48px 0}
+@media(min-width:1180px){.section-inner{padding:64px 0}}
+
+.s-marker{
+  display:flex;align-items:baseline;gap:14px;
+  margin-bottom:24px;
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:10px;font-weight:600;letter-spacing:2.5px;
+  color:var(--ink-4);text-transform:uppercase;
+}
+.s-marker-num{color:var(--ink);font-weight:700}
+
+.s-title{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(28px,4vw,40px);
+  font-weight:300;letter-spacing:-1.2px;
+  line-height:1.25;color:var(--ink);
+  margin-bottom:24px;
+}
+.s-title em{font-style:normal;color:var(--ink-4);font-weight:200}
+
+.s-sub{
+  font-size:15px;line-height:1.75;color:var(--ink-3);
+  font-weight:400;margin-bottom:36px;
+}
+.s-sub strong{color:var(--ink);font-weight:600}
+
+/* ═══════════ PROSE ═══════════ */
+.prose{font-size:15.5px;line-height:1.85;color:var(--ink-3)}
+.prose p{margin-bottom:22px}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--ink);font-weight:600}
+.prose em{font-style:normal;color:var(--ink);font-weight:inherit}
+
+/* ═══════════ HERO STAT ═══════════ */
+.hero{
+  margin:48px 0;
+  padding:48px 0;
+  border-top:1px solid var(--ink);
+  border-bottom:1px solid var(--rule);
+  text-align:center;
+}
+.hero-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero-num{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(96px,15vw,160px);
+  font-weight:200;letter-spacing:-5px;line-height:.9;
+  color:var(--ink);font-variant-numeric:tabular-nums;
+  margin-bottom:24px;
+}
+.hero-num span{font-size:.4em;vertical-align:.5em;margin-left:0;color:var(--ink-4);font-weight:300}
+.hero-headline{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:-.3px;line-height:1.5;margin-bottom:8px}
+.hero-detail{font-size:13px;color:var(--ink-4);line-height:1.7;max-width:380px;margin:0 auto}
+
+/* ═══════════ CHART ═══════════ */
+.chart-wrap{margin:48px 0;border-top:1px solid var(--ink);padding-top:24px}
+.chart-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px;gap:16px}
+.chart-tl{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--ink)}
+.chart-meta{font-size:10px;color:var(--ink-4);letter-spacing:1.5px;text-transform:uppercase}
+.chart-canvas{position:relative;height:320px;width:100%}
+@media(max-width:520px){.chart-canvas{height:280px}}
+
+/* ═══════════ COMPARE ═══════════ */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:48px 0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.cc-col{padding:28px 24px}
+.cc-col+.cc-col{border-left:1px solid var(--rule)}
+.cc-tag{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+.cc-name{font-size:16px;font-weight:700;color:var(--ink);letter-spacing:-.3px;margin-bottom:20px;word-break:break-all}
+.cc-row{display:flex;justify-content:space-between;align-items:baseline;padding:9px 0;border-top:1px solid var(--rule);font-size:12.5px;gap:12px}
+.cc-row:first-of-type{border-top:1px solid var(--ink-2)}
+.cc-key{color:var(--ink-4);font-weight:500}
+.cc-val{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+@media(max-width:560px){
+  .compare{grid-template-columns:1fr}
+  .cc-col+.cc-col{border-left:none;border-top:1px solid var(--rule)}
+  .cc-col{padding:24px 0}
+  .cc-col:first-child{padding-top:0}
+}
+
+/* ═══════════ THREE DIRECTIONS ═══════════ */
+.three{margin:48px 0;border-top:1px solid var(--ink)}
+.three-row{
+  display:grid;grid-template-columns:48px 1fr;
+  gap:24px;padding:28px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+.three-row:last-child{border-bottom:1px solid var(--ink-2)}
+.three-num{font-family:'Pretendard Variable',sans-serif;font-size:32px;font-weight:200;color:var(--ink-4);line-height:1;letter-spacing:-1.5px}
+.three-label{font-size:14.5px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.3px}
+.three-text{font-size:13.5px;color:var(--ink-3);line-height:1.75}
+
+/* ═══════════ TARGET MATRIX ═══════════ */
+.matrix{margin:48px 0;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+.mx-col{padding:28px 24px}
+.mx-col+.mx-col{border-left:1px solid var(--rule)}
+.mx-mark{font-family:'Pretendard Variable',sans-serif;font-size:24px;font-weight:200;color:var(--accent);margin-bottom:14px;letter-spacing:-1px;line-height:1}
+.mx-title{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:24px;letter-spacing:-.3px;padding-bottom:18px;border-bottom:1px solid var(--rule)}
+.mx-block{margin-bottom:20px}
+.mx-block:last-child{margin-bottom:0}
+.mx-lbl{font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-4);margin-bottom:7px}
+.mx-text{font-size:13px;color:var(--ink);line-height:1.75}
+@media(max-width:560px){
+  .matrix{grid-template-columns:1fr}
+  .mx-col+.mx-col{border-left:none;border-top:1px solid var(--rule)}
+}
+
+/* ═══════════ DARK BLOCK ═══════════ */
+.dark-block{
+  background:var(--ink);color:#fff;
+  padding:56px var(--pp);
+  margin:64px 0;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  box-sizing:border-box;
+}
+@media(min-width:1180px){
+  .dark-block{
+    width:calc(100vw - var(--nav-w));
+    margin-left:calc(50% - 50vw + var(--nav-w)/2);
+    margin-right:calc(50% - 50vw + var(--nav-w)/2);
+    padding:80px var(--pp);
+  }
+}
+.db-inner{max-width:640px;margin:0 auto}
+.db-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#ff7a4a;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.db-label::before{content:"";width:18px;height:1px;background:#ff7a4a}
+.db-h{
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:clamp(20px,2.6vw,28px);
+  font-weight:300;letter-spacing:-.7px;
+  line-height:1.45;color:#fff;
+  margin-bottom:24px;
+}
+.db-h em{font-style:normal;color:#ff7a4a;font-weight:500}
+.db-h strong{font-weight:600;color:#fff}
+.db-body{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.7);max-width:580px}
+.db-body strong{color:#fff;font-weight:600}
+.db-body p+p{margin-top:18px}
+
+/* ═══════════ FLOW (next steps) ═══════════ */
+.flow{margin:48px 0 0;border-top:1px solid var(--ink)}
+.flow-item{
+  display:grid;grid-template-columns:48px 1fr;
+  gap:24px;padding:28px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:start;
+}
+.flow-item:last-child{border-bottom:1px solid var(--ink-2)}
+.flow-num{font-family:'Pretendard Variable',sans-serif;font-size:24px;font-weight:200;color:var(--ink-4);line-height:1;letter-spacing:-1px;padding-top:4px}
+.flow-title{font-size:15px;font-weight:700;color:var(--ink);line-height:1.5;letter-spacing:-.3px;margin-bottom:8px}
+.flow-desc{font-size:13px;color:var(--ink-3);line-height:1.75}
+
+
+/* ═══════════ REVIEW CTA ═══════════ */
+.review-cta{
+  padding:0 var(--pp);
+  margin:0 0 64px;
+}
+.review-cta-inner{
+  max-width:640px;margin:0 auto;
+}
+.review-cta-greeting{
+  font-family:'SUIT Variable','Pretendard Variable',sans-serif;
+  font-size:19px;font-weight:700;letter-spacing:-.5px;
+  color:var(--ink);
+  margin:0 0 18px;
+}
+.review-cta-body{
+  font-size:15.5px;line-height:1.85;color:var(--ink-2);
+  margin-bottom:28px;letter-spacing:-.05px;
+}
+.review-cta-body strong{color:var(--ink);font-weight:600}
+.review-cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--accent);color:#fff;
+  border:none;
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:-.1px;
+  padding:14px 24px;
+  text-decoration:none;
+  transition:background .2s ease;
+}
+.review-cta-btn:hover{
+  background:#d04915;
+}
+.review-cta-btn .arrow{
+  display:inline-block;
+  transition:transform .2s ease;
+}
+.review-cta-btn:hover .arrow{
+  transform:translateX(3px);
+}
+@media(min-width:1180px){
+  .review-cta{margin-bottom:80px}
+}
+
+/* ═══════════ MINI TABLE ═══════════ */
+.mini-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:28px 0;
+  font-family:'Pretendard Variable',sans-serif;
+}
+.mini-table thead th{
+  text-align:left;
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  color:var(--ink-4);
+  padding:10px 12px 10px 0;
+  border-bottom:1px solid var(--ink);
+}
+.mini-table tbody td{
+  padding:16px 12px 16px 0;
+  border-bottom:1px solid var(--rule);
+  font-size:14.5px;
+  line-height:1.6;
+  color:var(--ink-2);
+  vertical-align:top;
+}
+.mini-table tbody td:first-child{
+  font-weight:600;
+  color:var(--ink);
+  white-space:nowrap;
+  padding-right:24px;
+}
+.mini-table tbody td.ratio{
+  font-family:'SUIT Variable','Pretendard Variable',sans-serif;
+  font-weight:700;
+  color:var(--accent);
+  white-space:nowrap;
+  font-size:15px;
+}
+.mini-table tbody tr:last-child td{border-bottom:none}
+
+/* ═══════════ EXAMPLE IMAGE ═══════════ */
+.example-img{
+  margin:28px 0 8px;
+  border:1px solid var(--rule);
+  background:#fff;
+}
+.example-img img{
+  display:block;
+  width:100%;
+  height:auto;
+}
+.example-caption{
+  font-size:11.5px;
+  color:var(--ink-4);
+  text-align:center;
+  margin:0 0 28px;
+  letter-spacing:.2px;
+}
+
+/* ═══════════ FOOTER ═══════════ */
+.foot{
+  border-top:1px solid var(--rule);
+  padding:48px var(--pp);
+  margin-top:64px;
+}
+.foot-inner{
+  max-width:var(--max-w);margin:0 auto;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:10px;color:var(--ink-4);letter-spacing:1.5px;text-transform:uppercase;
+  font-weight:500;
+}
+.foot-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);display:flex;align-items:center}
+.foot-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+@media(max-width:520px){.foot-inner{flex-direction:column;gap:10px;align-items:flex-start}}
+
+/* ═══════════ CLIENT VOICE ═══════════ */
+.voice-meta{
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:0;margin-top:32px;
+  border-top:1px solid var(--rule);
+}
+.vm-item{
+  display:flex;flex-direction:column;gap:4px;
+  padding:14px 16px 14px 0;
+  border-bottom:1px solid var(--rule);
+}
+.vm-item:nth-child(2n){padding-left:16px;padding-right:0;border-left:1px solid var(--rule)}
+.vm-key{font-size:9.5px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink-4)}
+.vm-val{font-size:13px;font-weight:500;color:var(--ink);letter-spacing:-.2px;line-height:1.5}
+
+.voice-list{margin-top:48px}
+.voice-item{
+  padding:32px 0;
+  border-bottom:1px solid var(--rule);
+}
+.voice-item:first-child{padding-top:0}
+.voice-item:last-child{border-bottom:1px solid var(--ink-2)}
+.voice-q-label{
+  display:inline-block;
+  font-size:10px;font-weight:700;letter-spacing:2px;
+  color:var(--accent);margin-bottom:14px;
+  font-variant-numeric:tabular-nums;
+}
+.voice-q{
+  font-size:14.5px;font-weight:600;color:var(--ink-2);
+  letter-spacing:-.3px;line-height:1.5;margin-bottom:18px;
+}
+.voice-a{
+  font-size:15.5px;line-height:1.95;color:var(--ink);
+  letter-spacing:-.05px;font-weight:400;
+  word-break:normal;
+  overflow-wrap:break-word;
+}
+
+@media(max-width:560px){
+  .voice-meta{grid-template-columns:1fr}
+  .vm-item{padding:14px 0}
+  .vm-item:nth-child(2n){padding-left:0;border-left:none}
+}
+
+/* ═══════════ ANIMATIONS ═══════════ */
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+/* three directions - stagger */
+.three .three-row{opacity:0;transform:translateX(-8px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.three.visible .three-row{opacity:1;transform:translateX(0)}
+.three.visible .three-row:nth-child(1){transition-delay:.1s}
+.three.visible .three-row:nth-child(2){transition-delay:.25s}
+.three.visible .three-row:nth-child(3){transition-delay:.4s}
+
+/* compare cards stagger */
+.compare .cc-col{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.compare.visible .cc-col:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.1s}
+.compare.visible .cc-col:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.25s}
+
+/* matrix stagger */
+.matrix .mx-col{opacity:0;transform:translateY(12px);transition:opacity .7s cubic-bezier(.2,.8,.2,1),transform .7s cubic-bezier(.2,.8,.2,1)}
+.matrix.visible .mx-col:nth-child(1){opacity:1;transform:translateY(0);transition-delay:.1s}
+.matrix.visible .mx-col:nth-child(2){opacity:1;transform:translateY(0);transition-delay:.25s}
+
+/* flow stagger */
+.flow .flow-item{opacity:0;transform:translateX(-8px);transition:opacity .6s cubic-bezier(.2,.8,.2,1),transform .6s cubic-bezier(.2,.8,.2,1)}
+.flow.visible .flow-item:nth-child(1){opacity:1;transform:translateX(0);transition-delay:.05s}
+.flow.visible .flow-item:nth-child(2){opacity:1;transform:translateX(0);transition-delay:.18s}
+.flow.visible .flow-item:nth-child(3){opacity:1;transform:translateX(0);transition-delay:.31s}
+.flow.visible .flow-item:nth-child(4){opacity:1;transform:translateX(0);transition-delay:.44s}
+.flow.visible .flow-item:nth-child(5){opacity:1;transform:translateX(0);transition-delay:.57s}
+.flow.visible .flow-item:nth-child(6){opacity:1;transform:translateX(0);transition-delay:.70s}
+
+/* dark block - bg first, then content */
+.dark-block{opacity:0;transition:opacity .8s cubic-bezier(.2,.8,.2,1)}
+.dark-block.visible{opacity:1}
+.dark-block .db-label,
+.dark-block .db-h,
+.dark-block .db-body{opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
+.dark-block.visible .db-label{opacity:1;transform:translateY(0);transition-delay:.2s}
+.dark-block.visible .db-h{opacity:1;transform:translateY(0);transition-delay:.35s}
+.dark-block.visible .db-body{opacity:1;transform:translateY(0);transition-delay:.5s}
+
+/* chart wrap fade - DISABLED to prevent rendering issue */
+.chart-wrap{opacity:1}
+
+@media (prefers-reduced-motion: reduce){
+  .fade-in,.three .three-row,.compare .cc-col,.matrix .mx-col,
+  .flow .flow-item,.dark-block,.chart-wrap,
+  .dark-block .db-label,.dark-block .db-h,.dark-block .db-body{
+    opacity:1!important;transform:none!important;transition:none!important;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════ TOP BAR (mobile/tablet) ═══════════ -->
+<header class="topbar" role="banner">
+  <div class="tb-inner">
+    <div class="tb-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div class="tb-current" id="tbCurrent"><span class="num">01</span>계정 현황</div>
+    <div class="tb-progress">
+      <div class="tb-prog-bar"><div class="tb-prog-fill" id="tbProgFill"></div></div>
+      <button class="tb-menu" id="tbMenu" aria-label="목차 열기">
+        <span class="tb-menu-icon"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<!-- ═══════════ SIDE NAV (desktop) ═══════════ -->
+<nav class="sidenav" aria-label="목차">
+  <div class="sn-masthead">
+    <div class="sn-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div class="sn-client">이건우</div>
+    <div class="sn-tagline">1RM · nore__ai · N°016</div>
+  </div>
+  <div class="sn-head">Contents</div>
+  <ul class="sn-list">
+    <li class="sn-item"><a href="#s01"><span class="sn-num">01</span><span class="sn-title">계정 구조</span></a></li>
+    <li class="sn-item"><a href="#s02"><span class="sn-num">02</span><span class="sn-title">콘텐츠 — 이미 작동 중</span></a></li>
+    <li class="sn-item"><a href="#s03"><span class="sn-num">03</span><span class="sn-title">단가와 타겟</span></a></li>
+    <li class="sn-item"><a href="#s04"><span class="sn-num">04</span><span class="sn-title">@1rm__official 역할</span></a></li>
+    <li class="sn-item"><a href="#s05"><span class="sn-num">05</span><span class="sn-title">nore__ai</span></a></li>
+    <li class="sn-item"><a href="#s06"><span class="sn-num">06</span><span class="sn-title">대표 유입 전략</span></a></li>
+    <li class="sn-item"><a href="#s07"><span class="sn-num">07</span><span class="sn-title">벤치마킹</span></a></li>
+    <li class="sn-item"><a href="#s08"><span class="sn-num">08</span><span class="sn-title">AI 활용</span></a></li>
+    <li class="sn-item"><a href="#s09"><span class="sn-num">09</span><span class="sn-title">프로필</span></a></li>
+    <li class="sn-item"><a href="#s10"><span class="sn-num">10</span><span class="sn-title">우선순위</span></a></li>
+  </ul>
+  <div class="sn-foot">
+    <div class="sn-foot-lbl"><span>Progress</span><span class="sn-foot-num" id="snProgNum">0%</span></div>
+    <div class="sn-prog"><div class="sn-prog-fill" id="snProgFill"></div></div>
+  </div>
+</nav>
+
+
+<!-- ═══════════ MOBILE DRAWER ═══════════ -->
+<div class="drawer" id="drawer" role="dialog" aria-label="목차" aria-hidden="true">
+  <div class="drawer-head">
+    <div class="drawer-brand"><span class="dot"></span>RE:FEEEL</div>
+    <button class="drawer-close" id="drawerClose" aria-label="닫기">×</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-eyebrow">Contents</div>
+    <ul class="dw-list">
+      <li class="dw-item"><a href="#s01"><span class="dw-num">01</span><span class="dw-body"><span class="dw-title">계정 구조</span><span class="dw-desc">3개 계정 · 7개 지점</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s02"><span class="dw-num">02</span><span class="dw-body"><span class="dw-title">콘텐츠 — 이미 작동 중</span><span class="dw-desc">600 팔로워에 7만 조회수</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s03"><span class="dw-num">03</span><span class="dw-body"><span class="dw-title">단가와 타겟</span><span class="dw-desc">페인포인트가 가격을 결정</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s04"><span class="dw-num">04</span><span class="dw-body"><span class="dw-title">@1rm__official 역할</span><span class="dw-desc">B2C와 B2B 사이에 섞임</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s05"><span class="dw-num">05</span><span class="dw-body"><span class="dw-title">nore__ai</span><span class="dw-desc">카피와 검증의 문제</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s06"><span class="dw-num">06</span><span class="dw-body"><span class="dw-title">대표 유입 전략</span><span class="dw-desc">7개 지점이라는 카드</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s07"><span class="dw-num">07</span><span class="dw-body"><span class="dw-title">벤치마킹</span><span class="dw-desc">카이정 · 리얼코치</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s08"><span class="dw-num">08</span><span class="dw-body"><span class="dw-title">AI 활용</span><span class="dw-desc">그록 · 제미나이 · 클로드</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s09"><span class="dw-num">09</span><span class="dw-body"><span class="dw-title">프로필</span><span class="dw-desc">추상에서 구체로</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s10"><span class="dw-num">10</span><span class="dw-body"><span class="dw-title">우선순위</span><span class="dw-desc">다음 단계</span></span><span class="dw-arrow">→</span></a></li>
+    </ul>
+  </div>
+</div>
+
+
+<main>
+
+
+<!-- ═══════════ COVER ═══════════ -->
+<section class="cover" aria-label="표지">
+<div class="cover-inner">
+  <div class="cv-top">
+    <div>RE:FEEEL Consulting Brief</div>
+    <div class="r">
+      Brief N°016<br>
+      2026 . 05 . 06
+    </div>
+  </div>
+  <div class="cv-mid">
+    <div class="cv-label">Brand Strategy Diagnosis</div>
+    <h1 class="cv-h1">컨설팅 요약<span class="line2">이건우 · 1RM · nore__ai</span></h1>
+    <p class="cv-desc">
+      PT 7개 지점을 운영하는 대표입니다. 콘텐츠로 도달을 만들어내는 능력도 함께 갖춰져 있는데 — 정작 세 개의 계정과 새 제품(nore__ai)이 각자의 역할 없이 흩어져 있는 상태입니다.
+    </p>
+  </div>
+  <div class="cv-bot" style="grid-template-columns:repeat(2,1fr);max-width:560px;">
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">01</div>
+      <div class="cv-kpi-val"><span class="ac">12K</span></div>
+      <div class="cv-kpi-lbl">@1rm__official 팔로워</div>
+      <div class="cv-kpi-sub">타겟이 섞여 있는 계정</div>
+    </div>
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">02</div>
+      <div class="cv-kpi-val">600</div>
+      <div class="cv-kpi-lbl">@1rm_archive 팔로워</div>
+      <div class="cv-kpi-sub">적은데 폭발적인 도달</div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════ INTRO ═══════════ -->
+<section class="intro" aria-label="서문">
+  <p>건우 대표님은 콘텐츠를 잘 만드는 사람입니다. 600 팔로워인 계정에서 릴스 조회수 7만이 나오고, 7개 PT 지점을 운영하면서 다양한 콘텐츠 자산을 만들어왔어요. 지금 시점의 과제는 — 세 개의 계정과 한 개의 새 제품(nore__ai)의 역할을 정리하는 일입니다.</p>
+</section>
+
+
+<!-- ═══════════ § 01. 계정 구조 ═══════════ -->
+<section class="section" id="s01" data-title="계정 구조">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">01</span><span>Account Structure</span></div>
+    <h2 class="s-title">세 개의 계정, <em>겹쳐 있는 역할</em></h2>
+
+    <table class="mini-table">
+      <thead>
+        <tr><th>계정</th><th>팔로워</th><th>역할</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>@1rm_archive</td>
+          <td class="ratio">600</td>
+          <td>PT 콘텐츠 (B2C). 적은 팔로워에 폭발적 도달.</td>
+        </tr>
+        <tr>
+          <td>@1rm__official</td>
+          <td class="ratio">12K</td>
+          <td>운동 정보 트래픽용 — 타겟이 고객과 트레이너 사이에서 혼재.</td>
+        </tr>
+        <tr>
+          <td>@nore__ai</td>
+          <td class="ratio">초기</td>
+          <td>AI CRM (B2B). PT샵 운영자 대상.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="prose">
+      <p>각 계정마다 역할이 명확히 분리돼야 합니다. 지금은 @1rm__official이 두 타겟 사이에 끼어 있고, @nore__ai는 1RM과 다른 톤으로 운영되고 있습니다. 한 사람이 만들어내고 있지만, 결과적으로 각 계정의 잠재력이 한 방향으로 작동하지 않는 구조입니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 02. 콘텐츠 ═══════════ -->
+<section class="section" id="s02" data-title="콘텐츠 — 이미 작동 중">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">02</span><span>Content Engine</span></div>
+    <h2 class="s-title">콘텐츠는 <em>이미 작동하고 있습니다</em></h2>
+
+    <div class="prose">
+      <p>팔로워 600인데 릴스 조회수가 6만~7.3만이 나옵니다. 도달 효율이 매우 높은 상태이고, <em>콘텐츠 제작 능력 자체를 바꿀 필요는 없습니다.</em></p>
+    </div>
+
+    <table class="mini-table">
+      <thead>
+        <tr><th>콘텐츠</th><th>조회수</th><th>특징</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>"회원님 대출 받아오세요.."</td>
+          <td class="ratio">7.3만</td>
+          <td>타 헬스장과의 차별 어필</td>
+        </tr>
+        <tr>
+          <td>여성 회원 감량 전후</td>
+          <td class="ratio">7만</td>
+          <td>고객이 직접 말하는 결과</td>
+        </tr>
+        <tr>
+          <td>"오직 간호사분들을 위한 PT"</td>
+          <td class="ratio">6.1만</td>
+          <td>구체적 페르소나 타겟팅</td>
+        </tr>
+        <tr>
+          <td>"당뇨 전단계? 식단 없이 14kg"</td>
+          <td class="ratio">6만</td>
+          <td>상식 파괴 반전 훅</td>
+        </tr>
+        <tr>
+          <td>야외 러닝 / 트레이닝 장면</td>
+          <td class="ratio">1천~2천</td>
+          <td>일상 / 운동 장면 — 도달 안 됨</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="prose">
+      <p>패턴이 명확합니다 — <em>고객의 입에서 나오는 이야기 &gt; 빌런 서사 / 반전 훅 &gt; 일상 / 운동 장면.</em> Raw 톤의 고객 인터뷰, 카톡 피드백·인바디·식단 일지 같은 과정 증거 시각화, 간호사·당뇨 같은 구체적 페르소나 타겟팅까지 갖춰져 있습니다. 다음 단계는 이 능력을 어떤 타겟에게 어떻게 배치할지를 결정하는 일입니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 03. 단가와 타겟 ═══════════ -->
+<section class="section" id="s03" data-title="단가와 타겟">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">03</span><span>Pricing Logic</span></div>
+    <h2 class="s-title">단가는 <em>비교 대상이 결정합니다</em></h2>
+
+    <div class="prose">
+      <p>단가를 올리고 싶다고 하셨는데 — 가격은 내가 정하는 게 아니라 <em>고객이 비교하는 대상이 결정합니다.</em> 고객은 절대 가격을 가격 자체로 판단하지 않고, 항상 "이거 말고 저거 하면 얼마지?"를 무의식적으로 계산합니다.</p>
+      <p>다이어트 고객의 비교 대상은 위고비(30만원/월)나 홈트(무료)입니다. 그러면 PT 60만원/월이 비싸 보입니다. 반면 통증 / 재활 고객의 비교 대상은 도수 치료(회당 18만원)나 수술(수백만원)입니다. 같은 PT인데 10만원/회가 오히려 싸 보입니다.</p>
+      <p>같은 PT인데 타겟의 페인포인트만 달라져도 가격의 설득력이 완전히 달라진다는 뜻입니다. 핵심은 <em>"내 타겟이 누구이고, 그 타겟의 경쟁자가 무엇인지"</em>를 깊이 이해하는 것입니다. 브랜딩 클래스에서 경쟁자와 포지셔닝을 다룬 챕터를 먼저 진행해보시는 것을 권합니다.</p>
+      <p>콘텐츠도 마찬가지입니다. 유입용(조회수를 위한 다이어트 / 빌런 서사)과 전환용(실제로 타겟하는 고객의 이야기)을 피드 안에서 전략적으로 배치하는 것을 권합니다. 9~12개를 한 세트로 보면서 조절해보세요.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 04. @1rm__official ═══════════ -->
+<section class="section" id="s04" data-title="@1rm__official 역할">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">04</span><span>Role Clarification</span></div>
+    <h2 class="s-title">@1rm__official, <em>역할이 정해져야 합니다</em></h2>
+
+    <div class="prose">
+      <p>이 계정은 지금 타겟이 고객과 트레이너 사이에서 섞여 있습니다. 초보자용 운동 팁이 있다가 전문가용 고찰이 나오고 — 누구한테 말하는 건지 읽히지 않는 상태입니다.</p>
+      <p>교육이나 컨설팅 방향으로 확장할 계획이 있다면, B2B(트레이너 / 운영자 대상)로 가져가는 것이 자연스럽습니다. 운동 정보는 @1rm_archive에서 다룰 수 있는 영역이고요. 다만 교육은 따로 담당하는 분이 계시다고 하셨으니, 역할이 겹치지 않도록 정리가 필요합니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 05. nore__ai ═══════════ -->
+<section class="section" id="s05" data-title="nore__ai">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">05</span><span>nore__ai</span></div>
+    <h2 class="s-title">nore__ai — <em>두 가지 문제</em></h2>
+
+    <div class="prose">
+      <p>AI CRM 자체는 의미 있는 제품입니다. 다만 지금 두 가지 문제가 있습니다.</p>
+      <p><em>첫 번째 — 카피가 1RM과 완전히 다릅니다.</em> 1RM 릴스에서는 고객의 언어로, Raw하게, 감정이 있는 스토리텔링을 하고 있는데 — nore__ai 캐러셀에서는 "매출이 안 나올 때 진짜 문제는 매장 안에 있습니다", "피트니스 생존의 코어" 같은 전형적인 SaaS 마케팅 문구만 있습니다. 1RM에서 잘 쓰고 있는 고객의 언어가 여기서는 하나도 보이지 않습니다.</p>
+      <p>건우 대표님이 7개 지점을 운영하면서 직접 겪은 문제 — <em>"회원이 갑자기 안 나왔는데 아무도 몰랐다", "트레이너 피드백을 관리하고 싶은데 감으로만 했다"</em> — 이런 실제 경험을 1RM 콘텐츠의 톤으로 풀어야 nore__ai도 설득력이 생깁니다.</p>
+      <p><em>두 번째 — 이 제품이 필요한 사람이 누구인지 아직 검증되지 않았습니다.</em> 건우 대표님도 "다른 대표님들이 이걸 문제라고 느낄까, 엇박이 있을까 봐 걱정"이라고 하셨는데 — 그 걱정이 맞을 수 있습니다. 앉아서 기능을 만드는 것보다 직접 만나서 물어보는 것을 권합니다. "뭐가 고민이야, 이런 거 있으면 쓸 것 같아?" 하고 물어보고, 무료로 몇 명한테 써보게 한 다음 피드백을 받으세요. 소구점은 거기서 나옵니다.</p>
+      <p>랜딩 페이지도 같은 문제입니다. 지금은 "통합 대시보드", "AI 매출 분석", "트레이너 KPI" 같은 기능 나열만 있는데, 이런 기능이 왜 필요한지조차 모르는 사람들이 타겟입니다. 기능 설명 전에 — <em>고객의 문제가 먼저 와야 합니다.</em> 와디즈에서 잘 팔리는 교육 / 강의 상품의 상세 페이지를 참고해보셔도 좋습니다. 문제 인식 → 공감 → 해결책 → 증거 → CTA의 순서가 있고, AI 앱이니까 텍스트보다 UI 이미지가 많이 보여야 합니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 06. 대표 유입 전략 ═══════════ -->
+<section class="section" id="s06" data-title="대표 유입 전략">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">06</span><span>Owner Funnel</span></div>
+    <h2 class="s-title">7개 지점이라는 <em>가장 강력한 카드</em></h2>
+
+    <div class="prose">
+      <p>PT샵 운영자들이 가장 궁금해하는 게 "조회수 나오는 콘텐츠 만들고 싶어요", "인스타 잘하고 싶어요"입니다. 건우 대표님은 팔로워 600에서 조회수 7만을 만들어내고 있고, 12K까지 키운 경험도 있습니다.</p>
+      <p>"PT샵 운영하는 사람 입장에서 전환되는 콘텐츠 만드는 법"을 알려주면서 대표님들을 유입시키고, 자연스럽게 nore__ai로 연결하는 구조가 가능합니다. 회원님들이 릴스에 나오는 것 자체도 — "나도 저런 거 찍고 싶은데 어떻게 해요?"라는 소재가 됩니다.</p>
+      <p>그리고 7개 지점을 운영하고 있다는 것을 더 드러내는 것을 권합니다. 대표님들이 반응하는 건 "PT샵 7개 운영한대? 매출 얼마래?" 같은 결입니다. 콘텐츠로 만들어내기도 쉽고, 프랜차이즈 방향으로 갈 때도 가장 강력한 전환 근거가 됩니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 07. 벤치마킹 ═══════════ -->
+<section class="section" id="s07" data-title="벤치마킹">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">07</span><span>Benchmark</span></div>
+    <h2 class="s-title">벤치마킹 — <em>카이정 모델</em></h2>
+
+    <div class="prose">
+      <p>카이정은 미용실 경영 교육으로 업계 수준을 올린 사람입니다. 매출을 직접 공개하고, 소통을 적극적으로 하고, 리더로서의 모습을 전략적으로 보여주는 방식이 참고할 만한 구조입니다.</p>
+      <p>피트니스도 미용실과 구조가 비슷합니다 — 인력 기반, 파편화된 소규모 사업자, 체계적 경영의 부재. 카이정이 미용실에서 한 것을 피트니스에서 하는 포지션이 가능합니다.</p>
+      <p>피트니스 업계에서 마케팅을 하고 있는 계정들(리얼코치 등)도 — 내용에 동의하지 않더라도 봐야 합니다. 그들이 어떤 소구점을 쓰고, 어떤 훅을 쓰고, 어떤 문구에 사람들이 반응하는지를 데이터로 가져와서, 거기에 건우 대표님이 하고 싶은 이야기를 넣는 것입니다. 그록으로 이런 계정들의 콘텐츠를 분석해보는 것도 방법입니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 08. AI 활용 ═══════════ -->
+<section class="section" id="s08" data-title="AI 활용">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">08</span><span>AI Workflow</span></div>
+    <h2 class="s-title">도구별 역할 — <em>그록 · 제미나이 · 클로드</em></h2>
+
+    <div class="prose">
+      <p>건우 대표님은 이미 AI를 적극적으로 활용하고 있습니다. 도구별로 강점이 다르므로 역할을 나눠 쓰면 마케팅에도 같은 결로 확장할 수 있습니다.</p>
+    </div>
+
+    <table class="mini-table">
+      <thead>
+        <tr><th>도구</th><th>역할</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>그록 (Grok)</td>
+          <td>인스타에서 실제로 먹히는 마케팅 언어 추출. SNS 데이터 기반 AI라서 어떤 단어와 문장이 조회수 / 저장을 만드는지 리서치 가능. 한국 데이터가 부족하면 미국 피트니스 마케팅으로 확장.</td>
+        </tr>
+        <tr>
+          <td>제미나이 딥리서치</td>
+          <td>시장 규모, 경쟁 서비스, 상세 페이지 구조 같은 리서치 자료 수집.</td>
+        </tr>
+        <tr>
+          <td>클로드</td>
+          <td>프롬프트 설계, 콘텐츠 기획, 전략 정리. 그록 / 제미나이에 넣을 프롬프트를 먼저 클로드로 작성하면 결과물 질이 올라갑니다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 09. 프로필 ═══════════ -->
+<section class="section" id="s09" data-title="프로필">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">09</span><span>Profile</span></div>
+    <h2 class="s-title">프로필 — <em>추상에서 구체로</em></h2>
+
+    <div class="prose">
+      <p>현재 프로필 카피 — "가치를 쫓는 전문가들이 모인 곳. 바른 사람들이 오래 만든 변화를 기록합니다." 좋은 문장이지만 추상적입니다.</p>
+      <p>"여성전용 PT | 전국 7개 지점 | 대전 · 수원 · 김포" 같은 구체적 정보가 들어가면 전환이 달라집니다. 처음 보는 사람이 3초 안에 "이 사람 진짜 운영하고 있구나, 우리 동네에도 있구나"를 느끼는 흐름입니다. 건우 대표님의 언어로 다시 써보시는 것을 권합니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 10. 우선순위 ═══════════ -->
+<section class="section" id="s10" data-title="우선순위">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">10</span><span>Next Steps</span></div>
+    <h2 class="s-title">우선순위</h2>
+
+    <div class="prose">
+      <p>지금 시선이 분산되어 있습니다. 1RM 콘텐츠, 오피셜 방향, nore__ai, 컨설팅, 단가 — 다 중요하지만 동시에 할 수 없습니다. 다섯 가지를 순서대로 권합니다.</p>
+    </div>
+
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div>
+          <div class="flow-title">브랜딩 클래스 워크북 진행 — 포지셔닝과 경쟁자 챕터 먼저</div>
+          <div class="flow-desc">타겟, 경쟁자, 페인포인트의 구조가 정리되면 콘텐츠 방향도 같이 잡힙니다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div>
+          <div class="flow-title">nore__ai 고객 조사</div>
+          <div class="flow-desc">대표님들 직접 만나기, 무료 체험 제공, 피드백 수집. 기능을 만드는 것보다 — 누가 필요로 하는지를 먼저 검증.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div>
+          <div class="flow-title">@1rm_archive 콘텐츠 배치 조절</div>
+          <div class="flow-desc">유입용(조회수 콘텐츠)과 전환용(타겟 고객의 이야기)을 9~12개 한 세트로 전략적으로 섞기.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">4</div>
+        <div>
+          <div class="flow-title">nore__ai 랜딩 페이지 리빌드</div>
+          <div class="flow-desc">기능 나열에서 — 고객의 문제에서 시작하는 구조로. 문제 인식 → 공감 → 해결책 → 증거 → CTA. UI 이미지 비중 늘리기.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">5</div>
+        <div>
+          <div class="flow-title">@1rm__official 역할 정리</div>
+          <div class="flow-desc">B2C / B2B 혼재를 정리. 교육 · 컨설팅으로 가져가려면 B2B로, 운동 정보는 archive로 이관.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ REVIEW CTA ═══════════ -->
+<section class="review-cta" aria-label="후기 요청">
+  <div class="review-cta-inner">
+    <h3 class="review-cta-greeting">건우 대표님에게</h3>
+    <p class="review-cta-body">
+      이 컨설팅이 도움이 됐다면, 짧은 후기 한 줄을 부탁드립니다. 어떤 부분이 가장 도움이 됐는지, 한 줄이면 — 다음 코호트를 고민하는 분들에게 큰 도움이 되니까요.
+    </p>
+    <a href="https://refeeel.com/shop_view?idx=46" class="review-cta-btn" target="_blank" rel="noopener">
+      구매평 남기기 <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+
+</main>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div>본 브리프는 건우 대표님을 위해 작성되었습니다 · © 2026</div>
+  </div>
+</footer>
+
+
+<script>
+// ── REVEAL ANIMATIONS ──
+const reveal = document.querySelectorAll('.three, .compare, .matrix, .flow, .dark-block');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+reveal.forEach(el => revealObserver.observe(el));
+
+// ── DRAWER ──
+const drawer = document.getElementById('drawer');
+const tbMenu = document.getElementById('tbMenu');
+const drawerClose = document.getElementById('drawerClose');
+function openDrawer(){ drawer.classList.add('open'); document.body.classList.add('drawer-open'); drawer.setAttribute('aria-hidden','false'); }
+function closeDrawer(){ drawer.classList.remove('open'); document.body.classList.remove('drawer-open'); drawer.setAttribute('aria-hidden','true'); }
+tbMenu?.addEventListener('click', openDrawer);
+drawerClose?.addEventListener('click', closeDrawer);
+drawer?.addEventListener('click', (e) => { if(e.target === drawer) closeDrawer(); });
+drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+// ── PROGRESS BAR ──
+const tbProgFill = document.getElementById('tbProgFill');
+const snProgFill = document.getElementById('snProgFill');
+const snProgNum = document.getElementById('snProgNum');
+
+function updateProgress(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+  if(tbProgFill) tbProgFill.style.width = pct + '%';
+  if(snProgFill) snProgFill.style.width = pct + '%';
+  if(snProgNum) snProgNum.textContent = Math.round(pct) + '%';
+}
+updateProgress();
+window.addEventListener('scroll', updateProgress, { passive: true });
+
+// ── ACTIVE SECTION ──
+const sections = document.querySelectorAll('section[id]');
+const snItems = document.querySelectorAll('.sn-item');
+const tbCurrent = document.getElementById('tbCurrent');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.id;
+      const num = id.replace('s','');
+      const title = entry.target.dataset.title || '';
+      snItems.forEach(item => {
+        const a = item.querySelector('a');
+        item.classList.toggle('active', a && a.getAttribute('href') === '#' + id);
+      });
+      if(tbCurrent && title){
+        tbCurrent.innerHTML = '<span class="num">' + num + '</span>' + title;
+      }
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+
+sections.forEach(sec => sectionObserver.observe(sec));
+
+// ── CHART ──
+let chartInstance = null;
+function initChart(){
+  const ctx = document.getElementById('hookChart');
+  if(!ctx || typeof Chart === 'undefined' || chartInstance) return;
+
+  chartInstance = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['교육 / 정보형', 'CTA 강조형', '공감 / 질문형', '개인 서사형', '포트폴리오형'],
+      datasets: [{
+        label: '평균 ER (%)',
+        data: [0.25, 0.14, 0.06, 0.04, 0.03],
+        backgroundColor: ['#e75519', '#cfc9bd', '#cfc9bd', '#cfc9bd', '#aaa498'],
+        borderWidth: 0,
+        barPercentage: 0.7,
+        categoryPercentage: 0.85
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#0a0a0a',
+          titleColor: '#fff',
+          bodyColor: 'rgba(255,255,255,0.85)',
+          padding: 10,
+          cornerRadius: 0,
+          displayColors: false,
+          callbacks: { label: (ctx) => ctx.parsed.x + '%' }
+        }
+      },
+      scales: {
+        x: {
+          beginAtZero: true,
+          max: 0.30,
+          grid: { color: '#ebe8e0', drawBorder: false },
+          border: { display: false },
+          ticks: {
+            color: '#8a8a8a',
+            font: { size: 10.5, family: "'SUIT Variable', sans-serif", weight: 500 },
+            stepSize: 0.05,
+            callback: (v) => v.toFixed(2) + '%'
+          }
+        },
+        y: {
+          grid: { display: false },
+          border: { display: false },
+          ticks: {
+            color: '#2a2a2a',
+            font: { size: 12, family: "'SUIT Variable', sans-serif", weight: 600 },
+            padding: 14
+          }
+        }
+      },
+      animation: {
+        duration: 900,
+        easing: 'easeOutQuart',
+        delay: (context) => {
+          if(context.type === 'data' && context.mode === 'default'){
+            return context.dataIndex * 180;
+          }
+          return 0;
+        }
+      }
+    }
+  });
+}
+
+// Trigger chart render only when scrolled into view
+window.addEventListener('load', () => {
+  const chartEl = document.getElementById('hookChart');
+  if(!chartEl) return;
+
+  const chartObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        initChart();
+        chartObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  chartObserver.observe(chartEl);
+});
+</script>
+</body>
+</html>
