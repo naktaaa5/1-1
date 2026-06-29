@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>컨설팅 요약 — 박지윤님 · @mujer_official · 무헤르</title>
+<meta name="description" content="민감성 피부 큐레이션 브랜드 무헤르 · 노동을 자산으로 바꾸는 콘텐츠 구조 진단 · RE:FEEEL Consulting Summary"/>
+
+<meta property="og:type" content="article"/>
+<meta property="og:title" content="컨설팅 요약 — 박지윤님 · @mujer_official"/>
+<meta property="og:description" content="민감성 피부 큐레이션 브랜드 무헤르 · 노동을 자산으로 바꾸는 콘텐츠 구조 진단 · RE:FEEEL Consulting Summary"/>
+<meta property="og:image" content="https://pub-f337889f68dc417a957731031766fb4f.r2.dev/logo_black.png"/>
+<meta property="og:site_name" content="RE:FEEEL"/>
+<meta property="og:locale" content="ko_KR"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="컨설팅 요약 — 박지윤님"/>
+<meta name="twitter:description" content="민감성 피부 큐레이션 브랜드 무헤르 · 노동을 자산으로 · RE:FEEEL"/>
+<meta name="twitter:image" content="https://pub-f337889f68dc417a957731031766fb4f.r2.dev/logo_black.png"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ═══════════════════════════════════════════════════════
+   RE:FEEEL — Consulting Summary Design System
+   Hybrid: MUJI breathing + Editorial navigation
+   ═══════════════════════════════════════════════════════ */
+
+:root{
+  --bg:#fafaf7;
+  --bg-soft:#f3f1ec;
+  --ink:#0a0a0a;
+  --ink-2:#2a2a2a;
+  --ink-3:#555555;
+  --ink-4:#8a8a8a;
+  --ink-5:#b8b8b8;
+  --rule:#e0ddd5;
+  --rule-soft:#ebe8e0;
+  --accent:#e75519;
+  --accent-soft:rgba(231,85,25,.08);
+
+  --pp:clamp(20px,4vw,48px);
+  --max-w:880px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{
+  font-family:'SUIT Variable','Pretendard Variable',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);
+  color:var(--ink-2);
+  font-size:15px;
+  line-height:1.85;
+  font-weight:400;
+  letter-spacing:-.005em;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:clip;
+  word-break:keep-all;
+}
+
+:focus-visible{outline:1.5px solid var(--accent);outline-offset:3px}
+
+/* ═══════════ TOP BAR (mobile/tablet) ═══════════ */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(250,250,247,.88);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--rule);
+  height:52px;
+  display:flex;align-items:center;
+  padding:0 var(--pp);
+}
+.tb-inner{max-width:var(--max-w);margin:0 auto;width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.tb-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);flex-shrink:0}
+.tb-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+.tb-current{font-size:11.5px;color:var(--ink-4);font-weight:500;letter-spacing:.3px;flex:1;text-align:center;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 8px}
+.tb-current .num{color:var(--ink);font-weight:700;margin-right:8px}
+.tb-progress{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.tb-prog-bar{width:64px;height:1px;background:var(--rule);position:relative;overflow:hidden}
+.tb-prog-fill{position:absolute;top:0;left:0;height:100%;background:var(--ink);width:0%;transition:width .3s ease}
+.tb-menu{
+  background:none;border:none;padding:8px;margin-right:-8px;
+  cursor:pointer;flex-shrink:0;color:var(--ink);
+  display:flex;align-items:center;
+}
+.tb-menu-icon{display:inline-flex;flex-direction:column;gap:4px;width:14px}
+.tb-menu-icon span{display:block;height:1px;background:currentColor}
+.tb-menu-icon span:nth-child(2){width:70%}
+
+@media(max-width:640px){
+  .tb-current{font-size:11px}
+  .tb-prog-bar{width:48px}
+}
+@media(min-width:1180px){
+  .topbar{display:none}
+}
+
+/* ═══════════ SIDE NAV (desktop) ═══════════ */
+.sidenav{display:none}
+@media(min-width:1180px){
+  :root{ --nav-w:240px; }
+  .sidenav{
+    display:flex;flex-direction:column;
+    position:fixed;top:0;left:0;bottom:0;
+    width:var(--nav-w);z-index:80;
+    padding:48px 24px 32px 36px;
+    background:var(--bg);
+    border-right:1px solid var(--rule);
+    box-sizing:border-box;
+  }
+  .sn-masthead{margin-bottom:56px}
+  .sn-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);margin-bottom:24px;display:flex;align-items:center}
+  .sn-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+  .sn-client{font-size:13.5px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.4;margin-bottom:6px}
+  .sn-tagline{font-size:10px;font-weight:600;color:var(--ink-4);letter-spacing:1.6px;text-transform:uppercase}
+  .sn-head{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--ink-4);text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .sn-head::before{content:"";width:14px;height:1px;background:var(--ink-4)}
+  .sn-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:1px;flex:1;overflow-y:auto;-ms-overflow-style:none;scrollbar-width:none}
+  .sn-list::-webkit-scrollbar{display:none}
+  .sn-item a{
+    display:grid;grid-template-columns:24px 1fr;gap:10px;align-items:baseline;
+    padding:7px 0;text-decoration:none;
+    transition:transform .3s cubic-bezier(.2,.8,.2,1);
+  }
+  .sn-item a:hover{transform:translateX(2px)}
+  .sn-item a:hover .sn-title{color:var(--ink)}
+  .sn-num{font-size:9.5px;font-weight:700;letter-spacing:.5px;color:var(--ink-5);font-variant-numeric:tabular-nums}
+  .sn-title{font-size:12.5px;font-weight:500;color:var(--ink-3);letter-spacing:-.2px;transition:color .2s ease}
+  .sn-item.active .sn-num{color:var(--accent)}
+  .sn-item.active .sn-title{color:var(--ink);font-weight:700}
+  .sn-foot{padding-top:24px;border-top:1px solid var(--rule);margin-top:24px}
+  .sn-foot-lbl{font-size:9.5px;font-weight:700;letter-spacing:2px;color:var(--ink-4);text-transform:uppercase;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+  .sn-foot-num{color:var(--ink);font-variant-numeric:tabular-nums}
+  .sn-prog{width:100%;height:1px;background:var(--rule);position:relative;overflow:hidden}
+  .sn-prog-fill{position:absolute;top:0;left:0;height:100%;background:var(--ink);width:0%;transition:width .3s ease}
+}
+
+/* ═══════════ MOBILE DRAWER ═══════════ */
+.drawer{
+  position:fixed;inset:0;z-index:200;
+  background:var(--ink);color:#fff;
+  display:flex;flex-direction:column;
+  opacity:0;visibility:hidden;pointer-events:none;
+  transition:opacity .3s cubic-bezier(.2,.8,.2,1), visibility 0s linear .3s;
+}
+.drawer.open{opacity:1;visibility:visible;pointer-events:auto;transition:opacity .3s cubic-bezier(.2,.8,.2,1), visibility 0s linear 0s}
+.drawer-head{display:flex;align-items:center;justify-content:space-between;padding:0 var(--pp);height:52px;border-bottom:1px solid rgba(255,255,255,.1);flex-shrink:0}
+.drawer-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:#fff;display:flex;align-items:center}
+.drawer-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px}
+.drawer-close{background:none;border:none;color:#fff;cursor:pointer;padding:8px;margin-right:-8px;font-size:22px;line-height:1;font-weight:300}
+.drawer-body{flex:1;overflow-y:auto;padding:48px var(--pp) 64px}
+.drawer-eyebrow{font-size:10px;font-weight:700;letter-spacing:2.5px;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:32px;display:flex;align-items:center;gap:10px}
+.drawer-eyebrow::before{content:"";width:18px;height:1px;background:var(--accent)}
+.dw-list{list-style:none;margin:0;padding:0}
+.dw-item a{display:grid;grid-template-columns:32px 1fr 16px;gap:14px;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.08);text-decoration:none;color:inherit;transition:padding-left .3s cubic-bezier(.2,.8,.2,1)}
+.dw-item a:active{padding-left:6px}
+.dw-num{font-size:11px;font-weight:700;letter-spacing:1px;color:rgba(255,255,255,.5);font-variant-numeric:tabular-nums;padding-top:2px}
+.dw-body{display:flex;flex-direction:column;gap:4px}
+.dw-title{font-size:16px;font-weight:600;color:#fff;letter-spacing:-.3px;line-height:1.4}
+.dw-desc{font-size:12px;color:rgba(255,255,255,.5);line-height:1.5}
+.dw-arrow{font-size:13px;color:rgba(255,255,255,.4);padding-top:4px;text-align:right}
+body.drawer-open{overflow:hidden}
+
+/* ═══════════ MAIN ═══════════ */
+main{padding-top:52px}
+@media(min-width:1180px){main{padding-top:0;padding-left:var(--nav-w)}}
+
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pp)}
+.wrap-narrow{max-width:640px;margin:0 auto;padding:0 var(--pp)}
+
+/* ═══════════ COVER ═══════════ */
+.cover{
+  background:var(--ink);color:#fff;
+  min-height:calc(100vh - 52px);
+  display:flex;flex-direction:column;
+  padding:64px var(--pp) 48px;
+  position:relative;
+}
+@media(min-width:1180px){
+  .cover{min-height:100vh;padding:80px var(--pp) 64px}
+}
+.cover-inner{max-width:var(--max-w);margin:0 auto;width:100%;display:flex;flex-direction:column;flex:1}
+.cv-top{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:48px;font-size:10px;letter-spacing:2.5px;color:rgba(255,255,255,.5);text-transform:uppercase;font-weight:600}
+.cv-top .r{text-align:right;line-height:1.8}
+.cv-mid{flex:1;display:flex;flex-direction:column;justify-content:center;padding:48px 0}
+.cv-label{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:32px;display:flex;align-items:center;gap:10px}
+.cv-label::before{content:"";width:24px;height:1px;background:var(--accent)}
+.cv-h1{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(40px,7vw,80px);
+  font-weight:300;letter-spacing:-2.5px;
+  line-height:1;color:#fff;
+  margin-bottom:24px;
+}
+.cv-h1 .line2{display:block;color:rgba(255,255,255,.4);font-weight:200;font-size:.55em;letter-spacing:-1px;margin-top:14px}
+.cv-desc{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.7);max-width:520px;font-weight:400;margin-top:16px}
+.cv-bot{padding-top:48px;border-top:1px solid rgba(255,255,255,.1);display:grid;grid-template-columns:repeat(2,1fr);gap:32px;max-width:520px}
+.cv-kpi{padding:0}
+.cv-kpi-num{font-size:9.5px;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:1.5px;margin-bottom:14px}
+.cv-kpi-val{font-family:'Pretendard Variable','SUIT Variable',sans-serif;font-size:clamp(28px,3.5vw,42px);font-weight:300;letter-spacing:-1.5px;line-height:1;color:#fff;margin-bottom:14px;font-variant-numeric:tabular-nums}
+.cv-kpi-val .ac{color:#ff7a4a}
+.cv-kpi-lbl{font-size:12px;font-weight:600;color:#fff;margin-bottom:3px;letter-spacing:-.1px}
+.cv-kpi-sub{font-size:11px;color:rgba(255,255,255,.5);line-height:1.5}
+
+@media(max-width:640px){
+  .cv-bot{grid-template-columns:repeat(2,1fr);gap:32px 16px}
+}
+
+/* ═══════════ DOTS DIVIDER ═══════════ */
+.dots{
+  text-align:center;
+  font-size:11px;
+  color:var(--ink-5);
+  letter-spacing:6px;
+  padding:24px 0;
+}
+@media(min-width:1180px){
+  .dots{padding:32px 0}
+}
+
+/* ═══════════ INTRO ═══════════ */
+.intro{padding:48px var(--pp) 0;max-width:640px;margin:0 auto}
+@media(min-width:1180px){.intro{padding-top:64px}}
+.intro p{font-size:15.5px;line-height:1.85;color:var(--ink-3);margin-bottom:22px}
+.intro p:last-child{margin-bottom:0}
+.intro em{font-style:normal;color:var(--ink);font-weight:inherit}
+
+/* ═══════════ SECTION ═══════════ */
+.section{padding:0 var(--pp);scroll-margin-top:32px}
+.section-inner{max-width:640px;margin:0 auto;padding:48px 0}
+@media(min-width:1180px){.section-inner{padding:64px 0}}
+
+.s-marker{
+  display:flex;align-items:baseline;gap:14px;
+  margin-bottom:24px;
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:10px;font-weight:600;letter-spacing:2.5px;
+  color:var(--ink-4);text-transform:uppercase;
+}
+.s-marker-num{color:var(--ink);font-weight:700}
+
+.s-title{
+  font-family:'Pretendard Variable','SUIT Variable',sans-serif;
+  font-size:clamp(28px,4vw,40px);
+  font-weight:300;letter-spacing:-1.2px;
+  line-height:1.25;color:var(--ink);
+  margin-bottom:24px;
+}
+.s-title em{font-style:normal;color:var(--ink-4);font-weight:200}
+
+.s-sub{
+  font-size:15px;line-height:1.75;color:var(--ink-3);
+  font-weight:400;margin-bottom:36px;
+}
+.s-sub strong{color:var(--ink);font-weight:600}
+
+/* ═══════════ PROSE ═══════════ */
+.prose{font-size:15.5px;line-height:1.85;color:var(--ink-3)}
+.prose p{margin-bottom:22px}
+.prose p:last-child{margin-bottom:0}
+.prose em{font-style:normal;color:var(--ink);font-weight:inherit}
+
+/* ═══════════ ACCOUNTS TABLE ═══════════ */
+.acc-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:32px 0;
+  font-family:'Pretendard Variable',sans-serif;
+  table-layout:fixed;
+}
+.acc-table col.c-name{width:auto}
+.acc-table col.c-num{width:96px}
+.acc-table col.c-role{width:auto}
+
+.acc-table th, .acc-table td{
+  padding:14px 14px 14px 0;
+  vertical-align:top;
+}
+.acc-table th:last-child, .acc-table td:last-child{padding-right:0}
+
+.acc-table thead th{
+  font-size:10.5px;
+  font-weight:700;
+  letter-spacing:1.8px;
+  text-transform:uppercase;
+  color:var(--ink-4);
+  text-align:left;
+  border-bottom:1px solid var(--ink);
+}
+.acc-table thead th.num{text-align:right}
+
+.acc-table tbody td{
+  font-size:14.5px;
+  line-height:1.55;
+  color:var(--ink-2);
+  border-bottom:1px solid var(--rule);
+}
+.acc-table tbody td.name{
+  font-family:'Pretendard Variable',sans-serif;
+  font-weight:700;
+  color:var(--ink);
+  white-space:nowrap;
+  letter-spacing:-.2px;
+}
+.acc-table tbody td.num{
+  text-align:right;
+  font-weight:700;
+  color:var(--accent);
+  font-variant-numeric:tabular-nums;
+  white-space:nowrap;
+}
+.acc-table tbody td.role{
+  font-size:13.5px;
+  color:var(--ink-3);
+}
+.acc-table tbody tr:last-child td{border-bottom:none}
+
+@media(max-width:560px){
+  .acc-table col.c-num{width:72px}
+  .acc-table th, .acc-table td{padding:14px 10px 14px 0}
+  .acc-table th:last-child, .acc-table td:last-child{padding-right:0}
+  .acc-table tbody td.name{font-size:12.5px}
+  .acc-table tbody td.num{font-size:13.5px}
+  .acc-table tbody td.role{font-size:12.5px}
+}
+
+/* ═══════════ DARK BLOCK (Next) ═══════════ */
+.dark-block{
+  background:var(--ink);color:#fff;
+  padding:56px var(--pp);
+  margin:64px 0 0;
+  width:100vw;
+  margin-left:calc(50% - 50vw);
+  margin-right:calc(50% - 50vw);
+  box-sizing:border-box;
+}
+@media(min-width:1180px){
+  .dark-block{
+    width:calc(100vw - var(--nav-w));
+    margin-left:calc(50% - 50vw + var(--nav-w)/2);
+    margin-right:calc(50% - 50vw + var(--nav-w)/2);
+    padding:80px var(--pp);
+  }
+}
+.db-inner{max-width:640px;margin:0 auto}
+.db-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#ff7a4a;margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.db-label::before{content:"";width:18px;height:1px;background:#ff7a4a}
+.db-h{
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:clamp(20px,2.6vw,28px);
+  font-weight:300;letter-spacing:-.7px;
+  line-height:1.45;color:#fff;
+  margin-bottom:24px;
+}
+.db-h em{font-style:normal;color:#ff7a4a;font-weight:500}
+.db-body{font-size:14.5px;line-height:1.85;color:rgba(255,255,255,.7);max-width:580px}
+.db-body p+p{margin-top:18px}
+
+/* ═══════════ REVIEW CTA ═══════════ */
+.review-cta{
+  padding:0 var(--pp);
+  margin:64px 0;
+}
+.review-cta-inner{
+  max-width:640px;margin:0 auto;
+}
+.review-cta-greeting{
+  font-family:'SUIT Variable','Pretendard Variable',sans-serif;
+  font-size:19px;font-weight:700;letter-spacing:-.5px;
+  color:var(--ink);
+  margin:0 0 18px;
+}
+.review-cta-body{
+  font-size:15.5px;line-height:1.85;color:var(--ink-2);
+  margin-bottom:28px;letter-spacing:-.05px;
+}
+.review-cta-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--accent);color:#fff;
+  border:none;
+  font-family:'Pretendard Variable',sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:-.1px;
+  padding:14px 24px;
+  text-decoration:none;
+  transition:background .2s ease;
+}
+.review-cta-btn:hover{background:#d04915}
+.review-cta-btn .arrow{
+  display:inline-block;
+  transition:transform .2s ease;
+}
+.review-cta-btn:hover .arrow{transform:translateX(3px)}
+
+/* ═══════════ FOOTER ═══════════ */
+.foot{
+  border-top:1px solid var(--rule);
+  padding:48px var(--pp);
+  margin-top:0;
+}
+.foot-inner{
+  max-width:var(--max-w);margin:0 auto;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:10px;color:var(--ink-4);letter-spacing:1.5px;text-transform:uppercase;
+  font-weight:500;
+}
+.foot-brand{font-size:10px;font-weight:700;letter-spacing:3px;color:var(--ink);display:flex;align-items:center}
+.foot-brand .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:middle;margin-top:-2px}
+
+/* ═══════════ 인포그래픽 — 넉넉한 여백 + 스크롤 인터랙션 ═══════════ */
+.er-rank{margin:clamp(40px,6vw,64px) 0;font-family:'Pretendard Variable',sans-serif}
+.er-rank-row{display:grid;grid-template-columns:30px 1fr 64px;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--rule)}
+.er-rank-row:last-child{border-bottom:none}
+.er-rank-num{font-size:12px;font-weight:700;color:var(--ink-5);font-variant-numeric:tabular-nums;letter-spacing:.5px}
+.er-rank-row:first-child .er-rank-num{color:var(--accent)}
+.er-rank-body{min-width:0}
+.er-rank-label{font-size:13.5px;color:var(--ink-2);line-height:1.45;margin-bottom:9px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:1;-webkit-box-orient:vertical}
+.er-rank-track{height:5px;background:var(--accent-soft);border-radius:3px;overflow:hidden}
+.er-rank-fill{height:100%;background:var(--accent);border-radius:3px;width:var(--w)}
+.er-rank-row:not(:first-child) .er-rank-fill{background:#f0a07d}
+.er-rank-val{text-align:right;font-size:15px;font-weight:700;color:var(--accent);font-variant-numeric:tabular-nums;white-space:nowrap}
+.er-rank-row:not(:first-child) .er-rank-val{color:var(--ink-3);font-size:14px}
+.js .er-rank-fill{width:0;transition:width 1.1s cubic-bezier(.16,1,.3,1)}
+.js .er-rank.in-view .er-rank-fill{width:var(--w)}
+.js .er-rank-row:nth-child(2) .er-rank-fill{transition-delay:.08s}
+.js .er-rank-row:nth-child(3) .er-rank-fill{transition-delay:.16s}
+.js .er-rank-row:nth-child(4) .er-rank-fill{transition-delay:.24s}
+.js .er-rank-row:nth-child(5) .er-rank-fill{transition-delay:.32s}
+
+/* ═══════════ 병렬 처방 — 넘버링 블록 ═══════════ */
+.proc{margin:36px 0 0;font-family:'SUIT Variable','Pretendard Variable',sans-serif}
+.proc-item{padding:26px 0;border-top:1px solid var(--rule)}
+.proc-item:first-child{padding-top:0;border-top:none}
+.proc-head{display:flex;align-items:baseline;gap:14px;margin-bottom:12px}
+.proc-num{font-family:'Pretendard Variable',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;color:var(--accent);font-variant-numeric:tabular-nums;flex-shrink:0;line-height:1.7}
+.proc-label{font-family:'Pretendard Variable','SUIT Variable',sans-serif;font-size:17px;font-weight:700;color:var(--ink);letter-spacing:-.3px;line-height:1.35}
+.proc-lead{font-size:14.5px;line-height:1.65;color:var(--ink-3);margin:0 0 12px;padding-left:25px}
+.proc-body{font-size:15px;line-height:1.85;color:var(--ink-3);padding-left:25px}
+.proc-body p{margin-bottom:14px}
+.proc-body p:last-child{margin-bottom:0}
+@media(max-width:560px){.proc-lead,.proc-body{padding-left:0}}
+
+@media(max-width:520px){.foot-inner{flex-direction:column;gap:10px;align-items:flex-start}}
+
+/* ═══════════ ANIMATIONS ═══════════ */
+.fade-in{opacity:0;transform:translateY(16px);transition:opacity .9s cubic-bezier(.2,.8,.2,1),transform .9s cubic-bezier(.2,.8,.2,1)}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+.dark-block{opacity:0;transition:opacity .8s cubic-bezier(.2,.8,.2,1)}
+.dark-block.visible{opacity:1}
+.dark-block .db-label,
+.dark-block .db-h,
+.dark-block .db-body{opacity:0;transform:translateY(10px);transition:opacity .7s ease,transform .7s ease}
+.dark-block.visible .db-label{opacity:1;transform:translateY(0);transition-delay:.2s}
+.dark-block.visible .db-h{opacity:1;transform:translateY(0);transition-delay:.35s}
+.dark-block.visible .db-body{opacity:1;transform:translateY(0);transition-delay:.5s}
+
+@media (prefers-reduced-motion: reduce){
+  .fade-in,.dark-block,
+  .dark-block .db-label,.dark-block .db-h,.dark-block .db-body{
+    opacity:1!important;transform:none!important;transition:none!important;
+  }
+  .js .er-rank-fill{transition:none!important}
+  .js .er-rank-fill{width:var(--w)}
+}
+</style>
+</head>
+<body>
+
+
+<!-- ═══════════ TOP BAR (mobile/tablet) ═══════════ -->
+<header class="topbar" role="banner">
+  <div class="tb-inner">
+    <div class="tb-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div class="tb-current" id="tbCurrent"><span class="num">01</span>계정 현황</div>
+    <div class="tb-progress">
+      <div class="tb-prog-bar"><div class="tb-prog-fill" id="tbProgFill"></div></div>
+      <button class="tb-menu" id="tbMenu" aria-label="목차 열기">
+        <span class="tb-menu-icon"><span></span><span></span><span></span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+
+<!-- ═══════════ SIDE NAV (desktop) ═══════════ -->
+<nav class="sidenav" aria-label="목차">
+  <div class="sn-masthead">
+    <div class="sn-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div class="sn-client">박지윤님</div>
+    <div class="sn-tagline">@mujer_official · 무헤르</div>
+  </div>
+  <div class="sn-head">Contents</div>
+  <ul class="sn-list">
+    <li class="sn-item"><a href="#s01"><span class="sn-num">01</span><span class="sn-title">계정 현황</span></a></li>
+    <li class="sn-item"><a href="#s02"><span class="sn-num">02</span><span class="sn-title">진짜 문제</span></a></li>
+    <li class="sn-item"><a href="#s03"><span class="sn-num">03</span><span class="sn-title">노동 vs 레버리지</span></a></li>
+    <li class="sn-item"><a href="#s04"><span class="sn-num">04</span><span class="sn-title">권위의 재정의</span></a></li>
+    <li class="sn-item"><a href="#s05"><span class="sn-num">05</span><span class="sn-title">큐레이터 · 신뢰 전시</span></a></li>
+    <li class="sn-item"><a href="#s06"><span class="sn-num">06</span><span class="sn-title">상담을 콘텐츠로</span></a></li>
+    <li class="sn-item"><a href="#s07"><span class="sn-num">07</span><span class="sn-title">실행 우선순위</span></a></li>
+  </ul>
+  <div class="sn-foot">
+    <div class="sn-foot-lbl"><span>Progress</span><span class="sn-foot-num" id="snProgNum">0%</span></div>
+    <div class="sn-prog"><div class="sn-prog-fill" id="snProgFill"></div></div>
+  </div>
+</nav>
+
+
+<!-- ═══════════ MOBILE DRAWER ═══════════ -->
+<div class="drawer" id="drawer" role="dialog" aria-label="목차" aria-hidden="true">
+  <div class="drawer-head">
+    <div class="drawer-brand"><span class="dot"></span>RE:FEEEL</div>
+    <button class="drawer-close" id="drawerClose" aria-label="닫기">×</button>
+  </div>
+  <div class="drawer-body">
+    <div class="drawer-eyebrow">Contents</div>
+    <ul class="dw-list">
+      <li class="dw-item"><a href="#s01"><span class="dw-num">01</span><span class="dw-body"><span class="dw-title">계정 현황</span><span class="dw-desc">이미 가진 자산과 멈춰 있는 곳</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s02"><span class="dw-num">02</span><span class="dw-body"><span class="dw-title">진짜 문제</span><span class="dw-desc">시간이 없는데 콘텐츠를 더 찾고 있다</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s03"><span class="dw-num">03</span><span class="dw-body"><span class="dw-title">노동 vs 레버리지</span><span class="dw-desc">상담 1건을 1,000명이 보게</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s04"><span class="dw-num">04</span><span class="dw-body"><span class="dw-title">권위의 재정의</span><span class="dw-desc">자격증이 아니라 결핍 서사</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s05"><span class="dw-num">05</span><span class="dw-body"><span class="dw-title">큐레이터 · 신뢰 전시</span><span class="dw-desc">셀러가 아니라 골라주는 사람</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s06"><span class="dw-num">06</span><span class="dw-body"><span class="dw-title">상담을 콘텐츠로</span><span class="dw-desc">캐러셀 · 스토리 · 릴스 역할 분리</span></span><span class="dw-arrow">→</span></a></li>
+      <li class="dw-item"><a href="#s07"><span class="dw-num">07</span><span class="dw-body"><span class="dw-title">실행 우선순위</span><span class="dw-desc">이번 주부터 무엇을</span></span><span class="dw-arrow">→</span></a></li>
+    </ul>
+  </div>
+</div>
+
+
+<main>
+
+
+<!-- ═══════════ COVER ═══════════ -->
+<section class="cover" aria-label="표지">
+<div class="cover-inner">
+  <div class="cv-top">
+    <div>RE:FEEEL Consulting Summary</div>
+    <div class="r">
+      박지윤<br>
+      2026 . 06 . 29
+    </div>
+  </div>
+  <div class="cv-mid">
+    <div class="cv-label">Brand Strategy Diagnosis</div>
+    <h1 class="cv-h1">컨설팅 요약<span class="line2">박지윤 · @mujer_official</span></h1>
+    <p class="cv-desc">
+      민감성 피부를 직접 고쳐낸 경험으로 좋은 것만 골라 파는 큐레이션 브랜드 무헤르. "파는 건 다 믿고 쓴다"는 단골 신뢰가 이미 쌓여 있습니다. 다만 출산·육아로 시간이 줄며 매출이 함께 줄었고, 1:1 상담에만 의존해 "내가 일한 만큼만" 버는 구조에 묶여 있습니다.
+    </p>
+  </div>
+  <div class="cv-bot">
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">01</div>
+      <div class="cv-kpi-val"><span class="ac">884</span></div>
+      <div class="cv-kpi-lbl">누적 게시물</div>
+      <div class="cv-kpi-sub">소재·신뢰 자산은 이미 있음</div>
+    </div>
+    <div class="cv-kpi">
+      <div class="cv-kpi-num">02</div>
+      <div class="cv-kpi-val">1 <span class="ac">→ 1,000</span></div>
+      <div class="cv-kpi-lbl">상담 1건의 레버리지</div>
+      <div class="cv-kpi-sub">노동을 콘텐츠로 박제하면</div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+<!-- ═══════════ INTRO ═══════════ -->
+<section class="intro" aria-label="서문">
+  <p>지윤님은 본인 피부를 직접 고쳐낸 경험으로 좋은 것만 골라 파는 사람입니다. "지윤님이 파는 건 다 믿고 쓴다"는 단골 신뢰가 이미 쌓여 있고, 누적 884개의 게시물이라는 소재도 있습니다. 그런데 출산·육아로 시간이 줄면서 매출이 함께 줄었고, "콘텐츠 주제를 못 정하겠다"는 고민이 남았습니다. 그 고민의 진짜 위치는 콘텐츠가 아니라 — 시간이 없는데 콘텐츠를 더 만들려는, 방향이 어긋난 지점입니다. 이 요약은 그 어긋남을 바로잡습니다.</p>
+</section>
+
+
+<!-- ═══════════ § 01. 계정 현황 ═══════════ -->
+<section class="section" id="s01" data-title="계정 현황">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">01</span><span>Where You Stand</span></div>
+    <h2 class="s-title">자산은 이미 있고, <em>지금은 멈춰 있다</em></h2>
+    <p class="s-sub">무헤르는 민감성 피부 전용 큐레이션 브랜드입니다. 884개를 쌓아온 오래된 계정이고 단골 신뢰도 단단한데, 2026년 들어서는 사실상 활동이 멈춘 상태입니다.</p>
+
+    <table class="acc-table">
+      <colgroup>
+        <col class="c-name">
+        <col class="c-num">
+        <col class="c-role">
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th class="num">현재</th>
+          <th>읽는 법</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="name">팔로워</td>
+          <td class="num">1,835</td>
+          <td class="role">고관여 단골 중심 — 카톡 1:1 상담으로 전환</td>
+        </tr>
+        <tr>
+          <td class="name">누적 게시물</td>
+          <td class="num">884</td>
+          <td class="role">오래 쌓인 소재 자산 (대부분 과거치)</td>
+        </tr>
+        <tr>
+          <td class="name">기간 게시물</td>
+          <td class="num">8</td>
+          <td class="role">1/1~6/21 — 사실상 동면</td>
+        </tr>
+        <tr>
+          <td class="name">하이라이트</td>
+          <td class="num">0</td>
+          <td class="role">"전문가"라는데 증거가 안 쌓임</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="prose">
+      <p>프로필에는 "수백 개를 버리고 남은 것만 공유한다"는 큐레이터 정체성이 분명하게 적혀 있습니다. 본인이 직접 민감성 피부를 겪고 고쳐낸 사람이라는 증거 모델이고, 그래서 "지윤님이 파는 건 다 믿고 쓴다"는 단골이 이미 있습니다. 이건 돈 주고도 못 사는 신뢰 자산입니다.</p>
+      <p>다만 그 신뢰가 피드 위에 쌓이지 않고 1:1 카톡 안에만 머뭅니다. 하이라이트가 0개라 후기도 상담 사례도 새로 온 사람 눈에는 보이지 않고, 2026년 들어 게시물도 거의 멈췄습니다. 가진 것은 분명한데, 그게 일하게 만드는 구조가 아직 없습니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 02. 진짜 문제 ═══════════ -->
+<section class="section" id="s02" data-title="진짜 문제">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">02</span><span>The Real Problem</span></div>
+    <h2 class="s-title">"콘텐츠를 더"가 아니라 <em>시간이 없는 게 문제다</em></h2>
+    <p class="s-sub">지윤님이 말한 문제는 "어떤 콘텐츠를 올릴지, 어떻게 효율적으로 운영할지 모르겠다"였습니다. 다만 컨설팅을 신청한 진짜 이유는 따로 있었습니다 — 출산 후 시간이 부족해 매출이 줄었다는 것입니다.</p>
+
+    <div class="prose">
+      <p>두 문장은 사실 다른 곳을 가리킵니다. 핵심 제약은 시간인데, 해법으로는 "콘텐츠를 더, 더 효율적으로"를 찾고 있습니다. 여기서 방향이 한 번 어긋납니다. 시간이 없는 사람에게 "매일 올려라"는 답이 될 수 없습니다.</p>
+      <p>시간이 없는 사람의 답은 콘텐츠의 양이 아니라, 한 번 만들어두면 계속 일하는 구조입니다. 설문에 적은 "내가 직접 일하지 않아도 매출이 나는 시스템"이 정확히 그 말입니다. 그 시스템의 실체는 세 가지입니다 — 포지션을 확정하고(큐레이터인가 셀러인가), 신뢰 자산을 한 번 쌓아두고(하이라이트·후기·상담 사례), 상담으로 가는 길을 정비하는 것.</p>
+      <p>그래서 이 요약은 "무엇을 더 올릴까"에 답하지 않습니다. "어떻게 하면 적게 올리고도 도는가"에 답합니다. 매출이 주로 인스타 스토리에서 난다고 했으니, 그 스토리가 혼자서도 설득하도록 앞단을 갖추는 일입니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 03. 노동 vs 레버리지 ═══════════ -->
+<section class="section" id="s03" data-title="노동 vs 레버리지">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">03</span><span>Labor vs Leverage</span></div>
+    <h2 class="s-title">상담 1건의 노동을 <em>1,000명이 보게 만든다</em></h2>
+    <p class="s-sub">지금 매출은 1:1 카톡 상담에서 납니다. 그런데 상담은 1시간을 써서 1명을 설득하는 일입니다. 시간이 줄면 매출이 그대로 줄어드는 이유가 여기 있습니다 — 본인이 일한 만큼만 버는 구조이기 때문입니다.</p>
+
+    <div class="prose">
+      <p>그 1:1 상담 안에는 이미 콘텐츠가 들어 있습니다. 고객이 "이거 써도 되나요, 저는 이런 피부인데"라고 물으면 지윤님은 그때마다 정성껏 답을 합니다. 그 답 하나하나가 곧 콘텐츠입니다. 콘텐츠는 새로 창작하는 게 아니라, 이미 하고 있는 상담을 포착해 박제하는 것입니다.</p>
+      <p>한 건의 상담을 캡처해 한 편의 게시물로 만들면, 같은 노동이 1명이 아니라 그 글을 보는 모두에게 닿습니다. 한 콘텐츠는 한 고객의 질문에서 나오면 됩니다 — 주제를 짜낼 필요가 없습니다. 그래서 "콘텐츠 주제를 못 정하겠다"는 고민은, 상담 캡처를 소재로 보는 순간 사라집니다.</p>
+    </div>
+
+    <div class="dark-block">
+      <div class="db-inner">
+        <div class="db-label">The Leverage</div>
+        <h3 class="db-h">같은 한 시간을 써도, 상담은 <em>1명</em>에게 닿고 박제된 콘텐츠는 <em>1,000명</em>에게 닿습니다.</h3>
+        <div class="db-body">
+          <p>일하지 않아도 매출이 나는 시스템은 거창한 게 아닙니다. 한 번 쓴 답이 잠든 사이에도 새 고객을 설득하고 있는 상태입니다. 상담은 끝나면 사라지지만, 콘텐츠로 박제한 상담은 계정에 남아 계속 일합니다.</p>
+          <p>그래서 지윤님이 늘려야 할 것은 상담 횟수가 아니라, 한 번의 상담을 남기는 습관입니다. 일이 줄어드는데 닿는 사람은 늘어나는 — 시간 없는 사람에게 맞는 단 하나의 방향입니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 04. 권위의 재정의 ═══════════ -->
+<section class="section" id="s04" data-title="권위의 재정의">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">04</span><span>Authority Redefined</span></div>
+    <h2 class="s-title">권위는 자격증이 아니라 <em>결핍을 건너온 서사다</em></h2>
+    <p class="s-sub">"뭘 드러내야 할지 모르겠다"는 고민의 뿌리에는 자격에 대한 불안이 있습니다. 화장품 전공도 자격증도 없이 "상담 전문가"라고 말하는 게 짜쳐 보인다는 마음입니다. 다만 사람들이 신뢰하는 권위는 자격증에서 나오지 않습니다.</p>
+
+    <div class="prose">
+      <p>지윤님의 권위는 분명한 데서 옵니다. 20대에 피부가 무너졌고, 좋다는 걸 수백 개 써보며 직접 공부해 본인 피부를 고쳐낸 사람입니다. "예민한 피부였는데 이걸로 끊었다"는 한 문장이, 어떤 자격증보다 강한 신뢰를 만듭니다. 같은 고통을 지나온 사람의 말이기 때문입니다.</p>
+      <p>비전공이 약점이 아니라는 증거는 많습니다. 떡볶이 프랜차이즈를 키운 사람이 요리 전공이어서가 아니고, 구독자 많은 패션 유튜버가 패션을 전공해서가 아닙니다. 사람들은 자격증이 아니라 "이 사람 말이 맞더라"는 경험을 믿습니다. 그러니 드러낼 것은 자격이 아니라 지윤님이 건너온 이야기입니다 — 무너졌던 피부, 버린 수백 개, 남긴 몇 개. 그게 무헤르가 파는 신뢰의 정체입니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 05. 큐레이터 · 신뢰 전시 ═══════════ -->
+<section class="section" id="s05" data-title="큐레이터 · 신뢰 전시">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">05</span><span>Curator, Not Seller</span></div>
+    <h2 class="s-title">"파는 사람"이 아니라 <em>"골라주는 사람"으로 보이게</em></h2>
+    <p class="s-sub">프로필은 "수백 개 써보고 남은 것만 골라준다"는 큐레이터인데, 피드는 거의 레비덤 한 브랜드로 채워져 있습니다. 그래서 새로 온 사람에게는 큐레이터가 아니라 레비덤 셀러로 읽힐 위험이 있습니다. 무헤르의 힘은 "골라주는 사람"이라는 위치에 있습니다.</p>
+
+    <div class="prose">
+      <p>셀러와 큐레이터는 같은 물건을 팔아도 신뢰의 방향이 반대입니다. 셀러는 많이 팔수록 "장사꾼" 쪽으로 기울고, 큐레이터는 "내 브랜드도 아닌데 진짜 좋은 것만 골라준다"는 데서 신뢰를 얻습니다. 레비덤이 피드를 채운 건 그게 실제로 지윤님의 피부염을 끊어준 브랜드이기 때문이지만, 보는 사람은 그 맥락을 모른 채 "한 브랜드만 미는 계정"으로 읽습니다.</p>
+      <p>그래서 할 일은 레비덤을 빼는 게 아니라, 왜 이것만 남았는지를 보이게 하는 것입니다. 버린 수백 개의 이야기, 다른 브랜드도 솔직하게 다루는 모습, "이건 예민한 피부엔 별로였다"는 거름망 — 이게 깔려야 레비덤 추천이 셀러의 영업이 아니라 큐레이터의 결론으로 읽힙니다. 신뢰는 말하는 게 아니라 전시하는 것입니다.</p>
+    </div>
+
+    <div class="dark-block">
+      <div class="db-inner">
+        <div class="db-label">The Principle</div>
+        <h3 class="db-h">잘 파는 셀러는 <em>덜 팝니다.</em></h3>
+        <div class="db-body">
+          <p>실제로 매출이 큰 셀러일수록 한 달에 미는 제품이 두세 개뿐입니다. 하나를 정하면 그 전후로 2주씩 콘텐츠를 몰아 신뢰를 쌓고, 그 위에서 팝니다. 늘어놓고 다 파는 게 아니라, 좁히고 깊게 설득합니다. SKU를 줄이는 건 매출을 줄이는 게 아니라, "이 사람은 아무거나 팔지 않는다"는 큐레이터 신뢰를 지키는 일입니다.</p>
+          <p>콘텐츠도 같습니다. 하나의 제품을 두고 쌓은 신뢰는 그 판매가 끝나도 사라지지 않고 다음 추천의 바탕이 됩니다. 덜 팔되 깊게 — 그게 시간이 없는 사람에게도 맞고, 큐레이터라는 위치에도 맞습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>벤치마크할 모델은 분명합니다. 텍스트와 DM 캡처로 신뢰를 쌓는 류디, 시각적으로 "저도 민감성이었거든요"를 빨간 자국과 함께 보여주는 슈림, 그리고 모디아티코(jiwon0721)·핑크원더 같은 계정들입니다. 베끼는 게 아니라, 이들이 신뢰를 어떻게 화면 위에 꺼내 놓는지 그 메커니즘을 가져옵니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 06. 상담을 콘텐츠로 ═══════════ -->
+<section class="section" id="s06" data-title="상담을 콘텐츠로">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">06</span><span>The Engine</span></div>
+    <h2 class="s-title">세 채널에 <em>각자의 일을 시킨다</em></h2>
+    <p class="s-sub">매일 다 올릴 필요가 없습니다. 캐러셀·스토리·릴스는 하는 일이 다릅니다. 각자의 역할을 정해두면, 적게 올리고도 들어오고·친해지고·결제까지 가는 동선이 만들어집니다.</p>
+
+    <div class="proc">
+      <div class="proc-item">
+        <div class="proc-head"><span class="proc-num">A</span><span class="proc-label">캐러셀 — 신뢰를 박제한다</span></div>
+        <p class="proc-lead">상담에서 나온 질문 하나를, 텍스트와 제품 이미지로 정리한 한 장짜리 답.</p>
+        <div class="proc-body">
+          <p>"예민한 피부에 이거 써도 되나요" 같은 실제 질문 하나가 곧 한 편입니다. 한 콘텐츠는 한 고객의 맥락에서 나오면 되고, 이렇게 쌓인 캐러셀이 계정에 남아 24시간 상담을 대신합니다. 짜내지 않고 포착하는, 시간 없는 사람의 주력 포맷입니다.</p>
+        </div>
+      </div>
+      <div class="proc-item">
+        <div class="proc-head"><span class="proc-num">B</span><span class="proc-label">스토리 — 라포를 쌓는다</span></div>
+        <p class="proc-lead">소통과 친밀감. "썸 타는 정도"의 거리로 일상과 반응을 주고받는 곳.</p>
+        <div class="proc-body">
+          <p>완성된 콘텐츠가 아니라 사람을 보여주는 채널입니다. 매출이 주로 스토리에서 난다고 했으니, 여기서 쌓인 친밀감이 곧 결제로 이어집니다. 질문 스티커·투표로 다음 캐러셀 소재까지 자연스럽게 모입니다.</p>
+        </div>
+      </div>
+      <div class="proc-item">
+        <div class="proc-head"><span class="proc-num">C</span><span class="proc-label">릴스 — 새 사람을 끌어온다</span></div>
+        <p class="proc-lead">유입 담당. 낚싯대 역할로, 캐러셀·스토리로 데려올 사람을 바깥에서 부른다.</p>
+        <div class="proc-body">
+          <p>릴스는 도달이 넓은 대신 신뢰를 만들지는 못합니다. 그래서 유입만 맡기고, 들어온 사람을 캐러셀(신뢰)과 스토리(친밀)로 넘깁니다. 다만 억지로 바이럴을 노린 샘플 이벤트는 맞는 사람이 아니라 공짜를 좇는 사람만 모으니 피합니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="prose">
+      <p>이 동선 위에 두 가지 기본기를 갖춥니다. 첫째, 하이라이트입니다. 지금 0개라 후기도 상담 사례도 새로 온 사람 눈에 안 보입니다. "건조함" "트러블" "예민함"처럼 고민별로 하이라이트를 묶어두면, 들어온 사람이 자기 고민을 골라 바로 증거를 확인합니다. 한 번 세팅하면 계속 일하는, 가장 싼 신뢰 자산입니다.</p>
+      <p>둘째, 사진의 질입니다. 필터 씌운 셀카 대신, 자연광에서 후면 카메라로 찍은 실사 고화질로 바꿉니다. 피부를 다루는 계정에서 화면 속 피부가 보정으로 뭉개져 있으면 신뢰가 깎입니다. 빨갛게 올라온 자국, 회복된 결 — 있는 그대로가 가장 강한 증거입니다.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ § 07. 실행 우선순위 ═══════════ -->
+<section class="section" id="s07" data-title="실행 우선순위">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">07</span><span>Priority</span></div>
+    <h2 class="s-title">이번 주부터 <em>순서대로</em></h2>
+    <p class="s-sub">한 번에 다 하지 않습니다. 한 번 만들어두면 일하는 것부터, 시간을 가장 적게 쓰는 순서로.</p>
+
+    <div class="proc">
+      <div class="proc-item">
+        <div class="proc-head"><span class="proc-num">01</span><span class="proc-label">이번 주 — 한 번 세팅해 계속 일하게</span></div>
+        <p class="proc-lead">하이라이트를 고민별로 묶고, 프로필을 큐레이터로 정렬한다.</p>
+        <div class="proc-body">
+          <p>"건조함·트러블·예민함"처럼 고민별 하이라이트를 만들어 기존 후기·상담 사례를 채워 넣습니다. 가진 자산을 새로 안 만들고 진열만 하는 일이라 시간이 가장 적게 듭니다. 프로필 문구는 "한 브랜드 셀러"가 아니라 "골라주는 사람"이 드러나게 다듬습니다.</p>
+        </div>
+      </div>
+      <div class="proc-item">
+        <div class="proc-head"><span class="proc-num">02</span><span class="proc-label">2~4주 — 상담을 박제하는 습관</span></div>
+        <p class="proc-lead">상담에서 나온 질문 하나를 주 1~2개 캐러셀로 남기고, 결핍 서사 한 편을 푼다.</p>
+        <div class="proc-body">
+          <p>새 주제를 짜내지 말고, 이미 한 상담을 캡처해 옮깁니다. 무너졌던 피부와 직접 공부한 이야기를 한 편으로 정리해 권위의 바탕을 깔고, 사진은 자연광·후면 카메라 실사로 바꿉니다.</p>
+        </div>
+      </div>
+      <div class="proc-item">
+        <div class="proc-head"><span class="proc-num">03</span><span class="proc-label">그 다음 — 세 채널 동선을 돌린다</span></div>
+        <p class="proc-lead">캐러셀(신뢰)·스토리(라포)·릴스(유입)에 각자의 일을 맡기고, 제품은 좁힌다.</p>
+        <div class="proc-body">
+          <p>한 달에 미는 제품을 한두 개로 좁혀 그 전후로 콘텐츠를 몰아 깊게 설득합니다. 릴스로 부른 사람을 캐러셀·스토리로 넘기는 동선을 반복하면, 매일 올리지 않아도 도는 구조가 만들어집니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════ DARK BLOCK — Next Step ═══════════ -->
+  <div class="dark-block">
+    <div class="db-inner">
+      <div class="db-label">Next Step</div>
+      <h3 class="db-h">지윤님에게 필요한 건 더 많은 콘텐츠가 아니라, <em>한 번 만들어두면 일하는 자산입니다.</em></h3>
+      <div class="db-body">
+        <p>신뢰도 소재도 이미 있습니다. 상담을 박제하고, 신뢰를 하이라이트로 전시하고, 세 채널에 각자의 일을 맡기는 것 — 이 순서대로 가면 시간을 덜 쓰고도 매출이 도는, 일하지 않아도 굴러가는 구조에 가까워집니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════ REVIEW CTA ═══════════ -->
+<section class="review-cta" aria-label="후기 요청">
+  <div class="review-cta-inner">
+    <h3 class="review-cta-greeting">박지윤님께</h3>
+    <p class="review-cta-body">
+      오늘 나눈 이야기가 도움이 됐다면, 짧은 후기 한 줄을 부탁드립니다. 어떤 부분이 가장 도움이 됐는지 한 줄이면 — 다음 컨설팅을 고민하는 분들에게 큰 힘이 됩니다.
+    </p>
+    <a href="#" class="review-cta-btn" target="_blank" rel="noopener">
+      후기 남기기 <span class="arrow">→</span>
+    </a>
+  </div>
+</section>
+
+
+</main>
+
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-brand"><span class="dot"></span>RE:FEEEL</div>
+    <div>본 요약은 박지윤님을 위해 작성되었습니다 · © 2026</div>
+  </div>
+</footer>
+
+
+<script>
+// ── PROGRESSIVE ENHANCEMENT FLAG (인포그래픽 막대를 스크롤 시 차오르게) ──
+document.documentElement.classList.add('js');
+
+// ── DARK BLOCK REVEAL ──
+const reveal = document.querySelectorAll('.dark-block');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+reveal.forEach(el => revealObserver.observe(el));
+
+// ── INFOGRAPHIC REVEAL (막대가 화면에 들어올 때 차오름) ──
+const figs = document.querySelectorAll('.er-rank, .er-trend');
+const figObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('in-view');
+      figObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.25 });
+figs.forEach(el => figObserver.observe(el));
+
+// ── DRAWER ──
+const drawer = document.getElementById('drawer');
+const tbMenu = document.getElementById('tbMenu');
+const drawerClose = document.getElementById('drawerClose');
+function openDrawer(){ drawer.classList.add('open'); document.body.classList.add('drawer-open'); drawer.setAttribute('aria-hidden','false'); }
+function closeDrawer(){ drawer.classList.remove('open'); document.body.classList.remove('drawer-open'); drawer.setAttribute('aria-hidden','true'); }
+tbMenu?.addEventListener('click', openDrawer);
+drawerClose?.addEventListener('click', closeDrawer);
+drawer?.addEventListener('click', (e) => { if(e.target === drawer) closeDrawer(); });
+drawer?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+// ── PROGRESS BAR ──
+const tbProgFill = document.getElementById('tbProgFill');
+const snProgFill = document.getElementById('snProgFill');
+const snProgNum = document.getElementById('snProgNum');
+
+function updateProgress(){
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const pct = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+  if(tbProgFill) tbProgFill.style.width = pct + '%';
+  if(snProgFill) snProgFill.style.width = pct + '%';
+  if(snProgNum) snProgNum.textContent = Math.round(pct) + '%';
+}
+updateProgress();
+window.addEventListener('scroll', updateProgress, { passive: true });
+
+// ── ACTIVE SECTION ──
+const sections = document.querySelectorAll('section[id]');
+const snItems = document.querySelectorAll('.sn-item');
+const tbCurrent = document.getElementById('tbCurrent');
+
+const sectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const id = entry.target.id;
+      const num = id.replace('s','');
+      const title = entry.target.dataset.title || '';
+      snItems.forEach(item => {
+        const a = item.querySelector('a');
+        item.classList.toggle('active', a && a.getAttribute('href') === '#' + id);
+      });
+      if(tbCurrent && title){
+        tbCurrent.innerHTML = '<span class="num">' + num + '</span>' + title;
+      }
+    }
+  });
+}, { rootMargin: '-40% 0px -50% 0px' });
+
+sections.forEach(sec => sectionObserver.observe(sec));
+</script>
+</body>
+</html>
