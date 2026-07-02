@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>클로드, 크롬에 설치해서 쓰기 — RE:FEEEL</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+:root{
+  --bg:#fafaf7;
+  --bg-soft:#f3f1ec;
+  --ink:#0a0a0a;
+  --ink-2:#2a2a2a;
+  --ink-3:#555555;
+  --ink-4:#8a8a8a;
+  --rule:#e0ddd5;
+  --accent:#e75519;
+  --accent-soft:rgba(231,85,25,.08);
+  --pp:clamp(20px,5vw,48px);
+  --max-w:640px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'SUIT Variable','Pretendard Variable',-apple-system,BlinkMacSystemFont,sans-serif;
+  background:var(--bg);color:var(--ink-2);
+  font-size:15.5px;line-height:1.85;font-weight:400;
+  letter-spacing:-.005em;word-break:keep-all;
+}
+.wrap{max-width:var(--max-w);margin:0 auto;padding:0 var(--pp)}
+
+/* header */
+.head{background:var(--ink);color:#fff;padding:56px var(--pp) 44px}
+.head-inner{max-width:var(--max-w);margin:0 auto}
+.h-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:20px;display:flex;align-items:center;gap:10px}
+.h-label::before{content:"";width:20px;height:1px;background:var(--accent)}
+.h-title{font-family:'Pretendard Variable',sans-serif;font-size:clamp(26px,5vw,36px);font-weight:300;letter-spacing:-1px;line-height:1.35;color:#fff;margin-bottom:16px}
+.h-title em{font-style:normal;color:#ff7a4a;font-weight:500}
+.h-desc{font-size:14.5px;line-height:1.8;color:rgba(255,255,255,.7)}
+
+/* section */
+.section{padding:44px var(--pp);border-bottom:1px solid var(--rule)}
+.section-inner{max-width:var(--max-w);margin:0 auto}
+.s-marker{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;font-size:10px;font-weight:600;letter-spacing:2px;color:var(--ink-4);text-transform:uppercase}
+.s-marker-num{color:var(--ink);font-weight:700}
+.s-title{font-family:'Pretendard Variable',sans-serif;font-size:clamp(20px,3vw,26px);font-weight:300;letter-spacing:-.6px;line-height:1.35;color:var(--ink);margin-bottom:14px}
+.s-title em{font-style:normal;color:var(--accent);font-weight:600}
+.s-sub{font-size:14px;color:var(--ink-3);margin-bottom:28px}
+
+.prose p{margin-bottom:18px;font-size:15px;color:var(--ink-3)}
+.prose p:last-child{margin-bottom:0}
+.prose strong{color:var(--ink);font-weight:600}
+
+/* steps */
+.steps{counter-reset:step;margin:8px 0 0}
+.step{position:relative;padding:18px 0 18px 40px;border-top:1px solid var(--rule)}
+.step:first-child{border-top:none;padding-top:0}
+.step::before{
+  counter-increment:step;content:counter(step);
+  position:absolute;left:0;top:20px;
+  width:24px;height:24px;border-radius:50%;
+  background:var(--ink);color:#fff;
+  font-size:11px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+}
+.step:first-child::before{top:0}
+.step-title{font-weight:700;color:var(--ink);font-size:15px;margin-bottom:6px}
+.step-body{font-size:14.5px;color:var(--ink-3);line-height:1.75}
+
+/* chat mock */
+.chat{margin:24px 0 0;border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+.chat-msg{padding:14px 18px;font-size:13.5px;line-height:1.7}
+.chat-msg.me{background:var(--bg-soft);color:var(--ink-2)}
+.chat-msg.ai{background:#fff;color:var(--ink-3);border-top:1px solid var(--rule)}
+.chat-who{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--ink-4);margin-bottom:6px}
+
+/* example cards */
+.ex-card{background:#fff;border:1px solid var(--rule);border-radius:12px;padding:24px;margin-bottom:20px}
+.ex-card:last-child{margin-bottom:0}
+.ex-name{display:flex;align-items:baseline;gap:10px;margin-bottom:10px}
+.ex-name .n{font-weight:700;color:var(--ink);font-size:15px}
+.ex-name .h{font-size:12px;color:var(--ink-4)}
+.ex-goal{font-size:13px;color:var(--accent);font-weight:600;margin-bottom:12px}
+.ex-prompt{background:var(--bg-soft);border-radius:8px;padding:14px 16px;font-size:13.5px;color:var(--ink-2);line-height:1.7;margin-bottom:0}
+
+/* tip block */
+.tip{background:var(--ink);color:#fff;border-radius:12px;padding:28px 24px;margin-top:8px}
+.tip-label{font-size:10px;font-weight:700;letter-spacing:2px;color:#ff7a4a;text-transform:uppercase;margin-bottom:12px}
+.tip-body{font-size:14px;line-height:1.8;color:rgba(255,255,255,.8)}
+
+.foot{padding:32px var(--pp);text-align:center;font-size:11px;color:var(--ink-4);letter-spacing:1px}
+</style>
+</head>
+<body>
+
+<header class="head">
+  <div class="head-inner">
+    <div class="h-label">RE:FEEEL · Tool Guide</div>
+    <h1 class="h-title">클로드, 크롬에 설치해서<br><em>리서치를 대신 시키기</em></h1>
+    <p class="h-desc">경쟁 계정 뒤지고, 후기 긁어모으고, 엑셀 정리하는 데 쓰는 시간 — 그 시간을 줄이는 방법입니다. 세션에서 짧게 보여드렸던 걸 다시 정리했습니다.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">01</span><span>설치</span></div>
+    <h2 class="s-title">크롬에 <em>클로드</em> 확장 프로그램 설치</h2>
+    <p class="s-sub">한 번만 설치하면 이후로는 어느 사이트에서든 바로 켜서 씁니다.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-title">크롬 웹스토어에서 검색</div>
+        <div class="step-body">구글에 "크롬 웹스토어"를 검색해 들어간 다음, 검색창에 "Claude"를 입력합니다. 공식 확장 프로그램을 크롬에 추가합니다.</div>
+      </div>
+      <div class="step">
+        <div class="step-title">계정 로그인 (유료 Pro 필요)</div>
+        <div class="step-body">브라우저를 제어하는 기능은 Pro 요금제부터 쓸 수 있습니다. 월 5만 원대이고, 이 안에서 인스타그램·엑셀·웹사이트 리서치까지 전부 가능합니다. 그 위 요금제는 토큰(한 번에 쓸 수 있는 양)만 더 많아지는 것이라 지금 단계에서는 Pro로 충분합니다.</div>
+      </div>
+      <div class="step">
+        <div class="step-title">아무 웹사이트에서나 켜보기</div>
+        <div class="step-body">설치 후 브라우저 오른쪽 위 확장 프로그램 아이콘을 누르면 옆에 채팅창처럼 뜹니다. 지금 보고 있는 페이지 주소를 그대로 물어볼 수 있습니다.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">02</span><span>프롬프트 기획</span></div>
+    <h2 class="s-title">프롬프트는 <em>내가 짜지 않는다</em></h2>
+    <p class="s-sub">"어떻게 물어봐야 하지"를 고민하는 대신, 상황을 설명하고 프롬프트 자체를 클로드에게 만들어달라고 합니다.</p>
+
+    <div class="prose">
+      <p>클로드를 어떻게 쓰는지는 강의를 찾아볼 필요 없이 <strong>클로드한테 직접 물어보면 됩니다.</strong> 내 상황 — 무엇을 파는지, 지금 뭐가 막혀 있는지 — 을 그대로 얘기하고, "이거 하려면 어떤 프롬프트가 필요해?"라고 물으면 프롬프트를 대신 짜줍니다.</p>
+    </div>
+
+    <div class="chat">
+      <div class="chat-msg me">
+        <div class="chat-who">나</div>
+        내 웹사이트 주소는 이거야. 상세 페이지 리뉴얼이랑 콘텐츠 소재 찾는 게 목표인데, 리서치할 수 있게 프롬프트 만들어줘.
+      </div>
+      <div class="chat-msg ai">
+        <div class="chat-who">클로드</div>
+        (웹사이트를 직접 읽고) 브랜드 정체성·경쟁사군·리서치 순서까지 정리한 프롬프트를 만들어 줍니다. 여기서 사실과 다른 부분이 있으면 그 자리에서 고쳐주면 됩니다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="s-marker"><span class="s-marker-num">03</span><span>세 분 상황에 맞춘 예시</span></div>
+    <h2 class="s-title">각자 계정에 <em>바로 넣어볼 프롬프트</em></h2>
+    <p class="s-sub">그대로 복사해서 채팅창에 붙여 넣고 시작하면 됩니다. 결과를 보면서 "이 부분은 아니야, 내 브랜드는 이래" 하고 계속 고쳐주면 점점 정확해집니다.</p>
+
+    <div class="ex-card">
+      <div class="ex-name"><span class="n">장혜나</span><span class="h">@amoka.official</span></div>
+      <div class="ex-goal">경쟁 브랜드 상세 페이지 · 후기 소구점 리서치</div>
+      <div class="ex-prompt">
+        나는 홈웨어·로브를 파는 아모카라는 브랜드를 운영하고 있어. [내 웹사이트 주소]를 먼저 읽어줘.<br><br>
+        29CM, W컨셉에서 로브·파자마 카테고리 상위 10개 제품을 찾아서, 각 상품의 상세 페이지 소구점 순서와 후기에서 반복되는 표현(좋았던 점·불만)을 정리해줘. 브랜드 파워가 이미 큰 곳은 빼고, 신생이거나 판매량이 높은 곳 위주로 봐줘.
+      </div>
+    </div>
+
+    <div class="ex-card">
+      <div class="ex-name"><span class="n">김우임</span><span class="h">@bbu__mom</span></div>
+      <div class="ex-goal">경쟁 육아 계정 10개 분석 · 매출 데이터 정리</div>
+      <div class="ex-prompt">
+        나는 육아용품을 판매하는 인스타그램 계정을 운영하고 있어. 아래 계정 10개를 하나씩 들어가서, 최근에 반응이 좋았던 게시물의 키워드·소구점과 프로필 링크 안 상세 페이지까지 정리해줘.<br><br>
+        [경쟁 계정 10개 아이디]<br><br>
+        그리고 내가 붙여넣는 판매 엑셀(제품별 조회수·저장·매출)을 보고, 어떤 카테고리가 재구매로 이어지는지도 같이 정리해줘.
+      </div>
+    </div>
+
+    <div class="ex-card">
+      <div class="ex-name"><span class="n">박지윤</span><span class="h">@mujer_official</span></div>
+      <div class="ex-goal">캐러셀 소재 · 지식 판매 계정 벤치마킹</div>
+      <div class="ex-prompt">
+        나는 에스테틱 화장품을 큐레이션해서 판매하는 무헤르라는 계정을 운영하고 있어. [내 인스타그램 주소]를 읽어줘.<br><br>
+        DM으로 받았던 고객 질문 답변이나 상담 내용을 캐러셀로 만들고 싶어. 스토리텔링 위주로 텍스트 콘텐츠를 만드는 계정들을 몇 개 찾아서, 어떤 순서로 텍스트를 배치하는지, 첫 장에서 어떤 문장으로 다음 장을 넘기게 만드는지 정리해줘.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="border-bottom:none">
+  <div class="section-inner">
+    <div class="tip">
+      <div class="tip-label">기억할 것</div>
+      <div class="tip-body">
+        클로드는 직원이라고 생각하면 씁니다. 새로 뽑은 직원이 하루 만에 일을 다 알지는 못하는 것처럼, 처음 결과물은 어설플 수 있습니다. "이건 틀렸어, 내 브랜드는 이런 거야"라고 계속 알려주면 그 대화 안에서 점점 정확해집니다. 한 번에 완성되는 도구가 아니라, 시간을 들인 만큼 맞아가는 도구입니다.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">RE:FEEEL · 2026</footer>
+
+</body>
+</html>
