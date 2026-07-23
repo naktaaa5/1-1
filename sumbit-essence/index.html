@@ -7,50 +7,52 @@
 <title>장사에서 브랜드로 — 숨빛</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <style>
   :root{
     --bg:#0b0b0a; --elev:#141311; --line:#26241f;
-    --text:#f0ede6; --dim:rgba(240,237,230,.62); --faint:rgba(240,237,230,.40);
+    --text:#f0ede6; --dim:rgba(240,237,230,.66); --faint:rgba(240,237,230,.40);
     --or:#e8763c; --or-hi:#ff8a4c; --or-dp:#c1531c;
     --f:'Pretendard','Space Grotesk',-apple-system,sans-serif;
     --en:'Space Grotesk','Pretendard',sans-serif;
-    --serif:'Instrument Serif','Pretendard',serif;
+    --serif:'Gowun Batang','Pretendard',serif;
   }
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
-  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f);line-height:1.6;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum";}
-  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(90% 55% at 50% -8%, rgba(232,118,60,.09) 0%, rgba(11,11,10,0) 60%);}
-  .wrap{position:relative;z-index:1;max-width:660px;margin:0 auto;padding:74px 26px 130px;}
-  .top{display:flex;justify-content:space-between;font-family:var(--en);font-size:12px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase;margin-bottom:56px;}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:var(--f);line-height:1.9;-webkit-font-smoothing:antialiased;font-feature-settings:"tnum";}
+  body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;background:radial-gradient(90% 55% at 50% -8%, rgba(232,118,60,.08) 0%, rgba(11,11,10,0) 60%);}
+  .wrap{position:relative;z-index:1;max-width:640px;margin:0 auto;padding:72px 26px 130px;}
+  .top{display:flex;justify-content:space-between;font-family:var(--en);font-size:12px;letter-spacing:.14em;color:var(--faint);text-transform:uppercase;margin-bottom:54px;}
   .top .r{color:var(--or)}
   .kicker{font-family:var(--en);font-size:12.5px;letter-spacing:.22em;color:var(--or);font-weight:600;text-transform:uppercase;}
-  h1{font-size:clamp(38px,8vw,58px);line-height:1.05;letter-spacing:-.02em;margin:.28em 0 .55em;font-weight:800;}
-  .lead{font-size:20px;line-height:1.6;color:var(--text);}
-  .lead p{margin:.7em 0;}
-  .intro-rule{border:0;border-top:1px solid var(--line);margin:50px 0;}
-  .ch{margin:66px 0 0;}
+  h1{font-size:clamp(37px,7.6vw,56px);line-height:1.08;letter-spacing:-.02em;margin:.3em 0 .55em;font-weight:800;}
+  .lead{font-size:19px;line-height:1.85;}
+  .lead p{margin:.7em 0;color:var(--text);}
+  em{font-style:normal;font-family:var(--serif);font-weight:700;color:var(--or-hi);}
+  .intro-rule{border:0;border-top:1px solid var(--line);margin:48px 0;}
+  .ch{margin:62px 0 0;}
   .ch-num{font-family:var(--en);font-size:13px;font-weight:600;color:var(--or);letter-spacing:.12em;}
-  .ch-title{font-size:clamp(24px,5vw,31px);line-height:1.22;letter-spacing:-.015em;font-weight:800;margin:10px 0 20px;text-wrap:balance;}
-  .ch p{font-size:18px;line-height:1.72;margin:.95em 0;color:var(--text);}
-  .ch ul{margin:1em 0;padding:0;list-style:none;}
-  .ch li{font-size:17.5px;line-height:1.6;margin:.6em 0;padding-left:20px;position:relative;}
-  .ch li::before{content:"";position:absolute;left:0;top:.62em;width:6px;height:6px;border-radius:50%;background:var(--or);}
-  .em{color:var(--or-hi);font-weight:600;}
-  b{font-weight:600;color:var(--text);}
-  .flow{background:var(--elev);border:1px solid var(--line);border-radius:14px;padding:16px 19px;margin:1.2em 0;font-size:15.5px;line-height:1.7;font-weight:500;color:var(--dim);}
+  .ch-title{font-size:clamp(24px,4.9vw,30px);line-height:1.28;letter-spacing:-.015em;font-weight:800;margin:9px 0 18px;word-break:keep-all;}
+  .ch p{font-size:17.5px;line-height:1.9;margin:1em 0;color:var(--text);}
+  b{font-weight:700;color:var(--text);}
+  .ch ul{margin:1.1em 0;padding:0;list-style:none;}
+  .ch li{font-size:17px;line-height:1.7;margin:.6em 0;padding-left:20px;position:relative;color:var(--text);}
+  .ch li::before{content:"";position:absolute;left:0;top:.66em;width:6px;height:6px;border-radius:50%;background:var(--or);}
+  .flow{background:var(--elev);border:1px solid var(--line);border-radius:14px;padding:16px 19px;margin:1.25em 0;font-size:15.5px;line-height:1.75;font-weight:500;color:var(--dim);}
   .flow b{color:var(--or-hi);font-weight:600;}
+  .pull{margin:52px 0;padding:2px 0 2px 22px;border-left:2px solid var(--or-dp);}
+  .pull .pt{font-family:var(--serif);font-size:23px;line-height:1.6;color:var(--text);}
   .res-grp{font-family:var(--en);font-size:12.5px;font-weight:600;color:var(--or);letter-spacing:.08em;text-transform:uppercase;margin:24px 0 10px;}
   .res-item{border:1px solid var(--line);border-radius:13px;padding:15px 18px;margin:9px 0;background:var(--elev);transition:border-color .2s;}
   .res-item:hover{border-color:var(--or-dp);}
-  .res-item a{font-size:17px;font-weight:600;color:var(--text);text-decoration:none;display:block;}
+  .res-item a{font-size:17px;font-weight:700;color:var(--text);text-decoration:none;display:block;}
   .res-item a .url{display:block;font-family:var(--en);font-size:12px;color:var(--or);font-weight:500;margin-top:2px;}
-  .res-item .d{font-size:14.5px;color:var(--dim);line-height:1.58;margin-top:7px;}
-  .res-item .d .em{color:var(--or-hi);}
-  .close{margin-top:76px;padding-top:36px;border-top:1px solid var(--or-dp);font-size:20px;line-height:1.6;}
+  .res-item .d{font-size:14.5px;color:var(--dim);line-height:1.65;margin-top:7px;}
+  .res-item .d em{font-size:inherit;}
+  .close{margin-top:74px;padding-top:36px;border-top:1px solid var(--or-dp);font-size:19px;line-height:1.75;}
   .sig{margin-top:26px;font-family:var(--en);font-size:12.5px;color:var(--faint);letter-spacing:.14em;text-transform:uppercase;}
-  @media(max-width:560px){.wrap{padding:52px 22px 96px}.lead{font-size:18px}.ch p{font-size:17px}}
+  @media(max-width:560px){.wrap{padding:52px 22px 96px}.lead{font-size:17.5px}.ch p{font-size:16.5px}}
 </style>
 </head>
 <body>
@@ -61,91 +63,94 @@
   <div class="kicker">RE:FEEEL Brand Note</div>
   <h1>장사에서 브랜드로</h1>
   <div class="lead">
-    <p>평점은 아무것도 증명하지 않는다. 요즘 4점대는 기본값이다.</p>
-    <p>맛있다는 말은 첫 방문을 만들 뿐, 다시 오게 하지 않는다. 왜 좋은데 안 남는지, 무엇을 봐야 하는지, 어디서 직접 확인하는지를 정리했다.</p>
+    <p>평점 4.8은 아무것도 증명하지 못해요. 요즘 4점대는 기본값이거든요. 별점을 후하게 준다고 손님이 다시 오는 게 아니에요.</p>
+    <p>"맛있었어요"는 첫 방문의 감상이지, 재방문의 이유가 아니에요. 그래서 이 글은 맛이 아니라 <em>그다음</em>을 다뤄요. 왜 좋은데 안 남는지, 뭘 봐야 하는지, 어디서 직접 확인하는지.</p>
   </div>
 
   <hr class="intro-rule">
 
   <div class="ch">
     <div class="ch-num">01</div>
-    <div class="ch-title">맛은 입장료다</div>
-    <p>고객이 다시 오는 이유는 맛이 아니라 <span class="em">그 자리에서 받은 기분</span>이다. 맛은 한 번 오게 하고, 기분이 다시 오게 한다.</p>
-    <p>맛은 승부처가 아니라 입장료다. 싸움은 그 뒤에 있다.</p>
+    <div class="ch-title">맛은 입장료예요</div>
+    <p>고객이 두 번째로 오는 이유는 맛이 아니에요. 그 자리에서 받은 <em>기분</em>이에요. 지난번에 뭘 시켰는지 기억해주는 것, 바쁜 와중에 눈 마주치고 웃어주는 것, "저번에 맵다고 하셔서 이번엔 좀 덜 맵게 했어요" 한마디. 이런 게 다음 발걸음을 만들어요.</p>
+    <p>맛은 손님을 한 번 오게 해요. 딱 한 번이에요. 옆집도 맛있거든요. 요즘은 안 맛있는 집을 찾는 게 더 어려워요. 그러니 맛은 승부처가 아니라 <b>입장료</b>예요. 입장료를 냈다고 이기는 게 아니고요. 진짜 싸움은 문 안에서 시작돼요.</p>
   </div>
 
   <div class="ch">
     <div class="ch-num">02</div>
-    <div class="ch-title">요즘 고객은 지나가다 안 들어온다, 검색하고 들어온다</div>
-    <p>간판을 봐도 고객은 폰부터 꺼낸다.</p>
-    <div class="flow">검색 &rarr; 플레이스에서 <b>메뉴·가격·사진</b> 확인 &rarr; <b>블로그 후기</b> &rarr; <b>인스타</b> &rarr; 그제야 방문</div>
-    <p>가게는 고객을 만나기 전에 <span class="em">온라인에서 먼저 심사받는다.</span> 실물이 좋아도 여기서 걸러지면, 실물은 보이지도 않는다. 플레이스·리뷰·인스타가 간판보다 먼저 고객을 만난다.</p>
+    <div class="ch-title">요즘 고객은 지나가다 안 들어와요, 검색하고 들어와요</div>
+    <p>"지나가다 눈에 띄어서 들어왔다"는 이제 옛날 얘기예요. 간판을 봐도 바로 안 들어와요. 일단 폰부터 꺼내요.</p>
+    <div class="flow">네이버 <b>검색</b> &rarr; 플레이스에서 <b>메뉴·가격</b> 보고 <b>사진</b> 넘겨보고 &rarr; <b>블로그 후기</b> 두세 개 &rarr; <b>인스타</b>까지 타고 들어가 보고 &rarr; 그제야 들어올지 말지 결정</div>
+    <p>무슨 뜻이냐면, <em>가게는 고객을 만나기도 전에 이미 온라인에서 심사를 받고 있다</em>는 거예요. 실물이 아무리 좋아도 이 검증에서 걸러지면, 고객은 실물을 볼 기회조차 없어요.</p>
+    <p>그래서 "가게만 잘하면 된다"는 말은 반은 맞고 반은 틀려요. 플레이스·리뷰·인스타가 사장님보다 <b>먼저</b> 고객을 만나거든요.</p>
   </div>
 
   <div class="ch">
     <div class="ch-num">03</div>
-    <div class="ch-title">고객은 광고가 아니라 다른 고객을 믿는다</div>
-    <p>사장이 찍은 메뉴·인테리어 사진은 <span class="em">광고로 걸러</span> 본다. 고객이 실제로 보는 건 다른 고객이 찍은 포토리뷰다. 실제 조명, 실제 양, 사람이 앉은 장면.</p>
-    <p>옷 살 때 모델컷 말고 포토리뷰를 뒤지는 것과 같다. "메뉴랑 인테리어만 잘 찍어두면 된다"는 착각이다.</p>
-    <p>할 일은 좋은 사진을 거는 게 아니라, <span class="em">고객이 찍고 싶게 만드는 것</span>이다.</p>
+    <div class="ch-title">고객은 사장님 말고 다른 고객을 믿어요</div>
+    <p>사장님이 예쁘게 찍어둔 메뉴 사진, 깔끔한 인테리어 사진. 물론 있어야 해요. 그런데 고객은 그걸 <em>"잘 나오게 찍은 광고"</em>로 알고 봐요. 안 믿는다는 뜻이에요.</p>
+    <p>고객이 진짜 뒤지는 건 따로 있어요. "내가 저기 앉아 있으면 어떤 느낌일까"를 알려주는 사진이요. 그건 사장님이 찍은 게 아니라 <b>다른 고객이 찍은 포토리뷰</b>예요. 실제 조명, 실제로 담겨 나온 양, 사람이 앉아 있는 진짜 장면.</p>
+    <p>옷 살 때랑 똑같아요. 쇼핑몰 모델컷은 다 예뻐 보이잖아요. 그래서 우리는 "내 체형에 입으면 어떨까"를 알려고 굳이 리뷰의 포토를 찾아서 넘겨봐요. 음식점도 똑같아요. 사장님은 "메뉴랑 인테리어 잘 찍어두면 됐지" 하시는데, 고객은 손님이 직접 찍은 날것의 사진을 훨씬 많이 봐요.</p>
+    <p>그러니 사장님이 할 일은 좋은 사진을 <b>거는</b> 게 아니에요. 고객이 사진을 <em>찍고 싶게 만드는</em> 거예요. 접시 하나, 공간 한 구석, 어떤 순간을 "이건 찍어야 돼" 싶게 만들어두는 것. 제일 센 광고는 사장이 만드는 게 아니라, 고객이 만들게 두는 거예요.</p>
   </div>
 
   <div class="ch">
     <div class="ch-num">04</div>
-    <div class="ch-title">지나가다 온 손님을, 일부러 오는 손님으로</div>
-    <p>첫 방문은 대부분 지나가다다. 다시 오는 건 일부러다. 이게 단골이다.</p>
-    <p>브랜드는 <span class="em">지나가다를 일부러로 바꾸는 것</span>이고, 재방문율이 그 결과다. 첫 방문만 늘리고 재방문이 없으면 매달 0에서 다시 판다.</p>
-    <p>단골로 바꾸는 건 기억되는 경험이다. 지난 주문을 기억하고, 이름을 부르고, 불편을 먼저 아는 것. 사장 한 명의 센스로 되지만, 그 사람이 빠지면 무너진다. 그래서 <span class="em">사람에 기대지 않고 반복되게</span> 설계돼야 한다.</p>
+    <div class="ch-title">지나가다 온 고객을, 일부러 오는 고객으로</div>
+    <p>검색을 통과해서 첫 방문이 일어났어요. 근데 여기서 끝나면 소용없어요. 첫 방문을 아무리 늘려도 다시 안 오면, 매달 0에서 다시 파는 거거든요. 매번 새 손님만 후려야 하니까 안 지칠 수가 없어요.</p>
+    <p>첫 방문은 대부분 "지나가다(검색하다)"예요. 다시 오는 건 "일부러"고요. 이 <em>일부러</em>가 단골이에요. 브랜딩이라는 거 별거 아니에요. 지나가다 온 고객을 일부러 오는 고객으로 바꾸는 거예요. 그게 됐는지는 <b>재방문율</b>이 말해줘요.</p>
+    <p>근데 이 재방문이 사장님 한 명의 눈치와 센스로만 굴러가면 위험해요. 사장님이 하루 빠지거나 직원이 바뀌면 바로 무너지거든요. 그래서 좋은 가게는 이 기분을 사람에 기대지 않게, <b>반복되게</b> 만들어둬요.</p>
   </div>
 
   <div class="ch">
     <div class="ch-num">05</div>
-    <div class="ch-title">가게가 어디 있느냐가 규칙을 정한다</div>
-    <p>모든 가게에 같은 처방은 없다. 위치가 규칙을 정한다.</p>
+    <div class="ch-title">가게가 어디 있느냐가 규칙을 정해요</div>
+    <p>모든 가게에 같은 처방을 내리면 안 돼요. 가게가 어디 있느냐가 규칙을 정하거든요.</p>
     <ul>
-      <li><b>큰길·역세권</b> — 지나가며 검색하는 사람이 많다. 검색에 걸리고 첫인상에서 이기는 게 먼저다.</li>
-      <li><b>골목·주택가</b> — 지나가는 사람 자체가 없다. 기다리지 말고 일부러 오게 만들어야 한다. 발견·단골·입소문이 전부다.</li>
-      <li><b>배달</b> — 배민·쿠팡 화면이 상권이다. 순위와 재주문이 전부다.</li>
+      <li><b>큰길·역세권</b> — 지나가며 검색하는 사람이 많아요. 검색에 잘 걸리고 첫인상에서 이기는 게 먼저예요.</li>
+      <li><b>골목·주택가</b> — 애초에 지나가는 사람이 없어요. 기다리면 안 되고, 일부러 찾아오게 만들어야 해요. 검색 노출·단골·입소문이 전부예요.</li>
+      <li><b>배달</b> — 배민·쿠팡 화면이 우리 상권이에요. 거기 순위랑 재주문이 전부고요.</li>
     </ul>
-    <p>자기 위치를 모르면 헛심을 쓴다. 골목 가게가 지나가는 사람을 기다리면 지치고, 큰길 가게가 검색에서 안 보이면 눈앞의 고객을 통째로 흘린다.</p>
+    <p>자기가 어디 있는지 모르면 헛심을 써요. 골목 가게가 지나가는 손님만 기다리면 지치고, 큰길 가게가 검색에서 안 보이면 눈앞의 고객을 통째로 흘려요.</p>
   </div>
 
   <div class="ch">
     <div class="ch-num">06</div>
-    <div class="ch-title">트렌드는 따라가는 게 아니라 아는 거다</div>
-    <p>한국은 유행이 빠르다. 좇으면 늘 늦고, 유행이 죽으면 같이 죽는다.</p>
-    <p>그렇다고 모르면 가진 걸 지금 언어로 못 옮긴다. 60년 전통도 멈춘 블로그에 묻히면 아무것도 아니다. 같은 전통을 오늘의 사진과 말로 옮기면 그때 무기가 된다.</p>
-    <p>유행은 따라가는 게 아니라 아는 거다.</p>
+    <div class="ch-title">트렌드는 따라가는 게 아니라 아는 거예요</div>
+    <p>한국은 유행이 너무 빨라요. 탕후루도 마라도 반년이면 식어요. 유행을 좇으면 늘 늦어요. 내가 따라 할 때쯤이면 이미 저물고 있거든요. 그리고 유행이 죽으면 나도 같이 죽어요. 남는 게 없어요.</p>
+    <p>그렇다고 세상 흐름을 아예 모르면, 내가 가진 좋은 걸 지금 고객이 알아보게 보여줄 수가 없어요. 60년 된 전통도 몇 년째 안 건드린 블로그에 묻혀 있으면 아무것도 아니에요. 근데 그 똑같은 전통을 오늘의 사진이랑 말로 옮기면, 그때부터 <em>아무도 못 베끼는 무기</em>가 돼요.</p>
+    <p>그래서 유행은 따라가는 게 아니라 아는 거예요. 알아야 내 걸 지금 고객 눈높이로 꺼낼 수 있으니까요.</p>
   </div>
 
   <div class="ch">
     <div class="ch-num">07</div>
     <div class="ch-title">알고 지키면 브랜드, 모르고 지키면 방치</div>
-    <p>옆집과 똑같아지면 고객은 가격만 본다. 거기서 빠져나오려면 <span class="em">"여기서만 되는 것"</span> 하나가 있어야 한다. 그건 멀리 있지 않다. 사장 자신, 걸어온 길, 오래된 시간, 쌓은 관계. 아무도 못 베낀다.</p>
-    <p>지키는 게 맞다. 단, 알고 지키면 소신이고 모르고 지키면 방치다. 행동은 같다. <span class="em">아는 것이 고집을 소신으로 바꾼다.</span></p>
+    <p>옆집이랑 똑같아지면 고객은 가격만 봐요. 여기서 빠져나오려면 <em>"여기서만 되는 거"</em> 하나가 있어야 해요. 근데 그 하나, 멀리서 안 찾아도 돼요. 사장님 본인, 걸어온 길, 오래된 시간, 손님이랑 쌓아온 관계 — 여기 다 있어요. 이건 아무도 못 베껴요.</p>
+    <p>그러니까 지키는 게 맞아요. 딱 하나만 구분하면 돼요. 상권도, 고객이 실제로 하는 말도, 지금 흐름도 다 알고 나서 "그래도 나는 이렇게 한다"면 그건 소신이에요. 근데 아무것도 모르고 그냥 하던 대로면, 그건 소신이 아니라 그냥 굳은 거예요.</p>
+    <div class="pull"><div class="pt">행동은 똑같아요. 아는 것이 고집을 소신으로 바꿔요.</div></div>
   </div>
 
   <div class="ch">
     <div class="ch-num">08</div>
-    <div class="ch-title">직접 확인하는 법 — 어디서 보는가</div>
-    <p>안다는 게 감이 아니라 확인이 되려면 볼 곳이 있어야 한다. 사장이 직접, 무료로 볼 수 있는 곳이다.</p>
+    <div class="ch-title">그래서 어디서 확인하느냐</div>
+    <p>"안다"는 게 감이 아니라 확인이 되려면, 볼 곳이 있어야겠죠. 아래는 사장님이 직접, 무료로 볼 수 있는 곳들이에요. 우리 동네에 손님이 얼마나 있는지, 뭘 검색하는지, 우리 가게를 어떻게 찾는지 — 다 여기서 나와요.</p>
 
     <div class="res-grp">우리 동네 상권 — 얼마나·언제·누가</div>
-    <div class="res-item"><a href="https://golmok.seoul.go.kr" target="_blank" rel="noopener">서울시 우리마을가게 상권분석<span class="url">golmok.seoul.go.kr</span></a><div class="d">우리 상권 검색 → 배후 인구·연령, 요일·시간대 유동인구, 업종별 매출·점포수·생존율. 서울시 무료.</div></div>
-    <div class="res-item"><a href="https://sg.sbiz.or.kr" target="_blank" rel="noopener">소상공인 상권정보시스템<span class="url">sg.sbiz.or.kr</span></a><div class="d">전국. 주소·업종 넣으면 주변 경쟁 점포 수, 업종 매출, 배후 세대 간이분석.</div></div>
-    <div class="res-item"><a href="https://www.openub.com" target="_blank" rel="noopener">오픈업<span class="url">openub.com</span></a><div class="d">카드매출 기반으로 우리 동네·업종 실매출 규모 추정.</div></div>
+    <div class="res-item"><a href="https://golmok.seoul.go.kr" target="_blank" rel="noopener">서울시 우리마을가게 상권분석<span class="url">golmok.seoul.go.kr</span></a><div class="d">우리 상권을 검색하면 배후 인구·연령, 요일·시간대별 유동인구, 업종별 평균 매출·점포수·생존율까지 나와요. 서울시가 무료로 줘요.</div></div>
+    <div class="res-item"><a href="https://sg.sbiz.or.kr" target="_blank" rel="noopener">소상공인 상권정보시스템<span class="url">sg.sbiz.or.kr</span></a><div class="d">전국 버전. 우리 주소랑 업종 넣으면 주변 경쟁 점포 수, 업종 매출, 배후 세대를 간이로 분석해줘요.</div></div>
+    <div class="res-item"><a href="https://www.openub.com" target="_blank" rel="noopener">오픈업<span class="url">openub.com</span></a><div class="d">카드 매출 기반으로 우리 동네·업종이 대략 얼마 버는지 규모를 추정해서 보여줘요.</div></div>
 
-    <div class="res-grp">검색어 — 고객이 무슨 말로 찾는가</div>
-    <div class="res-item"><a href="https://datalab.naver.com" target="_blank" rel="noopener">네이버 데이터랩<span class="url">datalab.naver.com</span></a><div class="d">지역·업종별로 뭘 검색하는지, 계절·요일 추이.</div></div>
-    <div class="res-item"><a href="https://searchad.naver.com" target="_blank" rel="noopener">네이버 검색광고 · 키워드도구<span class="url">searchad.naver.com → 도구 → 키워드도구</span></a><div class="d">"연신내 술집" 같은 검색어가 한 달에 몇 번 검색되는지 정확한 숫자.</div></div>
-    <div class="res-item"><a href="https://blackkiwi.net" target="_blank" rel="noopener">블랙키위<span class="url">blackkiwi.net</span></a><div class="d">키워드 검색량·연관어·트렌드. 무료로 상당 부분.</div></div>
+    <div class="res-grp">검색어 — 고객이 무슨 말로 우리를 찾나</div>
+    <div class="res-item"><a href="https://datalab.naver.com" target="_blank" rel="noopener">네이버 데이터랩<span class="url">datalab.naver.com</span></a><div class="d">지역·업종별로 사람들이 뭘 검색하는지, 계절이랑 요일 따라 어떻게 변하는지 봐요.</div></div>
+    <div class="res-item"><a href="https://searchad.naver.com" target="_blank" rel="noopener">네이버 검색광고 · 키워드도구<span class="url">searchad.naver.com → 도구 → 키워드도구</span></a><div class="d">"연신내 술집" 같은 검색어가 한 달에 몇 번 검색되는지 정확한 숫자로 나와요. 내 가게가 어떤 검색어에 걸려야 할지 정할 때 봐요.</div></div>
+    <div class="res-item"><a href="https://blackkiwi.net" target="_blank" rel="noopener">블랙키위<span class="url">blackkiwi.net</span></a><div class="d">키워드 검색량이랑 연관 검색어, 트렌드를 무료로 상당 부분 보여줘요.</div></div>
 
-    <div class="res-grp">우리 가게 — 고객이 어떻게 찾고 보는가</div>
-    <div class="res-item"><a href="https://smartplace.naver.com" target="_blank" rel="noopener">네이버 스마트플레이스<span class="url">smartplace.naver.com</span></a><div class="d">사장이 직접 관리(무료). 조회수, <span class="em">고객이 어떤 검색어로 우리를 찾았는지</span>, 리뷰, 예약. 유입 키워드가 고객의 진짜 언어다. 답글도 여기서.</div></div>
+    <div class="res-grp">우리 가게 — 고객이 우리를 어떻게 찾고 보나</div>
+    <div class="res-item"><a href="https://smartplace.naver.com" target="_blank" rel="noopener">네이버 스마트플레이스<span class="url">smartplace.naver.com</span></a><div class="d">사장님이 직접 관리하는 곳(무료). 조회수, <em>고객이 어떤 검색어로 우리를 찾았는지</em>, 리뷰, 예약이 다 보여요. 여기 유입 키워드가 곧 고객의 진짜 언어예요. 답글도 여기서 달고요.</div></div>
   </div>
 
   <div class="close">
-    답은 이미 안에 있다. 없는 걸 만드는 게 아니라, 가진 걸 지금 고객이 알아보게 꺼내는 일이다.
+    결국 답은 밖이 아니라 안에 있어요. 없는 걸 새로 만드는 게 아니라, 이미 가진 걸 지금 고객이 알아보게 꺼내는 일이에요.
     <div class="sig">RE:FEEEL &middot; 은평 「숨빛」</div>
   </div>
 
