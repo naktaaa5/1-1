@@ -462,5 +462,18 @@ const sections=document.querySelectorAll('section[id]'),snItems=document.querySe
 const sectionObserver=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){const id=e.target.id,num=id.replace('s',''),title=e.target.dataset.title||'';snItems.forEach(it=>{const a=it.querySelector('a');it.classList.toggle('active',a&&a.getAttribute('href')==='#'+id)});if(tbCurrent&&title){tbCurrent.innerHTML='<span class="num">'+num+'</span>'+title}}})},{rootMargin:'-40% 0px -50% 0px'});
 sections.forEach(s=>sectionObserver.observe(s));
 </script>
+<!-- refeeel-doc-view-beacon --><script>(function(){try{
+var K='rf_v',v=localStorage.getItem(K);
+if(!v){v=Math.random().toString(36).slice(2)+Date.now().toString(36);localStorage.setItem(K,v);}
+var d=location.pathname.replace(/index\.html$/,'').replace(/^\/+|\/+$/g,'');
+if(!d)return;
+var kind=d.indexOf('brand_guide')===0?(/guideline/.test(d)?'guideline':'proposal'):'report';
+var t0=Date.now(),sent=false;
+function send(ms){var b=JSON.stringify({doc:d,v:v,kind:kind,ms:ms});
+if(navigator.sendBeacon){navigator.sendBeacon('https://refeeel-ig.naktaaa00.workers.dev/doc-view',new Blob([b],{type:'application/json'}));}
+else{fetch('https://refeeel-ig.naktaaa00.workers.dev/doc-view',{method:'POST',headers:{'Content-Type':'application/json'},body:b,keepalive:true}).catch(function(){});}}
+send(null);
+addEventListener('pagehide',function(){if(sent)return;sent=true;send(Date.now()-t0);});
+}catch(e){}})();</script>
 </body>
 </html>
