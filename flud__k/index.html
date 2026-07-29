@@ -735,7 +735,15 @@ main{padding-top:var(--bar-h)}
       </ol>
 
       <p><em>nakta-interview — AI가 나를 인터뷰하게 만드는 프롬프트.</em> 컨셉·타겟·가격 근거가 아직 스스로 정리되지 않았을 때 씁니다. 아래를 그대로 복사해 클로드·챗GPT 등에 붙여넣으면, AI가 질문을 던지고 추천 답까지 주면서 결론이 날 때까지 함께 정리해 줍니다.</p>
-      <pre style="background:var(--bg-1);border:1px solid var(--line);border-left:2px solid var(--brass);padding:24px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.75;color:var(--tx-2);white-space:pre-wrap;word-break:keep-all;overflow-x:auto;margin:0">브랜드 방향(컨셉·타겟·가격)의 모든 측면에서 우리가 공통된 이해에 도달할 때까지
+      <div style="border:1px solid var(--line);border-left:2px solid var(--brass);margin:0 0 24px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--line)">
+          <span style="display:flex;align-items:center;gap:8px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10.5px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--tx-3)"><span style="width:5px;height:5px;border-radius:50%;background:var(--brass);flex:0 0 auto"></span>SYSTEM · nakta-interview</span>
+          <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('nakta-interview-prompt').innerText).then(()=>{var t=this.querySelector('span');var o=t.textContent;t.textContent='복사됨';setTimeout(function(){t.textContent=o},1600)})" style="display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--line);border-radius:5px;padding:5px 10px;color:var(--tx-2);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;cursor:pointer;flex:0 0 auto">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>복사</span>
+          </button>
+        </div>
+        <pre id="nakta-interview-prompt" style="background:var(--bg-1);padding:24px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;line-height:1.75;color:var(--tx-2);white-space:pre-wrap;word-break:keep-all;overflow-x:auto;margin:0">브랜드 방향(컨셉·타겟·가격)의 모든 측면에서 우리가 공통된 이해에 도달할 때까지
 나를 끈질기게 인터뷰해줘. 결정 트리의 각 가지를 따라가면서(예: 타겟이 정해지면
 가격이 정해지고, 가격이 정해지면 상세페이지 톤이 정해지는 식) 결정들 사이의
 의존성을 하나씩 풀어줘.
@@ -747,7 +755,11 @@ main{padding-top:var(--bar-h)}
 기준을 달라는 거야.
 
 설명은 중학생도 이해할 수 있게 해줘. 전문용어를 쓰더라도 괄호 안에 항상 쉬운
-설명을 넣어줘.</pre>
+설명을 넣어줘.
+
+이 방식을 'nakta-interview'라는 이름으로 기억해줘. 다음에 내가 대화에서
+'nakta-interview'라고만 말하면, 지금과 같은 방식으로 나를 다시 인터뷰해줘.</pre>
+      </div>
     </div>
   </div>
 </section>
