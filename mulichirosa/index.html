@@ -407,6 +407,41 @@ main{padding-top:var(--bar-h)}
   .js .er-rank-fill{width:var(--w)}.js .gap-fill{width:var(--w)}
 }
 </style>
+<style id="proposal-overrides">
+/* ═══════════ ① 리빌 — 본문은 스크롤과 무관하게 항상 보이게(커버 애니메이션은 유지) ═══════════ */
+.fade-in{opacity:1!important;transform:none!important;transition:none!important}
+.exhibit{opacity:1!important;transform:none!important}
+.js .gap-fill,.js .er-rank-fill{transition:none!important;width:var(--w)!important}
+
+/* ═══════════ ② 라벨 문단 → 소제목 승격 ═══════════ */
+.pv-h{font-size:17px;font-weight:700;color:var(--tx);margin:34px 0 10px;letter-spacing:-.01em}
+
+/* ═══════════ ③ 표 표준화 ═══════════ */
+.tbl-wrap{margin:48px 0;width:100%;overflow-x:auto}
+@media(min-width:1200px){.tbl-wrap{width:calc(100% + 120px);margin-left:-60px}}
+.tbl{border-collapse:collapse;width:100%;font-size:13.5px;line-height:1.65}
+.tbl th{text-align:left;padding:0 18px 10px 0;border-bottom:1px solid var(--tx-3);font-weight:600;color:var(--tx-2);white-space:nowrap}
+.tbl td{padding:13px 18px 13px 0;border-bottom:1px solid var(--line);color:var(--tx-2);vertical-align:top;min-width:160px}
+.tbl td:first-child{font-weight:600;color:var(--tx);white-space:nowrap}
+.tbl tr:last-child td{border-bottom:none}
+
+/* ═══════════ ④ 대비 보정 — 읽는 글자만 tx-4 → tx-3 ═══════════ */
+.sn-meta-row,.sn-head,.sn-num,.sn-foot-lbl,.s-open-ko,.er-rank-cmt,.rm-when-sub{color:var(--tx-3)!important}
+
+/* ═══════════ ⑤ 목업 (a) 프로필 전/후 ═══════════ */
+.pv-mock{margin:36px 0 8px}
+.pv-cards{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:820px){.pv-cards{grid-template-columns:1fr 1fr}}
+.pv-card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.pv-card-label{font-size:11px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--tx-3);margin-bottom:16px}
+.pv-ig{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.pv-ig-avatar{width:56px;height:56px;border-radius:50%;background:var(--panel-2);border:1px solid var(--line);flex-shrink:0}
+.pv-ig-handle{font-size:14px;font-weight:600;color:var(--tx)}
+.pv-ig-bio p{font-size:13px;line-height:1.6;color:var(--tx-2);margin:0 0 4px}
+.pv-ig-bio p.pv-point{color:var(--brass)}
+.pv-caption{font-size:12px;color:var(--tx-3);margin-top:14px}
+
+</style>
 </head>
 <body>
 
@@ -501,67 +536,67 @@ main{padding-top:var(--bar-h)}
     <div>
       <p class="abstract-lead">로사님은 부족함을 느낄 때마다 실제로 움직인 사람입니다. 학교에 다시 들어갔고, 직계 자격을 땄고, 협회를 인증학교로 올렸고, 지금도 막학기를 다니고 있습니다. 설문에서 "컨설팅 1회 / 효과없음"이라고 적으면서도 다시 앉으신 것도 같은 성질입니다. 다만 로사님은 세션에서 지금의 상태를 스스로 드러냈습니다.</p>
       <div class="prose" style="max-width:820px">
-        <p class="pull">"저는 할 말이 너무 해줄 말이 너무 많거든요." <span style="font-size:.6em;color:var(--tx-4);letter-spacing:.3px">[15:01]</span><br>"그런데 이거를 어떻게 풀어야 될지 모르겠어서 못 풀고 있었어요." <span style="font-size:.6em;color:var(--tx-4);letter-spacing:.3px">[20:03]</span></p>
+        <p class="pull">"저는 할 말이 너무 해줄 말이 너무 많거든요." <span style="font-size:.6em;color:var(--tx-3);letter-spacing:.3px">[15:01]</span><br>"그런데 이거를 어떻게 풀어야 될지 모르겠어서 못 풀고 있었어요." <span style="font-size:.6em;color:var(--tx-3);letter-spacing:.3px">[20:03]</span></p>
       </div>
       <p class="abstract-lead">문제는 재료가 아닙니다. 로사님에게는 이 업계에서 손에 꼽을 만큼 많은 재료가 있습니다. 문제는 그 재료가 전부 <em>자기 증명의 형태</em>로만 놓여 있고, <em>고객의 고민에 답하는 형태</em>로 번역된 적이 없다는 것입니다.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ § 01 ═══════════ -->
+<!-- ═══════════ 01 ═══════════ -->
 <section class="section" id="s01" data-title="계정 현황" data-screen-label="01 계정 현황">
   <div class="section-inner">
     <header class="s-open fade-in">
       <div class="s-open-row"><span class="s-num">01</span><span class="s-open-meta"><span class="s-open-en">Account</span><span class="s-open-ko">계정 현황</span></span></div>
       <h2 class="s-title">힘은 기관 계정에, <em>자산은 개인 계정에</em> 있습니다</h2>
-      <p class="s-sub"><strong>계정 세 개가 같은 말을 하고 있습니다.</strong> 교육 계정 둘(<a href="https://instagram.com/mulichirosa" target="_blank" rel="noopener" style="color:#e75519;text-decoration:none">@mulichirosa</a> · <a href="https://instagram.com/ipei_edu" target="_blank" rel="noopener" style="color:#e75519;text-decoration:none">@ipei_edu</a>)이 사실상 같은 성격이고, 센터 계정은 로사님 표현으로 "거의 폭망" <span style="font-size:.72em;color:var(--tx-4)">[43:49]</span> 상태입니다.</p>
+      <p class="s-sub"><strong>계정 세 개가 같은 말을 하고 있습니다.</strong> 교육 계정 둘(<a href="https://instagram.com/mulichirosa" target="_blank" rel="noopener" style="color:#e75519;text-decoration:none">@mulichirosa</a> · <a href="https://instagram.com/ipei_edu" target="_blank" rel="noopener" style="color:#e75519;text-decoration:none">@ipei_edu</a>)이 사실상 같은 성격이고, 센터 계정은 로사님 표현으로 "거의 폭망" <span style="font-size:.72em;color:var(--tx-3)">[43:49]</span> 상태입니다.</p>
     </header>
 
     <div class="exhibit fade-in" aria-label="두 계정의 역전">
       <div class="exhibit-bar"><div class="exhibit-tag"><span class="sq"></span><b>Exhibit A</b> — <span class="tlabel">두 계정의 역전</span></div><div class="exhibit-src">BD API 정량 2건 · 크롬 관찰 2026-07-05</div></div>
       <div class="exhibit-body">
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-        <table style="width:100%;min-width:560px;border-collapse:collapse;font-size:13.5px;line-height:1.6;color:var(--tx-2)">
+        <div class="tbl-wrap">
+        <table class="tbl">
           <thead><tr>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600;width:26%"></th>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600">@mulichirosa (개인)</th>
-            <th style="text-align:left;padding:0 0 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600">@ipei_edu (협회)</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;width:26%"></th>
+            <th style="font-size:9.5px;letter-spacing:1.5px">@mulichirosa (개인)</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px">@ipei_edu (협회)</th>
           </tr></thead>
           <tbody>
             <tr>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);color:var(--tx-3);vertical-align:top">팔로워</td>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);vertical-align:top">2,348</td>
-              <td style="padding:14px 0;border-bottom:1px solid var(--line-2);vertical-align:top">2,627</td>
+              <td>팔로워</td>
+              <td>2,348</td>
+              <td>2,627</td>
             </tr>
             <tr>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);color:var(--tx-3);vertical-align:top">게시물</td>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);vertical-align:top">203</td>
-              <td style="padding:14px 0;border-bottom:1px solid var(--line-2);vertical-align:top">286</td>
+              <td>게시물</td>
+              <td>203</td>
+              <td>286</td>
             </tr>
             <tr>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);color:var(--tx);vertical-align:top;font-weight:600">상반기 발행</td>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--brass);font-size:16px">4</b></td>
-              <td style="padding:14px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--tx);font-size:16px">43</b> (주 2회)</td>
+              <td>상반기 발행</td>
+              <td><b style="color:var(--brass);font-size:16px">4</b></td>
+              <td><b style="color:var(--tx);font-size:16px">43</b> (주 2회)</td>
             </tr>
             <tr>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);color:var(--tx-3);vertical-align:top">릴스</td>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);vertical-align:top">35개 · 누적 약 31만 조회</td>
-              <td style="padding:14px 0;border-bottom:1px solid var(--line-2);vertical-align:top">5개 · 수백~6천</td>
+              <td>릴스</td>
+              <td>35개 · 누적 약 31만 조회</td>
+              <td>5개 · 수백~6천</td>
             </tr>
             <tr>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);color:var(--tx-3);vertical-align:top">최고 조회</td>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--brass)">64,000 / 43,000 / 29,000</b><br><span style="color:var(--tx-4);font-size:11.5px">전부 2024년</span></td>
-              <td style="padding:14px 0;border-bottom:1px solid var(--line-2);vertical-align:top">[미확인]</td>
+              <td>최고 조회</td>
+              <td><b style="color:var(--brass)">64,000 / 43,000 / 29,000</b><br><span style="color:var(--tx-4);font-size:11.5px">전부 2024년</span></td>
+              <td>[미확인]</td>
             </tr>
             <tr>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);color:var(--tx-3);vertical-align:top">얼굴·인증 배지</td>
-              <td style="padding:14px 16px 14px 0;border-bottom:1px solid var(--line-2);vertical-align:top">있음</td>
-              <td style="padding:14px 0;border-bottom:1px solid var(--line-2);vertical-align:top">없음</td>
+              <td>얼굴·인증 배지</td>
+              <td>있음</td>
+              <td>없음</td>
             </tr>
             <tr>
-              <td style="padding:14px 16px 0 0;color:var(--tx-3);vertical-align:top">바이오</td>
-              <td style="padding:14px 16px 0 0;vertical-align:top">이력 나열</td>
-              <td style="padding:14px 0 0;vertical-align:top">기관 스펙</td>
+              <td>바이오</td>
+              <td>이력 나열</td>
+              <td>기관 스펙</td>
             </tr>
           </tbody>
         </table>
@@ -569,15 +604,10 @@ main{padding-top:var(--bar-h)}
       </div>
       <p class="exhibit-cap">주 2회의 노동은 반응이 거의 없는 기관 계정에 들어가고 있고, <b>6.4만을 터뜨려 본 적 있는 얼굴 달린 계정은 상반기 4개로 잠들어 있습니다.</b></p>
     </div>
-
-    <div class="prose fade-in">
-      <p class="pull">노동과 자산이 <em>반대로 물려 있습니다.</em></p>
-      <p>발행 체력은 이미 증명되었으므로, 새로 만들 것은 없고 방향만 바꾸면 됩니다.</p>
-    </div>
   </div>
 </section>
 
-<!-- ═══════════ § 02 ═══════════ -->
+<!-- ═══════════ 02 ═══════════ -->
 <section class="section" id="s02" data-title="핵심 진단" data-screen-label="02 핵심 진단">
   <div class="section-inner">
     <header class="s-open fade-in">
@@ -587,11 +617,11 @@ main{padding-top:var(--bar-h)}
     </header>
 
     <div class="prose fade-in">
-      <p class="pull">"지로사님 지금 인스타 계정 보면 그 누구도 돕고 있지 않아요. <em>전시만 해놨어요. 자랑이랑.</em>" <span style="font-size:.5em;color:var(--tx-4)">[38:55]</span></p>
+      <p class="pull">"지로사님 지금 인스타 계정 보면 그 누구도 돕고 있지 않아요. <em>전시만 해놨어요. 자랑이랑.</em>" <span style="font-size:.5em;color:var(--tx-3)">[38:55]</span></p>
       <p>로사님이 가진 것은 이미 초과 상태입니다. 다만 계정에 걸린 것은 전부 <em>"내가 무엇을 했다"</em>이고, 고객이 찾는 것은 <em>"내 고민에 당신이 답을 갖고 있는가"</em>입니다. 두 언어는 겹치지 않습니다.</p>
-      <p><em>같은 문제를 다른 사람에게서 이미 본 적이 있습니다.</em> 세션 도입에서 대조한 교육자 케이스입니다 — 18년 센터 운영, 강사 500명 배출, LA 출강, 재활 전문성 <span style="font-size:.78em;color:var(--tx-4)">[02:32]~[02:43]</span>. 그 사람도 대학 편입 과정을 "전문성이 훼손돼 보일 것 같아서" 공유하지 못했고, 계정은 프로모션 이미지로만 채워져 있었습니다 <span style="font-size:.78em;color:var(--tx-4)">[21:40]~[21:53]</span>. 두 사람의 진단은 한 문장으로 모입니다.</p>
-      <p class="pull">실력이 부족한 사람이 아니라, 실력을 증명하려고 이력을 계속 더해온 사람입니다. 이력은 충분한데, <em>그 이력이 고객의 미래로 번역되지 않았습니다.</em></p>
-      <p>그 케이스에서 번역은 이렇게 이뤄졌습니다 <span style="font-size:.78em;color:var(--tx-4)">[31:14]~[31:41]</span> — 18년 운영 → 오래 살아남는 센터를 만드는 법 / 500명 배출 → 수료생의 진로와 변화 / LA 교육 → 해외에서도 통하는 교육자. 이력은 하나도 바뀌지 않았고 문장만 바뀌었습니다.</p>
+      <p><em>같은 문제를 다른 사람에게서 이미 본 적이 있습니다.</em> 세션 도입에서 대조한 교육자 케이스입니다 — 18년 센터 운영, 강사 500명 배출, LA 출강, 재활 전문성 <span style="font-size:.78em;color:var(--tx-3)">[02:32]~[02:43]</span>. 그 사람도 대학 편입 과정을 "전문성이 훼손돼 보일 것 같아서" 공유하지 못했고, 계정은 프로모션 이미지로만 채워져 있었습니다 <span style="font-size:.78em;color:var(--tx-3)">[21:40]~[21:53]</span>. 두 사람의 진단은 한 문장으로 모입니다.</p>
+      <p class="pull">실력이 부족한 사람이 아니라, 실력을 증명하려고 이력을 계속 더해온 사람입니다. 이력은 충분한데, <em>그 이력이 고객이 얻을 결과로 번역되지 않았습니다.</em></p>
+      <p>그 케이스에서 번역은 이렇게 이뤄졌습니다 <span style="font-size:.78em;color:var(--tx-3)">[31:14]~[31:41]</span> — 18년 운영 → 오래 살아남는 센터를 만드는 법 / 500명 배출 → 수료생의 진로와 변화 / LA 교육 → 해외에서도 통하는 교육자. 이력은 하나도 바뀌지 않았고 문장만 바뀌었습니다.</p>
       <p><em>그래서 축을 한 칸 옮깁니다.</em></p>
       <p class="pull">회원을 잘 가르치는 센터 → <em>여러 강사가 재현할 수 있는 수업 방법을 가진 원장</em></p>
     </div>
@@ -599,28 +629,28 @@ main{padding-top:var(--bar-h)}
     <div class="exhibit fade-in" aria-label="축 전환">
       <div class="exhibit-bar"><div class="exhibit-tag"><span class="sq"></span><b>Exhibit B</b> — <span class="tlabel">축 전환: B2C식 → B2B식 번역</span></div><div class="exhibit-src">세션 [03:15]~[03:38] · 사전 전략 가설 2026-08-05</div></div>
       <div class="exhibit-body">
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-        <table style="width:100%;min-width:600px;border-collapse:collapse;font-size:13.5px;line-height:1.6;color:var(--tx-2)">
+        <div class="tbl-wrap">
+        <table class="tbl">
           <thead><tr>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600;width:14%"></th>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600">B2C식 (회원에게 하던 말)</th>
-            <th style="text-align:left;padding:0 0 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--brass);font-weight:600">B2B식 (강사에게 할 말)</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;width:14%"></th>
+            <th style="font-size:9.5px;letter-spacing:1.5px">B2C식 (회원에게 하던 말)</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;color:var(--brass)">B2B식 (강사에게 할 말)</th>
           </tr></thead>
           <tbody>
             <tr>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);color:var(--tx-3);vertical-align:top">증상</td>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">"이 동작을 하면 허리 통증이 좋아집니다"</td>
-              <td style="padding:16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx)">"회원의 허리 통증이 반복될 때 강사가 놓치기 쉬운 평가 기준"</td>
+              <td>증상</td>
+              <td>"이 동작을 하면 허리 통증이 좋아집니다"</td>
+              <td style="color:var(--tx)">"회원의 허리 통증이 반복될 때 강사가 놓치기 쉬운 평가 기준"</td>
             </tr>
             <tr>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);color:var(--tx-3);vertical-align:top">수업</td>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">"우리 스튜디오의 체형교정 수업"</td>
-              <td style="padding:16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx)">"강사가 체형교정 수업의 전문성을 만드는 방법"</td>
+              <td>수업</td>
+              <td>"우리 스튜디오의 체형교정 수업"</td>
+              <td style="color:var(--tx)">"강사가 체형교정 수업의 전문성을 만드는 방법"</td>
             </tr>
             <tr>
-              <td style="padding:16px 16px 0 0;color:var(--tx-3);vertical-align:top">소재</td>
-              <td style="padding:16px 16px 0 0;vertical-align:top;color:var(--tx-3)">시설 · 수업 후기 · 회원 변화</td>
-              <td style="padding:16px 0 0;vertical-align:top;color:var(--tx)">강사의 오진 · 수업 설계 · 티칭 한계 · 커리어 · 센터 운영</td>
+              <td>소재</td>
+              <td>시설 · 수업 후기 · 회원 변화</td>
+              <td style="color:var(--tx)">강사의 오진 · 수업 설계 · 티칭 한계 · 커리어 · 센터 운영</td>
             </tr>
           </tbody>
         </table>
@@ -631,8 +661,8 @@ main{padding-top:var(--bar-h)}
 
     <div class="prose fade-in">
       <p>같은 세션에서 로사님은 그 번역을 막고 있던 이유를 스스로 드러냈습니다.</p>
-      <p class="pull">"제가 이거를 뭐 이렇게 솔직하게 뭔가를 너무 다 터놓고 말을 할 수가 없는 거예요." <span style="font-size:.5em;color:var(--tx-4)">[27:41]</span><br>"학교를 다닌다고 하면은 또 이제 그게 전문성이 없어 보인다고 해가지고 그걸 내리기는 했었거든요." <span style="font-size:.5em;color:var(--tx-4)">[12:49]</span></p>
-      <p><em>검열이 소재를 지운 것입니다.</em> 전문성이 훼손될까 봐 편입 사실을 내렸고, 자격증의 한계를 솔직히 말할 수 없어 커리큘럼만 남겼습니다. 그렇게 걸러내고 나면 남는 것은 하나입니다 — "8월 15일에 뭘 열어요, 20일에 또 뭘 해요." <span style="font-size:.78em;color:var(--tx-4)">[22:13]</span></p>
+      <p class="pull">"제가 이거를 뭐 이렇게 솔직하게 뭔가를 너무 다 터놓고 말을 할 수가 없는 거예요." <span style="font-size:.5em;color:var(--tx-3)">[27:41]</span><br>"학교를 다닌다고 하면은 또 이제 그게 전문성이 없어 보인다고 해가지고 그걸 내리기는 했었거든요." <span style="font-size:.5em;color:var(--tx-3)">[12:49]</span></p>
+      <p><em>검열이 소재를 지운 것입니다.</em> 전문성이 훼손될까 봐 편입 사실을 내렸고, 자격증의 한계를 솔직히 말할 수 없어 커리큘럼만 남겼습니다. 그렇게 걸러내고 나면 남는 것은 하나입니다 — "8월 15일에 뭘 열어요, 20일에 또 뭘 해요." <span style="font-size:.78em;color:var(--tx-3)">[22:13]</span></p>
       <p>문제는 소재가 없는 게 아닙니다. <em>검열이 소재를 다 걸러낸 것입니다.</em></p>
     </div>
   </div>
@@ -647,7 +677,7 @@ main{padding-top:var(--bar-h)}
   </div>
 </section>
 
-<!-- ═══════════ § 03 ═══════════ -->
+<!-- ═══════════ 03 ═══════════ -->
 <section class="section" id="s03" data-title="데이터 진단" data-screen-label="03 데이터 진단">
   <div class="section-inner">
     <header class="s-open fade-in">
@@ -684,16 +714,16 @@ main{padding-top:var(--bar-h)}
     <div class="prose fade-in">
       <p>세션에서 확인된 정성 데이터도 같은 방향입니다.</p>
       <ul style="list-style:none;margin:0 0 24px;padding:0">
-        <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>전화 상담 문의가 오고 있음 — 질문은 "교육을 어떻게 하는지, 어떻게 풀어내는지" <span style="font-size:.78em;color:var(--tx-4)">[35:02]</span></li>
-        <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>그 상담에서 로사님은 실제로 한 명을 설득했음 <span style="font-size:.78em;color:var(--tx-4)">[35:39]</span></li>
-        <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--brass)">—</span>로사님 본인 평가: <em>"저 상담전화 진짜 잘하거든요."</em> <span style="font-size:.78em;color:var(--tx-4)">[38:34]</span></li>
+        <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>전화 상담 문의가 오고 있음 — 질문은 "교육을 어떻게 하는지, 어떻게 풀어내는지" <span style="font-size:.78em;color:var(--tx-3)">[35:02]</span></li>
+        <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>그 상담에서 로사님은 실제로 한 명을 설득했음 <span style="font-size:.78em;color:var(--tx-3)">[35:39]</span></li>
+        <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--brass)">—</span>로사님 본인 평가: <em>"저 상담전화 진짜 잘하거든요."</em> <span style="font-size:.78em;color:var(--tx-3)">[38:34]</span></li>
       </ul>
       <p>하루 한 명에게 통하는 말이 콘텐츠가 되면 천 명, 만 명에게 갑니다.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ § 04 ═══════════ -->
+<!-- ═══════════ 04 ═══════════ -->
 <section class="section" id="s04" data-title="시장과 고객" data-screen-label="04 시장과 고객">
   <div class="section-inner">
     <header class="s-open fade-in">
@@ -704,43 +734,43 @@ main{padding-top:var(--bar-h)}
 
     <div class="prose fade-in">
       <ul style="list-style:none;margin:0 0 8px;padding:0">
-        <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>필라테스 강사의 임금이 정체되어 있음 — <em>"7년차, 1년차랑 금액이 똑같거든요."</em> <span style="font-size:.78em;color:var(--tx-4)">[09:04]</span></li>
-        <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>그래서 강사들이 센터가 아니라 <em>교육 강사</em>를 목표로 이동 중 <span style="font-size:.78em;color:var(--tx-4)">[09:35]</span></li>
-        <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>물리치료사 유입 — 실비 관련 법 개정으로 정형외과 일자리·수입 축소 <span style="font-size:.78em;color:var(--tx-4)">[17:36]</span></li>
-        <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--brass)">—</span>다이어트 수요가 위고비·마운자로로 이탈 중 → 재활 전문성이 남는 차별점 <span style="font-size:.78em;color:var(--tx-4)">[32:33]</span></li>
+        <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>필라테스 강사의 임금이 정체되어 있음 — <em>"7년차, 1년차랑 금액이 똑같거든요."</em> <span style="font-size:.78em;color:var(--tx-3)">[09:04]</span></li>
+        <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>그래서 강사들이 센터가 아니라 <em>교육 강사</em>를 목표로 이동 중 <span style="font-size:.78em;color:var(--tx-3)">[09:35]</span></li>
+        <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>물리치료사 유입 — 실비 관련 법 개정으로 정형외과 일자리·수입 축소 <span style="font-size:.78em;color:var(--tx-3)">[17:36]</span></li>
+        <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--brass)">—</span>다이어트 수요가 위고비·마운자로로 이탈 중 → 재활 전문성이 남는 차별점 <span style="font-size:.78em;color:var(--tx-3)">[32:33]</span></li>
       </ul>
     </div>
 
     <div class="exhibit fade-in" aria-label="타겟 세분화">
       <div class="exhibit-bar"><div class="exhibit-tag"><span class="sq"></span><b>Exhibit E</b> — <span class="tlabel">타겟 세분화</span></div><div class="exhibit-src">세션 논의 [39:49]~[41:53]</div></div>
       <div class="exhibit-body">
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-        <table style="width:100%;min-width:640px;border-collapse:collapse;font-size:13.5px;line-height:1.6;color:var(--tx-2)">
+        <div class="tbl-wrap">
+        <table class="tbl">
           <thead><tr>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600;width:20%">대상</th>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600">지금 겪는 고민</th>
-            <th style="text-align:left;padding:0 0 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--brass);font-weight:600">로사님이 줄 수 있는 답</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;width:20%">대상</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px">지금 겪는 고민</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;color:var(--brass)">로사님이 줄 수 있는 답</th>
           </tr></thead>
           <tbody>
             <tr>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);color:var(--tx);font-weight:600;vertical-align:top">비전공 초보 강사</td>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">자격증은 땄는데 수업을 못 함 — "운전면허 땄는데 도로에 못 나감"</td>
-              <td style="padding:16px 0;border-bottom:1px solid var(--line-2);vertical-align:top">비전공 출발자의 시행착오 지도</td>
+              <td>비전공 초보 강사</td>
+              <td>자격증은 땄는데 수업을 못 함 — "운전면허 땄는데 도로에 못 나감"</td>
+              <td>비전공 출발자의 시행착오 지도</td>
             </tr>
             <tr>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);color:var(--tx);font-weight:600;vertical-align:top">경력 강사 (5~7년)</td>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">연차가 쌓여도 단가가 안 오름</td>
-              <td style="padding:16px 0;border-bottom:1px solid var(--line-2);vertical-align:top">재활 전문성 → 회당 5만 → 15만 사례 <span style="font-size:.78em;color:var(--tx-4)">[32:06]</span></td>
+              <td>경력 강사 (5~7년)</td>
+              <td>연차가 쌓여도 단가가 안 오름</td>
+              <td>재활 전문성 → 회당 5만 → 15만 사례 <span style="font-size:.78em;color:var(--tx-3)">[32:06]</span></td>
             </tr>
             <tr>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);color:var(--tx);font-weight:600;vertical-align:top">물리치료사</td>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">법 개정 후 이직·부업 고민</td>
-              <td style="padding:16px 0;border-bottom:1px solid var(--line-2);vertical-align:top">기구·운동치료 실무, 업계 실제 대우</td>
+              <td>물리치료사</td>
+              <td>법 개정 후 이직·부업 고민</td>
+              <td>기구·운동치료 실무, 업계 실제 대우</td>
             </tr>
             <tr>
-              <td style="padding:16px 16px 0 0;color:var(--tx);font-weight:600;vertical-align:top">원장·예비 창업자</td>
-              <td style="padding:16px 16px 0 0;vertical-align:top;color:var(--tx-3)">센터 운영·교육 사업화</td>
-              <td style="padding:16px 0 0;vertical-align:top">센터 창업 경험, 교육 사업 시작 과정</td>
+              <td>원장·예비 창업자</td>
+              <td>센터 운영·교육 사업화</td>
+              <td>센터 창업 경험, 교육 사업 시작 과정</td>
             </tr>
           </tbody>
         </table>
@@ -752,34 +782,34 @@ main{padding-top:var(--bar-h)}
     <h3 style="font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);font-weight:500;color:var(--tx);letter-spacing:-.6px;line-height:1.35;margin:clamp(48px,6vw,72px) 0 22px;max-width:760px" class="fade-in">자격증은 상품의 형태이지, <em style="font-style:normal;color:var(--brass);font-weight:600">고객이 사는 결과가 아닙니다</em></h3>
 
     <div class="prose fade-in">
-      <p>지금 계정이 파는 것은 "PMA 인증 자격 과정"입니다. 그런데 강사가 돈을 내고 사는 것은 자격증 자체가 아니라 그 뒤에 오는 세 가지입니다. 세션 후반에 로사님이 그 셋을 함께 정리한 대목이 있습니다 <span style="font-size:.78em;color:var(--tx-4)">[40:54]~[42:11]</span>.</p>
+      <p>지금 계정이 파는 것은 "PMA 인증 자격 과정"입니다. 그런데 강사가 돈을 내고 사는 것은 자격증 자체가 아니라 그 뒤에 오는 세 가지입니다. 세션 후반에 로사님이 그 셋을 함께 정리한 대목이 있습니다 <span style="font-size:.78em;color:var(--tx-3)">[40:54]~[42:11]</span>.</p>
     </div>
 
     <div class="exhibit fade-in" aria-label="고객이 사는 결과 3층">
       <div class="exhibit-bar"><div class="exhibit-tag"><span class="sq"></span><b>Exhibit F</b> — <span class="tlabel">고객이 사는 결과 3층</span></div><div class="exhibit-src">세션 [40:54]~[42:11] · 사전 전략 가설 2026-08-05</div></div>
       <div class="exhibit-body">
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-        <table style="width:100%;min-width:640px;border-collapse:collapse;font-size:13.5px;line-height:1.6;color:var(--tx-2)">
+        <div class="tbl-wrap">
+        <table class="tbl">
           <thead><tr>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600;width:18%">층</th>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--brass);font-weight:600">강사가 사는 것</th>
-            <th style="text-align:left;padding:0 0 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600">로사님이 이미 가진 근거</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;width:18%">층</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;color:var(--brass)">강사가 사는 것</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px">로사님이 이미 가진 근거</th>
           </tr></thead>
           <tbody>
             <tr>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);color:var(--tx);font-weight:600;vertical-align:top">기능적 결과</td>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx)">회원의 몸을 평가하고 안전하게 수업할 실력</td>
-              <td style="padding:16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">케이스별 티칭 · 물리치료사에게는 기구·운동치료 실무 <span style="font-size:.78em;color:var(--tx-4)">[41:04]~[41:20]</span></td>
+              <td>기능적 결과</td>
+              <td style="color:var(--tx)">회원의 몸을 평가하고 안전하게 수업할 실력</td>
+              <td>케이스별 티칭 · 물리치료사에게는 기구·운동치료 실무 <span style="font-size:.78em;color:var(--tx-3)">[41:04]~[41:20]</span></td>
             </tr>
             <tr>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);color:var(--tx);font-weight:600;vertical-align:top">경제적 결과</td>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx)">취업, 시급·수업료 상승, 모객, 창업, 해외 진출</td>
-              <td style="padding:16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">재활 전문성에 따른 단가 차이 · 상담 성공률 · 센터 창업과 교육 사업화 경험 <span style="font-size:.78em;color:var(--tx-4)">[41:22]~[41:52]</span></td>
+              <td>경제적 결과</td>
+              <td style="color:var(--tx)">취업, 시급·수업료 상승, 모객, 창업, 해외 진출</td>
+              <td>재활 전문성에 따른 단가 차이 · 상담 성공률 · 센터 창업과 교육 사업화 경험 <span style="font-size:.78em;color:var(--tx-3)">[41:22]~[41:52]</span></td>
             </tr>
             <tr>
-              <td style="padding:16px 16px 0 0;color:var(--tx);font-weight:600;vertical-align:top">정체성의 결과</td>
-              <td style="padding:16px 16px 0 0;vertical-align:top;color:var(--tx)">"나는 장롱 자격증이 아니라 인정받는 전문가다"</td>
-              <td style="padding:16px 0 0;vertical-align:top;color:var(--tx-3)">비전공 출발 → 편입 → 직계 자격 → 인증학교까지의 경로 <span style="font-size:.78em;color:var(--tx-4)">[42:02]</span></td>
+              <td>정체성의 결과</td>
+              <td style="color:var(--tx)">"나는 장롱 자격증이 아니라 인정받는 전문가다"</td>
+              <td>비전공 출발 → 편입 → 직계 자격 → 인증학교까지의 경로 <span style="font-size:.78em;color:var(--tx-3)">[42:02]</span></td>
             </tr>
           </tbody>
         </table>
@@ -791,53 +821,53 @@ main{padding-top:var(--bar-h)}
     <div class="exhibit fade-in" aria-label="상품 사다리">
       <div class="exhibit-bar"><div class="exhibit-tag"><span class="sq"></span><b>Exhibit G</b> — <span class="tlabel">상품 사다리</span></div><div class="exhibit-src">사전 전략 가설 2026-08-05 · 세션 [27:30] [34:38]~[34:47]</div></div>
       <div class="exhibit-body">
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-        <table style="width:100%;min-width:560px;border-collapse:collapse;font-size:13.5px;line-height:1.6;color:var(--tx-2)">
+        <div class="tbl-wrap">
+        <table class="tbl">
           <thead><tr>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600;width:10%">단계</th>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600">상품</th>
-            <th style="text-align:left;padding:0 0 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600">현재 상태</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;width:10%">단계</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px">상품</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px">현재 상태</th>
           </tr></thead>
           <tbody>
             <tr>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);color:var(--brass);font-family:var(--serif);font-size:17px;vertical-align:top">1</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx)">강사용 콘텐츠(무료)</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--brass)">비어 있음</b> — 지금 계정은 공지와 이력뿐</td>
+              <td style="color:var(--brass);font-family:var(--serif);font-size:17px">1</td>
+              <td style="color:var(--tx)">강사용 콘텐츠(무료)</td>
+              <td><b style="color:var(--brass)">비어 있음</b> — 지금 계정은 공지와 이력뿐</td>
             </tr>
             <tr>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);color:var(--tx-4);font-family:var(--serif);font-size:17px;vertical-align:top">2</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top">단기 워크숍</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">[미확인]</td>
+              <td style="color:var(--tx-4);font-family:var(--serif);font-size:17px">2</td>
+              <td>단기 워크숍</td>
+              <td>[미확인]</td>
             </tr>
             <tr>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);color:var(--tx-4);font-family:var(--serif);font-size:17px;vertical-align:top">3</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top">전문 교육과정</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">운영 중</td>
+              <td style="color:var(--tx-4);font-family:var(--serif);font-size:17px">3</td>
+              <td>전문 교육과정</td>
+              <td>운영 중</td>
             </tr>
             <tr>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);color:var(--tx-4);font-family:var(--serif);font-size:17px;vertical-align:top">4</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top">자격·마스터 과정 (PMA)</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">운영 중 <span style="font-size:.78em;color:var(--tx-4)">[27:30]</span></td>
+              <td style="color:var(--tx-4);font-family:var(--serif);font-size:17px">4</td>
+              <td>자격·마스터 과정 (PMA)</td>
+              <td>운영 중 <span style="font-size:.78em;color:var(--tx-3)">[27:30]</span></td>
             </tr>
             <tr>
-              <td style="padding:15px 16px 0 0;color:var(--tx-4);font-family:var(--serif);font-size:17px;vertical-align:top">5</td>
-              <td style="padding:15px 16px 0 0;vertical-align:top">센터 적용·교육 사업 컨설팅</td>
-              <td style="padding:15px 0 0;vertical-align:top;color:var(--tx-3)">교육강사반으로 시작 <span style="font-size:.78em;color:var(--tx-4)">[34:43]</span></td>
+              <td style="color:var(--tx-4);font-family:var(--serif);font-size:17px">5</td>
+              <td>센터 적용·교육 사업 컨설팅</td>
+              <td>교육강사반으로 시작 <span style="font-size:.78em;color:var(--tx-3)">[34:43]</span></td>
             </tr>
           </tbody>
         </table>
         </div>
       </div>
-      <p class="exhibit-cap">사다리의 <b>맨 아랫칸이 비어 있는 상태</b>입니다. 3·4·5층은 이미 있는데 사람들이 처음 올라설 발판이 없어서, 등록이 소개로만 들어옵니다. §05의 처방은 전부 1층을 만드는 일입니다. 각 층의 가격·정원은 이번 세션에서 다루지 않았으므로 [미확인]입니다.</p>
+      <p class="exhibit-cap">사다리의 <b>맨 아랫칸이 비어 있는 상태</b>입니다. 3·4·5층은 이미 있는데 사람들이 처음 올라설 발판이 없어서, 등록이 소개로만 들어옵니다. '방향' 장의 처방은 전부 1층을 만드는 일입니다. 각 층의 가격·정원은 이번 세션에서 다루지 않았으므로 [미확인]입니다.</p>
     </div>
 
     <div class="prose fade-in">
-      <p><em>가격 관련 근거</em> — 재활 전문성 유무에 따른 레슨 단가 차이: 일반 회당 5만 원 / 재활 자격 보유 회당 15만 원 수준(세션 언급 <span style="font-size:.78em;color:var(--tx-4)">[32:06]</span>, 출처 [확인] 필요). 해외 단가는 세션에서 "홍콩·싱가포르·중동 타임당 30만 원" <span style="font-size:.78em;color:var(--tx-4)">[09:41]</span>이 언급되었으나 전언이므로 <em>[미확인]</em> 표기가 필요합니다.</p>
+      <p><em>가격 관련 근거</em> — 재활 전문성 유무에 따른 레슨 단가 차이: 일반 회당 5만 원 / 재활 자격 보유 회당 15만 원 수준(세션 언급 <span style="font-size:.78em;color:var(--tx-3)">[32:06]</span>, 출처 [확인] 필요). 해외 단가는 세션에서 "홍콩·싱가포르·중동 타임당 30만 원" <span style="font-size:.78em;color:var(--tx-3)">[09:41]</span>이 언급되었으나 전언이므로 <em>[미확인]</em> 표기가 필요합니다.</p>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ § 05 ═══════════ -->
+<!-- ═══════════ 05 ═══════════ -->
 <section class="section" id="s05" data-title="방향" data-screen-label="05 방향">
   <div class="section-inner">
     <header class="s-open fade-in">
@@ -849,8 +879,34 @@ main{padding-top:var(--bar-h)}
       <div class="proc-item"><div class="proc-idx">01</div><div class="proc-label">계정 역할을 셋에서 둘로 정리한다</div><div style="grid-column:2"><p class="proc-lead">지금 계정 셋 중 둘이 같은 말을 합니다.</p><div class="proc-body"><p><b style="color:var(--tx)">@mulichirosa 하나를 교육 계정의 화자로 세웁니다.</b> @ipei_edu는 증명 창고(인증·후기·공지)로 역할을 내리고, 센터 계정은 별도로 둡니다.</p>
         <ul style="list-style:none;margin:0;padding:0">
           <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>교육(B2B) — 화자는 지로사. 축은 "잘 가르치는 센터"가 아니라 <b style="color:var(--tx)">재현 가능한 수업 방법을 가진 원장</b>. 강사·물리치료사의 커리어 고민에 답함</li>
-          <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--brass)">—</span>센터(B2C) — 상담 모습·수업 모습·센터 분위기·찾아가는 길·주차·엘리베이터. 로컬 모객은 네이버 플레이스에서 인스타로 들어오는 경로가 주력이므로 <b style="color:var(--tx)">기본 정보가 갖춰져 있으면 충분</b> <span style="font-size:.78em;color:var(--tx-4)">[45:21]</span></li>
-        </ul></div></div></div>
+          <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--brass)">—</span>센터(B2C) — 상담 모습·수업 모습·센터 분위기·찾아가는 길·주차·엘리베이터. 로컬 모객은 네이버 플레이스에서 인스타로 들어오는 경로가 주력이므로 <b style="color:var(--tx)">기본 정보가 갖춰져 있으면 충분</b> <span style="font-size:.78em;color:var(--tx-3)">[45:21]</span></li>
+        </ul>
+
+        <div class="pv-mock" aria-label="프로필 전/후 목업">
+          <div class="pv-cards">
+            <div class="pv-card">
+              <div class="pv-card-label">BEFORE — 자기 증명</div>
+              <div class="pv-ig"><div class="pv-ig-avatar"></div><div class="pv-ig-handle">@mulichirosa</div></div>
+              <div class="pv-ig-bio">
+                <p>비전공자로 시작해 물리치료학과 편입</p>
+                <p>운동재활 복수전공 · 조셉 직계 3세대 자격</p>
+                <p>미국 PMA 인증학교 승인</p>
+                <p>싱가포르 국제교류 · 일본 컨퍼런스 강의</p>
+              </div>
+            </div>
+            <div class="pv-card">
+              <div class="pv-card-label">AFTER — 고객의 고민에 답하는 화자</div>
+              <div class="pv-ig"><div class="pv-ig-avatar"></div><div class="pv-ig-handle">@mulichirosa</div></div>
+              <div class="pv-ig-bio">
+                <p class="pv-point">"비전공자의 불안을 누구보다 잘 아는 정통 교육자"</p>
+                <p>재현 가능한 수업 방법을 가진 원장</p>
+                <p>강사·물리치료사의 커리어 고민에 답함</p>
+              </div>
+            </div>
+          </div>
+          <p class="pv-caption">목업 — '방향' 장의 처방을 화면으로 옮긴 예시입니다</p>
+        </div>
+        </div></div></div>
 
       <div class="proc-item"><div class="proc-idx">02</div><div class="proc-label">답부터 말하지 말고, 고민부터 말한다</div><div style="grid-column:2"><p class="proc-lead">지금 콘텐츠는 해답 지점에서 시작합니다.</p><div class="proc-body"><p>로사님은 이미 답을 알고 있어서 답에서 출발합니다. 그러면 고객은 자기 이야기라고 느끼지 못합니다. 순서를 뒤집습니다.</p>
         <ol style="list-style:none;margin:0;padding:0">
@@ -867,14 +923,14 @@ main{padding-top:var(--bar-h)}
         </ul>
         <p><b style="color:var(--tx)">"내가 이렇게 했으니 너도 이렇게 해라"가 아닙니다.</b> "나는 시행착오를 다 겪었으니 핵심만 알려줄 수 있다"입니다. 이 차이가 로사님의 커리큘럼을 구매할 이유가 됩니다.</p></div></div></div>
 
-      <div class="proc-item"><div class="proc-idx">04</div><div class="proc-label">검열을 푼다</div><div style="grid-column:2"><p class="proc-lead">올려서 잃을 것이 없습니다.</p><div class="proc-body"><p>편입 사실을 내린 것, 자격증의 한계를 말하지 못하는 것 — 둘 다 전문성을 지키려는 판단이었습니다. 다만 결과는 반대입니다. 마흔에도 계속 공부하는 사람이라는 사실이 지워졌고, 남은 것은 공지뿐입니다.</p><p>자격증 한계는 이렇게 뒤집습니다. <b style="color:var(--tx)">"우리 자격증은 스탓만큼의 권위는 없습니다. 대신 스탓은 실제 티칭에 불친절합니다. 우리는 회원 케이스마다 바로 수업할 수 있게 하나하나 짚습니다."</b> — 이것이 약점 고백이 아니라 차별점 진술입니다 <span style="font-size:.78em;color:var(--tx-4)">[27:48]</span>.</p></div></div></div>
+      <div class="proc-item"><div class="proc-idx">04</div><div class="proc-label">검열을 푼다</div><div style="grid-column:2"><p class="proc-lead">올려서 잃을 것이 없습니다.</p><div class="proc-body"><p>편입 사실을 내린 것, 자격증의 한계를 말하지 못하는 것 — 둘 다 전문성을 지키려는 판단이었습니다. 다만 결과는 반대입니다. 마흔에도 계속 공부하는 사람이라는 사실이 지워졌고, 남은 것은 공지뿐입니다.</p><p>자격증 한계는 이렇게 뒤집습니다. <b style="color:var(--tx)">"우리 자격증은 스탓만큼의 권위는 없습니다. 대신 스탓은 실제 티칭에 불친절합니다. 우리는 회원 케이스마다 바로 수업할 수 있게 하나하나 짚습니다."</b> — 이것이 약점 고백이 아니라 차별점 진술입니다 <span style="font-size:.78em;color:var(--tx-3)">[27:48]</span>.</p></div></div></div>
 
       <div class="proc-item"><div class="proc-idx">05</div><div class="proc-label">상담 통화를 콘텐츠 원료로 전환한다</div><div style="grid-column:2"><p class="proc-lead">설득은 이미 통화에서 성공하고 있습니다.</p><div class="proc-body"><p>상담 전화를 녹음하고(고지·동의 전제), 반복되는 질문을 목록으로 만듭니다. 한 명을 설득한 통화 한 건이 콘텐츠 한 편이 됩니다. 소재를 새로 짜낼 필요가 없어지고, 검열 문제도 우회됩니다 — 이미 실제로 한 말이기 때문입니다.</p></div></div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════ § 06 ═══════════ -->
+<!-- ═══════════ 06 ═══════════ -->
 <section class="section" id="s06" data-title="벤치마킹과 훈련" data-screen-label="06 벤치마킹과 훈련">
   <div class="section-inner">
     <header class="s-open fade-in">
@@ -890,9 +946,13 @@ main{padding-top:var(--bar-h)}
         <li style="padding-left:20px;position:relative;margin-bottom:12px"><span style="position:absolute;left:0;color:var(--brass)">—</span>사진 위에 텍스트를 얹어 일기처럼 기록하기</li>
         <li style="padding-left:20px;position:relative"><span style="position:absolute;left:0;color:var(--brass)">—</span>상담 통화에서 나온 질문 하나를 그대로 제목으로 쓰기</li>
       </ul>
-      <p><em>훈련법 — 한 명 앞에 앉혀두고 씁니다.</em> 불특정 다수를 설득하려 하면 "나 교육해요, 10년 경력이고요, 이 자격증 있어요"밖에 나오지 않습니다. 로사님이 실제로 설득한 그 한 명에게 말하듯 씁니다 <span style="font-size:.78em;color:var(--tx-4)">[36:10]</span>.</p>
-      <p><em>소재표 — 타겟 4종 × 결과 3층 = 12칸.</em> §04의 Exhibit E와 F를 교차시키면 표가 나옵니다. 한 칸이 콘텐츠 한 편입니다. 예를 들어 <em>물리치료사 × 경제적 결과</em> 칸은 "법 개정 이후 물리치료사가 필라테스 업계로 왔을 때 실제로 받는 대우"가 되고, <em>비전공 초보 강사 × 정체성의 결과</em> 칸은 "자격증을 따고 더 불안해졌던 시기"가 됩니다. 감으로 정하지 않고 빈 칸을 채웁니다.</p>
-      <p><em>페르소나:</em> <em>"비전공자의 불안을 누구보다 잘 아는 정통 교육자"</em> — 모순되는 말처럼 들리지만 로사님에게서는 둘 다 성립합니다 <span style="font-size:.78em;color:var(--tx-4)">[42:19]</span>. §02에서 대조한 교육자가 <em>"성공한 현장 선배가 보여주는 확장 가능한 삶"</em>이라면, 같은 재료를 가지고도 로사님이 설 자리는 다릅니다. 로사님만 가진 것은 <em>출발점의 불안을 실제로 통과했다는 사실</em>이고, 그것이 비전공자가 다수인 이 시장에서 가장 희소한 자산입니다 <span style="font-size:.78em;color:var(--tx-4)">[16:37]~[16:55]</span>.</p>
+
+      <h4 class="pv-h">훈련법</h4>
+      <p>한 명 앞에 앉혀두고 씁니다. 불특정 다수를 설득하려 하면 "나 교육해요, 10년 경력이고요, 이 자격증 있어요"밖에 나오지 않습니다. 로사님이 실제로 설득한 그 한 명에게 말하듯 씁니다 <span style="font-size:.78em;color:var(--tx-3)">[36:10]</span>.</p>
+      <h4 class="pv-h">소재표</h4>
+      <p>타겟 4종 × 결과 3층 = 12칸. '시장과 고객' 장에서 정리한 타겟 네 종류와, 각 타겟이 원하는 결과 세 층을 곱하면 12칸짜리 표가 나옵니다. 한 칸이 콘텐츠 한 편입니다. 예를 들어 <em>물리치료사 × 경제적 결과</em> 칸은 "법 개정 이후 물리치료사가 필라테스 업계로 왔을 때 실제로 받는 대우"가 되고, <em>비전공 초보 강사 × 정체성의 결과</em> 칸은 "자격증을 따고 더 불안해졌던 시기"가 됩니다. 감으로 정하지 않고 빈 칸을 채웁니다.</p>
+      <h4 class="pv-h">페르소나</h4>
+      <p><em>"비전공자의 불안을 누구보다 잘 아는 정통 교육자"</em> — 모순되는 말처럼 들리지만 로사님에게서는 둘 다 성립합니다 <span style="font-size:.78em;color:var(--tx-3)">[42:19]</span>. '핵심 진단' 장에서 대조한 교육자가 <em>"성공한 현장 선배가 보여주는 확장 가능한 삶"</em>이라면, 같은 재료를 가지고도 로사님이 설 자리는 다릅니다. 로사님만 가진 것은 <em>출발점의 불안을 실제로 통과했다는 사실</em>이고, 그것이 비전공자가 다수인 이 시장에서 가장 희소한 자산입니다 <span style="font-size:.78em;color:var(--tx-3)">[16:37]~[16:55]</span>.</p>
     </div>
 
     <h3 style="font-family:var(--serif);font-size:clamp(21px,2.4vw,28px);font-weight:500;color:var(--tx);letter-spacing:-.6px;line-height:1.35;margin:clamp(48px,6vw,72px) 0 22px;max-width:760px" class="fade-in">해외 이력은 <em style="font-style:normal;color:var(--brass);font-weight:600">확인된 것과 미확인을 갈라 씁니다</em></h3>
@@ -904,23 +964,23 @@ main{padding-top:var(--bar-h)}
     <div class="exhibit fade-in" aria-label="해외 이력 구분">
       <div class="exhibit-bar"><div class="exhibit-tag"><span class="sq"></span><b>Exhibit H</b> — <span class="tlabel">해외 이력: 확인된 것과 미확인</span></div><div class="exhibit-src">세션 [29:03]~[29:47]</div></div>
       <div class="exhibit-body">
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-        <table style="width:100%;min-width:640px;border-collapse:collapse;font-size:13.5px;line-height:1.6;color:var(--tx-2)">
+        <div class="tbl-wrap">
+        <table class="tbl">
           <thead><tr>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600;width:14%"></th>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--brass);font-weight:600">확인된 것</th>
-            <th style="text-align:left;padding:0 0 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600">아직 미확인</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;width:14%"></th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;color:var(--brass)">확인된 것</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px">아직 미확인</th>
           </tr></thead>
           <tbody>
             <tr>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);color:var(--tx);font-weight:600;vertical-align:top">싱가포르</td>
-              <td style="padding:16px 16px 16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx)">PMA 인증학교 간 <b style="color:var(--brass)">교육기관 국제교류</b>. 현지 인력이 방한해 워크숍 진행. <b style="color:var(--brass)">현지 업체 정보·연결은 실제로 가능</b> <span style="font-size:.78em;color:var(--tx-4)">[29:07]~[29:22]</span></td>
-              <td style="padding:16px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">이 자격으로 현지 취업이 가능한지 · 현지 업체가 자격을 인정하는지 · 비자·언어·경력 조건 · 수료생 중 해외 취업자 유무</td>
+              <td>싱가포르</td>
+              <td style="color:var(--tx)">PMA 인증학교 간 <b style="color:var(--brass)">교육기관 국제교류</b>. 현지 인력이 방한해 워크숍 진행. <b style="color:var(--brass)">현지 업체 정보·연결은 실제로 가능</b> <span style="font-size:.78em;color:var(--tx-3)">[29:07]~[29:22]</span></td>
+              <td>이 자격으로 현지 취업이 가능한지 · 현지 업체가 자격을 인정하는지 · 비자·언어·경력 조건 · 수료생 중 해외 취업자 유무</td>
             </tr>
             <tr>
-              <td style="padding:16px 16px 0 0;color:var(--tx);font-weight:600;vertical-align:top">일본</td>
-              <td style="padding:16px 16px 0 0;vertical-align:top;color:var(--tx)">컨퍼런스 강연 이력. 강사 대상 교육으로 확장 가능(통역 동반) <span style="font-size:.78em;color:var(--tx-4)">[29:27]~[29:47]</span></td>
-              <td style="padding:16px 0 0;vertical-align:top;color:var(--tx-3)">실제 연결·채용 경로는 없음 <span style="font-size:.78em;color:var(--tx-4)">[29:37]</span></td>
+              <td>일본</td>
+              <td style="color:var(--tx)">컨퍼런스 강연 이력. 강사 대상 교육으로 확장 가능(통역 동반) <span style="font-size:.78em;color:var(--tx-3)">[29:27]~[29:47]</span></td>
+              <td>실제 연결·채용 경로는 없음 <span style="font-size:.78em;color:var(--tx-3)">[29:37]</span></td>
             </tr>
           </tbody>
         </table>
@@ -936,7 +996,7 @@ main{padding-top:var(--bar-h)}
   </div>
 </section>
 
-<!-- ═══════════ § 07 ═══════════ -->
+<!-- ═══════════ 07 ═══════════ -->
 <section class="section" id="s07" data-title="우선순위" data-screen-label="07 우선순위">
   <div class="section-inner">
     <header class="s-open fade-in">
@@ -981,59 +1041,59 @@ main{padding-top:var(--bar-h)}
     <div class="exhibit fade-in" aria-label="사전 확인 질문 8">
       <div class="exhibit-bar"><div class="exhibit-tag"><span class="sq"></span><b>Exhibit I</b> — <span class="tlabel">사전 확인 질문 8 대조</span></div><div class="exhibit-src">사전분석 질문 × 세션 전사</div></div>
       <div class="exhibit-body">
-        <div style="overflow-x:auto;-webkit-overflow-scrolling:touch">
-        <table style="width:100%;min-width:660px;border-collapse:collapse;font-size:13.5px;line-height:1.6;color:var(--tx-2)">
+        <div class="tbl-wrap">
+        <table class="tbl">
           <thead><tr>
-            <th style="text-align:left;padding:0 14px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600;width:5%">#</th>
-            <th style="text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600;width:34%">질문</th>
-            <th style="text-align:left;padding:0 0 12px 0;border-bottom:1px solid var(--tx-4);font-size:9.5px;letter-spacing:1.5px;color:var(--tx-3);font-weight:600">결과</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;width:5%">#</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px;width:34%">질문</th>
+            <th style="font-size:9.5px;letter-spacing:1.5px">결과</th>
           </tr></thead>
           <tbody>
             <tr>
-              <td style="padding:15px 14px 15px 0;border-bottom:1px solid var(--line-2);color:var(--tx-4);font-family:var(--serif);vertical-align:top">1</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">수강생은 자격 취득 후 어디에 취업했는가</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--brass)">다음 확인</b> — 세션에서 다루지 않음</td>
+              <td style="color:var(--tx-4);font-family:var(--serif)">1</td>
+              <td>수강생은 자격 취득 후 어디에 취업했는가</td>
+              <td><b style="color:var(--brass)">다음 확인</b> — 세션에서 다루지 않음</td>
             </tr>
             <tr>
-              <td style="padding:15px 14px 15px 0;border-bottom:1px solid var(--line-2);color:var(--tx-4);font-family:var(--serif);vertical-align:top">2</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">취득 전후 수업료·시급·회원 수 변화가 있었는가</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--brass)">다음 확인</b> — 세션의 5만/15만은 시장 일반값 <span style="font-size:.78em;color:var(--tx-4)">[32:06]</span>이지 수료생 실측이 아님</td>
+              <td style="color:var(--tx-4);font-family:var(--serif)">2</td>
+              <td>취득 전후 수업료·시급·회원 수 변화가 있었는가</td>
+              <td><b style="color:var(--brass)">다음 확인</b> — 세션의 5만/15만은 시장 일반값 <span style="font-size:.78em;color:var(--tx-3)">[32:06]</span>이지 수료생 실측이 아님</td>
             </tr>
             <tr>
-              <td style="padding:15px 14px 15px 0;border-bottom:1px solid var(--line-2);color:var(--tx-4);font-family:var(--serif);vertical-align:top">3</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">초보자·현직 강사·원장 중 누가 가장 많이 등록하는가</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--brass)">다음 확인</b> — 물리치료사 유입이 늘고 있다는 시장 관찰 <span style="font-size:.78em;color:var(--tx-4)">[13:57]</span>은 있으나 등록 구성비는 미확인</td>
+              <td style="color:var(--tx-4);font-family:var(--serif)">3</td>
+              <td>초보자·현직 강사·원장 중 누가 가장 많이 등록하는가</td>
+              <td><b style="color:var(--brass)">다음 확인</b> — 물리치료사 유입이 늘고 있다는 시장 관찰 <span style="font-size:.78em;color:var(--tx-3)">[13:57]</span>은 있으나 등록 구성비는 미확인</td>
             </tr>
             <tr>
-              <td style="padding:15px 14px 15px 0;border-bottom:1px solid var(--line-2);color:var(--tx-4);font-family:var(--serif);vertical-align:top">4</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">등록 직전 가장 많이 묻는 질문은 무엇인가</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--tx)">답 나옴</b> — "교육을 어떻게 하는지, 어떻게 풀어내는지" <span style="font-size:.78em;color:var(--tx-4)">[35:02]</span> · "물리치료를 다시 갈까, 대학원을 갈까" · "협회를 다시 딸까" <span style="font-size:.78em;color:var(--tx-4)">[25:11]~[25:26]</span> → 이 셋이 첫 콘텐츠 3편의 제목이 됩니다</td>
+              <td style="color:var(--tx-4);font-family:var(--serif)">4</td>
+              <td>등록 직전 가장 많이 묻는 질문은 무엇인가</td>
+              <td><b style="color:var(--tx)">답 나옴</b> — "교육을 어떻게 하는지, 어떻게 풀어내는지" <span style="font-size:.78em;color:var(--tx-3)">[35:02]</span> · "물리치료를 다시 갈까, 대학원을 갈까" · "협회를 다시 딸까" <span style="font-size:.78em;color:var(--tx-3)">[25:11]~[25:26]</span> → 이 셋이 첫 콘텐츠 3편의 제목이 됩니다</td>
             </tr>
             <tr>
-              <td style="padding:15px 14px 15px 0;border-bottom:1px solid var(--line-2);color:var(--tx-4);font-family:var(--serif);vertical-align:top">5</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">수강생이 처음 품었던 가장 큰 불안은 무엇인가</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--tx)">부분</b> — 로사님 본인의 불안은 확인됨("운전면허를 따긴 땄는데 도로에 나갈 수가 없는 거예요" <span style="font-size:.78em;color:var(--tx-4)">[17:13]</span> · "자격증 따고 나서 더 멘탈이 나갔어요" <span style="font-size:.78em;color:var(--tx-4)">[17:27]</span>). 수강생 본인 발화는 미확인 → <b style="color:var(--brass)">다음 확인</b></td>
+              <td style="color:var(--tx-4);font-family:var(--serif)">5</td>
+              <td>수강생이 처음 품었던 가장 큰 불안은 무엇인가</td>
+              <td><b style="color:var(--tx)">부분</b> — 로사님 본인의 불안은 확인됨("운전면허를 따긴 땄는데 도로에 나갈 수가 없는 거예요" <span style="font-size:.78em;color:var(--tx-3)">[17:13]</span> · "자격증 따고 나서 더 멘탈이 나갔어요" <span style="font-size:.78em;color:var(--tx-3)">[17:27]</span>). 수강생 본인 발화는 미확인 → <b style="color:var(--brass)">다음 확인</b></td>
             </tr>
             <tr>
-              <td style="padding:15px 14px 15px 0;border-bottom:1px solid var(--line-2);color:var(--tx-4);font-family:var(--serif);vertical-align:top">6</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">싱가포르 교류가 수강생에게 주는 구체적 기회는 무엇인가</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--tx)">답 나옴</b> — 현지 업체 정보·연결은 가능 <span style="font-size:.78em;color:var(--tx-4)">[29:07]~[29:22]</span>, 취업 경로는 아님 <span style="font-size:.78em;color:var(--tx-4)">[29:03]</span></td>
+              <td style="color:var(--tx-4);font-family:var(--serif)">6</td>
+              <td>싱가포르 교류가 수강생에게 주는 구체적 기회는 무엇인가</td>
+              <td><b style="color:var(--tx)">답 나옴</b> — 현지 업체 정보·연결은 가능 <span style="font-size:.78em;color:var(--tx-3)">[29:07]~[29:22]</span>, 취업 경로는 아님 <span style="font-size:.78em;color:var(--tx-3)">[29:03]</span></td>
             </tr>
             <tr>
-              <td style="padding:15px 14px 15px 0;border-bottom:1px solid var(--line-2);color:var(--tx-4);font-family:var(--serif);vertical-align:top">7</td>
-              <td style="padding:15px 16px 15px 0;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--tx-3)">해외 취업·워크숍·채용 연결 사례가 실제로 있는가</td>
-              <td style="padding:15px 0;border-bottom:1px solid var(--line-2);vertical-align:top"><b style="color:var(--tx)">부분</b> — 취업 연결은 없음이 확인됨 <span style="font-size:.78em;color:var(--tx-4)">[29:03]</span>, 일본은 강연 이력이며 연결은 아님 <span style="font-size:.78em;color:var(--tx-4)">[29:37]</span>. 수료생 해외 진출 사례 유무는 미확인 → <b style="color:var(--brass)">다음 확인</b></td>
+              <td style="color:var(--tx-4);font-family:var(--serif)">7</td>
+              <td>해외 취업·워크숍·채용 연결 사례가 실제로 있는가</td>
+              <td><b style="color:var(--tx)">부분</b> — 취업 연결은 없음이 확인됨 <span style="font-size:.78em;color:var(--tx-3)">[29:03]</span>, 일본은 강연 이력이며 연결은 아님 <span style="font-size:.78em;color:var(--tx-3)">[29:37]</span>. 수료생 해외 진출 사례 유무는 미확인 → <b style="color:var(--brass)">다음 확인</b></td>
             </tr>
             <tr>
-              <td style="padding:15px 14px 0 0;color:var(--tx-4);font-family:var(--serif);vertical-align:top">8</td>
-              <td style="padding:15px 16px 0 0;vertical-align:top;color:var(--tx-3)">본인의 비전공자 시절과 수강생의 두려움이 어디에서 겹치는가</td>
-              <td style="padding:15px 0 0;vertical-align:top"><b style="color:var(--tx)">답 나옴</b> — "비전공자라서 시작을 해서 비전공자의 마음을 아니까" <span style="font-size:.78em;color:var(--tx-4)">[13:49]</span>. 이 겹침이 §06 페르소나의 근거입니다</td>
+              <td style="color:var(--tx-4);font-family:var(--serif)">8</td>
+              <td>본인의 비전공자 시절과 수강생의 두려움이 어디에서 겹치는가</td>
+              <td><b style="color:var(--tx)">답 나옴</b> — "비전공자라서 시작을 해서 비전공자의 마음을 아니까" <span style="font-size:.78em;color:var(--tx-3)">[13:49]</span>. 이 겹침이 '벤치마킹과 훈련' 장 페르소나의 근거입니다</td>
             </tr>
           </tbody>
         </table>
         </div>
       </div>
-      <p class="exhibit-cap">남은 넷은 전부 <b>경제적 결과(Exhibit F 2층)의 증거</b>입니다. 지금 콘텐츠가 기능적 결과와 정체성 결과까지는 근거를 갖췄는데, "그래서 돈이 되는가"만 비어 있다는 뜻입니다. 수료생 4~5명에게 취업처와 취득 전후 단가를 물어보는 것이 가장 싼 다음 수순입니다.</p>
+      <p class="exhibit-cap">남은 넷은 전부 <b>경제적 결과의 증거</b>입니다. 지금 콘텐츠가 기능적 결과와 정체성 결과까지는 근거를 갖췄는데, "그래서 돈이 되는가"만 비어 있다는 뜻입니다. 수료생 4~5명에게 취업처와 취득 전후 단가를 물어보는 것이 가장 싼 다음 수순입니다.</p>
     </div>
   </div>
 </section>
