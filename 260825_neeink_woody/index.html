@@ -1387,7 +1387,7 @@ https://neeinkclass.manus.space/
     feedbackSubmit.disabled=true;
     feedbackStatus.textContent='후기를 보내고 있습니다.';
     fetch(feedbackEndpoint,{method:'POST',headers:{'Content-Type':'text/plain;charset=UTF-8'},body:JSON.stringify(payload)})
-      .then(function(response){ if(!response.ok) throw new Error('HTTP '+response.status); return response.json(); })
+      .then(function(response){ if(!response.ok) throw new Error('HTTP '+response.status); return response.text(); })
       .then(function(){
         feedbackStatus.textContent='후기가 전달되었습니다. 감사합니다.';
         feedbackText.value=''; feedbackUse.checked=false;
