@@ -1,0 +1,75 @@
+# .gitignore — naktaaa5/1-1 (PUBLIC · GitHub Pages: main 브랜치 루트)
+# 생성 2026-08-29 · 목적: 고객 자료가 실수로 공개되는 것을 막는다.
+#
+# 이 저장소는 PUBLIC 이다. 커밋되는 순간 곧 공개다.
+# 지금 배포되는 것은 고객별 `<슬러그>/index.html` 하나뿐이다.
+# 그 외에는 전부 막고, 배포 대상만 맨 아래에서 되살린다.
+#
+# 되돌리기: 이 파일 하나를 지우면 원상복구다. (추적 파일은 건드리지 않는다)
+
+# 1. 원자료 — 표·덤프 (개인정보가 들어가는 형식)
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.numbers
+*.json
+*.db
+*.sqlite
+*.parquet
+
+# 2. 문서 원본 — 설문·계약·제안서
+*.pdf
+*.docx
+*.doc
+*.pptx
+*.hwp
+*.hwpx
+*.pages
+*.key
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.gz
+
+# 3. 녹음·영상·전사 (세션 원본)
+*.m4a
+*.mp3
+*.wav
+*.mp4
+*.mov
+*.webm
+*.srt
+*.vtt
+*transcript*
+*전사*
+*녹취*
+
+# 4. 작업 스크립트·중간 산출물 (배포물이 아니다)
+*.py
+*.mjs
+*.sh
+*.log
+__pycache__/
+.venv/
+node_modules/
+
+# 5. 자격증명
+.env
+.env.*
+*.pem
+*credentials*
+*secret*
+*token*
+
+# 6. 도구 부산물
+.claude/
+.DS_Store
+.playwright-mcp/
+
+# 7. 배포 대상 되살리기 — Pages 가 실제로 서비스하는 것
+!.nojekyll
+!.gitignore
+!*/index.html
+!*/*/index.html
