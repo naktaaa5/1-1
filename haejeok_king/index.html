@@ -1041,6 +1041,11 @@ main>.chapter:first-child{padding-top:104px}
 .chapter>ul+p,.chapter>ul+.statement,.chapter>ol:not(.outline-list)+p{margin-top:24px}
 .chapter>ul,.chapter>ol:not(.outline-list){margin-bottom:24px}
 .chapter>h3+p.ig-caption{margin-top:0}
+
+/* ⑪ 좌측 기준선 최종 — :not() 특이도에 밀려 statement 5개가 24px 안으로 들어가 있었다.
+   각 장에서 가장 중요한 문장이라 본문과 같은 선에 서야 한다. 후기 목록 들여쓰기도 본문 목록(18px)에 맞춘다. */
+.chapter .statement:not(.lead-statement),.chapter>h3 ~ .statement:not(.lead-statement){padding-left:0}
+ul.feedback-hints{padding-left:18px}
 </style>
 </head>
 <body>
