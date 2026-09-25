@@ -1000,6 +1000,34 @@ main>.chapter:first-child{padding-top:104px}
 
 .instagram-media{margin:16px 0 6px!important;max-width:540px!important}
 .ig-caption,.chapter>p.ig-caption{max-width:540px;margin:0 0 24px;text-align:left;font-size:12.5px;color:var(--muted)}
+
+/* ⑤ 좌측 기준선을 하나로 — 카드 제목 48px / 카드 본문 24px / 일반 문단 0px 로 갈려 있던 것을 정렬.
+   카드는 음수 여백으로 바깥으로 밀어 내부 텍스트가 본문과 같은 x에 서게 한다. */
+.chapter .trait,.chapter .stage{
+  margin-left:calc(var(--marker) * -1);margin-right:calc(var(--marker) * -1);
+  max-width:calc(var(--prose) + var(--marker) * 2);
+  padding:20px var(--marker);border-radius:4px}
+.chapter .trait+.trait,.chapter .stage+.stage{margin-top:12px}
+.chapter .trait>h3,.chapter .stage>h3{padding-left:0;margin:0 0 8px;font-size:15px;font-weight:700;line-height:1.75}
+.chapter .trait p,.chapter .stage p{margin:0}
+.chapter .statement{padding-left:0}
+.chapter .outline-list{padding-left:0;margin-left:0}
+.chapter ul{padding-left:18px;margin-left:0}
+.chapter ol:not(.outline-list){padding-left:20px;margin-left:0}
+/* ⑥ 장 사이 빈 공간 절제 */
+.chapter{padding:56px 0 64px}
+.chapter>h2:not(:first-child){margin-top:64px;padding-top:56px}
+
+/* ⑦ 소제목 뒤 문단이 24px, 목록이 48px 밀리던 규칙 해제 — 장 전체가 한 기준선을 쓴다.
+   그리고 소제목 위 전폭 가로선·48px 여백 제거(제목은 크기와 굵기로만 구분한다). */
+.chapter>h3{padding-left:0;padding-top:0;margin:32px 0 10px;font-size:15px;font-weight:700;line-height:1.75}
+.chapter>h3:after{content:none}
+.chapter>h3 ~ p,.chapter>h3 ~ .statement{padding-left:0}
+.chapter>h3 ~ ul,.chapter>h3 ~ ol{padding-left:18px}
+.chapter>h3 ~ ol.outline-list{padding-left:0}
+.chapter>h3+p.sec-sub{margin:-4px 0 14px}
+
+
 </style>
 </head>
 <body>
