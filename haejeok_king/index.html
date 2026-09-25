@@ -976,6 +976,31 @@ main>.chapter:first-child{padding-top:104px}
 }
 
 </style>
+
+<style id="nakta-typo-fix-20260925">
+/* 2026-09-25 낙타 조판 교정 — 코덱스 조판 위에 얹는 덮어쓰기.
+   ① 카드 제목: 본문과 같은 크기 + 굵게만(빈 번호 자리·장식 가로선 제거)
+   ② 번호 목록: 번호를 본문과 같은 줄에 맞춤
+   ③ 본문 15px
+   ④ 인스타 임베드와 캡션을 같은 왼쪽 기준으로 */
+.chapter h3{font-size:15px;font-weight:700;line-height:1.75;letter-spacing:-.012em;margin:34px 0 12px;padding-top:0}
+.chapter h3:not(:has(>i)){padding-top:0}
+.chapter h3:not(:has(>i)):before{content:none;display:none}
+.chapter h3>a{text-decoration:none;border-bottom:1px solid var(--line)}
+
+.outline-list{padding-left:0;margin:0 0 24px;max-width:var(--prose)}
+.outline-list>li{grid-template-columns:28px minmax(0,1fr);gap:8px;align-items:baseline;margin:0 0 8px}
+.outline-list>li>i{font-size:15px;line-height:1.75;font-weight:500;color:var(--muted);font-style:normal}
+.outline-list>li>div{font-size:15px;line-height:1.75}
+
+.chapter>p,.chapter>section>p,.chapter li{font-size:15px;line-height:1.8}
+.chapter>h2+p{font-size:16px;line-height:1.8}
+.chapter ul{max-width:var(--prose);padding-left:20px}
+.chapter ul>li{margin:0 0 8px}
+
+.instagram-media{margin:16px 0 6px!important;max-width:540px!important}
+.ig-caption,.chapter>p.ig-caption{max-width:540px;margin:0 0 24px;text-align:left;font-size:12.5px;color:var(--muted)}
+</style>
 </head>
 <body>
 <div class="progress"><i></i></div>
@@ -1203,7 +1228,7 @@ main>.chapter:first-child{padding-top:104px}
 <h3><a href="https://www.instagram.com/veggiet.official/">@veggiet.official</a></h3>
 
 <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/veggiet.official/" data-instgrm-version="14" style="max-width:540px;margin:16px auto"></blockquote>
-<p style="text-align:center;font-size:13px;color:#8a8a8a;margin-top:-8px">@veggiet.official</p>
+<p class="ig-caption">@veggiet.official</p>
 
 <p>식물성 단백질 브랜드입니다. 세 가지를 같은 계정 안에서 해결합니다.</p>
 
