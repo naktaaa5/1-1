@@ -28,7 +28,11 @@
 --space-paragraph:18px;--space-list:12px;--space-subsection:80px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard Variable",Pretendard,sans-serif;font-size:17px;line-height:1.8;word-break:keep-all;letter-spacing:-.005em;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}\na.kit{font-weight:600;color:var(--ink);text-decoration:underline;text-decoration-color:var(--lime);text-decoration-thickness:3px;text-underline-offset:3px}\na.kit:hover{background:var(--lime)}
+a{color:inherit;text-decoration:none}
+a.kit{display:inline-flex;align-items:center;gap:5px;margin:0 2px;padding:1px 9px 1px 10px;border-radius:999px;background:var(--ink);color:#fff;font-size:.78em;font-weight:600;letter-spacing:.04em;line-height:1.7;vertical-align:.08em;white-space:nowrap;text-decoration:none}
+a.kit:after{content:'↗';color:var(--lime);font-size:1em}
+a.kit:hover{background:#000;color:var(--lime)}
+.kitp{display:none}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .progress{position:fixed;inset:0 0 auto;height:3px;z-index:100}.progress i{display:block;height:100%;width:0;background:var(--lime)}
 .legacy-nav{display:none}
@@ -172,7 +176,7 @@ footer.foot{padding:28px 0 48px;border-top:1px solid var(--line);font-size:12px;
 <ul><li><strong>분명하게 만족시킨 사람들이 있다.</strong> 그리고 그들이 왜 만족했는지 안다.</li><li><strong>어떤 사람들의 분명한 문제를 파악했다.</strong> 그들이 지금 쓰는 것의 어디에 실망하고 있는지 안다.</li></ul>
 <p>그 만족과 문제에 대한 답이 제품입니다. 향수에서 「만족」은 불편을 없애는 것만이 아니에요. 좋아하는 재료를 찾던 사람의 취향을 채우는 것, 남과 겹치지 않는 향으로 나를 드러내게 하는 것, 선물하는 사람이 실패하지 않게 하는 것도 만족입니다.</p>
 <p>그래서 타겟을 안다는 것은 그 사람이 <strong>어떤 상황에서, 무엇과 비교하며, 어디까지 돈을 내봤는지</strong>까지 아는 것입니다. 같은 사람도 출근 전에 고르는 향, 선물로 고르는 향, 차에 두는 향의 기준이 다르니까요.</p>
-<p>사람은 나이가 아니라 상황 때문에 물건을 사고, 그래서 타겟은 사람이라기보다 <strong>순간</strong>에 가깝습니다(<a class="kit" href="https://www.refeeel.com/rekit036" target="_blank" rel="noopener">CO:KIT 36</a>). 그리고 좋다고 느끼는 사람과 그 가격을 낼 사람이 다를 수 있기 때문에, 그 사람이 무엇과 비교하고 어디까지 돈을 내봤는지까지 알아야 「타겟을 안다」고 말할 수 있어요(<a class="kit" href="https://www.refeeel.com/rekit092" target="_blank" rel="noopener">CO:KIT 92</a>).</p>
+<p>사람은 나이가 아니라 상황 때문에 물건을 사고, 그래서 타겟은 사람이라기보다 <strong>순간</strong>에 가깝습니다<span class="kitp">(</span><a class="kit" href="https://www.refeeel.com/rekit036" target="_blank" rel="noopener">CO:KIT 36</a><span class="kitp">)</span>. 그리고 좋다고 느끼는 사람과 그 가격을 낼 사람이 다를 수 있기 때문에, 그 사람이 무엇과 비교하고 어디까지 돈을 내봤는지까지 알아야 「타겟을 안다」고 말할 수 있어요<span class="kitp">(</span><a class="kit" href="https://www.refeeel.com/rekit092" target="_blank" rel="noopener">CO:KIT 92</a><span class="kitp">)</span>.</p>
 <p>리수에에는 이 기준으로 볼 때 <strong>타겟의 후보</strong>가 몇 군데 보입니다. 아직 후보입니다. 후보를 타겟으로 바꾸는 것이 다음 장의 고객 조사입니다.</p>
 </section></div>
 <div class="sec" id="s03"><div class="side"><div class="sticky"><div class="bigno">03</div><div class="eyebrow">Chapter</div></div></div><section class="chapter"><h2>고객 조사는 왜 해야 하나</h2>
@@ -190,7 +194,7 @@ footer.foot{padding:28px 0 48px;border-top:1px solid var(--line);font-size:12px;
 </div>
 <h3><small>3.2</small>두 장면이 알려 주는 고객 조사의 원칙</h3>
 <div class="prin"><div class="n">1</div><div><h4>응원과 근거는 다르다.</h4><p>다른 향 제품을 준비하던 한 대표님은 샘플 반응이 아주 좋았다고 했습니다. 그 반응은 부모님, 지인, 아로마 전문가, 함께 일하는 관계자에게서 나왔어요. 가까운 사람의 칭찬이 쓸모없는 것이 아닙니다.</p></div></div>
-<p>다만 그 말을 「내 고객도 원할 것」의 근거로 쓰려면, 그 사람이 평소 <strong>이런 제품을 자기 돈으로 사는 사람인지</strong>부터 알아야 합니다. 듣고 싶지 않은 답을 조금 일찍 듣는 것이 더 큰 돈을 쓰기 전에 할 수 있는 가장 값싼 실패예요(<a class="kit" href="https://www.refeeel.com/rekit098" target="_blank" rel="noopener">CO:KIT 98</a>). 리수에에서 근거가 되는 것은 장면 1과 2처럼 <strong>실제로 돈을 낸 사람</strong>의 이야기입니다.</p>
+<p>다만 그 말을 「내 고객도 원할 것」의 근거로 쓰려면, 그 사람이 평소 <strong>이런 제품을 자기 돈으로 사는 사람인지</strong>부터 알아야 합니다. 듣고 싶지 않은 답을 조금 일찍 듣는 것이 더 큰 돈을 쓰기 전에 할 수 있는 가장 값싼 실패예요<span class="kitp">(</span><a class="kit" href="https://www.refeeel.com/rekit098" target="_blank" rel="noopener">CO:KIT 98</a><span class="kitp">)</span>. 리수에에서 근거가 되는 것은 장면 1과 2처럼 <strong>실제로 돈을 낸 사람</strong>의 이야기입니다.</p>
 <div class="prin"><div class="n">2</div><div><h4>「살 것 같다」는 의향이고, 데이터는 과거의 행동이다.</h4><p>「카페 향수가 나오면 사실 건가요?」라고 물으면 대부분 「살 것 같다」고 답합니다. 상대는 일어나지 않은 일을 상상해서 답할 뿐이에요. 물어야 할 것은 「지금 어떤 향을 쓰세요?」, 「그걸 고를 때 뭐가 아쉬웠어요?」, 「마지막으로 향수를 산 게 언제고, 어디서, 얼마였어요?」입니다.</p></div></div>
 <div class="prin"><div class="n">3</div><div><h4>조사를 해도 듣고 싶은 말만 들을 수 있다.</h4><p>앞의 대표님은 경쟁 리뷰에서 「향이 너무 진해 머리가 아프다」는 불만을 보고 천연 향 방향에 확신을 얻었습니다. 그런데 같은 리뷰에 「지속력이 짧다」는 불만도 있었고, 준비하던 제품도 그 약점을 갖고 있었어요.</p></div></div>
 <p>리수에에도 지속력에 대한 아쉬움이 사쉐와 향수에서 한 건씩 나옵니다. 아직 두 건이라 「반복되는 불만」이라고 할 수는 없지만, 다음 향을 기획하기 전에 <strong>반드시 확인해야 할 신호</strong>입니다.</p>
@@ -214,7 +218,7 @@ footer.foot{padding:28px 0 48px;border-top:1px solid var(--line);font-size:12px;
 <p>포지셔닝도 같은 표에서 나옵니다. 고객이 비교하는 대안에 비해 리수에가 <strong>실제로 더 나은 지점</strong>이 어디인지를 고르는 일이에요.</p>
 <p>지금 자료로 보면 후보는 「재료가 분명한 무화과 향」, 「성별을 타지 않는 공간의 향」, 「향수와 같은 향으로 이어지는 사쉐」 정도입니다. 어느 것이 진짜인지는 장면 1과 2 같은 이야기를 더 모아야 판단할 수 있어요.</p>
 <p>카페 콘셉트도 이 표 위에 올려 보면 질문이 분명해집니다. 「카페」는 세 칸 중 어디에 들어가는가. 니치 향수라면 커피 향을 몸에 뿌리고 싶은 사람이, 공간의 향이라면 집에서 카페 향을 원하는 사람이 있어야 합니다.</p>
-<p>「카페」는 카테고리가 아니라 수식어라서, 이 질문에 답하지 않으면 고객은 무엇과 비교해야 할지 모르게 돼요. 넓게 서면 추천할 말이 사라지고, 하나의 만족을 분명하게 차지해야 「OO 하면 떠오르는 브랜드」가 됩니다(<a class="kit" href="https://www.refeeel.com/rekit045" target="_blank" rel="noopener">CO:KIT 45</a>).</p>
+<p>「카페」는 카테고리가 아니라 수식어라서, 이 질문에 답하지 않으면 고객은 무엇과 비교해야 할지 모르게 돼요. 넓게 서면 추천할 말이 사라지고, 하나의 만족을 분명하게 차지해야 「OO 하면 떠오르는 브랜드」가 됩니다<span class="kitp">(</span><a class="kit" href="https://www.refeeel.com/rekit045" target="_blank" rel="noopener">CO:KIT 45</a><span class="kitp">)</span>.</p>
 </section></div>
 <div class="sec" id="s06"><div class="side"><div class="sticky"><div class="bigno">06</div><div class="eyebrow">Chapter</div></div></div><section class="chapter"><h2>새 방향을 검토한다면: 그 자리에 이미 있는 브랜드부터 읽기</h2>
 <p>지금까지의 내용은 이미 가진 제품에서 답을 찾는 방법입니다. 그런데 카페 콘셉트처럼 <strong>새로운 자리로 옮기는 것</strong>을 검토하고 있다면, 질문이 하나 더 생깁니다. 그 자리에 이미 서 있는 브랜드의 고객은 무엇 때문에 사고, 무엇에 실망하는가.</p>
@@ -222,7 +226,7 @@ footer.foot{padding:28px 0 48px;border-top:1px solid var(--line);font-size:12px;
 <h3><small>6.1</small>읽어야 할 네 가지</h3>
 <div class="tbl"><table><thead><tr><th></th><th>무엇을 보나</th><th>무엇을 알게 되나</th></tr></thead><tbody><tr><td><strong>상세페이지</strong></td><td>첫 문장, 설득의 순서, 어떤 증거를 붙였는지</td><td>그 브랜드가 고객의 어떤 망설임을 먼저 풀려고 하는지</td></tr><tr><td><strong>소구점</strong></td><td>재료, 기분, 지속력, 독특함, 선물 중 무엇을 약속하는지</td><td>그 자리의 브랜드들이 같은 약속을 하고 있다면, 리수에가 같은 말을 해서는 비교에서 이길 수 없다는 것</td></tr><tr><td><strong>마케팅 경로</strong></td><td>인스타그램 콘텐츠, 체험단, 팝업, 플랫폼 입점, 광고 중 어디서 고객을 만나는지</td><td>그 자리의 고객이 어디서 처음 브랜드를 알게 되는지</td></tr><tr><td><strong>리뷰</strong></td><td>반복되는 단어, 좋았던 이유, 실망한 이유, 산 상황, 비교한 대상</td><td>그 시장의 고객이 실제로 쓰는 말, 기대하는 것, 아직 채워지지 않은 것</td></tr></tbody></table></div>
 <p>네 가지 중 가장 중요한 것은 리뷰입니다. <strong>상세페이지에는 브랜드가 내세우고 싶은 소구점이 있고, 리뷰에는 고객이 실제로 산 이유가 고객의 말로 적혀 있어요.</strong> 둘이 다르다면 고객의 말이 맞습니다.</p>
-<p>한 브랜드는 광고 카피를 리뷰에 나온 고객의 표현으로 바꾸기만 해서 전환율이 크게 올랐어요. 사업자는 성분을 말했는데, 고객은 아침에 일어났을 때의 느낌을 말하고 있었던 거죠(<a class="kit" href="https://www.refeeel.com/rekit033" target="_blank" rel="noopener">CO:KIT 33</a>).</p>
+<p>한 브랜드는 광고 카피를 리뷰에 나온 고객의 표현으로 바꾸기만 해서 전환율이 크게 올랐어요. 사업자는 성분을 말했는데, 고객은 아침에 일어났을 때의 느낌을 말하고 있었던 거죠<span class="kitp">(</span><a class="kit" href="https://www.refeeel.com/rekit033" target="_blank" rel="noopener">CO:KIT 33</a><span class="kitp">)</span>.</p>
 <h3><small>6.2</small>디저트 콘셉트의 국내 브랜드로 본다면</h3>
 <p>세션에서 이미 이 작업의 첫 장면이 있었습니다. 대표님은 디저트를 콘셉트로 하는 한 국내 향수 브랜드를 직접 찾아가 시향하고 구매까지 했고, 그 브랜드의 베스트셀러가 말차라떼 향이라는 것을 확인했어요. 「말차라떼를 몸에 뿌리고 싶은 사람이 있을까」라는 의문과 달리, 실제로 팔리고 있었던 겁니다.</p>
 <p>여기서 물어야 할 것은 「그러니 카페 콘셉트도 팔리겠다」가 아니라 <strong>「그 사람들은 왜 샀는가」</strong>입니다. 리뷰를 읽어 보면 이유가 갈릴 수 있어요.</p>
@@ -231,7 +235,7 @@ footer.foot{padding:28px 0 48px;border-top:1px solid var(--line);font-size:12px;
 <p>이 세 이유 중 무엇이 가장 큰지에 따라 카페 콘셉트의 의미가 완전히 달라집니다. 세 번째가 크다면, 리수에가 새로 가야 할 곳은 카페가 아니라 지금 서 있는 자리를 더 분명하게 말하는 쪽일 수 있어요.</p>
 <h3><small>6.3</small>리뷰를 AI로 수집하고 분석하는 법</h3>
 <p>예전에는 리뷰 수백 건을 읽고 분류하는 데 사람과 시간이 들었지만, 지금은 AI가 수집·정리·해석의 대부분을 대신합니다. 순서는 이렇습니다. 먼저 검토할 자리에 있는 브랜드 서너 곳을 고르고, 자사몰·플랫폼(29CM, 무신사, 올리브영 등)의 상품 리뷰와 인스타그램 게시물·댓글을 모읍니다.</p>
-<p>브라우저를 직접 조작하는 AI 에이전트에 「이 브랜드의 최근 게시물과 리뷰를 수집해 정리해 달라」고 맡기면 계정 분석 리포트까지 몇 분 안에 받을 수 있고(<a class="kit" href="https://www.refeeel.com/rekit054" target="_blank" rel="noopener">CO:KIT 54</a>), 캡처한 리뷰는 이미지 인식이 강한 AI로 <strong>원문 그대로</strong> 텍스트를 뽑은 뒤 맥락 분석이 강한 AI로 분류하면 됩니다(<a class="kit" href="https://www.refeeel.com/rekit032" target="_blank" rel="noopener">CO:KIT 32</a>). 분류할 때는 「고객이 어떤 상황에서 무엇을 해결하려고 이 제품을 골랐는가」를 기준으로 묶고, 결과를 <strong>고객의 언어 사전</strong>(반복되는 표현, 감정어, 상황을 묘사한 문장), <strong>기대와 실망 표</strong>, <strong>아직 아무도 채우지 못한 빈자리</strong> 세 가지로 정리합니다. 다만 두 가지는 걸러야 해요.</p>
+<p>브라우저를 직접 조작하는 AI 에이전트에 「이 브랜드의 최근 게시물과 리뷰를 수집해 정리해 달라」고 맡기면 계정 분석 리포트까지 몇 분 안에 받을 수 있고<span class="kitp">(</span><a class="kit" href="https://www.refeeel.com/rekit054" target="_blank" rel="noopener">CO:KIT 54</a><span class="kitp">)</span>, 캡처한 리뷰는 이미지 인식이 강한 AI로 <strong>원문 그대로</strong> 텍스트를 뽑은 뒤 맥락 분석이 강한 AI로 분류하면 됩니다<span class="kitp">(</span><a class="kit" href="https://www.refeeel.com/rekit032" target="_blank" rel="noopener">CO:KIT 32</a><span class="kitp">)</span>. 분류할 때는 「고객이 어떤 상황에서 무엇을 해결하려고 이 제품을 골랐는가」를 기준으로 묶고, 결과를 <strong>고객의 언어 사전</strong>(반복되는 표현, 감정어, 상황을 묘사한 문장), <strong>기대와 실망 표</strong>, <strong>아직 아무도 채우지 못한 빈자리</strong> 세 가지로 정리합니다. 다만 두 가지는 걸러야 해요.</p>
 <p>체험단 리뷰와 「좋아요」 같은 정형 문구는 산 이유를 알려 주지 않으니 따로 빼고, 리뷰는 이미 산 사람의 말이라 사지 않은 이유는 실망 리뷰와 「다른 걸 써 봤는데」 같은 비교 표현에서만 보인다는 점을 감안합니다. 그리고 수집을 시작하기 전에 <strong>어떤 결과가 나오면 카페 콘셉트를 접을지</strong>를 먼저 적어 두세요. 그러지 않으면 수백 건을 모아 놓고도 듣고 싶은 말만 고르게 됩니다.</p>
 </section></div>
 <div class="sec" id="s07"><div class="side"><div class="sticky"><div class="bigno">07</div><div class="eyebrow">Chapter</div></div></div><section class="chapter"><h2>지금 정할 것과 아직 정하지 말 것</h2>
